@@ -15,15 +15,6 @@ Welcome to the Event Management System, a project built with Vite and React.
 9. **Networking and Community Building**
 10. **Feedback and Review System**
 
-## New Technology
-
-- **Redux**
-  - **Why Redux?**
-    - Predictable state management for JavaScript applications.
-    - Centralized store for the entire application state.
-    - Predictable state changes through actions and reducers.
-    - Global accessibility for easy state modification.
-
 ## Contributing
 
 We welcome contributions from the community! Follow these guidelines to contribute to the project:
