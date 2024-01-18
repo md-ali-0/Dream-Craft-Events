@@ -1,6 +1,6 @@
 # Event Management System and Booking System
 
-Welcome to the Event Management System, a project built with Vite and React.
+Welcome to the Event Management System, a project built with MERN.
 
 ## Main Features
 
