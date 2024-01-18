@@ -1,7 +1,11 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Navbar = () => {
+
+  const { user, logOut } = useContext(AuthContext);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -66,7 +70,66 @@ const Navbar = () => {
         </div>
         <div>
           {/* Add your login link or button here */}
-          <NavLink to="/login" className="text-gray-800">Login</NavLink>
+          {/* <NavLink to="/login" className="text-gray-800">Login</NavLink> */}
+
+          <div className="">
+
+            {
+              user?.email ? <div className="dropdown dropdown-end">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <div className=" flex flex-col justify-center">
+                      <p>{user.displayName}</p>
+
+                    </div>
+
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+
+                      <div className="w-10 rounded-full">
+                        <img src={user.photoURL} />
+                      </div>
+                    </label>
+                  </div>
+
+                  <div>
+
+                    <button
+                      onClick={logOut}
+                      className="btn btn-sm  btn-primary bg-[#F4E869] text-black">Logout</button>
+
+                  </div>
+                </div>
+                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  bg-[#F4E869] pb-[100px] z-20">
+                  <li>
+                    <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
+                    <button className="btn btn-sm  btn-ghost">{user.email}</button>
+
+                  </li>
+                  <li>
+                    <button
+                      onClick={logOut}
+                      className="btn btn-sm btn-primary bg-[#F4E869] text-black">Logout</button>
+
+                  </li>
+                </ul>
+              </div>
+                :
+                <div>
+                  <Link to='/login'>
+                    <button className="btn btn-sm  btn-primary bg-[#F4E869] text-black">Login</button>
+                  </Link>
+                  /
+                  <Link to='/register'>
+                    <button className="btn btn-sm text-black btn-primary bg-[#F4E869]">Register</button>
+                  </Link>
+
+                </div>
+
+
+
+
+            }
+          </div>
         </div>
       </div>
     </nav>
