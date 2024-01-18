@@ -4,16 +4,16 @@ Welcome to the Event Management System, a project built with Vite and React.
 
 ## Main Features
 
-1. **User-friendly Event Creation:**
-2. **Integrated Calendar and Scheduling:**
-3. **Ticketing and Registration:**
-4. **Virtual Event Hosting and Streaming:**
-5. **Payment Gateway Integration:**
-6. **Promotional Tools:**
-7. **Event Analytics and Reporting:**
-8. **Interactive Event Pages:**
-9. **Networking and Community Building:**
-10. **Feedback and Review System:**
+1. **User-friendly Event Creation**
+2. **Integrated Calendar and Scheduling**
+3. **Ticketing and Registration**
+4. **Virtual Event Hosting and Streaming**
+5. **Payment Gateway Integration**
+6. **Promotional Tools**
+7. **Event Analytics and Reporting**
+8. **Interactive Event Pages**
+9. **Networking and Community Building**
+10. **Feedback and Review System**
 
 ## New Technology
 
