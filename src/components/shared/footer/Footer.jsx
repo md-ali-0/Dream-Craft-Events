@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png';
+import Container from '../../container/Container';
 
 const Footer = () => {
   return (
     <footer className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+      <Container>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <div className="flex justify-center text-blue-500 sm:justify-start">
@@ -293,7 +294,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };
