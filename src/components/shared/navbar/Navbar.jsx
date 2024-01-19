@@ -1,9 +1,10 @@
-import { RxCross2 } from "react-icons/rx";
 import { useContext, useState } from 'react';
+import { LuMenu, LuSearch } from "react-icons/lu";
+import { RxCross2 } from "react-icons/rx";
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
-import Container from "../../container/Container";
 import logo from '../../../assets/logo/logo.png';
+import Container from "../../container/Container";
 
 const Navbar = () => {
 
@@ -26,19 +27,7 @@ const Navbar = () => {
                 onClick={toggleMenu}
                 className="text-gray-800  focus:outline-none"
               >
-                <svg
-                  className="h-6 w-6 fill-current"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {!isMenuOpen && (
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M2 4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4C22 4.55228 21.5523 5 21 5H3C2.44772 5 2 4.55228 2 4ZM2 10C2 9.44772 2.44772 9 3 9H21C21.5523 9 22 9.44772 22 10C22 10.5523 21.5523 11 21 11H3C2.44772 11 2 10.5523 2 10ZM2 16C2 15.4477 2.44772 15 3 15H21C21.5523 15 22 15.4477 22 16C22 16.5523 21.5523 17 21 17H3C2.44772 17 2 16.5523 2 16ZM3 21C2.44772 21 2 20.5523 2 20C2 19.4477 2.44772 19 3 19H21C21.5523 19 22 19.4477 22 20C22 20.5523 21.5523 21 21 21H3Z"
-                    />
-                  )}
-                </svg>
+                <LuMenu size={30} className='text-dark_01'/>
               </button>
             </div>
             <div className="text-gray-800 font-bold text-xl">
@@ -71,7 +60,7 @@ const Navbar = () => {
           <div className="flex items-center ml-4">
             <div className="mr-4">
               {/* Add your search icon component or link here */}
-              <span className="text-gray-800">🔍</span>
+              <span className="text-gray-800"><LuSearch /></span>
             </div>
             <div>
               {/* Add your login link or button here */}
