@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import banner from '../../assets/banner/banner-img.png';
 import Container from "../../components/container/Container";
-const Banner = () => {
+const 
+Banner = () => {
     const scrollToPrice = ()=>{
         const priceSection = document.getElementById('price')
 
