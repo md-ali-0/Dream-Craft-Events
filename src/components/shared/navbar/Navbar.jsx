@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#FFFFFF] py-4 max-w-screen-xl mx-auto shadow flex justify-between items-center">
+    <nav className="bg-[#FFFFFF] py-4  max-w-screen-xl mx-auto shadow flex justify-between items-center">
       <div className="flex items-center">
         <div className="text-gray-800 font-bold text-xl">
           <span className='text-blue-600 font-bold text-2xl'>DC Events</span>
