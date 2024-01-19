@@ -15,9 +15,9 @@ const Contact = () => {
 
   return (
     <div>
-      <section className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 text-white">
+      <section className="">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center dark:text-white">Contact Us</h2>
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center">Contact Us</h2>
 
           <form onSubmit={handleSubmit} className="space-y-8">
             <div>

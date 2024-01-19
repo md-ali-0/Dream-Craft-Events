@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Container from "../../container/Container";
+import logo from '../../../assets/logo/logo.png';
 
 const Navbar = () => {
 
@@ -41,7 +42,7 @@ const Navbar = () => {
               </button>
             </div>
             <div className="text-gray-800 font-bold text-xl">
-              <Link to='/'><span className='text-blue-600 font-bold text-2xl'>DC Events</span></Link>
+              <Link to='/'><img src={logo} alt="" /></Link>
             </div>
 
             <div className={`md:flex gap-6 md:ml-12 list-none ${isMenuOpen ? 'fixed w-full flex flex-col justify-center items-center z-10 mt-96 text-2xl space-y-2 py-96  text-white  bg-black bg-opacity-95' : 'hidden'}`}>
