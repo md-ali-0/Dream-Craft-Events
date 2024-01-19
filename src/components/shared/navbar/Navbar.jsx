@@ -1,3 +1,4 @@
+import { RxCross2 } from "react-icons/rx";
 import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
@@ -13,28 +14,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#FFFFFF] p-4 shadow flex justify-between items-center">
+    <nav className="bg-[#FFFFFF] py-4  max-w-screen-xl mx-auto shadow flex justify-between items-center">
       <div className="flex items-center">
-        <div className="text-gray-800 font-bold text-xl">
-          <span className='text-blue-600 font-bold text-2xl'>C</span>vent
-        </div>
-        <div className="md:hidden">
+        
+        <div className="md:hidden mx-4">
           <button
             onClick={toggleMenu}
-            className="text-gray-800 focus:outline-none"
+            className="text-gray-800  focus:outline-none"
           >
             <svg
               className="h-6 w-6 fill-current"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {isMenuOpen ? (
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M2 3C2 2.44772 2.44772 2 3 2H21C21.5523 2 22 2.44772 22 3C22 3.55228 21.5523 4 21 4H3C2.44772 4 2 3.55228 2 3ZM22 9C22 8.44772 21.5523 8 21 8H3C2.44772 8 2 8.44772 2 9C2 9.55228 2.44772 10 3 10H21C21.5523 10 22 9.55228 22 9ZM21 14H3C2.44772 14 2 14.4477 2 15C2 15.5523 2.44772 16 3 16H21C21.5523 16 22 15.5523 22 15C22 14.4477 21.5523 14 21 14ZM21 20H3C2.44772 20 2 20.4477 2 21C2 21.5523 2.44772 22 3 22H21C21.5523 22 22 21.5523 22 21C22 20.4477 21.5523 20 21 20Z"
-                />
-              ) : (
+              {!isMenuOpen && (
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -44,26 +37,34 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
+        <div className="text-gray-800 font-bold text-xl">
+          <Link to='/'><span className='text-blue-600 font-bold text-2xl'>DC Events</span></Link>
+        </div>
 
-        <div className={`md:flex space-x-4 list-none ml-4 ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div className={`md:flex gap-6 md:ml-12 list-none ${isMenuOpen ? 'fixed w-full flex flex-col justify-center items-center z-10 mt-96 text-2xl space-y-2 py-96  text-white  bg-black bg-opacity-95' : 'hidden'}`}>
+          {
+            isMenuOpen && (
+              <RxCross2 onClick={toggleMenu} className='text-3xl cursor-pointer'></RxCross2>
+            )  
+          }
           <li>
-            <NavLink to="/" className="text-gray-800">Home</NavLink>
+            <NavLink to="/" className="">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/booking" className="text-gray-800">Booking</NavLink>
+            <NavLink to="/booking" className="">Booking</NavLink>
           </li>
           <li>
-            <NavLink to="/About" className="text-gray-800">About</NavLink>
+            <NavLink to="/About" className="">About</NavLink>
           </li>
           <li>
-            <NavLink to="/Services" className="text-gray-800">Services</NavLink>
+            <NavLink to="/Services" className="">Services</NavLink>
           </li>
           <li>
-            <NavLink to="/Contact" className="text-gray-800">Contact</NavLink>
+            <NavLink to="/Contact" className="">Contact</NavLink>
           </li>
         </div>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center ml-4">
         <div className="mr-4">
           {/* Add your search icon component or link here */}
           <span className="text-gray-800">🔍</span>
@@ -114,11 +115,11 @@ const Navbar = () => {
                 </ul>
               </div>
                 :
-                <div>
+                <div className="flex gap-4">
                   <Link to='/login'>
                     <button className="btn btn-sm  btn-primary bg-[#F4E869] text-black">Login</button>
                   </Link>
-                  /
+                  
                   <Link to='/register'>
                     <button className="btn btn-sm text-black btn-primary bg-[#F4E869]">Register</button>
                   </Link>
