@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { RxCross2 } from "react-icons/rx";
->>>>>>> 59ad4753773ea6b4e24137db50251a6fee425d4e
 import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
@@ -118,19 +115,11 @@ const Navbar = () => {
                 </ul>
               </div>
                 :
-<<<<<<< HEAD
-                <div>
-                  <Link to='/login'>
-                    <button className="btn btn-sm  btn-primary bg-[#F4E869] text-black">Login</button>
-                  </Link>
-                  /
-=======
                 <div className="flex gap-4">
                   <Link to='/login'>
                     <button className="btn btn-sm  btn-primary bg-[#F4E869] text-black">Login</button>
                   </Link>
                   
->>>>>>> 59ad4753773ea6b4e24137db50251a6fee425d4e
                   <Link to='/register'>
                     <button className="btn btn-sm text-black btn-primary bg-[#F4E869]">Register</button>
                   </Link>
