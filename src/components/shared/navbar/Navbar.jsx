@@ -1,9 +1,12 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { RxCross2 } from "react-icons/rx";
-
+import { useContext, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Navbar = () => {
+
+  const { user, logOut } = useContext(AuthContext);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,10 +16,8 @@ const Navbar = () => {
   return (
     <nav className="bg-[#FFFFFF] py-4  max-w-screen-xl mx-auto shadow flex justify-between items-center">
       <div className="flex items-center">
-        <div className="text-gray-800 font-bold text-xl">
-          <span className='text-blue-600 font-bold text-2xl'>DC Events</span>
-        </div>
-        <div className="md:hidden ml-52">
+        
+        <div className="md:hidden mx-4">
           <button
             onClick={toggleMenu}
             className="text-gray-800  focus:outline-none"
@@ -35,6 +36,9 @@ const Navbar = () => {
               )}
             </svg>
           </button>
+        </div>
+        <div className="text-gray-800 font-bold text-xl">
+          <Link to='/'><span className='text-blue-600 font-bold text-2xl'>DC Events</span></Link>
         </div>
 
         <div className={`md:flex gap-6 md:ml-12 list-none ${isMenuOpen ? 'fixed w-full flex flex-col justify-center items-center z-10 mt-96 text-2xl space-y-2 py-96  text-white  bg-black bg-opacity-95' : 'hidden'}`}>
@@ -67,7 +71,66 @@ const Navbar = () => {
         </div>
         <div>
           {/* Add your login link or button here */}
-          <NavLink to="/login" className="text-gray-800">Login</NavLink>
+          {/* <NavLink to="/login" className="text-gray-800">Login</NavLink> */}
+
+          <div className="">
+
+            {
+              user?.email ? <div className="dropdown dropdown-end">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <div className=" flex flex-col justify-center">
+                      <p>{user.displayName}</p>
+
+                    </div>
+
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+
+                      <div className="w-10 rounded-full">
+                        <img src={user.photoURL} />
+                      </div>
+                    </label>
+                  </div>
+
+                  <div>
+
+                    <button
+                      onClick={logOut}
+                      className="btn btn-sm  btn-primary bg-[#F4E869] text-black">Logout</button>
+
+                  </div>
+                </div>
+                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  bg-[#F4E869] pb-[100px] z-20">
+                  <li>
+                    <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
+                    <button className="btn btn-sm  btn-ghost">{user.email}</button>
+
+                  </li>
+                  <li>
+                    <button
+                      onClick={logOut}
+                      className="btn btn-sm btn-primary bg-[#F4E869] text-black">Logout</button>
+
+                  </li>
+                </ul>
+              </div>
+                :
+                <div className="flex gap-4">
+                  <Link to='/login'>
+                    <button className="btn btn-sm  btn-primary bg-[#F4E869] text-black">Login</button>
+                  </Link>
+                  
+                  <Link to='/register'>
+                    <button className="btn btn-sm text-black btn-primary bg-[#F4E869]">Register</button>
+                  </Link>
+
+                </div>
+
+
+
+
+            }
+          </div>
         </div>
       </div>
     </nav>
