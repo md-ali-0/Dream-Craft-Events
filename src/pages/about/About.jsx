@@ -2,12 +2,12 @@ const About = () => {
   return (
     <div>
       <h2 className="text-4xl text-center mt-5">About Us</h2>
-      <h3 className="text-3xl font-semibold text-center m-5">
+      <h3 className="text-3xl font-semibold text-center m-5 text-primary font-serif">
         Dream Craft Events
       </h3>
       <div className="mx-5 p-3 space-y-7">
         <div>
-          <h4 className="text-2xl mb-2">Original⇢</h4>
+          <h4 className="text-2xl mb-2 ">Original⇢</h4>
           <p className="text-sm">
             We have the sense fresh, new and original ideas that will ensure the
             event we organize is successful, unique and memorable. And We are
@@ -17,7 +17,7 @@ const About = () => {
           </p>
         </div>
         <div>
-          <h4 className="text-2xl mb-2">Creative⇢</h4>
+          <h4 className="text-2xl mb-2 ">Creative⇢</h4>
           <p>
             We are creative in every aspect of the event; planning, promotional
             and publicity as well as execution. By being creative, our events
