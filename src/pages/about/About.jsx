@@ -1,11 +1,13 @@
+import Container from "../../components/container/Container";
+
 const About = () => {
   return (
-    <div>
+    <Container>
       <h2 className="text-4xl text-center mt-5">About Us</h2>
       <h3 className="text-3xl font-semibold text-center m-5 text-primary font-serif">
         Dream Craft Events
       </h3>
-      <div className="mx-5 p-3 space-y-7">
+      <div className="space-y-7 mt-5 mb-10">
         <div>
           <h4 className="text-2xl mb-2 ">Original⇢</h4>
           <p className="text-sm">
@@ -54,7 +56,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
