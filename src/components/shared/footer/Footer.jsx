@@ -4,9 +4,9 @@ import Container from '../../container/Container';
 
 const Footer = () => {
   return (
-    <footer className="bg-white">
+    <footer className="bg-white border-t border-gray-200">
       <Container>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 py-5">
           <div>
             <div className="flex justify-center text-blue-500 sm:justify-start">
               <img src={logo} alt="" />
@@ -284,7 +284,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-gray-100 pt-6">
+        <div className="mt-12 border-t border-gray-100 py-6">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
             <p className="text-sm text-gray-500">
               <span className="block sm:inline">All rights reserved.</span>
