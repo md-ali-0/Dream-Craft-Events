@@ -7,6 +7,8 @@ import Home from "../pages/home/Home";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import Contact from "../pages/contact/Contact";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
 
 const Router = createBrowserRouter([
   {
