@@ -43,7 +43,7 @@ Banner = () => {
             <img
               src={banner}
               alt=""
-              className="object-contain h-72 md:w-[500px] md:h-[500px] animate-fade-up animate-once animate-duration-1000 animate-delay-1000 animate-ease-linear animate-normal"
+              className="object-contain h-72 md:w-[500px] md:h-[500px]"
             />
           </div>
         </div>
