@@ -8,6 +8,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import Contact from "../pages/contact/Contact";
 
+
 const Router = createBrowserRouter([
   {
     path: "/",
