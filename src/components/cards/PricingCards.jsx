@@ -13,7 +13,7 @@ const PricingCards = () => {
                 </div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                    <div className='border-2 px-8 my-6 py-8 flex flex-col justify-center items-center space-y-2'>
+                    <div className='border-2 hover:shadow-2xl px-8 my-6 py-8 flex flex-col justify-center items-center space-y-2'>
                         <img className='w-20' src={standard} alt="" />
                         <p className='text-gray-500 italic'>Standard ticket</p>
                         <h1 className='text-5xl font-bold pt-3'>$59</h1>
@@ -28,7 +28,7 @@ const PricingCards = () => {
 
 
                     </div>
-                    <div className='border-2 px-8 my-6 py-8 flex flex-col justify-center items-center space-y-2'>
+                    <div className='border-2 hover:shadow-2xl px-8 my-6 py-8 flex flex-col justify-center items-center space-y-2'>
                         <img className='w-20' src={premium} alt="" />
                         <p className='text-gray-500 italic'>Premium ticket</p>
                         <h1 className='text-5xl font-bold pt-3'>$89</h1>
@@ -42,7 +42,7 @@ const PricingCards = () => {
                         </button>
 
                     </div>
-                    <div className='border-2 px-8 my-6 py-8 flex flex-col justify-center items-center space-y-2'>
+                    <div className='border-2 hover:shadow-2xl px-8 my-6 py-8 flex flex-col justify-center items-center space-y-2'>
                         <img className='w-20' src={vip} alt="" />
                         <p className='text-gray-500 italic'>VIP ticket</p>
                         <h1 className='text-5xl font-bold pt-3'>$159</h1>
