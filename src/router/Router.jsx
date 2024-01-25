@@ -8,7 +8,6 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import Contact from "../pages/contact/Contact";
 import EventDetails from "../pages/eventDetails/EventDetails";
-import Houses from "../components/cards/Houses";
 
 
 const Router = createBrowserRouter([
