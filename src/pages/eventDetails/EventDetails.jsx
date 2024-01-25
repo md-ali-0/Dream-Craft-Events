@@ -15,10 +15,11 @@ const EventDetails = () => {
     return (
         <div>
             <div className='' style={{
-                backgroundImage: "url('https://i.ibb.co/YbNwSg0/birthday.jpg')",
+                backgroundImage: "url('https://i.ibb.co/VxZZKMK/banner-top.jpg')",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 borderRadius: "6px",
+                backgroundPosition: 'center'
             }}>
                 <div className='h-96 bg-black bg-opacity-70 relative'>
                     <div className='absolute top-48 left-8 md:left-36 '>
@@ -33,9 +34,9 @@ const EventDetails = () => {
             <div className='grid grid-cols-1 lg:grid-cols-7 mt-24 max-w-screen-xl mx-auto px-4 '>
                 <div className='lg:col-span-5'>
                     <div>
-                        <img className='w-full lg:w-[95%] h-96 rounded-md' src="https://i.ibb.co/9qNw5xs/leadership.jpg" alt="" />
+                        <img className='w-full lg:w-[95%] h-96 rounded-md' src="https://i.ibb.co/cTQbLD1/event-top.jpg" alt="" />
                         <div className='flex justify-between md:max-w-[780px] lg:max-w-[830px] ml-2 mt-6'>
-                            <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-xl' />January 21, 2021</p>
+                            <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-xl' />January 31, 2024</p>
                             <p className='flex items-center gap-2 text-red-600 font-semibold text-xl'><BsDiagram3 className='text-xl' />500 Seat</p>
                             <p className='flex items-center gap-1 text-sm'><VscLocation className='text-2xl' />Broadw, New York</p>
                         </div>
@@ -77,7 +78,7 @@ const EventDetails = () => {
                         <h2 className='text-2xl font-semibold max-w-[850px]'>Media Companies Need To Better One Then Educate Advertisers. Better One Then Educate.</h2>
                         <p className='mt-5 text-gray-600 leading-loose max-w-[850px]'>Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut sollicitudin. Pellentesque in faucibus purus.Nulla nisl tellus, hendrerit nec dignissim pellentesque, posuere in est. Suspendisse bibendum vestibulum elit eu placerat. In ut ipsum in odio euismod tincidunt non lacinia nunc. Donec ligula augue, mattis eu varius ac.</p>
                     </div>
-                    <div className='mt-8 grid gap-8 lg:grid-cols-2 items-center'>
+                    <div className='mt-8 grid gap-8 md:gap-6 lg:gap-0 max-w-[840px] lg:grid-cols-2 items-center'>
                         <div>
                             <h2 className='text-2xl font-semibold'>Overview</h2>
                             <ul className='space-y-4 mt-5 text-lg font-medium'>
@@ -89,8 +90,8 @@ const EventDetails = () => {
                             </ul>
                         </div>
                         <div className='flex gap-8'>
-                            <img className='w-[38%] rounded-tr-md rounded-bl-md h-52' src="https://i.ibb.co/9qNw5xs/leadership.jpg" alt="" />
-                            <img className='w-[38%] rounded-tl-md rounded-br-md h-52' src="https://i.ibb.co/9qNw5xs/leadership.jpg" alt="" />
+                            <img className='w-[38%] md:w-[48%] rounded-tr-md rounded-bl-md h-52' src="https://i.ibb.co/mGZ71df/pexels-rdne-stock-project-7648306.jpg" alt="" />
+                            <img className='w-[38%] md:w-[48%] rounded-tl-md rounded-br-md h-52' src="https://i.ibb.co/9qNw5xs/leadership.jpg" alt="" />
 
                         </div>
 
@@ -215,7 +216,7 @@ const EventDetails = () => {
                                 <div className=''>
                                     <h3 className='text-sm font-semibold'>Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.</h3>
                                     <div className='flex justify-between my-3'>
-                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />January 21, 2021</p>
+                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />January 30, 2024</p>
                                         <p className='flex items-center gap-2 text-sm text-red-600 font-semibold '><BsDiagram3 className='text-sm' />500 Seat</p>
                                     </div>
                                     <button className='text-sm text-red-600 underline'>Book Now</button>
@@ -226,7 +227,7 @@ const EventDetails = () => {
                                 <div className=''>
                                     <h3 className='text-sm font-semibold'>Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.</h3>
                                     <div className='flex justify-between my-3'>
-                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />January 21, 2021</p>
+                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />January 26, 2024</p>
                                         <p className='flex items-center gap-2 text-sm text-red-600 font-semibold '><BsDiagram3 className='text-sm' />500 Seat</p>
                                     </div>
                                     <button className='text-sm text-red-600 underline'>Book Now</button>
@@ -237,7 +238,7 @@ const EventDetails = () => {
                                 <div className=''>
                                     <h3 className='text-sm font-semibold'>Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.</h3>
                                     <div className='flex justify-between my-3'>
-                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />January 21, 2021</p>
+                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />February 21, 2024</p>
                                         <p className='flex items-center gap-2 text-sm text-red-600 font-semibold '><BsDiagram3 className='text-sm' />500 Seat</p>
                                     </div>
                                     <button className='text-sm text-red-600 underline'>Book Now</button>
@@ -248,7 +249,7 @@ const EventDetails = () => {
                                 <div className=''>
                                     <h3 className='text-sm font-semibold'>Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.</h3>
                                     <div className='flex justify-between my-3'>
-                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />January 21, 2021</p>
+                                        <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-sm' />February 28, 2024</p>
                                         <p className='flex items-center gap-2 text-sm text-red-600 font-semibold '><BsDiagram3 className='text-sm' />500 Seat</p>
                                     </div>
                                     <button className='text-sm text-red-600 underline'>Book Now</button>
