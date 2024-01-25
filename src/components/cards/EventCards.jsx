@@ -8,7 +8,7 @@ const EventCards = () => {
         <div className="flex justify-between">
           <SectionTitle
             heading={"Our Services"}
-            subHeading={"explore our services"}
+            // subHeading={"explore our services"}
           />
           <div className="self-center">
             <button className="text-xl border px-6 py-2 rounded-3xl hover:bg-gradient-to-r from-purple-500 to-emerald-300 hover:text-white border-cyan-500">
@@ -60,7 +60,7 @@ const EventCards = () => {
           >
             <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
               <h2 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text font-semibold text-xl tracking-widest">
-                $700
+                $800
               </h2>
             </div>
             <div className="absolute bottom-3 left-4">
@@ -91,7 +91,7 @@ const EventCards = () => {
           >
             <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
               <h2 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text font-semibold text-xl tracking-widest">
-                $700
+                $1100
               </h2>
             </div>
             <div className="absolute bottom-3 left-4">
