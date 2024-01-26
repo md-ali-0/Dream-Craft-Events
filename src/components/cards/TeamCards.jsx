@@ -23,28 +23,28 @@ const TeamCards = () => {
             <div className="flex gap-5 py-2">
               <Link to="https://facebook.com" target="_blank">
                 <LuFacebook
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
               <Link to="https://twitter.com" target="_blank">
                 <LuTwitter
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
               <Link to="https://linkedIn.com" target="_blank">
                 <LuLinkedin
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
             </div>
             <div className="absolute top-3 right-3">
-              <p className="bg-indigo-100 text-[#7881a1] px-1 py-1 rounded">
+              <p className="bg-primary/10 text-primary/70 px-1 py-1 rounded">
                 CEO & Founder
               </p>
             </div>
@@ -63,28 +63,28 @@ const TeamCards = () => {
             <div className="flex gap-5 py-2">
               <Link to="https://facebook.com" target="_blank">
                 <LuFacebook
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
               <Link to="https://twitter.com" target="_blank">
                 <LuTwitter
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
               <Link to="https://linkedIn.com" target="_blank">
                 <LuLinkedin
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
             </div>
             <div className="absolute top-3 right-3">
-              <p className="bg-indigo-100 text-[#7881a1] px-1 py-1 rounded">
+              <p className="bg-primary/10 text-primary/70 px-1 py-1 rounded">
                 Creative Director
               </p>
             </div>
@@ -103,28 +103,28 @@ const TeamCards = () => {
             <div className="flex gap-5 py-2">
               <Link to="https://facebook.com" target="_blank">
                 <LuFacebook
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
               <Link to="https://twitter.com" target="_blank">
                 <LuTwitter
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
               <Link to="https://linkedIn.com" target="_blank">
                 <LuLinkedin
-                  className="inline text-2xl border border-blue-300 text-blue-500 rounded-md p-0.5"
+                  className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
-                  fill="lightblue"
+                  fill="pink"
                 />
               </Link>
             </div>
             <div className="absolute top-3 right-3">
-              <p className="bg-indigo-100 text-[#7881a1] px-1 py-1 rounded">
+              <p className="bg-primary/10 text-primary/70 px-1 py-1 rounded">
                 Manager
               </p>
             </div>

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { FiAlignJustify, FiLogOut, FiUser } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../assets/logo/logo.png";
+import logo from "../../../assets/logo/dream-craft.png";
 
 const Header = () => {
     const [user,setUser] = useState(true)
