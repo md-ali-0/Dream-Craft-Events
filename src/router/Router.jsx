@@ -8,7 +8,13 @@ import Contact from "../pages/contact/Contact";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
+<<<<<<< HEAD
 import Portfolio from "../pages/portfolio/Portfolio";
+=======
+import Events from "../pages/allEvents/Events";
+import Schedule from "../pages/schedule/Schedule";
+import Shop from "../pages/shop/Shop";
+>>>>>>> origin/stage
 
 
 const Router = createBrowserRouter([
@@ -27,29 +33,42 @@ const Router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About/>
+        element: <About />
       },
       {
         path: '/contact',
         element: <Contact/>
       },
       {
+<<<<<<< HEAD
         path: '/portfolio',
         element: <Portfolio/>
+=======
+        path: '/schedule',
+        element: <Schedule/>
+>>>>>>> origin/stage
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />
       },
       {
         path: "/register",
-        element: <Register/>
+        element: <Register />
+      },
+      {
+        path: "/events",
+        element: <Events />
       },
       {
         path: '/event-details',
-        element: <EventDetails/>
+        element: <EventDetails />
+      },
+      {
+        path: "/shop",
+        element: <Shop></Shop>
       }
-     
+
     ],
   },
 ]);
