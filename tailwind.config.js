@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#004AAD',
+        'primary': '#ce1446',
+        'secondary': '#2d373c',
         'dark_01': '#0a0041'
       },
       fontFamily:{
@@ -15,6 +16,7 @@ export default {
       }
     },
   },
-  plugins: [require("daisyui")],
+  darkMode: "class",
+  plugins: [],
 }
 

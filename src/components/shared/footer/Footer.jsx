@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo/logo.png';
+import logo from '../../../assets/logo/dream-craft.png';
 import Container from '../../container/Container';
 
 const Footer = () => {
@@ -126,6 +126,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
+            <div></div>
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-gray-900">Important Links</p>
               <ul className="mt-8 space-y-4 text-sm">
@@ -158,53 +159,7 @@ const Footer = () => {
                     className="text-gray-700 transition hover:text-gray-700/75"
                     href="/login"
                   >
-                    {" "}
-                    Login{" "}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-gray-900">Our Services</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                <li>
-                  <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/"
-                  >
-                    Event Planning and Coordination
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/"
-                  >
-                    Venue Selection and Management
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/"
-                  >
-                    Event Marketing and Promotion
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/"
-                  >
-                    Virtual Event Management
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/"
-                  >
-                    Catering and Culinary Services
+                    Login
                   </Link>
                 </li>
               </ul>
