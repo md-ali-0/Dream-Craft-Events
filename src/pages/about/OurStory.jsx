@@ -2,7 +2,7 @@ import React from "react";
 
 const OurStory = () => {
   return (
-    <div className="text-center font-serif p-10 text-white ">
+    <div className="text-center font-serif p-10  ">
       <h2 className="text-3xl font-semibold mb-5">Our Story</h2>
       <p className="text-xl">
         We are an Exclusive ,independent BD(Bangladesh ) based Event planners .
