@@ -8,6 +8,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import Contact from "../pages/contact/Contact";
 import EventDetails from "../pages/eventDetails/EventDetails";
+import Events from "../pages/allEvents/Events";
 
 
 const Router = createBrowserRouter([
@@ -26,11 +27,11 @@ const Router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About/>
+        element: <About />
       },
       {
         path: '/contact',
-        element: <Contact/>
+        element: <Contact />
       },
       {
         path: "/login",
@@ -41,10 +42,14 @@ const Router = createBrowserRouter([
         element: <RegisterPage></RegisterPage>
       },
       {
+        path: "/events",
+        element: <Events />
+      },
+      {
         path: '/event-details',
-        element: <EventDetails/>
+        element: <EventDetails />
       }
-     
+
     ],
   },
 ]);
