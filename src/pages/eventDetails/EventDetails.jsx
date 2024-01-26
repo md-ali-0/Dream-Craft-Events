@@ -18,7 +18,8 @@ const EventDetails = () => {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 borderRadius: "6px",
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
+                height: 
             }}>
                 <div className='h-96 bg-black bg-opacity-70 relative'>
                     <div className='absolute top-48 left-8 md:left-36 '>
