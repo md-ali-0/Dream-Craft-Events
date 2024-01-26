@@ -75,6 +75,11 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/portfolio" className="">
+                  Portfolio
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/contact" className="">
                   Contact
                 </NavLink>
