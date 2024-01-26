@@ -63,11 +63,6 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/Services" className="">
-                  Services
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/Contact" className="">
                   Contact
                 </NavLink>
