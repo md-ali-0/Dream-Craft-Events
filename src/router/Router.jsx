@@ -8,6 +8,8 @@ import Contact from "../pages/contact/Contact";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
+import Events from "../pages/allEvents/Events";
+import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 
 
@@ -27,30 +29,37 @@ const Router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About/>
+        element: <About />
       },
       {
         path: '/contact',
         element: <Contact/>
       },
       {
+        path: '/schedule',
+        element: <Schedule/>
+      },
+      {
         path: "/login",
-        element: <Login/>
+        element: <Login />
       },
       {
         path: "/register",
-        element: <Register/>
+        element: <Register />
+      },
+      {
+        path: "/events",
+        element: <Events />
       },
       {
         path: '/event-details',
-        element: <EventDetails/>
+        element: <EventDetails />
       },
-
       {
         path: "/shop",
         element: <Shop></Shop>
       }
-     
+
     ],
   },
 ]);
