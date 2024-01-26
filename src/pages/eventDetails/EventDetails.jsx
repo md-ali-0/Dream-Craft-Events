@@ -34,7 +34,7 @@ const EventDetails = () => {
             <div className='grid grid-cols-1 lg:grid-cols-7 mt-24 max-w-screen-xl mx-auto px-4 '>
                 <div className='lg:col-span-5'>
                     <div>
-                        <img className='w-full lg:w-[95%] h-96 rounded-md' src="https://i.ibb.co/cTQbLD1/event-top.jpg" alt="" />
+                        <img className='w-full lg:w-[95%] h-96 rounded-md' src="https://a.storyblok.com/f/188325/1920x1280/41e681c422/alexandre-pellaes-6vajp0pscx0-unsplash-1-1.jpg" alt="" />
                         <div className='flex justify-between md:max-w-[780px] lg:max-w-[830px] ml-2 mt-6'>
                             <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-xl' />January 31, 2024</p>
                             <p className='flex items-center gap-2 text-red-600 font-semibold text-xl'><BsDiagram3 className='text-xl' />500 Seat</p>
@@ -75,8 +75,8 @@ const EventDetails = () => {
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-2xl font-semibold max-w-[850px]'>Media Companies Need To Better One Then Educate Advertisers. Better One Then Educate.</h2>
-                        <p className='mt-5 text-gray-600 leading-loose max-w-[850px]'>Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut sollicitudin. Pellentesque in faucibus purus.Nulla nisl tellus, hendrerit nec dignissim pellentesque, posuere in est. Suspendisse bibendum vestibulum elit eu placerat. In ut ipsum in odio euismod tincidunt non lacinia nunc. Donec ligula augue, mattis eu varius ac.</p>
+                        <h2 className='text-2xl font-semibold max-w-[850px]'>Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos.</h2>
+                        <p className='mt-5 text-gray-600 leading-loose max-w-[850px]'>Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase. Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase.</p>
                     </div>
                     <div className='mt-8 grid gap-8 md:gap-6 lg:gap-0 max-w-[840px] lg:grid-cols-2 items-center'>
                         <div>
@@ -84,8 +84,8 @@ const EventDetails = () => {
                             <ul className='space-y-4 mt-5 text-lg font-medium'>
                                 <li className='flex items-center gap-2'><TiTick className='text-2xl' /> You Got Full Free Certificate.</li>
                                 <li className='flex items-center gap-2'><TiTick className='text-2xl' />Unlimited Coffe & Tea When U Boring.</li>
-                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Etiam Dictum, Dui Sit Amet Venenatis.</li>
-                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Class Aptent Taciti Sociosqu Ad Litora.</li>
+                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Comfortable Seating Areas.</li>
+                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Wi-Fi Access.</li>
                                 <li className='flex items-center gap-2'><TiTick className='text-2xl' />Lunch Suspendisse In Commodo Feli.</li>
                             </ul>
                         </div>
@@ -96,7 +96,7 @@ const EventDetails = () => {
                         </div>
 
                     </div>
-                    <p className='mt-8 text-gray-600 max-w-[850px]'>Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut sollicitudin. Pellentesque in faucibus purus.Nulla nisl tellus, hendrerit nec dignissim pellentesque.</p>
+                    <p className='mt-8 text-gray-600 max-w-[850px]'>Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase. Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase.</p>
 
                     <h2 className='text-2xl font-semibold my-8'>Main Speakers</h2>
 
