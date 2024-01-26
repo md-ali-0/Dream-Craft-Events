@@ -80,6 +80,35 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/portfolio" className="">
+                  Portfolio
+                </NavLink>
+              </li>
+                        </ul>
+                    </div>
+                    {/* Right elements */}
+                    {user ? (
+                        <div className="relative flex items-center">
+                            {/* Second dropdown container */}
+                            <div className="relative">
+                                <img
+                                    ref={imgRef}
+                                    onClick={handleDropDown}
+                                    src={user?.photoURL}
+                                    className="rounded-full w-10 h-10 cursor-pointer"
+                                />
+                                <ul
+                                    ref={dropdownRef}
+                                    className={`absolute py-2 px-1 z-[1000] m-0  min-w-max overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg  w-40 ${
+                                        dropdownOpen ? "block left-auto right-0" : "hidden"
+                                    }`}
+                                >
+                                {user && (
+                                    <li>
+                                        <Link
+                                            to="/dashboard/professional-profile"
+                                            className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent 
 
               {/* <li>
                 <details>
