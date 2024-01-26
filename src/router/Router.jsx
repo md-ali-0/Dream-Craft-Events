@@ -8,6 +8,7 @@ import Contact from "../pages/contact/Contact";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
+import Portfolio from "../pages/portfolio/Portfolio";
 import Events from "../pages/allEvents/Events";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
@@ -33,11 +34,15 @@ const Router = createBrowserRouter([
       },
       {
         path: '/contact',
-        element: <Contact/>
+        element: <Contact />
+      },
+      {
+        path: '/portfolio',
+        element: <Portfolio />
       },
       {
         path: '/schedule',
-        element: <Schedule/>
+        element: <Schedule />
       },
       {
         path: "/login",
