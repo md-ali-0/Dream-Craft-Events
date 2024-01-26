@@ -3,7 +3,7 @@ import { FiAlignJustify, FiLogOut, FiUser } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo/dream-craft.png";
 
-const Header = () => {
+const Navbar = () => {
   const [user, setUser] = useState(true);
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
@@ -40,9 +40,8 @@ const Header = () => {
             </Link>
           </div>
           <div
-            className={`!visible ${
-              collapse ? "block" : "hidden"
-            } absolute md:static top-14 bg-white w-full md:w-auto border shadow-xl md:border-none md:shadow-none items-center px-3 lg:!flex lg:basis-auto z-50`}
+            className={`!visible ${collapse ? "block" : "hidden"
+              } absolute md:static top-14 bg-white w-full md:w-auto border shadow-xl md:border-none md:shadow-none items-center px-3 lg:!flex lg:basis-auto z-50`}
           >
             <ul className="flex mx-auto flex-col md:flex-row justify-center gap-5 py-3">
               <li>
@@ -80,35 +79,6 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/portfolio" className="">
-                  Portfolio
-                </NavLink>
-              </li>
-                        </ul>
-                    </div>
-                    {/* Right elements */}
-                    {user ? (
-                        <div className="relative flex items-center">
-                            {/* Second dropdown container */}
-                            <div className="relative">
-                                <img
-                                    ref={imgRef}
-                                    onClick={handleDropDown}
-                                    src={user?.photoURL}
-                                    className="rounded-full w-10 h-10 cursor-pointer"
-                                />
-                                <ul
-                                    ref={dropdownRef}
-                                    className={`absolute py-2 px-1 z-[1000] m-0  min-w-max overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg  w-40 ${
-                                        dropdownOpen ? "block left-auto right-0" : "hidden"
-                                    }`}
-                                >
-                                {user && (
-                                    <li>
-                                        <Link
-                                            to="/dashboard/professional-profile"
-                                            className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent 
 
               {/* <li>
                 <details>
@@ -128,7 +98,7 @@ const Header = () => {
                 </details>
               </li> */}
 
-              
+
             </ul>
           </div>
           {/* Right elements */}
@@ -144,9 +114,8 @@ const Header = () => {
                 />
                 <ul
                   ref={dropdownRef}
-                  className={`absolute py-2 px-1 z-[1000] m-0  min-w-max overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg  w-40 ${
-                    dropdownOpen ? "block left-auto right-0" : "hidden"
-                  }`}
+                  className={`absolute py-2 px-1 z-[1000] m-0  min-w-max overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg  w-40 ${dropdownOpen ? "block left-auto right-0" : "hidden"
+                    }`}
                 >
                   {user && (
                     <li>
@@ -199,4 +168,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
