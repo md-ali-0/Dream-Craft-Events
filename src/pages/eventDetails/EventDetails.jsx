@@ -1,4 +1,3 @@
-import React from 'react';
 import { CiCalendarDate, CiPlay1  } from "react-icons/ci";
 import { BsDiagram3, BsLightning, BsBookmarkCheck } from "react-icons/bs";
 import { VscLocation } from "react-icons/vsc";

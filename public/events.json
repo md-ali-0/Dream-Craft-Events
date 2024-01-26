@@ -5,7 +5,7 @@
     "date": "2024-03-15",
     "location": "City Convention Center",
     "description": "International conference on the latest technology trends.",
-    "image": "https://example.com/conference_image.jpg"
+    "image": "https://conferencenext.com/blog/wp-content/uploads/2021/12/getty_486734270_86526.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "date": "2024-06-22",
     "location": "Greenfield Park",
     "description": "Three-day music festival featuring various genres and artists.",
-    "image": "https://example.com/music_festival_image.jpg"
+    "image": "https://conferencenext.com/blog/wp-content/uploads/2021/12/getty_486734270_86526.jpg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "date": "2024-04-10",
     "location": "Citywide",
     "description": "Join us in making our community cleaner and greener.",
-    "image": "https://example.com/cleanup_day_image.jpg"
+    "image": "https://conferencenext.com/blog/wp-content/uploads/2021/12/getty_486734270_86526.jpg"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "date": "2024-05-18",
     "location": "Downtown Gallery",
     "description": "Showcasing local and international artists.",
-    "image": "https://example.com/art_exhibition_image.jpg"
+    "image": "https://conferencenext.com/blog/wp-content/uploads/2021/12/getty_486734270_86526.jpg"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "date": "2024-08-07",
     "location": "Culinary Square",
     "description": "Explore a variety of cuisines from around the world.",
-    "image": "https://example.com/food_festival_image.jpg"
+    "image": "https://conferencenext.com/blog/wp-content/uploads/2021/12/getty_486734270_86526.jpg"
   },
   {
     "id": 6,
@@ -45,6 +45,6 @@
     "date": "2024-09-30",
     "location": "City Cinema",
     "description": "A night of independent and international films.",
-    "image": "https://example.com/film_screening_image.jpg"
+    "image": "https://conferencenext.com/blog/wp-content/uploads/2021/12/getty_486734270_86526.jpg"
   }
 ]
