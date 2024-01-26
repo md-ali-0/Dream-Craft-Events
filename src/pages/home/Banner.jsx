@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import banner from '../../assets/banner/banner-img.png';
+import banner from '../../assets/banner/hero-figure1.png';
 import Container from "../../components/container/Container";
 const 
 Banner = () => {
@@ -23,7 +23,7 @@ Banner = () => {
               From corporate gatherings to personal celebrations, we transform
               your vision into memorable experiences.
             </p>
-            <div className="flex flex-col space-y-3 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+            <div className="flex items-center justify-center lg:justify-start gap-2">
               <button
                 onClick={scrollToPrice}
                 className="px-5 py-3 text-lg font-semibold rounded bg-primary text-white"
@@ -31,9 +31,8 @@ Banner = () => {
                 Get Started
               </button>
               <Link
-                rel="noopener noreferrer"
                 to="/contact"
-                className="px-8 py-3 text-lg font-semibold border border-primary text-primary rounded"
+                className="px-5 py-3 text-lg font-semibold border border-primary text-primary rounded"
               >
                 Contact Us
               </Link>
