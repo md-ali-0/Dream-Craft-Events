@@ -8,6 +8,7 @@ import Contact from "../pages/contact/Contact";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
+import Schedule from "../pages/schedule/Schedule";
 
 
 const Router = createBrowserRouter([
@@ -31,6 +32,10 @@ const Router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact/>
+      },
+      {
+        path: '/schedule',
+        element: <Schedule/>
       },
       {
         path: "/login",
