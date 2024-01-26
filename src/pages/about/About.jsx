@@ -6,15 +6,16 @@ import img4 from "../../assets/about/nature.jpg";
 import img5 from "../../assets/about/technology.jpg";
 import Add from "./Add";
 import OurStory from "./OurStory";
+import Reviews from "../Review/Reviews";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-r from-fuchsia-600 to-pink-600 ">
+    <div className=" ">
       <div className="">
         <div>
           <img src={bg} alt="" />
         </div>
-        <div className="-mt-[110px] md:-mt-40">
+        <div className="-mt-[75px] md:-mt-40">
           <h2 className="text-xl md:text-4xl text-center ">About Us</h2>
           <h3 className="text-xl md:text-3xl font-semibold text-center text-primary font-serif">
             Dream Craft Events
@@ -24,7 +25,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className=" p-3 space-y-7 mt-20 text-blue-50 md:max-w-6xl mx-auto">
+      <div className=" p-3 space-y-7 mt-20  md:max-w-6xl mx-auto">
         <h2 className="text-center text-3xl underline">
           Why choose us
         </h2>
@@ -109,6 +110,7 @@ const About = () => {
       </div>
       <Add></Add>
       <OurStory></OurStory>
+      <Reviews></Reviews>
     </div>
   );
 };
