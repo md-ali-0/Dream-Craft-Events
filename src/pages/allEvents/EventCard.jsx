@@ -4,12 +4,12 @@ import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 const EventCard = ({ event }) => {
-    const { title, image, date, location } = event;
+    const { title, image, date, location, seat } = event;
     return (
         <div className="rounded-md shadow-lg">
             <div className="rounded-t-md shadow-lg h-60 relative overflow-hidden">
                 <img src={image} alt={title} className="rounded-t-md h-full w-full object-cover transform transition-transform duration-500 hover:scale-110" />
-                <div className="absolute bg-primary bottom-0 left-0 px-6 py-3 text-white font-semibold rounded-tr-md flex items-center gap-3"> <BsDiagram3 /> 500 Seat</div>
+                <div className="absolute bg-primary bottom-0 left-0 px-6 py-3 text-white font-semibold rounded-tr-md flex items-center gap-3"> <BsDiagram3 /> {seat} Seat</div>
             </div>
             <div className="px-4 py-6">
                 <div className="flex justify-between">
