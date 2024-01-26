@@ -69,6 +69,11 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/portfolio" className="">
+                  Portfolio
+                </NavLink>
+              </li>
                         </ul>
                     </div>
                     {/* Right elements */}
