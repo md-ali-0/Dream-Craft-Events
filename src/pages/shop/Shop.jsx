@@ -1,7 +1,7 @@
 const Shop = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 h-[70vh] relative">
-
+    <div>
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 h-[70vh] relative">
         <section
           className="bg-cover bg-center flex items-center h-[70vh]"
           style={{
@@ -25,7 +25,154 @@ const Shop = () => {
             </a>
           </div>
         </section>
+      </div>
 
+      {/* shopping cards  */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center mx-auto max-w-screen-xl mt-10 gap-5 mb-10">
+
+        {/* single card  */}
+        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f7c77f093e3ab80a5cab_balloons-p-500.webp"
+            alt="Product Image"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Product Name
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-gray-700 font-semibold">$19.99</span>
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* single card end */}
+        {/* single card  */}
+        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f76df64e0d5c5c806b4f_balloons%20photo-p-500.webp"
+            alt="Product Image"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Product Name
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-gray-700 font-semibold">$19.99</span>
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* single card end */}
+        {/* single card  */}
+        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f6bd61b2697423136d86_birthday%20image%20small-p-500.webp"
+            alt="Product Image"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Product Name
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-gray-700 font-semibold">$19.99</span>
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* single card end */}
+
+        {/* single card  */}
+        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f7c77f093e3ab80a5cab_balloons-p-500.webp"
+            alt="Product Image"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Product Name
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-gray-700 font-semibold">$19.99</span>
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* single card end */}
+        {/* single card  */}
+        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f76df64e0d5c5c806b4f_balloons%20photo-p-500.webp"
+            alt="Product Image"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Product Name
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-gray-700 font-semibold">$19.99</span>
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* single card end */}
+        {/* single card  */}
+        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f6bd61b2697423136d86_birthday%20image%20small-p-500.webp"
+            alt="Product Image"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Product Name
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-gray-700 font-semibold">$19.99</span>
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* single card end */}
+
+
+      </div>
+      {/* shopping cards end */}
     </div>
   );
 };
