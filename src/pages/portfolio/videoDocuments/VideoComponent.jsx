@@ -1,9 +1,7 @@
-import  { useState, useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import videoSource from '../../../assets/testVideo/test.mp4'; // Replace with the actual path to your video file
-import { BsX } from 'react-icons/bs'; // Import the close icon from react-icons library
-import Container from '../../../components/container/Container';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
+import { BsX } from "react-icons/bs";
 
 const VideoComponent = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
@@ -24,18 +22,17 @@ const VideoComponent = () => {
   };
 
   return (
-    <Container>
-    <div className="flex items-center justify-between h-96 bg-gradient-to-r from-blue-500 to-purple-500 text-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
-      <div className="max-w-md">
-        <h2 className="text-3xl font-bold mb-4">How We Work</h2>
+    <div className="md:flex flex-col items-center justify-center gap-8  h-[70vh] bg-gradient-to-r from-blue-400 to-purple-400 text-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+      <h2 className="text-3xl font-bold text-center mb-4 sm:text-left">How We Work</h2>
+      <div className="max-w-md text-center sm:text-left">
         <p className="text-lg">
-          A brief description of your event management process and services. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          No matter if you're organizing a corporate event, a wedding, or a special celebration, our team possesses the expertise and resources to ensure its success.
         </p>
       </div>
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 text-center">
         <button
           onClick={handleWatchVideo}
-          className="bg-white text-gray-800 px-6 py-3 rounded-full hover:bg-gray-200 transition duration-300 focus:outline-none"
+          className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
           data-aos="zoom-in"
         >
           Watch Video
@@ -45,25 +42,23 @@ const VideoComponent = () => {
       {/* Video Modal */}
       {isVideoVisible && (
         <div className="fixed inset-0 z-50 overflow-hidden flex items-center justify-center">
-          <div className="absolute inset-0 bg-black opacity-75" onClick={handleVideoClose}></div>
-          <div className="relative z-10">
-            <button className="absolute top-0 right-0 m-4 text-blue-500 text-2xl" onClick={handleVideoClose}>
-              <BsX />
-            </button>
-            <video
-              className="w-full h-full"
-              controls
-              autoPlay
-              loop
-              muted
-              preload="auto"
-              src={videoSource}
-            />
-          </div>
+          <button
+            className="absolute top-0 right-0 m-4 text-blue-500 text-2xl"
+            onClick={handleVideoClose}
+          >
+            <BsX />
+          </button>
+          {/* Replace the <video> element with an <iframe> for YouTube */}
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/eTl2Cxb74r0"
+            frameBorder="0"
+            allowFullScreen
+            title="YouTube Video"
+          ></iframe>
         </div>
       )}
     </div>
-    </Container>
   );
 };
 
