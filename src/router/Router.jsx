@@ -4,10 +4,11 @@ import About from "../pages/about/About";
 import Booking from "../pages/bookings/Booking";
 import ErrorPage from "../pages/error/ErrorPage";
 import Home from "../pages/home/Home";
-import LoginPage from "../pages/LoginPage/LoginPage";
-import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import Contact from "../pages/contact/Contact";
-import Portfolio from "../pages/portfolio/Portfolio";
+import EventDetails from "../pages/eventDetails/EventDetails";
+import Login from "../pages/auth/login/Login";
+import Register from "../pages/auth/register/Register";
+
 
 const Router = createBrowserRouter([
   {
@@ -33,17 +34,16 @@ const Router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <LoginPage></LoginPage>
+        element: <Login/>
       },
       {
         path: "/register",
-        element: <RegisterPage></RegisterPage>
+        element: <Register/>
       },
       {
-        path: "/portfolio",
-        element: <Portfolio></Portfolio>
-      },
-
+        path: '/event-details',
+        element: <EventDetails/>
+      }
      
     ],
   },
