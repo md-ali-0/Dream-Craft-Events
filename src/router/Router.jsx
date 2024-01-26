@@ -10,6 +10,7 @@ import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
 import Events from "../pages/allEvents/Events";
 import Schedule from "../pages/schedule/Schedule";
+import Shop from "../pages/shop/Shop";
 
 
 const Router = createBrowserRouter([
@@ -53,6 +54,10 @@ const Router = createBrowserRouter([
       {
         path: '/event-details',
         element: <EventDetails />
+      },
+      {
+        path: "/shop",
+        element: <Shop></Shop>
       }
 
     ],
