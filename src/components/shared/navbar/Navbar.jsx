@@ -72,6 +72,11 @@ const Navbar = () => {
                   Contact
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/portfolio" className="">
+                  Portfoli
+                </NavLink>
+              </li>
             </div>
           </div>
           <div className="flex items-center ml-4">
@@ -85,7 +90,7 @@ const Navbar = () => {
               {/* Add your login link or button here */}
               {/* <NavLink to="/login" className="text-gray-800">Login</NavLink> */}
 
-              <div className="">
+              <div>
                 {user?.email ? (
                   <div className="dropdown dropdown-end">
                     <div className="flex flex-col items-center gap-2">
