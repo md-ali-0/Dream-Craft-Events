@@ -45,6 +45,10 @@ const Router = createBrowserRouter([
         element: <Schedule/>
       },
       {
+        path: '/schedule',
+        element: <Schedule />
+      },
+      {
         path: "/login",
         element: <Login />
       },
