@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../layout/main";
+import Dashboard from "../layout/Dash/Dashboard";
+import Main from "../layout/Main/Main";
 import About from "../pages/about/About";
 import Events from "../pages/allEvents/Events";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
 import Booking from "../pages/bookings/Booking";
 import Contact from "../pages/contact/Contact";
+import DashboardHome from "../pages/dashboard/Home/DashboardHome";
 import ErrorPage from "../pages/error/ErrorPage";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Home from "../pages/home/Home";
@@ -71,6 +73,16 @@ const Router = createBrowserRouter([
 
     ],
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+        {
+            path: '/dashboard',
+            element: <DashboardHome/>
+        },
+    ]
+},
 ]);
 
 export default Router;

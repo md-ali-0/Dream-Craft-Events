@@ -23,7 +23,7 @@ const Register = () => {
             const response = await signUp(name, email, password)
             toast.dismiss(toastLoading)
             toast.success('Sign Up Successfully')
-            navigation('/')
+            navigation('/dashboard')
             console.log(response);
         } catch (error) {
             console.log(error);
