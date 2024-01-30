@@ -5,7 +5,7 @@ import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
-    const { user } = useAuth();
+    const { user, setUser } = useAuth();
     const [dropdownOpen, setDropDown] = useState(false);
     const [collapse, setCollapse] = useState(false);
     const imgRef = useRef();
@@ -19,7 +19,7 @@ const Navbar = () => {
         setDropDown(!dropdownOpen);
     };
     const logOutHandler = () => {
-        // setUser(false);
+        setUser(false);
     };
     return (
         <>
@@ -110,9 +110,7 @@ const Navbar = () => {
                                             : "hidden"
                                     }`}
                                 >
-                                    <li>
-                                        {user?.name}
-                                    </li>
+                                    <li>{user?.name}</li>
                                     <li>
                                         <Link
                                             to="/dashboard/professional-profile"

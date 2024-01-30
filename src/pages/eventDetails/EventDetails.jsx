@@ -18,10 +18,11 @@ const EventDetails = () => {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 borderRadius: "6px",
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
+                height: 500
             }}>
-                <div className='h-96 bg-black bg-opacity-70 relative'>
-                    <div className='absolute top-48 left-8 md:left-36 '>
+                <div className='h-[500px] bg-black bg-opacity-70 relative'>
+                    <div className='absolute top-60 left-8 md:left-36 '>
                         <h1 className='text-5xl text-white font-bold'>Event Details</h1>
                         <p className='text-xl mt-2 flex items-center gap-2 text-white'>Home <CiPlay1 className='text-pink-600'/> <span className='text-red-500'>Event Details</span></p>
 
@@ -33,7 +34,7 @@ const EventDetails = () => {
             <div className='grid grid-cols-1 lg:grid-cols-7 mt-24 max-w-screen-xl mx-auto px-4 '>
                 <div className='lg:col-span-5'>
                     <div>
-                        <img className='w-full lg:w-[95%] h-96 rounded-md' src="https://i.ibb.co/cTQbLD1/event-top.jpg" alt="" />
+                        <img className='w-full lg:w-[95%] h-96 rounded-md' src="https://a.storyblok.com/f/188325/1920x1280/41e681c422/alexandre-pellaes-6vajp0pscx0-unsplash-1-1.jpg" alt="" />
                         <div className='flex justify-between md:max-w-[780px] lg:max-w-[830px] ml-2 mt-6'>
                             <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-xl' />January 31, 2024</p>
                             <p className='flex items-center gap-2 text-red-600 font-semibold text-xl'><BsDiagram3 className='text-xl' />500 Seat</p>
@@ -74,8 +75,8 @@ const EventDetails = () => {
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-2xl font-semibold max-w-[850px]'>Media Companies Need To Better One Then Educate Advertisers. Better One Then Educate.</h2>
-                        <p className='mt-5 text-gray-600 leading-loose max-w-[850px]'>Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut sollicitudin. Pellentesque in faucibus purus.Nulla nisl tellus, hendrerit nec dignissim pellentesque, posuere in est. Suspendisse bibendum vestibulum elit eu placerat. In ut ipsum in odio euismod tincidunt non lacinia nunc. Donec ligula augue, mattis eu varius ac.</p>
+                        <h2 className='text-2xl font-semibold max-w-[850px]'>Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos.</h2>
+                        <p className='mt-5 text-gray-600 leading-loose max-w-[850px]'>Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase. Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase.</p>
                     </div>
                     <div className='mt-8 grid gap-8 md:gap-6 lg:gap-0 max-w-[840px] lg:grid-cols-2 items-center'>
                         <div>
@@ -83,8 +84,8 @@ const EventDetails = () => {
                             <ul className='space-y-4 mt-5 text-lg font-medium'>
                                 <li className='flex items-center gap-2'><TiTick className='text-2xl' /> You Got Full Free Certificate.</li>
                                 <li className='flex items-center gap-2'><TiTick className='text-2xl' />Unlimited Coffe & Tea When U Boring.</li>
-                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Etiam Dictum, Dui Sit Amet Venenatis.</li>
-                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Class Aptent Taciti Sociosqu Ad Litora.</li>
+                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Comfortable Seating Areas.</li>
+                                <li className='flex items-center gap-2'><TiTick className='text-2xl' />Wi-Fi Access.</li>
                                 <li className='flex items-center gap-2'><TiTick className='text-2xl' />Lunch Suspendisse In Commodo Feli.</li>
                             </ul>
                         </div>
@@ -95,7 +96,7 @@ const EventDetails = () => {
                         </div>
 
                     </div>
-                    <p className='mt-8 text-gray-600 max-w-[850px]'>Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut sollicitudin. Pellentesque in faucibus purus.Nulla nisl tellus, hendrerit nec dignissim pellentesque.</p>
+                    <p className='mt-8 text-gray-600 max-w-[850px]'>Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase. Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase.</p>
 
                     <h2 className='text-2xl font-semibold my-8'>Main Speakers</h2>
 
@@ -105,7 +106,7 @@ const EventDetails = () => {
                                 <img className='w-28 h-28 rounded-full' src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg" alt="" />
                                 <div>
                                     <h2 className='text-xl font-semibold'>Rakibul Hasan</h2>
-                                    <h3 className='text-md font-medium'>Web Dev</h3>
+                                    <h3 className='text-md font-medium'>Web Developer</h3>
                                     <div className='flex gap-3 mt-3'>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><RiFacebookFill className='text-md' /></p>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><FaInstagram className='text-md' /></p>
@@ -115,10 +116,10 @@ const EventDetails = () => {
                                 </div>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <img className='w-28 h-28 rounded-full' src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg" alt="" />
+                                <img className='w-28 h-28 rounded-full' src="https://demo.egenslab.com/html/eventlab/assets/images/speaker/speaker-sm1.png" alt="" />
                                 <div>
-                                    <h2 className='text-xl font-semibold'>Rakibul Hasan</h2>
-                                    <h3 className='text-md font-medium'>Web Dev</h3>
+                                    <h2 className='text-xl font-semibold'>Nizam Chy</h2>
+                                    <h3 className='text-md font-medium'>Graphic Designer</h3>
                                     <div className='flex gap-3 mt-3'>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><RiFacebookFill className='text-md' /></p>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><FaInstagram className='text-md' /></p>
@@ -128,10 +129,10 @@ const EventDetails = () => {
                                 </div>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <img className='w-28 h-28 rounded-full' src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg" alt="" />
+                                <img className='w-28 h-28 rounded-full' src="https://demo.egenslab.com/html/eventlab/assets/images/speaker/speaker-sm2.png" alt="" />
                                 <div>
-                                    <h2 className='text-xl font-semibold'>Rakibul Hasan</h2>
-                                    <h3 className='text-md font-medium'>Web Dev</h3>
+                                    <h2 className='text-xl font-semibold'>Mohammad Ali</h2>
+                                    <h3 className='text-md font-medium'>Digital Marketer</h3>
                                     <div className='flex gap-3 mt-3'>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><RiFacebookFill className='text-md' /></p>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><FaInstagram className='text-md' /></p>
@@ -143,10 +144,10 @@ const EventDetails = () => {
                         </div>
                         <div className='space-y-10'>
                             <div className='flex items-center gap-4'>
-                                <img className='w-28 h-28 rounded-full' src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg" alt="" />
+                                <img className='w-28 h-28 rounded-full' src="https://1.bp.blogspot.com/-HoyT-d9JX0g/YUtRefQcHLI/AAAAAAAAk9w/P-NTrf0jPColdcKjKy2XGAVAjLjbQUyIQCLcBGAsYHQ/s16000-rw/50%2B%252B%2BIndian%2BHijab%2BGirl%2BDP%2Bfor%2BInstagram%2BPage%2Bwith%2BCaption%2B%252825%2529.jpg" alt="" />
                                 <div>
-                                    <h2 className='text-xl font-semibold'>Rakibul Hasan</h2>
-                                    <h3 className='text-md font-medium'>Web Dev</h3>
+                                    <h2 className='text-xl font-semibold'>Neelima Sultana</h2>
+                                    <h3 className='text-md font-medium'>Product Designer</h3>
                                     <div className='flex gap-3 mt-3'>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><RiFacebookFill className='text-md' /></p>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><FaInstagram className='text-md' /></p>
@@ -156,10 +157,10 @@ const EventDetails = () => {
                                 </div>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <img className='w-28 h-28 rounded-full' src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg" alt="" />
+                                <img className='w-28 h-28 rounded-full' src="https://demo.egenslab.com/html/eventlab/assets/images/speaker/speaker-sm4.png" alt="" />
                                 <div>
-                                    <h2 className='text-xl font-semibold'>Rakibul Hasan</h2>
-                                    <h3 className='text-md font-medium'>Web Dev</h3>
+                                    <h2 className='text-xl font-semibold'>Saikat Singha</h2>
+                                    <h3 className='text-md font-medium'>Brand Identity Designer</h3>
                                     <div className='flex gap-3 mt-3'>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><RiFacebookFill className='text-md' /></p>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><FaInstagram className='text-md' /></p>
@@ -169,10 +170,10 @@ const EventDetails = () => {
                                 </div>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <img className='w-28 h-28 rounded-full' src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg" alt="" />
+                                <img className='w-28 h-28 rounded-full' src="https://i.ibb.co/pPtyQxm/360-F-214746128-31-Jkea-P6r-U0-Nzzzd-FC4kh-Gkmqc8noe6h.jpg" alt="" />
                                 <div>
-                                    <h2 className='text-xl font-semibold'>Rakibul Hasan</h2>
-                                    <h3 className='text-md font-medium'>Web Dev</h3>
+                                    <h2 className='text-xl font-semibold'>Rizve Ahmed</h2>
+                                    <h3 className='text-md font-medium'>Writer</h3>
                                     <div className='flex gap-3 mt-3'>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><RiFacebookFill className='text-md' /></p>
                                         <p className='border-2 border-gray-500 rounded-full p-1'><FaInstagram className='text-md' /></p>
@@ -260,9 +261,9 @@ const EventDetails = () => {
                             <div className='bg-base-200 py-5 lg:w-96 mt-8 lg:mt-10'>
                                 <h2 className='bg-pink-700 px-4 py-2 text-2xl w-72 text-center text-white rounded-r-md flex items-center gap-2'><MdPersonAddAlt1 className='text-3xl' />Event Organized By</h2>
                                 <div className='ml-32 mt-6'>
-                                    <img className='w-40 h-32 rounded-md' src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg" alt="" />
+                                    <img className='w-40 h-40 rounded-md' src="https://i.ibb.co/c2PW68Q/pexels-italo-melo-2379004.jpg" alt="" />
                                     <div className='mt-5 '>
-                                        <h2 className='text-2xl font-semibold'>Rakibul Hasan</h2>
+                                        <h2 className='text-2xl font-semibold'>Abdullah Mamun</h2>
                                         <h3 className='ml-16 text-lg'>CEO</h3>
                                     </div>
                                 </div>

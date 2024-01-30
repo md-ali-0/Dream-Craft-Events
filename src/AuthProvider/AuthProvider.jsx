@@ -30,6 +30,7 @@ export const AuthProdiver = ({ children }) => {
         login,
         signUp,
         user,
+        setUser
     };
 
     return (
