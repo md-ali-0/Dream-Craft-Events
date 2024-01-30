@@ -46,7 +46,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                 UI Components
                             </h4>
                             <SidebarSubMenu
-                                menu={{ name: "Seetings", icon: "Settings" }}
+                                menu={{ name: "Seetings", icon: "LuSettings" }}
                                 subMenu={[
                                     { name: "Button", path: "button" },
                                     { name: "Grid", path: "grid" },
