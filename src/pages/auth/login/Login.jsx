@@ -14,6 +14,7 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    
     const onSubmit = async (data) => {
         const toastLoading = toast.loading('User Signing...')
         const {email, password} = data

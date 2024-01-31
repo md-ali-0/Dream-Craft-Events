@@ -16,6 +16,7 @@ import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import AddEvent from "../pages/addEvent/AddEvent";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
+import CustomEvent from "../pages/customEvent/CustomEvent";
 
 
 const Router = createBrowserRouter([
@@ -71,6 +72,10 @@ const Router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>
+      },
+      {
+        path: '/create-your-event',
+        element: <CustomEvent/>
       }
 
     ],
