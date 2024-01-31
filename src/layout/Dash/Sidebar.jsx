@@ -37,6 +37,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                             />
                             <SideBarMenuItem
                                 menu={{
+                                    name: "Add Events",
+                                    icon: "LuCommand",
+                                    path: "/dashboard/addEvent",
+                                }}
+                            />
+                            
+                            <SideBarMenuItem
+                                menu={{
                                     name: "Pages",
                                     icon: "LuCommand",
                                     path: "/",
