@@ -14,6 +14,9 @@ import Home from "../pages/home/Home";
 import Portfolio from "../pages/portfolio/Portfolio";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
+import AddEvent from "../pages/addEvent/AddEvent";
+import UpdateEvent from "../pages/updateEvent/UpdateEvent";
+import CustomEvent from "../pages/customEvent/CustomEvent";
 
 
 const Router = createBrowserRouter([
@@ -69,6 +72,10 @@ const Router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>
+      },
+      {
+        path: '/create-your-event',
+        element: <CustomEvent/>
       }
 
     ],
@@ -81,6 +88,14 @@ const Router = createBrowserRouter([
             path: '/dashboard',
             element: <DashboardHome/>
         },
+        {
+          path:'addEvent',
+          element:<AddEvent></AddEvent>
+        },
+        {
+          path:'updateEvent',
+          element:<UpdateEvent></UpdateEvent>
+        }
     ]
 },
 ]);
