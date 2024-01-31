@@ -19,7 +19,7 @@ const Shop = () => {
             </p>
             <a
               href="#shop"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             >
               Shop Now
             </a>
@@ -46,8 +46,13 @@ const Shop = () => {
             </p>
             <div className="mt-4 flex items-center justify-between">
               <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+              <button className="bg-gradient-to-r from-rose-700 to-pink-600 text-white px-4 py-2 rounded-md flex">
+                <span>
                 Add to Cart
+                </span>
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </span>
               </button>
             </div>
           </div>
@@ -69,8 +74,13 @@ const Shop = () => {
             </p>
             <div className="mt-4 flex items-center justify-between">
               <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+              <button className="bg-gradient-to-r from-rose-700 to-pink-600 text-white px-4 py-2 rounded-md flex">
+                <span>
                 Add to Cart
+                </span>
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </span>
               </button>
             </div>
           </div>
@@ -92,8 +102,13 @@ const Shop = () => {
             </p>
             <div className="mt-4 flex items-center justify-between">
               <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+              <button className="bg-gradient-to-r from-rose-700 to-pink-600 text-white px-4 py-2 rounded-md flex">
+                <span>
                 Add to Cart
+                </span>
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </span>
               </button>
             </div>
           </div>
@@ -116,8 +131,13 @@ const Shop = () => {
             </p>
             <div className="mt-4 flex items-center justify-between">
               <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+              <button className="bg-gradient-to-r from-rose-700 to-pink-600 text-white px-4 py-2 rounded-md flex">
+                <span>
                 Add to Cart
+                </span>
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </span>
               </button>
             </div>
           </div>
@@ -139,8 +159,13 @@ const Shop = () => {
             </p>
             <div className="mt-4 flex items-center justify-between">
               <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+              <button className="bg-gradient-to-r from-rose-700 to-pink-600 text-white px-4 py-2 rounded-md flex">
+                <span>
                 Add to Cart
+                </span>
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </span>
               </button>
             </div>
           </div>
@@ -162,8 +187,13 @@ const Shop = () => {
             </p>
             <div className="mt-4 flex items-center justify-between">
               <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+              <button className="bg-gradient-to-r from-rose-700 to-pink-600 text-white px-4 py-2 rounded-md flex">
+                <span>
                 Add to Cart
+                </span>
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </span>
               </button>
             </div>
           </div>
