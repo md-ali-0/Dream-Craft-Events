@@ -42,7 +42,7 @@ const CustomEvent = () => {
         Swal.fire({
             position: "center",
             icon: "success",
-            title: "You have created an event",
+            title: "You have created an event, thanks",
             showConfirmButton: false,
             timer: 1500
           });
