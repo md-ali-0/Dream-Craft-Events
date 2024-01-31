@@ -35,6 +35,9 @@ const Events = () => {
                             <button type="submit" className="bg-primary text-white py-3 px-8 rounded-3xl rounded-tl-none -ml-8 text-2xl font-bold"
                             ><FaSearch /></button>
                         </form>
+
+                        {/* category  */}
+
                     </div>
 
                     {/* cards */}
