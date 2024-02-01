@@ -7,10 +7,37 @@ import { TiTick } from "react-icons/ti";
 import { RiFacebookFill } from "react-icons/ri";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { MdPersonAddAlt1 } from "react-icons/md";
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
+import Lottie from "lottie-react";
+import loadingAnimation from "/public/animation.json";
 
 
 
 const EventDetails = () => {
+    const params = useParams();
+
+    const fetchEvents = async () => {
+        const response = await fetch(`http://localhost:8080/event/${params._id}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    };
+
+    const { data: event=[], isLoading, error } = useQuery({
+        queryKey: ['event'],
+        queryFn: fetchEvents
+    });
+    if (isLoading) {
+        return  <Lottie className='flex justify-center items-center min-h-[70%]' animationData={loadingAnimation} width={500} height={350} />
+    }
+
+    if (error) {
+        return <p>Error loading events: {error.message}</p>;
+    }
+    
+
     return (
         <div>
             <div className='' style={{
@@ -34,11 +61,11 @@ const EventDetails = () => {
             <div className='grid grid-cols-1 lg:grid-cols-7 mt-24 max-w-screen-xl mx-auto px-4 '>
                 <div className='lg:col-span-5'>
                     <div>
-                        <img className='w-full lg:w-[95%] h-96 rounded-md' src="https://a.storyblok.com/f/188325/1920x1280/41e681c422/alexandre-pellaes-6vajp0pscx0-unsplash-1-1.jpg" alt="" />
+                        <img className='w-full lg:w-[95%] h-96 rounded-md' src={event.image} alt={event.title}/>
                         <div className='flex justify-between md:max-w-[780px] lg:max-w-[830px] ml-2 mt-6'>
-                            <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-xl' />January 31, 2024</p>
+                            <p className='flex items-center text-sm gap-2'><CiCalendarDate className='text-xl' />{event.date}</p>
                             <p className='flex items-center gap-2 text-red-600 font-semibold text-xl'><BsDiagram3 className='text-xl' />500 Seat</p>
-                            <p className='flex items-center gap-1 text-sm'><VscLocation className='text-2xl' />Broadw, New York</p>
+                            <p className='flex items-center gap-1 text-sm'><VscLocation className='text-2xl' />{event.location}</p>
                         </div>
                         <div className='flex text-sm md:flex-row flex-col gap-4 border-y py-4 my-6 justify-around max-w-[840px]'>
                             <div className='flex gap-3 md:gap-16 lg:gap-24'>
@@ -196,8 +223,8 @@ const EventDetails = () => {
                                 <input type="text" placeholder='Your full name' className='lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500' />
                                 <input type="text" placeholder='Your email' className='lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500' />
                                 <input type="text" placeholder='Phone' className='lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500' />
-                                <select type="text" className='lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500' >
-                                    <option value="" selected disabled>Quantity</option>
+                                <select type="text" defaultValue='' className='lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500' >
+                                    <option value=""  disabled>Quantity</option>
                                     <option value="One">One</option>
                                     <option value="Two">Two</option>
                                     <option value="Three">Three</option>
