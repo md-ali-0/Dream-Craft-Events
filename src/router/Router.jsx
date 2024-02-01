@@ -1,17 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../layout/main";
+import Dashboard from "../layout/Dash/Dashboard";
+import Main from "../layout/Main/Main";
 import About from "../pages/about/About";
-import Booking from "../pages/bookings/Booking";
-import ErrorPage from "../pages/error/ErrorPage";
-import Home from "../pages/home/Home";
-import Contact from "../pages/contact/Contact";
-import EventDetails from "../pages/eventDetails/EventDetails";
+import Events from "../pages/allEvents/Events";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
+import Booking from "../pages/bookings/Booking";
+import Contact from "../pages/contact/Contact";
+import DashboardHome from "../pages/dashboard/Home/DashboardHome";
+import ErrorPage from "../pages/error/ErrorPage";
+import EventDetails from "../pages/eventDetails/EventDetails";
+import Home from "../pages/home/Home";
 import Portfolio from "../pages/portfolio/Portfolio";
-import Events from "../pages/allEvents/Events";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
+import AddEvent from "../pages/addEvent/AddEvent";
+import UpdateEvent from "../pages/updateEvent/UpdateEvent";
+import CustomEvent from "../pages/customEvent/CustomEvent";
 
 
 const Router = createBrowserRouter([
@@ -38,7 +43,11 @@ const Router = createBrowserRouter([
       },
       {
         path: '/portfolio',
-        element: <Portfolio />
+        element: <Portfolio/>
+      },
+      {
+        path: '/schedule',
+        element: <Schedule/>
       },
       {
         path: '/schedule',
@@ -63,10 +72,32 @@ const Router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>
+      },
+      {
+        path: '/create-your-event',
+        element: <CustomEvent/>
       }
 
     ],
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+        {
+            path: '/dashboard',
+            element: <DashboardHome/>
+        },
+        {
+          path:'addEvent',
+          element:<AddEvent></AddEvent>
+        },
+        {
+          path:'updateEvent',
+          element:<UpdateEvent></UpdateEvent>
+        }
+    ]
+},
 ]);
 
 export default Router;

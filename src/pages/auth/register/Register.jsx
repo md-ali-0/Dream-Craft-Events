@@ -1,19 +1,35 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { GoInfo } from "react-icons/go";
 import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Register = () => {
     const [passwordShow, setPasswordShow] = useState(false);
     const navigation = useNavigate()
+    const {signUp} = useAuth()
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => {
+    
+    const onSubmit = async (data) => {
         console.log(data);
-        navigation('/')
+        const{name, email, password} = data
+        const toastLoading = toast.loading('User Signuping...')
+        try {
+            const response = await signUp(name, email, password)
+            toast.dismiss(toastLoading)
+            toast.success('Sign Up Successfully')
+            navigation('/dashboard')
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+            toast.dismiss(toastLoading)
+            toast.error(error?.response?.data)
+        }
     };
     return (
         <>
