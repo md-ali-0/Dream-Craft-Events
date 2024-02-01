@@ -7,16 +7,16 @@ import Lottie from "lottie-react";
 import { FaArrowRight } from "react-icons/fa";
 import EventCard from "../allEvents/EventCard";
 import loadingAnimation from "/public/animation.json";
+import axios from 'axios';
 
 const FeatureEvents = () => {
   const fetchEvents = async () => {
-    const response = await fetch(
-      "https://dream-craft-server.vercel.app/events"
-    );
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
+    try {
+      const response = await axios.get("https://dream-craft-server.vercel.app/events");
+      return response.data; 
+    } catch (error) {
+      return error.massage;
     }
-    return response.json();
   };
 
   const {
@@ -46,7 +46,7 @@ const FeatureEvents = () => {
     <section className="my-10">
       <Container>
         <SectionTitle heading={"Feature Events"} subHeading={"Events"} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5 ">
           {events?.slice(0, 3).map((event) => (
             <EventCard key={event._id} event={event}></EventCard>
           ))}
