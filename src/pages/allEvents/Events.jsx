@@ -1,19 +1,47 @@
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import  { useEffect, useState } from "react";
 import Container from "../../components/container/Container";
-import useEvents from "../../hooks/useEvents";
 import EventBanner from "./EventBanner";
 import EventCard from "./EventCard";
 import { FaSearch } from "react-icons/fa";
+import { useQuery } from "@tanstack/react-query";
+import Lottie from "lottie-react";
+import loadingAnimation from "/public/animation.json";
 
 const Events = () => {
-    const [events] = useEvents()
-    const [allEvents, setAllEvents] = useState(events)
     const [searchTerm, setSearchTerm] = useState('');
+    const [filteredEvents, setFilteredEvents] = useState([]);
+
+    const fetchEvents = async () => {
+        const response = await fetch('http://localhost:8080/events');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    };
+
+    const { data: allEvents=[], isLoading, error } = useQuery({
+        queryKey: ['allEvents'],
+        queryFn: fetchEvents
+    });
+
+    useEffect(() => {
+        setFilteredEvents(allEvents || []);
+    }, [allEvents]);
 
     const handleSearch = e => {
-        e.preventDefault()
-        const searchResult = events.filter(event => event.title.toLowerCase().includes(searchTerm.toLowerCase()));
-        setAllEvents(searchResult);
+        e.preventDefault();
+        const searchResult = allEvents?.filter(event => 
+            event.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        setFilteredEvents(searchResult);
+    };
+
+    if (isLoading) {
+        return  <Lottie className='flex justify-center items-center min-h-[70%]' animationData={loadingAnimation} width={500} height={350} />
+    }
+
+    if (error) {
+        return <p>Error loading events: {error.message}</p>;
     }
 
     return (
@@ -40,7 +68,7 @@ const Events = () => {
                     {/* cards */}
                     <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {
-                            allEvents.map(event => <EventCard key={event.id} event={event}></EventCard>)
+                            allEvents?.map(event => <EventCard key={event._id} event={event}></EventCard>)
                         }
                     </div>
                 </div>
