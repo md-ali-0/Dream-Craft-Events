@@ -69,7 +69,7 @@ const Events = () => {
             <EventBanner />
             <Container>
                 <h2 className="text-3xl md:text-5xl font-bold text-center text-secondary mt-10 uppercase">
-                    Popular Events
+                    All Events
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 my-10 md:my-20 gap-6">
                     <div className="md:col-span-1">
