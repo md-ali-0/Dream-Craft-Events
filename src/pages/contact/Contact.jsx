@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import logo from '../../assets/logo/dream-craft.png'
 
 const Contact = () => {
   const [email, setEmail] = useState('');
@@ -15,12 +17,30 @@ const Contact = () => {
 
   return (
     <div>
-      <section className="">
-        <div className="py-8 border my-5 rounded-md lg:py-16 px-10 mx-auto max-w-screen-md">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center">Contact Us</h2>
+       <h2 className='text-4xl text-center  font-bold  underline'>Contact Us</h2>
+      <div className="mt-10 p-5 flex flex-col md:flex-row max-w-5xl mx-auto text-black ">
+       
+      <div className=" md:w-1/2">
+        <img src={logo} alt="" className="w-32" />
+        <h2 className="text-2xl font-semibold  mb-3">Address</h2>
+        <hr className="w-32 " />
+        <h2 className="text-2xl font-semibold">+44 20 3519 2700</h2>
+        <p className="text-base mb-3">Book online or call</p>
+        <h2 className="text-2xl font-semibold">contact@dreamcraft.com</h2>
+        <div className='flex items-center '>
+        <p className="text-base mb-3">Send us an email or use contact form</p><AiOutlineArrowRight className='text-xl ml-2 '></AiOutlineArrowRight>
+        </div>
+        <h2 className="text-2xl font-semibold">Our address</h2>
+        <p className="text-base mb-3">
+        Banani, Dhaka <br /> Bangladesh
+        </p>
+      </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div>
+      <div className="md:w-1/2 mt-10 md:mt-0 md:ml-20">
+        <h2 className="text-2xl font-semibold ">SEND US A MESSAGE</h2>
+        <hr className="w-52 " />
+        <form onSubmit={handleSubmit} className="">
+        <div>
               <label htmlFor="email" className="block mb-2 text-sm font-medium">Your email</label>
               <input
                 type="email"
@@ -56,13 +76,12 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="py-2 px-5 bg-sky-500 text-white rounded-lg hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-primary-300 ">Send message</button>
-
-            
-
-          </form>
-        </div>
-      </section>
+          
+          <button type="submit" className="flex justify-center items-center  text-white w-1/2 mx-auto mt-2 p-2 rounded-lg bg-gradient-to-r from-rose-700 to-pink-600  hover:bg-slate-800">Send message</button>
+          
+        </form>
+      </div>
+    </div>
     </div>
   );
 };
