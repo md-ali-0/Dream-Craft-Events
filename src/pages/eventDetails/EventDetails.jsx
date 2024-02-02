@@ -76,7 +76,7 @@ const EventDetails = () => {
         <div className="lg:col-span-5">
           <div>
             <img
-              className="w-full lg:w-[95%] h-96 rounded-md"
+              className="w-full lg:w-[95%] h-96 object-cover rounded-md"
               src={event.image}
               alt={event.title}
             />
