@@ -48,6 +48,10 @@ const EventDetails = () => {
     return <p>Error loading events: {error.message}</p>;
   }
 
+  const dateFormat = new Date(event.date);
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const formattedDate = dateFormat.toLocaleDateString('en-US', options);
+
   return (
     <div>
       <div
@@ -83,7 +87,7 @@ const EventDetails = () => {
             <div className="flex justify-between md:max-w-[780px] lg:max-w-[830px] ml-2 mt-6">
               <p className="flex items-center text-sm gap-2">
                 <CiCalendarDate className="text-xl" />
-                {event.date}
+                {formattedDate}
               </p>
               <p className="flex items-center gap-2 text-red-600 font-semibold text-xl">
                 <BsDiagram3 className="text-xl" />
