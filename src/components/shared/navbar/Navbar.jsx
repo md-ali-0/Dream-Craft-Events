@@ -117,7 +117,7 @@ const Navbar = () => {
                 <img
                   ref={imgRef}
                   onClick={handleDropDown}
-                  src={"https://placehold.co/500x500/png"}
+                  src={user?.image}
                   className="rounded-full w-10 h-10 cursor-pointer"
                 />
                 <ul
@@ -128,7 +128,7 @@ const Navbar = () => {
                   {user && (
                     <li>
                       <Link
-                        to="/dashboard/professional-profile"
+                        to="/dashboard/profile"
                         className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent 
                                             flex items-center gap-2
                                             "
