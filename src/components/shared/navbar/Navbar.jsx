@@ -46,42 +46,42 @@ const Navbar = () => {
           >
             <ul className="flex mx-auto flex-col md:flex-row justify-center gap-5 py-3">
               <li>
-                <NavLink to="/" className="">
+                <NavLink to="/" className="border border-white p-1">
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/booking" className="">
+                <NavLink to="/booking" className="border border-white p-1">
                   Booking
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/events" className="">
+                <NavLink to="/events" className="border border-white p-1">
                   Events
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/schedule" className="">
+                <NavLink to="/schedule" className="border border-white p-1">
                   Schedule
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/shop" className="">
+                <NavLink to="/shop" className="border border-white p-1">
                   Shop
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="">
+                <NavLink to="/about" className="border border-white p-1">
                   About
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/portfolio" className="">
+                <NavLink to="/portfolio" className="border border-white p-1">
                   Portfolio
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/contact" className="">
+                <NavLink to="/contact" className="border border-white p-1">
                   Contact
                 </NavLink>
               </li>
@@ -91,12 +91,12 @@ const Navbar = () => {
                   <summary>More</summary>
                   <ul className="p-2 bg-base-100 rounded-t-none">
                     <li>
-                    <NavLink to="/event-details" className="">
+                    <NavLink to="/event-details" className="border border-white p-1">
                     Event Details
                 </NavLink>
                     </li>
                     <li>
-                    <NavLink to="/shop" className="">
+                    <NavLink to="/shop" className="border border-white p-1">
                     Shop
                 </NavLink>
                     </li>
