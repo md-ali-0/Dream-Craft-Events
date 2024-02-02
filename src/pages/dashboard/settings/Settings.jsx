@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { BiErrorCircle } from "react-icons/bi";
 
 const Settings = () => {
@@ -10,6 +11,7 @@ const Settings = () => {
     const onSubmit = async (data) => {
         const { siteName, siteLogo } = data;
         console.log(siteName, siteLogo);
+        toast.success('Successfully Updated')
     };
     
     return (
@@ -29,7 +31,7 @@ const Settings = () => {
                             })}
                             placeholder="Enter Website Name"
                             className="mt-1 p-2 w-full border border-primary/20 rounded-md focus:border-primary/20 outline-none transition-colors duration-300"
-                            defaultValue={''}
+                            defaultValue={'Dream Craft'}
                         />
                         {errors.siteName && (
                             <span className="text-center text-red-500 flex items-center gap-1">
