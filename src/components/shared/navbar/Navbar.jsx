@@ -5,7 +5,7 @@ import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
-  const {user, setUser} = useAuth()
+  const { user, setUser } = useAuth()
   const navigate = useNavigate()
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
@@ -54,13 +54,13 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/booking" className="border border-white p-1">
-                  Booking
+                <NavLink to="/events" className="border border-white p-1">
+                  Events
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/events" className="border border-white p-1">
-                  Events
+                <NavLink to="/create-your-event" className="border border-white p-1">
+                  Create Event
                 </NavLink>
               </li>
               <li>
@@ -145,36 +145,36 @@ const Navbar = () => {
                       className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent
                                         flex items-center gap-2
                                         "
-                                        >
-                                            <FiLogOut />
-                                            LogOut
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="flex items-center gap-2">
-                            <Link
-                                to="/login"
-                                type="button"
-                                className="inline-block rounded bg-primary/10 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary/90 transition duration-150 ease-in-out hover:bg-primary/20 focus:bg-primary/30 focus:outline-none focus:ring-0 active:bg-primary/20"
-                            >
-                                Login
-                            </Link>
-                            <Link
-                                to="/register"
-                                type="button"
-                                className="mr-3 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
-                            >
-                                Sign Up
-                            </Link>
-                        </div>
-                    )}
-                </div>
-            </nav>
-        </>
-    );
+                    >
+                      <FiLogOut />
+                      LogOut
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2">
+              <Link
+                to="/login"
+                type="button"
+                className="inline-block rounded bg-primary/10 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary/90 transition duration-150 ease-in-out hover:bg-primary/20 focus:bg-primary/30 focus:outline-none focus:ring-0 active:bg-primary/20"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                type="button"
+                className="mr-3 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
+        </div>
+      </nav>
+    </>
+  );
 };
 
 export default Navbar;
