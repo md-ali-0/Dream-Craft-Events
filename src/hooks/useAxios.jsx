@@ -1,13 +1,12 @@
 import axios from "axios";
 
 const axiosSecure = axios.create({
-    // baseURL: 'http://localhost:8080'
-    baseURL: 'https://dream-craft-server.vercel.app'
-})
+  // baseURL: 'https://dream-craft-server.vercel.app'
+  baseURL: "https://dream-craft-server.vercel.app",
+});
 
-const useAxios = ()=>{
+const useAxios = () => {
+  return axiosSecure;
+};
 
-    return axiosSecure
-}
-
-export default useAxios
+export default useAxios;
