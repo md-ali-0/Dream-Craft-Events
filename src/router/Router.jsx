@@ -2,21 +2,23 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layout/Dash/Dashboard";
 import Main from "../layout/Main/Main";
 import About from "../pages/about/About";
+import AddEvent from "../pages/addEvent/AddEvent";
 import Events from "../pages/allEvents/Events";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
 import Booking from "../pages/bookings/Booking";
 import Contact from "../pages/contact/Contact";
+import CustomEvent from "../pages/customEvent/CustomEvent";
 import DashboardHome from "../pages/dashboard/Home/DashboardHome";
+import Profile from "../pages/dashboard/profile/Profile";
+import Settings from "../pages/dashboard/settings/Settings";
 import ErrorPage from "../pages/error/ErrorPage";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Home from "../pages/home/Home";
 import Portfolio from "../pages/portfolio/Portfolio";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
-import AddEvent from "../pages/addEvent/AddEvent";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
-import CustomEvent from "../pages/customEvent/CustomEvent";
 
 
 const Router = createBrowserRouter([
@@ -95,7 +97,15 @@ const Router = createBrowserRouter([
         {
           path:'updateEvent',
           element:<UpdateEvent></UpdateEvent>
-        }
+        },
+        {
+          path: 'settings',
+          element: <Settings/>
+        },
+        {
+          path: 'profile',
+          element: <Profile/>
+        },
     ]
 },
 ]);

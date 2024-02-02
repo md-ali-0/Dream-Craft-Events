@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/logo/logo-dark.png";
 import SideBarMenuItem from "../../components/sidebar/SideBarMenuItem";
 import SidebarSubMenu from "../../components/sidebar/SidebarSubMenu";
 
@@ -20,7 +20,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 }`}
             >
                 <div className="flex items-center justify-center border-b border-gray-900 py-[18px]">
-                    <img src={logo} alt="" className="w-28 invert" />
+                    <img src={logo} alt="" className="w-28" />
                 </div>
                 <div className="overflow-y-auto custom-scroll">
                     <nav className="mt-5 px-3">
@@ -42,24 +42,21 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     path: "/dashboard/addEvent",
                                 }}
                             />
-                            
                             <SideBarMenuItem
                                 menu={{
-                                    name: "Pages",
+                                    name: "Profile",
                                     icon: "LuCommand",
-                                    path: "/",
+                                    path: "/dashboard/profile",
                                 }}
                             />
                             <h4 className="text-gray-400 font-semibold text-xs mt-2">
-                                UI Components
+                                Settings
                             </h4>
                             <SidebarSubMenu
                                 menu={{ name: "Seetings", icon: "LuSettings" }}
                                 subMenu={[
-                                    { name: "Button", path: "button" },
-                                    { name: "Grid", path: "grid" },
-                                    { name: "Widgets", path: "widgets" },
-                                    { name: "Icons", path: "icons" },
+                                    { name: "Company", path: "settings" },
+                                    { name: "Mail", path: "email-settings" },
                                 ]}
                             ></SidebarSubMenu>
                         </ul>
