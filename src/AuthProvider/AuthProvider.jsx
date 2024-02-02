@@ -21,6 +21,9 @@ export const AuthProdiver = ({ children }) => {
         setUser(response.data);
         return response;
     };
+    const logout = async()=>{
+        setUser(null);
+    }
     useEffect(()=>{
       const unSubscribe = ()=>{
         console.log('s');
@@ -31,7 +34,8 @@ export const AuthProdiver = ({ children }) => {
         login,
         signUp,
         user,
-        setUser
+        setUser,
+        logout
     };
 
     return (

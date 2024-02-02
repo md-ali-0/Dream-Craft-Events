@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import { FiAlignJustify, FiLogOut, FiUser } from "react-icons/fi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
   const {user, setUser} = useAuth()
+  const navigate = useNavigate()
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const imgRef = useRef();
@@ -19,7 +20,8 @@ const Navbar = () => {
     setDropDown(!dropdownOpen);
   };
   const logOutHandler = () => {
-    setUser(false);
+    setUser(null);
+    navigate('/')
   };
   return (
     <>
