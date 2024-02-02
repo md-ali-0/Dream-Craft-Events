@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, useForm } from "react-hook-form";
-import img from "../../assets/addEvent/white-pastel-pink-balloons-removebg-preview.png"
+
 import { toast } from 'react-hot-toast';
 
 const AddEvent = () => {
@@ -24,11 +24,9 @@ const AddEvent = () => {
       <h2 className="text-2xl md:text-6xl font-bold text-center uppercase text-rose-700">
         Add Events
       </h2>
-      <div className="mt-5 flex">
-        <div className='hidden md:flex md:w-1/3  justify-center hover:scale-125'>
-            <img src={img} alt="" className='min-h-screen w-[400px] animate-updown ' />
-        </div>
-        <form className="w-full md:w-2/3 space-y-5" onSubmit={handleSubmit(onSubmit)}>
+      <div className="mt-5 ">
+        
+        <form className="w-full  space-y-5" onSubmit={handleSubmit(onSubmit)}>
           <div className=" ">
             <label className="text-2xl font-semibold ">
               <span className=" ">Event Name*</span>
