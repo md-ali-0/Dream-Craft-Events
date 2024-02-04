@@ -1,180 +1,120 @@
-const Shop = () => {
-  return (
-    <div>
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 h-[70vh] relative">
-        <section
-          className="bg-cover bg-center flex items-center h-[70vh]"
-          style={{
-            backgroundImage:
-              "url('https://s3.ap-southeast-1.amazonaws.com/localiiz-prod/uploads/cny-lunar-new-year-displays-decorations-hong-kong-ifc.jpg?mtime=20210209023619&focal=none')",
-          }}
-        >
-          <div className="absolute inset-0 bg-black opacity-50 mx-4 md:mx-8 lg:mx-12"></div>
-          <div className="container mx-auto text-center text-white relative z-10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Dream Craft Events
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl mb-8">
-              Your one-stop shop for event accessories
-            </p>
-            <a
-              href="#shop"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Shop Now
-            </a>
-          </div>
-        </section>
-      </div>
+/* eslint-disable no-unused-vars */
+import { useQuery } from "@tanstack/react-query";
+import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
+import Container from "../../components/container/Container";
+import ShopBanner from "./ShopBanner";
+import ShopCard from "./ShopCard";
+import loadingAnimation from "/public/animation.json";
 
-      {/* shopping cards  */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center mx-auto max-w-screen-xl mt-10 gap-5 mb-10">
+const Events = () => {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filteredEvents, setFilteredEvents] = useState([]);
 
-        {/* single card  */}
-        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
-            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f7c77f093e3ab80a5cab_balloons-p-500.webp"
-            alt="Product Image"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Product Name
-            </h2>
-            <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* single card end */}
-        {/* single card  */}
-        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
-            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f76df64e0d5c5c806b4f_balloons%20photo-p-500.webp"
-            alt="Product Image"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Product Name
-            </h2>
-            <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* single card end */}
-        {/* single card  */}
-        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
-            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f6bd61b2697423136d86_birthday%20image%20small-p-500.webp"
-            alt="Product Image"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Product Name
-            </h2>
-            <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* single card end */}
+    // const fetchEvents = async () => {
+    //     const response = await fetch(
+    //         "https://dream-craft-server.vercel.app/events"
+    //     );
+    //     if (!response.ok) {
+    //         throw new Error("Network response was not ok");
+    //     }
+    //     return response.json();
+    // };
 
-        {/* single card  */}
-        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
-            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f7c77f093e3ab80a5cab_balloons-p-500.webp"
-            alt="Product Image"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Product Name
-            </h2>
-            <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* single card end */}
-        {/* single card  */}
-        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
-            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f76df64e0d5c5c806b4f_balloons%20photo-p-500.webp"
-            alt="Product Image"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Product Name
-            </h2>
-            <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* single card end */}
-        {/* single card  */}
-        <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
-            src="https://assets-global.website-files.com/6481774ac8e2ed2234eb16cb/6492f6bd61b2697423136d86_birthday%20image%20small-p-500.webp"
-            alt="Product Image"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Product Name
-            </h2>
-            <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-gray-700 font-semibold">$19.99</span>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* single card end */}
+    const fetchProducts = async () => {
+      try {
+          // Assuming the shop.json file is in the public directory
+          const response = await fetch("https://dream-craft-server.vercel.app/products");
+  
+          if (!response.ok) {
+              throw new Error("Network response was not ok");
+          }
+  
+          return response.json();
+      } catch (error) {
+          console.error("Error fetching events:", error);
+          throw error;
+      }
+  };
+  
 
+    const {
+        data: allProducts = [],
+        isLoading,
+        error,
+    } = useQuery({
+        queryKey: ["allProducts"],
+        queryFn: fetchProducts,
+    });
 
-      </div>
-      {/* shopping cards end */}
-    </div>
-  );
+    useEffect(() => {
+        setFilteredEvents(allProducts || []);
+    }, [allProducts]);
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const searchResult = allProducts?.filter((event) =>
+            event.product_name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredEvents(searchResult);
+    };
+
+    if (isLoading) {
+        return (
+            <Lottie
+                className="flex justify-center items-center min-h-[70%]"
+                animationData={loadingAnimation}
+                width={500}
+                height={350}
+            />
+        );
+    }
+
+    if (error) {
+        return <p>Error loading events: {error.message}</p>;
+    }
+
+    return (
+        <div>
+            <ShopBanner />
+            <Container>
+                <h2 className="text-3xl md:text-5xl font-bold text-center text-secondary mt-10 ">
+                    Popular Event Accessories
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 my-10 md:my-20 gap-6">
+                    {/* Search */}
+                    <div className="col-span-1">
+                        <form
+                            onSubmit={handleSearch}
+                            className="flex bg-gray-50 p-5 shadow-md rounded-md"
+                        >
+                            <input
+                                type="text"
+                                name="search"
+                                placeholder="Search by name"
+                                className="w-full px-4 py-3 border rounded-3xl outline-none border-none bg-gray-200 text-black"
+                                onInput={(e) => setSearchTerm(e.target.value)}
+                            />
+                            <button
+                                type="submit"
+                                className="bg-primary text-white py-3 px-8 rounded-3xl rounded-tl-none -ml-8 text-2xl font-bold"
+                            >
+                                <FaSearch />
+                            </button>
+                        </form>
+                    </div>
+
+                    {/* cards */}
+                    <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {filteredEvents?.map((event) => (
+                            <ShopCard key={event.id} event={event}></ShopCard>
+                        ))}
+                    </div>
+                </div>
+            </Container>
+        </div>
+    );
 };
 
-export default Shop;
+export default Events;

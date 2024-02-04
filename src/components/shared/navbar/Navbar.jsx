@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import { FiAlignJustify, FiLogOut, FiUser } from "react-icons/fi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
-  const {user, setUser} = useAuth()
+  const { user, setUser } = useAuth()
+  const navigate = useNavigate()
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const imgRef = useRef();
@@ -19,7 +20,9 @@ const Navbar = () => {
     setDropDown(!dropdownOpen);
   };
   const logOutHandler = () => {
-    setUser(false);
+    setUser(null);
+    navigate('/')
+    toast.success('Successfully Logout')
   };
   return (
     <>
@@ -46,42 +49,42 @@ const Navbar = () => {
           >
             <ul className="flex mx-auto flex-col md:flex-row justify-center gap-5 py-3">
               <li>
-                <NavLink to="/" className="">
+                <NavLink to="/" className="border border-white p-1">
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/booking" className="">
-                  Booking
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/events" className="">
+                <NavLink to="/events" className="border border-white p-1">
                   Events
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/schedule" className="">
+                <NavLink to="/create-your-event" className="border border-white p-1">
+                  Create Event
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/schedule" className="border border-white p-1">
                   Schedule
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/shop" className="">
+                <NavLink to="/shop" className="border border-white p-1">
                   Shop
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="">
+                <NavLink to="/about" className="border border-white p-1">
                   About
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/portfolio" className="">
+                <NavLink to="/portfolio" className="border border-white p-1">
                   Portfolio
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/contact" className="">
+                <NavLink to="/contact" className="border border-white p-1">
                   Contact
                 </NavLink>
               </li>
@@ -91,12 +94,12 @@ const Navbar = () => {
                   <summary>More</summary>
                   <ul className="p-2 bg-base-100 rounded-t-none">
                     <li>
-                    <NavLink to="/event-details" className="">
+                    <NavLink to="/event-details" className="border border-white p-1">
                     Event Details
                 </NavLink>
                     </li>
                     <li>
-                    <NavLink to="/shop" className="">
+                    <NavLink to="/shop" className="border border-white p-1">
                     Shop
                 </NavLink>
                     </li>
@@ -115,7 +118,7 @@ const Navbar = () => {
                 <img
                   ref={imgRef}
                   onClick={handleDropDown}
-                  src={"https://placehold.co/500x500/png"}
+                  src={user?.image}
                   className="rounded-full w-10 h-10 cursor-pointer"
                 />
                 <ul
@@ -126,7 +129,7 @@ const Navbar = () => {
                   {user && (
                     <li>
                       <Link
-                        to="/dashboard/professional-profile"
+                        to="/dashboard/profile"
                         className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent 
                                             flex items-center gap-2
                                             "
@@ -142,36 +145,36 @@ const Navbar = () => {
                       className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent
                                         flex items-center gap-2
                                         "
-                                        >
-                                            <FiLogOut />
-                                            LogOut
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="flex items-center gap-2">
-                            <Link
-                                to="/login"
-                                type="button"
-                                className="inline-block rounded bg-primary/10 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary/90 transition duration-150 ease-in-out hover:bg-primary/20 focus:bg-primary/30 focus:outline-none focus:ring-0 active:bg-primary/20"
-                            >
-                                Login
-                            </Link>
-                            <Link
-                                to="/register"
-                                type="button"
-                                className="mr-3 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
-                            >
-                                Sign Up
-                            </Link>
-                        </div>
-                    )}
-                </div>
-            </nav>
-        </>
-    );
+                    >
+                      <FiLogOut />
+                      LogOut
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2">
+              <Link
+                to="/login"
+                type="button"
+                className="inline-block rounded bg-primary/10 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary/90 transition duration-150 ease-in-out hover:bg-primary/20 focus:bg-primary/30 focus:outline-none focus:ring-0 active:bg-primary/20"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                type="button"
+                className="mr-3 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
+        </div>
+      </nav>
+    </>
+  );
 };
 
 export default Navbar;
