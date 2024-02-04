@@ -13,24 +13,29 @@ export const AuthProdiver = ({ children }) => {
         return response;
     };
     const signUp = async (name, email, password) => {
-        const response = await axios.post("add-user", {
+        const response = await axios.post("/add-user", {
             name,
             email,
             password,
         });
+        setUser(response.data);
         return response;
     };
+    const logout = async()=>{
+        setUser(null);
+    }
     useEffect(()=>{
       const unSubscribe = ()=>{
         console.log('s');
       }
       return ()=>unSubscribe()
-    })
+    },[user])
     const userInfo = {
         login,
         signUp,
         user,
-        setUser
+        setUser,
+        logout
     };
 
     return (

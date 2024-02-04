@@ -65,3 +65,7 @@
     transition: background 0.15s ease-in-out, border-color 0.15s ease-in-out,
         box-shadow 0.15s ease-in-out;
 }
+
+.active {
+    @apply text-primary border border-primary;
+}

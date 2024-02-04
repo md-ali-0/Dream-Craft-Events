@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, useForm } from "react-hook-form";
-import img from "../../assets/addEvent/white-pastel-pink-balloons-removebg-preview.png"
+
 import { toast } from 'react-hot-toast';
 
 const AddEvent = () => {
@@ -24,11 +24,9 @@ const AddEvent = () => {
       <h2 className="text-2xl md:text-6xl font-bold text-center uppercase text-rose-700">
         Add Events
       </h2>
-      <div className="mt-5 flex">
-        <div className='hidden md:flex md:w-1/3  justify-center hover:scale-125'>
-            <img src={img} alt="" className='min-h-screen w-[400px] animate-updown ' />
-        </div>
-        <form className="w-full md:w-2/3 space-y-5" onSubmit={handleSubmit(onSubmit)}>
+      <div className="mt-5 ">
+        
+        <form className="w-full  space-y-5 bg-gray-200 p-3 md:p-5 rounded-md" onSubmit={handleSubmit(onSubmit)}>
           <div className=" ">
             <label className="text-2xl font-semibold ">
               <span className=" ">Event Name*</span>
@@ -42,7 +40,8 @@ const AddEvent = () => {
             />
           </div>
 
-          <div className="">
+          <div className='md:flex gap-3 '>
+          <div className="md:w-1/2">
             <label className="">
               <span className="text-2xl font-semibold">Event seats*</span>
             </label>
@@ -55,7 +54,7 @@ const AddEvent = () => {
             />
           </div>
 
-          <div className="">
+          <div className="md:w-1/2">
             <label className="">
               <span className="text-2xl font-semibold">Event type*</span>
             </label>
@@ -67,8 +66,10 @@ const AddEvent = () => {
               required
             />
           </div>
+          </div>
 
-          <div className="">
+          <div className='md:flex gap-3'>
+          <div className="md:w-1/2">
             <label className="">
               <span className="text-2xl font-semibold">Event Location*</span>
             </label>
@@ -81,7 +82,7 @@ const AddEvent = () => {
             />
           </div>
 
-          <div className="">
+          <div className="md:w-1/2">
             <label className="">
               <span className="text-2xl font-semibold">Event Date*</span>
             </label>
@@ -93,7 +94,12 @@ const AddEvent = () => {
               required
             />
           </div>
-          <div className="">
+
+
+          </div>
+          
+          <div className='md:flex gap-3'>
+          <div className="md:w-1/2">
             <label className="">
               <span className="text-2xl font-semibold">Speakers*</span>
             </label>
@@ -106,7 +112,7 @@ const AddEvent = () => {
             />
           </div>
 
-          <div className="">
+          <div className="md:w-1/2">
             <label className="">
               <span className="text-2xl font-semibold">Sponsor*</span>
             </label>
@@ -117,6 +123,7 @@ const AddEvent = () => {
               className="input input-bordered w-full rounded-lg p-3 border border-black"
               required
             />
+          </div>
           </div>
           <div className="">
             <label className="">
@@ -145,7 +152,7 @@ const AddEvent = () => {
             <input
               
               type="submit"
-              value="POST"
+              value="POST EVENT"
               className="btn text-xl font-semibold bg-gradient-to-r from-rose-700 to-pink-600 text-white hover:bg-slate-800 p-3 w-full rounded-lg hover:cursor-pointer "
             />
           </div>

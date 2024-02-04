@@ -1,10 +1,17 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
+    const navigate = useNavigate()
+    const {user, logout}= useAuth()
     const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const handleLogout = async()=>{
+        await logout()
+        navigate('/login')
+    }
     return (
         <header className="flex items-center justify-between px-6 py-3 bg-white border">
             <div className="flex items-center">
@@ -50,9 +57,7 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
                     >
                         <img
                             className="object-cover w-full h-full"
-                            src={
-                                "https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80"
-                            }
+                            src={user?.image}
                             alt="Your avatar"
                         />
                     </button>
@@ -70,19 +75,13 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
                         }`}
                     >
                         <Link
-                            to="#"
+                            to="/dashboard/profile"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
                         >
                             Profile
                         </Link>
                         <Link
-                            to="#"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
-                        >
-                            Products
-                        </Link>
-                        <Link
-                            to="/login"
+                            onClick={handleLogout}
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
                         >
                             Logout
