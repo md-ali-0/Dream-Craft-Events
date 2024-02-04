@@ -22,10 +22,10 @@ const Events = () => {
     //     return response.json();
     // };
 
-    const fetchEvents = async () => {
+    const fetchProducts = async () => {
       try {
           // Assuming the shop.json file is in the public directory
-          const response = await fetch("/public/shop.json");
+          const response = await fetch("https://dream-craft-server.vercel.app/products");
   
           if (!response.ok) {
               throw new Error("Network response was not ok");
@@ -40,21 +40,21 @@ const Events = () => {
   
 
     const {
-        data: allEvents = [],
+        data: allProducts = [],
         isLoading,
         error,
     } = useQuery({
-        queryKey: ["allEvents"],
-        queryFn: fetchEvents,
+        queryKey: ["allProducts"],
+        queryFn: fetchProducts,
     });
 
     useEffect(() => {
-        setFilteredEvents(allEvents || []);
-    }, [allEvents]);
+        setFilteredEvents(allProducts || []);
+    }, [allProducts]);
 
     const handleSearch = (e) => {
         e.preventDefault();
-        const searchResult = allEvents?.filter((event) =>
+        const searchResult = allProducts?.filter((event) =>
             event.product_name.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setFilteredEvents(searchResult);
