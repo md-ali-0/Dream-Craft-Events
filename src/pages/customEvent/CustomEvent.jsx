@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CiLocationOn, CiUser, CiPlay1 } from 'react-icons/ci';
-import { FaListAlt, FaCalendarAlt,FaUsers, FaCamera } from "react-icons/fa";
+import { FaListAlt, FaCalendarAlt, FaUsers, FaCamera } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { TbToolsKitchen2 } from "react-icons/tb";
 import Swal from 'sweetalert2';
@@ -16,6 +16,36 @@ const CustomEvent = () => {
     const [guestCount, setEventGuestCount] = useState('')
     const [photography, setPhotography] = useState('')
     const [catering, setCatering] = useState('')
+
+    let totalCost = 0;
+
+    if (guestCount == '1-250') {
+        totalCost = + 450
+    } else if
+        (guestCount == '1-500') {
+        totalCost = + 850
+    }
+    else if
+        (guestCount == '1-1000') {
+        totalCost = + 1150
+    }
+
+
+    if (photography == 'Photography and Videography') {
+        totalCost = totalCost + 200
+    } else if
+        (photography == 'Photography') {
+        totalCost = totalCost + 100
+    } else if
+        (photography == 'Videography') {
+        totalCost = totalCost + 150
+    }
+
+    if (catering == 'yes') {
+        totalCost = totalCost + 300;
+
+    }
+
 
 
     const handleInputDate = (e) => {
@@ -45,7 +75,7 @@ const CustomEvent = () => {
             title: "You have created an event, thanks",
             showConfirmButton: false,
             timer: 1500
-          });
+        });
     }
 
 
@@ -121,7 +151,7 @@ const CustomEvent = () => {
                                         <label className="block text-sm font-medium leading-6 text-gray-900">Photography and Videography</label>
                                         <div className="mt-2">
                                             <select onChange={handleInputPhotography} className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2' name="" id="">
-                                                <option selected disabled>Select</option>
+                                                <option selected value="select">Select</option>
                                                 <option value="Photography and Videography">Photography and Videography</option>
                                                 <option value="Photography">Photography</option>
                                                 <option value="Videography">Videography</option>
@@ -152,39 +182,40 @@ const CustomEvent = () => {
                             </div>
                         </div>
                     </div>
+                
                     <div className='col-span-2 rounded-lg border-gray-400 border'>
                         <div className="w-full bg-white rounded-lg  sm:p-12 ">
                             <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Estimated Cost</h5>
                             <div className="flex items-baseline text-gray-900 dark:text-white">
                                 <span className="text-3xl font-semibold">$</span>
-                                <span className="text-5xl font-extrabold tracking-tight">{guestCount == '1-250' && '499' || guestCount == '1-500' && '799' || guestCount == '1-1000' && '1299' || guestCount == '' && '00' }</span>
+                                <span className="text-5xl font-extrabold tracking-tight">{totalCost}</span>
                                 <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/day</span>
                             </div>
                             <ul role="list" className="space-y-5 my-7">
                                 {eventType && <li className="flex items-center rounded-md">
-                                    <FaListAlt/>
+                                    <FaListAlt className='text-rose-700' />
                                     <span className="text-lg font-normal leading-tight  ms-3">{eventType}</span>
                                 </li>}
                                 {date && <li className="flex items-center rounded-md">
-                                   <FaCalendarAlt/>
+                                    <FaCalendarAlt className='text-rose-700' />
                                     <span className="text-base font-normal leading-tight  ms-3">{date}</span>
                                 </li>}
                                 {location && <li className="flex items-center rounded-md">
-                                    <IoLocationSharp className='text-xl'/>
+                                    <IoLocationSharp className='text-xl text-rose-700' />
                                     <span className="text-base font-normal leading-tight  ms-3">{location}</span>
                                 </li>}
-                                {guestCount&& <li className="flex items-center rounded-md ">
-                                   <FaUsers className='text-xl'/>
+                                {guestCount && <li className="flex items-center rounded-md ">
+                                    <FaUsers className='text-xl text-rose-700' />
                                     <span className="text-base font-normal leading-tight  ms-3">{guestCount}</span>
                                 </li>}
-                               {photography && <li className="flex items-center rounded-md">
-                                    <FaCamera/>
+                                {photography == 'select' ? '' : <li className="flex items-center rounded-md">
+                                    <FaCamera className='text-rose-700' />
                                     <span className="text-base font-normal leading-tight  ms-3">{photography}</span>
                                 </li>}
                                 {catering == 'yes' && <li className="flex items-center rounded-md">
-                                    <TbToolsKitchen2 className='text-xl'/>
+                                    <TbToolsKitchen2 className='text-xl text-rose-700' />
                                     <span className="text-base font-normal leading-tight  ms-3">{catering && 'Catering'}</span>
-                                </li> }                               
+                                </li>}
                             </ul>
                             <button onClick={handleBooking} type="button" className=" bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-center">Book Now</button>
                         </div>
