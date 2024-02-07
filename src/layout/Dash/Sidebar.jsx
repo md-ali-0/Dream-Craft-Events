@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import logo from "../../assets/logo/logo-dark.png";
 import SideBarMenuItem from "../../components/sidebar/SideBarMenuItem";
-import SidebarSubMenu from "../../components/sidebar/SidebarSubMenu";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     return (
@@ -52,13 +51,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                             <h4 className="text-gray-400 font-semibold text-xs mt-2">
                                 Settings
                             </h4>
-                            <SidebarSubMenu
+                            <SideBarMenuItem
+                                menu={{
+                                    name: "Seetings",
+                                    icon: "LuSettings",
+                                    path: "/dashboard/settings",
+                                }}
+                            />
+                            {/* <SidebarSubMenu
                                 menu={{ name: "Seetings", icon: "LuSettings" }}
                                 subMenu={[
                                     { name: "Company", path: "settings" },
                                     { name: "Mail", path: "email-settings" },
                                 ]}
-                            ></SidebarSubMenu>
+                            ></SidebarSubMenu> */}
                         </ul>
                     </nav>
                 </div>
