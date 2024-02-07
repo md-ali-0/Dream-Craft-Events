@@ -19,6 +19,7 @@ import Portfolio from "../pages/portfolio/Portfolio";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
+import PaymentPage from "../pages/payment/PaymentPage";
 
 
 const Router = createBrowserRouter([
@@ -78,6 +79,10 @@ const Router = createBrowserRouter([
       {
         path: '/create-your-event',
         element: <CustomEvent/>
+      },
+      {
+        path: '/payment/:_id',
+        element: <PaymentPage/>
       }
 
     ],

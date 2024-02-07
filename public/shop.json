@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "product_image": "https://i.ibb.co/rm6HMYW/Balloons.jpg",
+    "product_name": "Balloons",
+    "product_description": "Colorful balloons to add a festive touch to your event. Perfect for birthdays, weddings, and celebrations.",
+    "product_price": 10.99
+  },
+  {
+    "id": 2,
+    "product_image": "https://i.ibb.co/RHzkf3r/Fireworks.jpg",
+    "product_name": "Fireworks",
+    "product_description": "Spectacular fireworks display to light up the sky and create a memorable moment for your event.",
+    "product_price": 49.99
+  },
+  {
+    "id": 3,
+    "product_image": "https://i.ibb.co/F3GxG8W/Color-Splash.jpg",
+    "product_name": "ColorSplash",
+    "product_description": "Vibrant color powders for a lively color splash festival. Perfect for Holi and other fun events.",
+    "product_price": 14.99
+  },
+  {
+    "id": 4,
+    "product_image": "https://i.ibb.co/rvSVTrj/Lighting.jpg",
+    "product_name": "Lighting",
+    "product_description": "Atmospheric lighting options to set the mood for your event. Choose from string lights, fairy lights, and more.",
+    "product_price": 29.99
+  },
+  {
+    "id": 5,
+    "product_image": "https://i.ibb.co/WpqZmCN/Firework-Sticks.jpg",
+    "product_name": "Firework Sticks",
+    "product_description": "Safe and exciting firework sticks to add an extra sparkle to your celebration.",
+    "product_price": 8.99
+  },
+  {
+    "id": 6,
+    "product_image": "https://i.ibb.co/hmrZfy0/Birthday-Attributes.jpg",
+    "product_name": "Birthday Attributes",
+    "product_description": "Complete set of birthday attributes including banners, hats, and candles for a memorable birthday celebration.",
+    "product_price": 19.99
+  },
+  {
+    "id": 7,
+    "product_image": "https://i.ibb.co/G5JrNjB/Party-Tents.jpg",
+    "product_name": "Party Tents",
+    "product_description": "Sturdy and stylish party tents to provide shelter and create a comfortable space for your event.",
+    "product_price": 79.99
+  },
+  {
+    "id": 8,
+    "product_image": "https://i.ibb.co/Y7VRHnv/Confetti-Cannons.jpg",
+    "product_name": "Confetti Cannons",
+    "product_description": "Elevate the excitement with confetti cannons, perfect for grand reveals and special moments.",
+    "product_price": 16.99
+  }
+]
