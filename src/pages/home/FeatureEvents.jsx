@@ -3,11 +3,11 @@ import Container from "../../components/container/Container";
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
 
 import { useQuery } from "@tanstack/react-query";
+import axios from 'axios';
 import Lottie from "lottie-react";
 import { FaArrowRight } from "react-icons/fa";
+import loadingAnimation from "../../assets/animation/animation.json";
 import EventCard from "../allEvents/EventCard";
-import loadingAnimation from "/public/animation.json";
-import axios from 'axios';
 
 const FeatureEvents = () => {
   const fetchEvents = async () => {

@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 import logo from "../../assets/logo/logo-dark.png";
+import Loading from "../../components/loading/Loading";
 import SideBarMenuItem from "../../components/sidebar/SideBarMenuItem";
-import SidebarSubMenu from "../../components/sidebar/SidebarSubMenu";
+import useAuth from "../../hooks/useAuth";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
+    const { user, isLoading } = useAuth();
+    if (isLoading) {
+        return <Loading />;
+    }
     return (
         <>
             <div
@@ -49,16 +54,39 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     path: "/dashboard/profile",
                                 }}
                             />
-                            <h4 className="text-gray-400 font-semibold text-xs mt-2">
-                                Settings
-                            </h4>
-                            <SidebarSubMenu
+
+                            {user?.role === "admin" && (
+                                <>
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Manage Users",
+                                            icon: "LuUser",
+                                            path: "/dashboard/users",
+                                        }}
+                                    />
+                                </>
+                            )}
+                            {user?.role === "admin" && (
+                                <>
+                                    <h4 className="text-gray-400 font-semibold text-xs mt-2">
+                                        Settings
+                                    </h4>
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Seetings",
+                                            icon: "LuSettings",
+                                            path: "/dashboard/settings",
+                                        }}
+                                    />
+                                </>
+                            )}
+                            {/* <SidebarSubMenu
                                 menu={{ name: "Seetings", icon: "LuSettings" }}
                                 subMenu={[
                                     { name: "Company", path: "settings" },
                                     { name: "Mail", path: "email-settings" },
                                 ]}
-                            ></SidebarSubMenu>
+                            ></SidebarSubMenu> */}
                         </ul>
                     </nav>
                 </div>
