@@ -79,6 +79,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     { name: "Company", path: "settings" },
                                     { name: "Mail", path: "email-settings" },
                                 ]}
+                                
                             ></SidebarSubMenu>
                         </ul>
                     </nav>
