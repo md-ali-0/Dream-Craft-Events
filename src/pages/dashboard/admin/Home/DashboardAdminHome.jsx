@@ -1,5 +1,11 @@
-import { HiOutlineChartPie, HiOutlineClock, HiOutlineEye, HiOutlineUser } from "react-icons/hi";
+import {
+    HiOutlineChartPie,
+    HiOutlineClock,
+    HiOutlineEye,
+    HiOutlineUser,
+} from "react-icons/hi";
 import DashboardChart from "./DashboardChart";
+import DashboardPieChart from "./DashboardPieChart";
 
 const DashboardAdminHome = () => {
     return (
@@ -58,8 +64,19 @@ const DashboardAdminHome = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full py-10">
-                <DashboardChart/>
+            <div className="py-10">
+                <div className="">
+                    <h3 className="text-2xl font-bold">Events Statistics</h3>
+                </div>
+                <div className="flex flex-col md:flex-row justify-between gap-2">
+                    
+                    <div className="md:w-3/4 mx-auto">
+                        <DashboardChart />
+                    </div>
+                    <div className="md:w-1/3 self-center mx-auto">
+                        <DashboardPieChart />
+                    </div>
+                </div>
             </div>
         </>
     );
