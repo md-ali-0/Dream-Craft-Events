@@ -33,13 +33,28 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                             <h4 className="text-gray-400 font-semibold text-xs mb-1">
                                 Main
                             </h4>
-                            <SideBarMenuItem
-                                menu={{
-                                    name: "Dashboard",
-                                    icon: "LuCommand",
-                                    path: "/dashboard",
-                                }}
-                            />
+                            {user?.role === "user" && (
+                                <>
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Dashboard",
+                                            icon: "LuCommand",
+                                            path: "/dashboard",
+                                        }}
+                                    />
+                                </>
+                            )}
+                            {user?.role === "admin" && (
+                                <>
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Dashboard",
+                                            icon: "LuCommand",
+                                            path: "/dashboard/admin",
+                                        }}
+                                    />
+                                </>
+                            )}
                             <SideBarMenuItem
                                 menu={{
                                     name: "Add Events",
@@ -73,7 +88,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     </h4>
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Seetings",
+                                            name: "Setings",
                                             icon: "LuSettings",
                                             path: "/dashboard/settings",
                                         }}
