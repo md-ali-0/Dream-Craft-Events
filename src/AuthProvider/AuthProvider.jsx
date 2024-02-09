@@ -21,8 +21,8 @@ export const AuthProdiver = ({ children }) => {
             email,
             password,
         });
-        setUser(response.data);
         setIsLoading(false)
+        setUser(response.data);
         return response;
     };
     const logout = async()=>{
@@ -40,17 +40,19 @@ export const AuthProdiver = ({ children }) => {
                 setIsLoading(true)
                 const response = await axios.post('/token-verify', {token})
                 setUser(response.data)
+                setIsLoading(false)
             } catch (error) {
                 console.error('Token verification failed:', error);
                 setUser(null)
                 localStorage.removeItem('token')
+                setIsLoading(false)
             }
         } else{
             setUser(null)
             setIsLoading(false)
         }
       }
-      setIsLoading(false)
+      
       return () => unSubscribe()
     },[axios])
     
@@ -59,7 +61,8 @@ export const AuthProdiver = ({ children }) => {
         signUp,
         logout,
         user,
-        isLoading
+        isLoading,
+        
     };
 
     return (
