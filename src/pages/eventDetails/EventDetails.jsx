@@ -4,14 +4,14 @@ import { BsDiagram3, BsLightning } from "react-icons/bs";
 import { CiCalendarDate, CiPlay1 } from "react-icons/ci";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
+import { IoTicketOutline } from "react-icons/io5";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { PiListDashesBold, PiNotebookDuotone } from "react-icons/pi";
 import { RiFacebookFill } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";
 import { VscLocation } from "react-icons/vsc";
 import { Link, useParams } from "react-router-dom";
-import loadingAnimation from "/public/animation.json";
-import { IoTicketOutline } from "react-icons/io5";
+import loadingAnimation from "../../assets/animation/animation.json";
 
 
 const EventDetails = () => {

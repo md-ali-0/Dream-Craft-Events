@@ -1,14 +1,14 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import Lottie from 'lottie-react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import loadingAnimation from "../../assets/animation/animation.json";
 import Container from '../../components/container/Container';
 import EventCard from '../allEvents/EventCard';
-import Lottie from 'lottie-react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import loadingAnimation from "/public/animation.json";
 
 const PopularEvents = () => {
     const fetchEvents = async () => {

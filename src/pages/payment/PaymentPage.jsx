@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import Lottie from 'lottie-react';
-import { Link, useParams } from 'react-router-dom';
-import loadingAnimation from "/public/animation.json";
-import PricingCards from '../../components/cards/PricingCards';
 import { useState } from 'react';
-import { MdOutlineCalendarMonth } from "react-icons/md";
 import { CiLocationOn } from 'react-icons/ci';
+import { MdOutlineCalendarMonth } from "react-icons/md";
+import { Link, useParams } from 'react-router-dom';
+import loadingAnimation from "../../assets/animation/animation.json";
+import PricingCards from '../../components/cards/PricingCards';
 
 const PaymentPage = () => {
   const params = useParams();
