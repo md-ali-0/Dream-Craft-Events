@@ -27,25 +27,30 @@ const MagicBanner = () => {
               key={index}
               style={{ display: currentSlide === index ? "block" : "none" }}
             >
-              <img className="brightness-75" src={img} alt={`Slide ${index + 1}`} />
+              <img
+                className="brightness-[0.65]"
+                src={img}
+                alt={`Slide ${index + 1}`}
+              />
               <div className="content">
-                <div className="author backdrop-brightness-50 w-1/2">
+                <div className="author backdrop-brightness-50 w-[38%]">
                   <p className="pl-4">Dream Craft Events</p>
                 </div>
                 <div className="title">Recent Events</div>
                 <div className="topic">Book Now</div>
-                <div className="w-2/3 text-justify backdrop-brightness-50">
-                  <p className="px-2">
+                <div className="w-2/3  backdrop-brightness-50">
+                  <p className="px-6 py-2">
                     A diverse collection of events, ranging from sophisticated
-                    soirees to vibrant and energetic gatherings. Our events cater
-                    to every occasion and guest, ensuring a unique and memorable
-                    experience for all.
+                    soirees to vibrant and energetic gatherings. Our events
+                    cater to every occasion and guest, ensuring a unique and
+                    memorable experience for all.
                   </p>
                 </div>
+
                 <Link to="/events">
                   <button
                     type="button"
-                    className="mt-16 text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-lg px-7 py-2 text-center  mb-2"
+                    className="mt-12 text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-lg px-7 py-2 text-center  mb-2"
                   >
                     See More
                   </button>
@@ -59,13 +64,21 @@ const MagicBanner = () => {
           {[img1, img2, img3, img4].map((img, index) => (
             <div
               key={index}
-              className={`item ${currentSlide === index ? 'border-4 rounded-3xl border-rose-500' : ''}`}
+              className={`item ${
+                currentSlide === index
+                  ? "border-4 rounded-3xl border-rose-500"
+                  : ""
+              }`}
               onClick={() => setCurrentSlide(index)}
             >
               <img src={img} alt={`Thumbnail ${index + 1}`} />
               <div className="content">
-                <div className="title text-slate-800 ">Event name</div>
-                <div className="description text-black">Description</div>
+                <div className="title backdrop-brightness-50 text-center">
+                  Event name
+                </div>
+                <div className="description backdrop-brightness-50 text-center">
+                  Description
+                </div>
               </div>
             </div>
           ))}

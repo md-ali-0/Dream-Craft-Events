@@ -58,7 +58,7 @@ header a{
 }
 .carousel .list .item .author{
     font-weight: bold;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 }
 .carousel .list .item .title,
 .carousel .list .item .topic{
@@ -67,7 +67,13 @@ header a{
     line-height: 1.3em;
 }
 .carousel .list .item .topic{
-    color: #f1683a;
+    /* background: linear-gradient(to right, #AD1457, #A91358, #C2185C, #DC1A5F, #D81B60); */
+    /* background: linear-gradient(to right,  #DC1A5F, #D81B60);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; */
+  /* color: #f1683a;  */
+  color: #E91E63; 
 }
 /* .carousel .list .item .buttons{
     display: grid;
@@ -76,18 +82,18 @@ header a{
     gap: 5px;
     margin-top: 20px;
 } */
-.carousel .list .item .buttons button{
+/* .carousel .list .item .buttons button{
     border: none;
     background-color: #eee;
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 500;
-}
-.carousel .list .item .buttons button:nth-child(2){
+} */
+/* .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
     border: 1px solid #fff;
     color: #eee;
-}
+} */
 /* thumbail */
 .thumbnail{
     position: absolute;
