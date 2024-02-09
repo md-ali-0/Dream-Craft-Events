@@ -10,6 +10,7 @@ import Booking from "../pages/bookings/Booking";
 import Contact from "../pages/contact/Contact";
 import CustomEvent from "../pages/customEvent/CustomEvent";
 import DashboardHome from "../pages/dashboard/Home/DashboardHome";
+import DashboardAdminHome from "../pages/dashboard/admin/Home/DashboardAdminHome";
 import Profile from "../pages/dashboard/profile/Profile";
 import Settings from "../pages/dashboard/settings/Settings";
 import ErrorPage from "../pages/error/ErrorPage";
@@ -20,6 +21,7 @@ import Portfolio from "../pages/portfolio/Portfolio";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
+import AdminRouter from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -111,6 +113,10 @@ const Router = createBrowserRouter([
         {
           path: 'profile',
           element: <PrivateRoute><Profile/></PrivateRoute>
+        },
+        {
+          path: 'admin',
+          element: <AdminRouter><DashboardAdminHome/></AdminRouter>
         },
     ]
 },
