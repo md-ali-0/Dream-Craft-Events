@@ -1,9 +1,10 @@
+// MagicBanner.jsx file 
 import { useState } from "react";
 import "./banner.css"; // Import your CSS file here
-import img1 from "./image/img1.jpg";
-import img2 from "./image/img2.jpg";
-import img3 from "./image/img3.jpg";
-import img4 from "./image/img4.jpg";
+import img1 from "./image/img1.png";
+import img2 from "./image/img2.png";
+import img3 from "./image/img3.png";
+import img4 from "./image/img4.png";
 import { Link } from "react-router-dom";
 
 const MagicBanner = () => {
@@ -18,7 +19,7 @@ const MagicBanner = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-12 lg:mt-10">
       <div className="carousel">
         <div className="list">
           {[img1, img2, img3, img4].map((img, index) => (
@@ -28,12 +29,13 @@ const MagicBanner = () => {
               style={{ display: currentSlide === index ? "block" : "none" }}
             >
               <img
-                className="brightness-[0.65]"
+                className="brightness-[0.60]"
                 src={img}
                 alt={`Slide ${index + 1}`}
               />
+
               <div className="content">
-                <div className="author backdrop-brightness-50 w-[38%]">
+                {/* <div className="author backdrop-brightness-50 w-[38%]">
                   <p className="pl-4">Dream Craft Events</p>
                 </div>
                 <div className="title">Recent Events</div>
@@ -45,17 +47,36 @@ const MagicBanner = () => {
                     cater to every occasion and guest, ensuring a unique and
                     memorable experience for all.
                   </p>
+                </div> */}
+
+                {/* using tailwind  */}
+                <div className="">
+                <div>
+                <p className="text-xl ml-1 font-semibold tracking-wider">Dream Craft Events</p>
                 </div>
+                <div className="my-5"><h1 className="text-3xl lg:text-6xl font-bold">Recent Events</h1></div>
+                <div className="my-5"><h1 className="drop-shadow-2xl text-lime-200 text-5xl lg:text-7xl font-bold">Book Now!</h1></div>
+                <div className="w-2/3 hidden lg:flex backdrop-brightness-50">
+                  <p className="px-6 py-2">
+                    A diverse collection of events, ranging from sophisticated
+                    soirees to vibrant and energetic gatherings. Our events
+                    cater to every occasion and guest, ensuring a unique and
+                    memorable experience for all.
+                  </p>
+                </div>
+                </div>
+                {/* using tailwind  */}
 
                 <Link to="/events">
                   <button
                     type="button"
-                    className="mt-12 text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-lg px-7 py-2 text-center  mb-2"
+                    className="mt-14 text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-lg px-7 py-2 text-center  mb-2"
                   >
                     See More
                   </button>
                 </Link>
               </div>
+
             </div>
           ))}
         </div>
