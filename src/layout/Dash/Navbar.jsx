@@ -5,13 +5,17 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
     const navigate = useNavigate()
-    const {user, logout}= useAuth()
+    const {user, logout, isLoading}= useAuth()
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const handleLogout = async()=>{
         await logout()
         navigate('/login')
     }
+    if (isLoading) {
+        return <p>loading..</p>
+      }
+    console.log(user);
     return (
         <header className="flex items-center justify-between px-6 py-3 bg-white border">
             <div className="flex items-center">

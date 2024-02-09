@@ -1,6 +1,6 @@
 import axios from "axios";
-import useSignOut from 'react-auth-kit/hooks/useSignOut';
 import { useNavigate } from "react-router-dom";
+import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
   // baseURL: 'https://dream-craft-server.vercel.app'
@@ -9,7 +9,7 @@ const axiosSecure = axios.create({
 
 const useAxios = () => {
     const navigate = useNavigate()
-    const signOut = useSignOut()
+    const {logout} = useAuth()
     axiosSecure.interceptors.request.use(
       (config)=>{
           config.headers.token = `Bearer ${localStorage.getItem('token')}`
@@ -25,7 +25,7 @@ const useAxios = () => {
     }, async (error) => {
         const status = error.response.status;
         if (status === 401 || status === 403) {
-            await signOut();
+            await logout();
             return navigate('/login');
         }
         return Promise.reject(error);

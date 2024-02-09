@@ -6,7 +6,7 @@ import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
-  const { user, setUser } = useAuth()
+  const { user, logout,isLoading } = useAuth()
   const navigate = useNavigate()
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
@@ -21,10 +21,14 @@ const Navbar = () => {
     setDropDown(!dropdownOpen);
   };
   const logOutHandler = () => {
-    setUser(null);
+    logout();
     navigate('/')
     toast.success('Successfully Logout')
   };
+  if (isLoading) {
+    return <p>loading..</p>
+  }
+  console.log(user);
   return (
     <>
       <nav className="flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 md:flex-wrap lg:py-3.5">

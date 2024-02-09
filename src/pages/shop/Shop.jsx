@@ -3,10 +3,10 @@ import { useQuery } from "@tanstack/react-query";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import loadingAnimation from "../../assets/animation/animation.json";
 import Container from "../../components/container/Container";
 import ShopBanner from "./ShopBanner";
 import ShopCard from "./ShopCard";
-import loadingAnimation from "/public/animation.json";
 
 const Events = () => {
     const [searchTerm, setSearchTerm] = useState("");
