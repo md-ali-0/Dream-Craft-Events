@@ -22,7 +22,7 @@ export const AuthProdiver = ({ children }) => {
             password,
         });
         setIsLoading(false)
-        setUser(response.data);
+        setUser(response.data.user);
         return response;
     };
     const logout = async()=>{

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layout/Dash/Dashboard";
 import Main from "../layout/Main/Main";
+import RequestOrganizer from "../pages/RequestOrganizer/RequestOrganizer";
 import About from "../pages/about/About";
 import AddEvent from "../pages/addEvent/AddEvent";
 import Events from "../pages/allEvents/Events";
@@ -10,6 +11,8 @@ import Booking from "../pages/bookings/Booking";
 import Contact from "../pages/contact/Contact";
 import CustomEvent from "../pages/customEvent/CustomEvent";
 import DashboardHome from "../pages/dashboard/Home/DashboardHome";
+import OrganizerRequest from "../pages/dashboard/OrganizerRequest/OrganizerRequest";
+import DashboardAdminHome from "../pages/dashboard/admin/Home/DashboardAdminHome";
 import Profile from "../pages/dashboard/profile/Profile";
 import Settings from "../pages/dashboard/settings/Settings";
 import ErrorPage from "../pages/error/ErrorPage";
@@ -20,9 +23,8 @@ import Portfolio from "../pages/portfolio/Portfolio";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
+import AdminRouter from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
-import RequestOrganizer from "../pages/RequestOrganizer/RequestOrganizer";
-import OrganizerRequest from "../pages/dashboard/OrganizerRequest/OrganizerRequest";
 
 
 const Router = createBrowserRouter([
@@ -122,6 +124,10 @@ const Router = createBrowserRouter([
         path: 'organizer-request',
         element: <PrivateRoute><OrganizerRequest /></PrivateRoute>
       },
+        {
+          path: 'admin',
+          element: <AdminRouter><DashboardAdminHome/></AdminRouter>
+        },
     ]
   },
 ]);
