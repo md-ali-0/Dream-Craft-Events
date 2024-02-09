@@ -24,8 +24,13 @@ import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
 import AdminRouter from "./AdminRoute";
-import PrivateRoute from "./PrivateRoute";
 
+
+import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
+import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
+import Cart from "../pages/dashboard/userDashboard/cart/cart";
+
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -42,12 +47,12 @@ const Router = createBrowserRouter([
         element: <Booking />,
       },
       {
-        path: '/about',
-        element: <About />
+        path: "/about",
+        element: <About />,
       },
       {
-        path: '/contact',
-        element: <Contact />
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: '/portfolio',
@@ -58,28 +63,28 @@ const Router = createBrowserRouter([
         element: <Schedule />
       },
       {
-        path: '/schedule',
-        element: <Schedule />
+        path: "/schedule",
+        element: <Schedule />,
       },
       {
         path: "/login",
-        element: <Login />
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Register />
+        element: <Register />,
       },
       {
         path: "/events",
-        element: <Events />
+        element: <Events />,
       },
       {
-        path: '/event-details/:_id',
-        element: <EventDetails />
+        path: "/event-details/:_id",
+        element: <EventDetails />,
       },
       {
         path: "/shop",
-        element: <Shop></Shop>
+        element: <Shop></Shop>,
       },
       {
         path: '/create-your-event',
@@ -98,6 +103,93 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <DashboardHome />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "addEvent",
+        element: (
+          <PrivateRoute>
+            <AddEvent />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "updateEvent",
+        element: (
+          <PrivateRoute>
+            <UpdateEvent />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "settings",
+        element: (
+          <PrivateRoute>
+            <Settings />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "organizer-request",
+        element: (
+          <PrivateRoute>
+            <OrganizerRequest />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "admin",
+        element: (
+          <AdminRouter>
+            <DashboardAdminHome />
+          </AdminRouter>
+        ),
+      },
+      {
+        path: "wishList",
+        element: (
+          <PrivateRoute>
+            <Wishlist />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "userBooking",
+        element: (
+          <PrivateRoute>
+            <UserBookings />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "cart",
+        element: (
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        ),
+      },
+    ],
     element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
