@@ -41,46 +41,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             icon: "LuCommand",
                                             path: "/dashboard",
                                         }}
-                                    /> 
-                                    <SideBarMenuItem
-                                menu={{
-                                    name: "Wishlist",
-                                    icon: "LuCommand",
-                                    path: "/dashboard/wishList",
-                                }}
-                            />
-                            <SideBarMenuItem
-                                menu={{
-                                    name: "My Bookings",
-                                    icon: "LuCommand",
-                                    path: "/dashboard/userBooking",
-                                }}
-                            />
-                            <SideBarMenuItem
-                                menu={{
-                                    name: "Cart",
-                                    icon: "LuCommand",
-                                    path: "/dashboard/cart",
-                                }}
-                            />
-                            </>
-                                    )}
-                                    {user?.role === "admin" && (
-                                        <>
-                                            <SideBarMenuItem
-                                                menu={{
-                                                    name: "Dashboard",
-                                                    icon: "LuCommand",
-                                                    path: "/dashboard/admin",
-                                                }}
-                                            />
-                                        </>
-                                    )}
+                                    />
+                                </>
+                            )}
+                            {user?.role === "admin" && (
+                                <>
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Add Events",
+                                            name: "Dashboard",
                                             icon: "LuCommand",
-                                            path: "/dashboard/addEvent",
+                                            path: "/dashboard/admin",
                                         }}
                                     />
                                     <SideBarMenuItem
