@@ -21,6 +21,8 @@ import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
 import PrivateRoute from "./PrivateRoute";
+import RequestOrganizer from "../pages/RequestOrganizer/RequestOrganizer";
+import OrganizerRequest from "../pages/dashboard/OrganizerRequest/OrganizerRequest";
 
 
 const Router = createBrowserRouter([
@@ -47,11 +49,11 @@ const Router = createBrowserRouter([
       },
       {
         path: '/portfolio',
-        element: <Portfolio/>
+        element: <Portfolio />
       },
       {
         path: '/schedule',
-        element: <Schedule/>
+        element: <Schedule />
       },
       {
         path: '/schedule',
@@ -79,11 +81,15 @@ const Router = createBrowserRouter([
       },
       {
         path: '/create-your-event',
-        element: <CustomEvent/>
+        element: <CustomEvent />
       },
       {
         path: '/payment/:_id',
-        element: <PaymentPage/>
+        element: <PaymentPage />
+      },
+      {
+        path: '/request-organizer',
+        element: <RequestOrganizer />
       }
 
     ],
@@ -92,28 +98,32 @@ const Router = createBrowserRouter([
     path: "/dashboard",
     element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
-        {
-            path: '/dashboard',
-            element: <PrivateRoute><DashboardHome/></PrivateRoute>
-        },
-        {
-          path:'addEvent',
-          element:<PrivateRoute><AddEvent/></PrivateRoute>
-        },
-        {
-          path:'updateEvent',
-          element:<PrivateRoute><UpdateEvent/></PrivateRoute>
-        },
-        {
-          path: 'settings',
-          element: <PrivateRoute><Settings/></PrivateRoute>
-        },
-        {
-          path: 'profile',
-          element: <PrivateRoute><Profile/></PrivateRoute>
-        },
+      {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardHome /></PrivateRoute>
+      },
+      {
+        path: 'addEvent',
+        element: <PrivateRoute><AddEvent /></PrivateRoute>
+      },
+      {
+        path: 'updateEvent',
+        element: <PrivateRoute><UpdateEvent /></PrivateRoute>
+      },
+      {
+        path: 'settings',
+        element: <PrivateRoute><Settings /></PrivateRoute>
+      },
+      {
+        path: 'profile',
+        element: <PrivateRoute><Profile /></PrivateRoute>
+      },
+      {
+        path: 'organizer-request',
+        element: <PrivateRoute><OrganizerRequest /></PrivateRoute>
+      },
     ]
-},
+  },
 ]);
 
 export default Router;
