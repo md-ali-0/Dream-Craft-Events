@@ -93,14 +93,14 @@ const MagicBanner = () => {
               onClick={() => setCurrentSlide(index)}
             >
               <img src={img} alt={`Thumbnail ${index + 1}`} />
-              <div className="content">
+              {/* <div className="content">
                 <div className="title backdrop-brightness-50 text-center">
                   Event name
                 </div>
                 <div className="description backdrop-brightness-50 text-center">
                   Description
                 </div>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
