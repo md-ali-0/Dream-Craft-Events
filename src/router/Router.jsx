@@ -23,11 +23,13 @@ import Portfolio from "../pages/portfolio/Portfolio";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
+import AdminRouter from "./AdminRoute";
+
 
 import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
 import Cart from "../pages/dashboard/userDashboard/cart/cart";
-import AdminRouter from "./AdminRoute";
+
 import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
@@ -53,12 +55,12 @@ const Router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/portfolio",
-        element: <Portfolio />,
+        path: '/portfolio',
+        element: <Portfolio />
       },
       {
-        path: "/schedule",
-        element: <Schedule />,
+        path: '/schedule',
+        element: <Schedule />
       },
       {
         path: "/schedule",
@@ -85,17 +87,18 @@ const Router = createBrowserRouter([
         element: <Shop></Shop>,
       },
       {
-        path: "/create-your-event",
-        element: <CustomEvent />,
+        path: '/create-your-event',
+        element: <CustomEvent />
       },
       {
-        path: "/payment/:_id",
-        element: <PaymentPage />,
+        path: '/payment/:_id',
+        element: <PaymentPage />
       },
       {
-        path: "/request-organizer",
-        element: <RequestOrganizer />,
-      },
+        path: '/request-organizer',
+        element: <RequestOrganizer />
+      }
+
     ],
   },
   {
@@ -187,6 +190,37 @@ const Router = createBrowserRouter([
         ),
       },
     ],
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
+    children: [
+      {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardHome /></PrivateRoute>
+      },
+      {
+        path: 'addEvent',
+        element: <PrivateRoute><AddEvent /></PrivateRoute>
+      },
+      {
+        path: 'updateEvent',
+        element: <PrivateRoute><UpdateEvent /></PrivateRoute>
+      },
+      {
+        path: 'settings',
+        element: <PrivateRoute><Settings /></PrivateRoute>
+      },
+      {
+        path: 'profile',
+        element: <PrivateRoute><Profile /></PrivateRoute>
+      },
+      {
+        path: 'organizer-request',
+        element: <PrivateRoute><OrganizerRequest /></PrivateRoute>
+      },
+        {
+          path: 'admin',
+          element: <AdminRouter><DashboardAdminHome/></AdminRouter>
+        },
+    ]
   },
 ]);
 
