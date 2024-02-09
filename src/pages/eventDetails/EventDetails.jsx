@@ -1,16 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import Lottie from "lottie-react";
-import { BsBookmarkCheck, BsDiagram3, BsLightning } from "react-icons/bs";
+import { BsDiagram3, BsLightning } from "react-icons/bs";
 import { CiCalendarDate, CiPlay1 } from "react-icons/ci";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
+import { IoTicketOutline } from "react-icons/io5";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { PiListDashesBold, PiNotebookDuotone } from "react-icons/pi";
 import { RiFacebookFill } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";
 import { VscLocation } from "react-icons/vsc";
-import { useParams } from "react-router-dom";
-import loadingAnimation from "/public/animation.json";
+import { Link, useParams } from "react-router-dom";
+import loadingAnimation from "../../assets/animation/animation.json";
+
 
 const EventDetails = () => {
   const params = useParams();
@@ -69,7 +71,7 @@ const EventDetails = () => {
           <div className="absolute top-60 left-8 md:left-36 ">
             <h1 className="text-5xl text-white font-bold">Event Details</h1>
             <p className="text-xl mt-2 flex items-center gap-2 text-white">
-              Home <CiPlay1 className="text-pink-600" />{" "}
+              <Link to={'/events'}><span className="underline">Events</span></Link> <CiPlay1 className="text-pink-600" />{" "}
               <span className="text-red-500">Event Details</span>
             </p>
           </div>
@@ -91,7 +93,7 @@ const EventDetails = () => {
               </p>
               <p className="flex items-center gap-2 text-red-600 font-semibold text-xl">
                 <BsDiagram3 className="text-xl" />
-                500 Seat
+                {event.seat} Seat
               </p>
               <p className="flex items-center gap-1 text-sm">
                 <VscLocation className="text-2xl" />
@@ -129,18 +131,25 @@ const EventDetails = () => {
               </div>
             </div>
           </div>
+          <div className="flex justify-center gap-3 my-6">
+            <div className="bg-pink-700 text-white px-5 py-1 rounded-md">
+              <span className="text-xl font-semibold">$</span>
+              <span className="text-3xl font-semibold tracking-tight">89</span>
+              <span className="ms-1 font-normal">/seat</span>
+            </div>
+            <Link to={`/payment/${params._id}`}>
+              <button className="bg-pink-700 px-4 py-2 text-2xl w-60 text-center text-white rounded-md flex items-center  gap-2">
+                <IoTicketOutline className="text-3xl" />
+                Get The Ticket
+              </button>
+            </Link>
+          </div>
           <div>
             <h2 className="text-2xl font-semibold max-w-[850px]">
-              Discover the latest tech trends at Tech Expo 2024. Engage with
-              leaders, explore innovations, and experience cutting-edge demos.
+              {event.title}
             </h2>
             <p className="mt-5 text-gray-600 leading-loose max-w-[850px]">
-              Discover the latest tech trends at Tech Expo 2024. Engage with
-              leaders, explore innovations, and experience cutting-edge demos.
-              Join us for a dynamic tech showcase. Discover the latest tech
-              trends at Tech Expo 2024. Engage with leaders, explore
-              innovations, and experience cutting-edge demos. Join us for a
-              dynamic tech showcase.
+              {event.description}
             </p>
           </div>
           <div className="mt-8 grid gap-8 md:gap-6 lg:gap-0 max-w-[840px] lg:grid-cols-2 items-center">
@@ -351,7 +360,7 @@ const EventDetails = () => {
           </div>
         </div>
         <div>
-          <div className="bg-base-200 py-5 lg:w-96 mt-8 lg:mt-0">
+          {/* <div className="bg-base-200 py-5 lg:w-96 mt-8 lg:mt-0">
             <h2 className="bg-pink-700 px-4 py-2 text-2xl w-60 text-center text-white rounded-r-md flex items-center gap-2">
               <BsBookmarkCheck />
               Book This Event
@@ -399,8 +408,8 @@ const EventDetails = () => {
                 </button>
               </form>
             </div>
-          </div>
-          <div className="bg-base-200 py-5 lg:w-96 mt-8 lg:mt-10">
+          </div> */}
+          <div className="bg-base-200 py-5 lg:w-96">
             <h2 className="bg-pink-700 px-4 py-2 text-2xl w-60 text-center text-white rounded-r-md flex items-center gap-2">
               <PiNotebookDuotone className="text-3xl" />
               Recent Event
@@ -410,7 +419,7 @@ const EventDetails = () => {
               <div className="flex gap-4 items-center">
                 <img
                   className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg"
+                  src="https://i.ibb.co/9qNw5xs/leadership.jpg"
                   alt=""
                 />
                 <div className="">
@@ -435,7 +444,7 @@ const EventDetails = () => {
               <div className="flex gap-4 items-center">
                 <img
                   className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg"
+                  src="https://i.ibb.co/mGZ71df/pexels-rdne-stock-project-7648306.jpg"
                   alt=""
                 />
                 <div className="">
@@ -460,7 +469,7 @@ const EventDetails = () => {
               <div className="flex gap-4 items-center">
                 <img
                   className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg"
+                  src="https://i.ibb.co/9qNw5xs/leadership.jpg"
                   alt=""
                 />
                 <div className="">
@@ -485,7 +494,7 @@ const EventDetails = () => {
               <div className="flex gap-4 items-center">
                 <img
                   className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg"
+                  src="https://i.ibb.co/mGZ71df/pexels-rdne-stock-project-7648306.jpg"
                   alt=""
                 />
                 <div className="">

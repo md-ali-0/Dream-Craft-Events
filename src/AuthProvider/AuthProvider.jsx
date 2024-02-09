@@ -6,36 +6,63 @@ export const AuthContext = createContext();
 export const AuthProdiver = ({ children }) => {
     const axios = useAxiosPublic();
     const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true)
 
     const login = async (email, password) => {
-        const response = await axios.post("/login-user", { email, password });
-        setUser(response.data);
+        const response = await axios.post("/login", { email, password });
+        localStorage.setItem('token',response.data.token)
+        setUser(response.data.user);
+        setIsLoading(false)
         return response;
     };
     const signUp = async (name, email, password) => {
-        const response = await axios.post("/add-user", {
+        const response = await axios.post("/signup", {
             name,
             email,
             password,
         });
-        setUser(response.data);
+        setIsLoading(false)
+        setUser(response.data.user);
         return response;
     };
     const logout = async()=>{
         setUser(null);
-    }
+        localStorage.removeItem('token')
+        setIsLoading(false)
+    };
+
     useEffect(()=>{
-      const unSubscribe = ()=>{
-        console.log('s');
+      const unSubscribe = async ()=>{
+        
+        const token = localStorage.getItem('token')
+        if (token) {
+            try {
+                setIsLoading(true)
+                const response = await axios.post('/token-verify', {token})
+                setUser(response.data)
+                setIsLoading(false)
+            } catch (error) {
+                console.error('Token verification failed:', error);
+                setUser(null)
+                localStorage.removeItem('token')
+                setIsLoading(false)
+            }
+        } else{
+            setUser(null)
+            setIsLoading(false)
+        }
       }
-      return ()=>unSubscribe()
-    },[user])
+      
+      return () => unSubscribe()
+    },[axios])
+    
     const userInfo = {
         login,
         signUp,
+        logout,
         user,
-        setUser,
-        logout
+        isLoading,
+        
     };
 
     return (
