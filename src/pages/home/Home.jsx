@@ -1,5 +1,6 @@
 import EventCards from "../../components/cards/EventCards";
 import TeamCards from "../../components/cards/TeamCards";
+import Organizer from "./Organizer/Organizer";
 // import Banner from "./Banner";
 // import FeatureEvents from "./FeatureEvents";
 import PopularEvents from "./PopularEvents";
@@ -10,10 +11,11 @@ const Home = () => {
         <div>
             <MagicBanner></MagicBanner>
             {/* <Banner/> */}
-            <EventCards/>
+            <EventCards />
             {/* <FeatureEvents/> */}
-            <PopularEvents/>
-            <TeamCards/>
+            <PopularEvents />
+            <Organizer />
+            <TeamCards />
         </div>
     );
 };
