@@ -25,10 +25,9 @@ import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
 import AdminRouter from "./AdminRoute";
 
-
-import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
-import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
 import Cart from "../pages/dashboard/userDashboard/cart/cart";
+import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
+import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 
 import PrivateRoute from "./PrivateRoute";
 
@@ -190,37 +189,6 @@ const Router = createBrowserRouter([
         ),
       },
     ],
-    element: <PrivateRoute><Dashboard /></PrivateRoute>,
-    children: [
-      {
-        path: '/dashboard',
-        element: <PrivateRoute><DashboardHome /></PrivateRoute>
-      },
-      {
-        path: 'addEvent',
-        element: <PrivateRoute><AddEvent /></PrivateRoute>
-      },
-      {
-        path: 'updateEvent',
-        element: <PrivateRoute><UpdateEvent /></PrivateRoute>
-      },
-      {
-        path: 'settings',
-        element: <PrivateRoute><Settings /></PrivateRoute>
-      },
-      {
-        path: 'profile',
-        element: <PrivateRoute><Profile /></PrivateRoute>
-      },
-      {
-        path: 'organizer-request',
-        element: <PrivateRoute><OrganizerRequest /></PrivateRoute>
-      },
-        {
-          path: 'admin',
-          element: <AdminRouter><DashboardAdminHome/></AdminRouter>
-        },
-    ]
   },
 ]);
 
