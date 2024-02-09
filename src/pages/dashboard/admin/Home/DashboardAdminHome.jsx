@@ -1,4 +1,5 @@
 import { HiOutlineChartPie, HiOutlineClock, HiOutlineEye, HiOutlineUser } from "react-icons/hi";
+import DashboardChart from "./DashboardChart";
 
 const DashboardAdminHome = () => {
     return (
@@ -57,8 +58,8 @@ const DashboardAdminHome = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                
+            <div className="w-full py-10">
+                <DashboardChart/>
             </div>
         </>
     );

@@ -73,7 +73,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     </h4>
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Seetings",
+                                            name: "Setings",
                                             icon: "LuSettings",
                                             path: "/dashboard/settings",
                                         }}
