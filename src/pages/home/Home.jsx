@@ -1,5 +1,6 @@
 import EventCards from "../../components/cards/EventCards";
 import TeamCards from "../../components/cards/TeamCards";
+import Booking from "../bookings/Booking";
 import Organizer from "./Organizer/Organizer";
 // import Banner from "./Banner";
 // import FeatureEvents from "./FeatureEvents";
@@ -15,6 +16,7 @@ const Home = () => {
             {/* <FeatureEvents/> */}
             <PopularEvents />
             <Organizer />
+            <Booking></Booking>
             <TeamCards />
         </div>
     );
