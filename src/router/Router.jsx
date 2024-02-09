@@ -15,11 +15,12 @@ import Settings from "../pages/dashboard/settings/Settings";
 import ErrorPage from "../pages/error/ErrorPage";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Home from "../pages/home/Home";
+import PaymentPage from "../pages/payment/PaymentPage";
 import Portfolio from "../pages/portfolio/Portfolio";
 import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
-import PaymentPage from "../pages/payment/PaymentPage";
+import PrivateRoute from "./PrivateRoute";
 import RequestOrganizer from "../pages/RequestOrganizer/RequestOrganizer";
 import OrganizerRequest from "../pages/dashboard/OrganizerRequest/OrganizerRequest";
 
@@ -95,31 +96,31 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
         path: '/dashboard',
-        element: <DashboardHome />
+        element: <PrivateRoute><DashboardHome /></PrivateRoute>
       },
       {
         path: 'addEvent',
-        element: <AddEvent></AddEvent>
+        element: <PrivateRoute><AddEvent /></PrivateRoute>
       },
       {
         path: 'updateEvent',
-        element: <UpdateEvent></UpdateEvent>
+        element: <PrivateRoute><UpdateEvent /></PrivateRoute>
       },
       {
         path: 'settings',
-        element: <Settings />
+        element: <PrivateRoute><Settings /></PrivateRoute>
       },
       {
         path: 'profile',
-        element: <Profile />
+        element: <PrivateRoute><Profile /></PrivateRoute>
       },
       {
         path: 'organizer-request',
-        element: <OrganizerRequest />
+        element: <PrivateRoute><OrganizerRequest /></PrivateRoute>
       },
     ]
   },
