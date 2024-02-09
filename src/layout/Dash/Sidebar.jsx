@@ -49,6 +49,27 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     path: "/dashboard/profile",
                                 }}
                             />
+                            <SideBarMenuItem
+                                menu={{
+                                    name: "Wishlist",
+                                    icon: "LuCommand",
+                                    path: "/dashboard/wishList",
+                                }}
+                            />
+                            <SideBarMenuItem
+                                menu={{
+                                    name: "My Bookings",
+                                    icon: "LuCommand",
+                                    path: "/dashboard/userBooking",
+                                }}
+                            />
+                            <SideBarMenuItem
+                                menu={{
+                                    name: "Cart",
+                                    icon: "LuCommand",
+                                    path: "/dashboard/cart",
+                                }}
+                            />
                             <h4 className="text-gray-400 font-semibold text-xs mt-2">
                                 Settings
                             </h4>

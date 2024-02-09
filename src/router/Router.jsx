@@ -20,6 +20,9 @@ import Schedule from "../pages/schedule/Schedule";
 import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
 import PaymentPage from "../pages/payment/PaymentPage";
+import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
+import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
+import Cart from "../pages/dashboard/userDashboard/cart/cart";
 
 
 const Router = createBrowserRouter([
@@ -110,6 +113,18 @@ const Router = createBrowserRouter([
         {
           path: 'profile',
           element: <Profile/>
+        },
+        {
+          path: 'wishList',
+          element: <Wishlist/>
+        },
+        {
+          path: 'userBooking',
+          element: <UserBookings/>
+        },
+        {
+          path: 'cart',
+          element: <Cart/>
         },
     ]
 },
