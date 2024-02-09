@@ -19,7 +19,7 @@ const MagicBanner = () => {
   };
 
   return (
-    <div className="mt-12">
+    <div className="mt-12 lg:mt-10">
       <div className="carousel">
         <div className="list">
           {[img1, img2, img3, img4].map((img, index) => (
