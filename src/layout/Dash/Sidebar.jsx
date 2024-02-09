@@ -53,15 +53,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/admin",
                                         }}
                                     />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Add Events",
+                                            icon: "LuCommand",
+                                            path: "/dashboard/addEvent",
+                                        }}
+                                    />
                                 </>
                             )}
-                            <SideBarMenuItem
-                                menu={{
-                                    name: "Add Events",
-                                    icon: "LuCommand",
-                                    path: "/dashboard/addEvent",
-                                }}
-                            />
                             <SideBarMenuItem
                                 menu={{
                                     name: "Profile",
@@ -70,17 +70,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                 }}
                             />
 
-                            {user?.role === "admin" && (
-                                <>
-                                    <SideBarMenuItem
-                                        menu={{
-                                            name: "Manage Users",
-                                            icon: "LuUser",
-                                            path: "/dashboard/users",
-                                        }}
-                                    />
-                                </>
-                            )}
                             {user?.role === "admin" && (
                                 <>
                                     <h4 className="text-gray-400 font-semibold text-xs mt-2">
@@ -95,6 +84,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     />
                                 </>
                             )}
+                            <SideBarMenuItem
+                                menu={{
+                                    name: "Back to Home",
+                                    icon: "LuHome",
+                                    path: "/",
+                                }}
+                            />
                             {/* <SidebarSubMenu
                                 menu={{ name: "Seetings", icon: "LuSettings" }}
                                 subMenu={[
