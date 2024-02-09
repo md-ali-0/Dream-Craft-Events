@@ -1,17 +1,23 @@
 import EventCards from "../../components/cards/EventCards";
 import TeamCards from "../../components/cards/TeamCards";
-import Banner from "./Banner";
-import FeatureEvents from "./FeatureEvents";
+import Booking from "../bookings/Booking";
+import Organizer from "./Organizer/Organizer";
+// import Banner from "./Banner";
+// import FeatureEvents from "./FeatureEvents";
 import PopularEvents from "./PopularEvents";
+import MagicBanner from "./magicBanner/MagicBanner";
 
 const Home = () => {
     return (
         <div>
-            <Banner/>
-            <EventCards/>
+            <MagicBanner></MagicBanner>
+            {/* <Banner/> */}
+            <EventCards />
             {/* <FeatureEvents/> */}
-            <PopularEvents/>
-            <TeamCards/>
+            <PopularEvents />
+            <Organizer />
+            <Booking></Booking>
+            <TeamCards />
         </div>
     );
 };

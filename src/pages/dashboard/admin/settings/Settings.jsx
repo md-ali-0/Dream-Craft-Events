@@ -41,6 +41,69 @@ const Settings = () => {
                         )}
                     </div>
                     <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                            Site Description
+                        </label>
+                        <input
+                            id="siteName"
+                            type="text"
+                            {...register("description", {
+                                required: "Site Name is required.",
+                            })}
+                            placeholder="Enter Website Name"
+                            className="mt-1 p-2 w-full border border-primary/20 rounded-md focus:border-primary/20 outline-none transition-colors duration-300"
+                            defaultValue={''}
+                        />
+                        {errors.siteName && (
+                            <span className="text-center text-red-500 flex items-center gap-1">
+                                <BiErrorCircle className="inline-block ml-2" size={15} />
+                                {errors.siteName?.message}
+                            </span>
+                        )}
+                    </div>
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                            Site Keyword
+                        </label>
+                        <input
+                            id="siteName"
+                            type="text"
+                            {...register("keyword", {
+                                required: "Site Name is required.",
+                            })}
+                            placeholder="Enter Website Name"
+                            className="mt-1 p-2 w-full border border-primary/20 rounded-md focus:border-primary/20 outline-none transition-colors duration-300"
+                            defaultValue={'events,'}
+                        />
+                        {errors.siteName && (
+                            <span className="text-center text-red-500 flex items-center gap-1">
+                                <BiErrorCircle className="inline-block ml-2" size={15} />
+                                {errors.siteName?.message}
+                            </span>
+                        )}
+                    </div>
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                            Copyright
+                        </label>
+                        <input
+                            id="siteName"
+                            type="text"
+                            {...register("copywrite", {
+                                required: "Site Name is required.",
+                            })}
+                            placeholder="Enter Website Name"
+                            className="mt-1 p-2 w-full border border-primary/20 rounded-md focus:border-primary/20 outline-none transition-colors duration-300"
+                            defaultValue={'© 2024 Dream Craft Events'}
+                        />
+                        {errors.siteName && (
+                            <span className="text-center text-red-500 flex items-center gap-1">
+                                <BiErrorCircle className="inline-block ml-2" size={15} />
+                                {errors.siteName?.message}
+                            </span>
+                        )}
+                    </div>
+                    <div>
                         <label htmlFor="logo" className="block text-sm font-medium text-gray-700">
                             Site logo
                         </label>

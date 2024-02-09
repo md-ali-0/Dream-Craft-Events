@@ -14,21 +14,27 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    
+
     const onSubmit = async (data) => {
         const toastLoading = toast.loading('User Signing...')
         const {email, password} = data
         try {
-            await login(email, password)
+            const {data} = await login(email, password)
             toast.dismiss(toastLoading)
             toast.success('Login Successfully')
-            navigation('/dashboard')
+            console.log(data.user);
+            if (data.user.role === 'admin') {
+                navigation('/dashboard/admin')
+            }else if(data.user.role === 'organiger'){
+                navigation('/dashboard/organiger')
+            }else{
+                navigation('/')
+            }
         } catch (error) {
             toast.dismiss(toastLoading)
             toast.error(error?.response?.data)
         }
     };
-    
     return (
         <>
             <div className="flex justify-center items-center w-full h-screen">

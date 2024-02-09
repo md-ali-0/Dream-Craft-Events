@@ -3,11 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { TbCategory2 } from "react-icons/tb";
+import loadingAnimation from "../../assets/animation/animation.json";
 import Container from "../../components/container/Container";
 import EventBanner from "./EventBanner";
 import EventCard from "./EventCard";
-import loadingAnimation from "/public/animation.json";
-import { TbCategory2 } from "react-icons/tb";
 
 const Events = () => {
     const [searchTerm, setSearchTerm] = useState("");
