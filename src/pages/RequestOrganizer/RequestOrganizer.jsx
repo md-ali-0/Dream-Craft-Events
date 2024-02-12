@@ -23,10 +23,10 @@ const RequestOrganizer = () => {
                 status: "pending"
             }
 
+            toast.success('Request for organizer, await for confirmation')
             const requestRes = await axiosSecure.post('/request-organizer', request)
             console.log(requestRes);
             if (requestRes.data.insertedId) {
-                toast.success('Request for organizer, await for confirmation')
                 reset()
             }
         }
