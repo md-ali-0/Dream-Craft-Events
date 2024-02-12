@@ -190,37 +190,7 @@ const Router = createBrowserRouter([
         ),
       },
     ],
-    element: <PrivateRoute><Dashboard /></PrivateRoute>,
-    children: [
-      {
-        path: '/dashboard',
-        element: <PrivateRoute><DashboardHome /></PrivateRoute>
-      },
-      {
-        path: 'addEvent',
-        element: <PrivateRoute><AddEvent /></PrivateRoute>
-      },
-      {
-        path: 'updateEvent',
-        element: <PrivateRoute><UpdateEvent /></PrivateRoute>
-      },
-      {
-        path: 'settings',
-        element: <PrivateRoute><Settings /></PrivateRoute>
-      },
-      {
-        path: 'profile',
-        element: <PrivateRoute><Profile /></PrivateRoute>
-      },
-      {
-        path: 'organizer-request',
-        element: <PrivateRoute><OrganizerRequest /></PrivateRoute>
-      },
-        {
-          path: 'admin',
-          element: <AdminRouter><DashboardAdminHome/></AdminRouter>
-        },
-    ]
+    
   },
 ]);
 
