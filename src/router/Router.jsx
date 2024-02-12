@@ -25,10 +25,9 @@ import Shop from "../pages/shop/Shop";
 import UpdateEvent from "../pages/updateEvent/UpdateEvent";
 import AdminRouter from "./AdminRoute";
 
-
-import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
-import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
 import Cart from "../pages/dashboard/userDashboard/cart/cart";
+import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
+import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 
 import PrivateRoute from "./PrivateRoute";
 
@@ -190,7 +189,6 @@ const Router = createBrowserRouter([
         ),
       },
     ],
-    
   },
 ]);
 
