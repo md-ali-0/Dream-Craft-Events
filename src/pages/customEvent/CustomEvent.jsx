@@ -14,7 +14,7 @@ const CustomEvent = () => {
     const [date, setDate] = useState('')
     const [location, setEventLocation] = useState('')
     const [guestCount, setEventGuestCount] = useState('')
-    const [photography, setPhotography] = useState('')
+    const [photography, setPhotography] = useState('select')
     const [catering, setCatering] = useState('')
 
     let totalCost = 0;
@@ -100,7 +100,7 @@ const CustomEvent = () => {
             </div>
             <div className='max-w-screen-xl mx-auto my-6'>
                 <h2 className='text-3xl font-semibold '>Let us know about your event</h2>
-                <div className='grid grid-cols-5 gap-12 my-8'>
+                <div className='grid md:grid-cols-5 p-2 gap-12 my-8'>
                     <div className='col-span-3 '>
                         <div>
                             <div className="border rounded-lg border-gray-400 p-4">
@@ -183,7 +183,7 @@ const CustomEvent = () => {
                         </div>
                     </div>
                 
-                    <div className='col-span-2 rounded-lg border-gray-400 border'>
+                    <div className='md:col-span-2 col-span-3 p-4 md:p-0 rounded-lg border-gray-400 border'>
                         <div className="w-full bg-white rounded-lg  sm:p-12 ">
                             <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Estimated Cost</h5>
                             <div className="flex items-baseline text-gray-900 dark:text-white">
