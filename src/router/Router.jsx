@@ -29,167 +29,189 @@ import Cart from "../pages/dashboard/userDashboard/cart/cart";
 import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
 import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 
+import AllUsers from "../pages/dashboard/admin/users/AllUsers";
+import EditUser from "../pages/dashboard/admin/users/EditUser";
 import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
+    {
         path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/booking",
-        element: <Booking />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: '/portfolio',
-        element: <Portfolio />
-      },
-      {
-        path: '/schedule',
-        element: <Schedule />
-      },
-      {
-        path: "/schedule",
-        element: <Schedule />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path: "/events",
-        element: <Events />,
-      },
-      {
-        path: "/event-details/:_id",
-        element: <EventDetails />,
-      },
-      {
-        path: "/shop",
-        element: <Shop></Shop>,
-      },
-      {
-        path: '/create-your-event',
-        element: <CustomEvent />
-      },
-      {
-        path: '/payment/:_id',
-        element: <PaymentPage />
-      },
-      {
-        path: '/request-organizer',
-        element: <RequestOrganizer />
-      }
-
-    ],
-  },
-  {
-    path: "/dashboard",
-    element: (
-      <PrivateRoute>
-        <Dashboard />
-      </PrivateRoute>
-    ),
-    children: [
-      {
+        element: <Main />,
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "/booking",
+                element: <Booking />,
+            },
+            {
+                path: "/about",
+                element: <About />,
+            },
+            {
+                path: "/contact",
+                element: <Contact />,
+            },
+            {
+                path: "/portfolio",
+                element: <Portfolio />,
+            },
+            {
+                path: "/schedule",
+                element: <Schedule />,
+            },
+            {
+                path: "/schedule",
+                element: <Schedule />,
+            },
+            {
+                path: "/login",
+                element: <Login />,
+            },
+            {
+                path: "/register",
+                element: <Register />,
+            },
+            {
+                path: "/events",
+                element: <Events />,
+            },
+            {
+                path: "/event-details/:_id",
+                element: <EventDetails />,
+            },
+            {
+                path: "/shop",
+                element: <Shop></Shop>,
+            },
+            {
+                path: "/create-your-event",
+                element: <CustomEvent />,
+            },
+            {
+                path: "/payment/:_id",
+                element: <PaymentPage />,
+            },
+            {
+                path: "/request-organizer",
+                element: <RequestOrganizer />,
+            },
+        ],
+    },
+    {
         path: "/dashboard",
         element: (
-          <PrivateRoute>
-            <DashboardHome />
-          </PrivateRoute>
+            <PrivateRoute>
+                <Dashboard />
+            </PrivateRoute>
         ),
-      },
-      {
-        path: "addEvent",
-        element: (
-          <PrivateRoute>
-            <AddEvent />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "updateEvent",
-        element: (
-          <PrivateRoute>
-            <UpdateEvent />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "settings",
-        element: (
-          <PrivateRoute>
-            <Settings />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "profile",
-        element: (
-          <PrivateRoute>
-            <Profile />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "organizer-request",
-        element: (
-          <PrivateRoute>
-            <OrganizerRequest />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "admin",
-        element: (
-          <AdminRouter>
-            <DashboardAdminHome />
-          </AdminRouter>
-        ),
-      },
-      {
-        path: "wishList",
-        element: (
-          <PrivateRoute>
-            <Wishlist />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "userBooking",
-        element: (
-          <PrivateRoute>
-            <UserBookings />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "cart",
-        element: (
-          <PrivateRoute>
-            <Cart />
-          </PrivateRoute>
-        ),
-      },
-    ],
-  },
+        children: [
+            {
+                path: "/dashboard",
+                element: (
+                    <PrivateRoute>
+                        <DashboardHome />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "addEvent",
+                element: (
+                    <PrivateRoute>
+                        <AddEvent />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "updateEvent",
+                element: (
+                    <PrivateRoute>
+                        <UpdateEvent />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "settings",
+                element: (
+                    <PrivateRoute>
+                        <Settings />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "profile",
+                element: (
+                    <PrivateRoute>
+                        <Profile />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "organizer-request",
+                element: (
+                    <PrivateRoute>
+                        <OrganizerRequest />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "admin",
+                element: (
+                    <AdminRouter>
+                        <DashboardAdminHome />
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "wishList",
+                element: (
+                    <PrivateRoute>
+                        <Wishlist />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "userBooking",
+                element: (
+                    <PrivateRoute>
+                        <UserBookings />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "cart",
+                element: (
+                    <PrivateRoute>
+                        <Cart />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "all-users",
+                element: (
+                    <AdminRouter>
+                        <AllUsers />
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "edit-user/:id",
+                loader: ({ params }) =>
+                    fetch(
+                        `https://dream-craft-server.vercel.app/user/${params.id}`,
+                        { method: "POST" }
+                    ),
+                element: (
+                    <AdminRouter>
+                        <EditUser />
+                    </AdminRouter>
+                ),
+            },
+        ],
+    },
 ]);
 
 export default Router;
