@@ -6,7 +6,7 @@ import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
-  const { user, logout, } = useAuth()
+  const { user, logout } = useAuth()
   const navigate = useNavigate()
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
@@ -25,7 +25,6 @@ const Navbar = () => {
     navigate('/')
     toast.success('Successfully Logout')
   };
-
   console.log(user);
   return (
     <>
