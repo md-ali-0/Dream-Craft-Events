@@ -217,7 +217,9 @@ const CustomEvent = () => {
                                     <span className="text-base font-normal leading-tight  ms-3">{catering && 'Catering'}</span>
                                 </li>}
                             </ul>
-                            <button onClick={handleBooking} type="button" className=" bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-center">Book Now</button>
+                            {
+                               <button onClick={handleBooking} type="button" className=" bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-center">Book Now</button>
+                            }
                         </div>
 
 
