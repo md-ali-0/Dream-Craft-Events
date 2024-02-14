@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./banner.css"; // Import your CSS file here
 import img1 from "./image/img1.png";
 import img2 from "./image/img2.png";
@@ -28,6 +28,15 @@ const MagicBanner = () => {
       setIsPrev(false);
     }, 500); // Animation duration
   };
+
+  // Automatically click next slide after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nextSlide();
+    }, 3000); // 3 seconds
+
+    return () => clearTimeout(timer);
+  }, [currentSlide]); // Re-run effect when currentSlide changes
 
   return (
     <div className="mt-12 lg:mt-10">
