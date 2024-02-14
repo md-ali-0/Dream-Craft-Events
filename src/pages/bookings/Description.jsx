@@ -1,6 +1,9 @@
 import { LuDollarSign } from "react-icons/lu";
 import { MdOutlineDateRange, MdOutlineLocationOn } from "react-icons/md";
 import Container from "../../components/container/Container";
+import { Link } from "react-router-dom";
+import { FaArrowTrendUp } from "react-icons/fa6";
+
 
 const Description = () => {
     return (
@@ -8,20 +11,32 @@ const Description = () => {
             <div className="bg-[#F4F4F4] rounded-md py-10 px-20 -mt-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                        <MdOutlineDateRange className="text-4xl text-[#C8C8CD]" />
-                        <h4 className="mt-6 text-3xl font-semibold">25 January</h4>
-                        <p className="mt-2 text-xl font-medium text-[#818181]">10:00 am</p>
+                        <MdOutlineDateRange className="text-4xl text-primary" />
+                        <h4 className="mt-6 text-3xl font-semibold">Upcoming Events</h4>
+                        <p className="mt-2 text-xl font-medium text-primary">Mark Your Calendar</p>
+                        {/* <h4 className="mt-6 text-3xl font-semibold">25 January</h4>
+                        <p className="mt-2 text-xl font-medium text-[#818181]">10:00 am</p> */}
                     </div>
                     <div>
-                        <MdOutlineLocationOn className="text-4xl text-[#C8C8CD]" />
-                        <h4 className="mt-6 text-3xl font-semibold">Banani, Dhaka</h4>
-                        <p className="mt-2 text-xl font-medium text-[#818181]">Bangladesh</p>
+                        <MdOutlineLocationOn className="text-4xl text-primary" />
+                        <h4 className="mt-6 text-3xl font-semibold">Your Desired Venue</h4>
+                        <p className="mt-2 text-xl font-medium text-primary">Bangladesh</p>
                     </div>
                     <div>
-                        <LuDollarSign className="text-4xl text-[#C8C8CD]" />
-                        <h4 className="mt-6 text-3xl font-semibold">$149</h4>
-                        <button className="mt-2 bg-orange-700 hover:bg-[#dd2504]  py-3 px-5 rounded-md text-white font-medium">Book a Ticket</button>
+                        <LuDollarSign className="text-4xl text-primary" />
+                        <h4 className="mt-6 text-3xl font-semibold">Get Discounts</h4>
+                        <Link to="/events">
+                <button
+                  type="button"
+                  className=" text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg lg:text-lg px-5 py-2.5 text-center me-2 mb-2 mt-2"
+                >
+                   <span className="flex gap-2">
+                   <span>Go to Events</span> <span className="mt-1"><FaArrowTrendUp /></span>
+                   </span>
+                </button>
+              </Link>
                     </div>
+
                 </div>
             </div>
             <div className="my-20">
