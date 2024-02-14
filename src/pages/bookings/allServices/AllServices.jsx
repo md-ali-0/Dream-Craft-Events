@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import Container from "../../../components/container/Container";
 import { AiOutlineFieldTime } from "react-icons/ai";
-import { IoTicketOutline } from "react-icons/io5";
+import { IoTicket } from "react-icons/io5";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaShoppingBag } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
@@ -76,7 +76,7 @@ const AllServices = () => {
             />
             <div className="absolute bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl bottom-0 left-0 px-6 py-3 text-white font-semibold rounded-tr-md flex items-center gap-3">
               {" "}
-              <IoTicketOutline />
+              <IoTicket />
               Book Ticket
             </div>
           </div>
