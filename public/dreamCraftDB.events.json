@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da777f"
+  },
+  "title": "Tech Expo 2024",
+  "date": "January 31, 2024",
+  "location": "Tech Convention Center",
+  "category": "technology",
+  "description": "Discover the latest tech trends at Tech Expo 2024. Engage with leaders, explore innovations, and experience cutting-edge demos. Join us for a dynamic tech showcase.",
+  "image": "https://a.storyblok.com/f/188325/1920x1280/41e681c422/alexandre-pellaes-6vajp0pscx0-unsplash-1-1.jpg",
+  "seat": 500
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7780"
+  },
+  "title": "Art and Culture Festival",
+  "date": "February 3, 2024",
+  "location": "City Arts Center",
+  "category": "others",
+  "description": "Immerse in art and culture at our festival. Enjoy live performances, diverse art, and cultural displays from global talent. A vibrant celebration of creativity awaits.",
+  "image": "https://www.discoverybangladesh.com/images/img-thumb/arts.jpg",
+  "seat": 800
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7781"
+  },
+  "title": "Fitness Challenge Day",
+  "date": "February 7, 2024",
+  "location": "Fitness Park",
+  "category": "health",
+  "description": "Join our Fitness Challenge Day for fun workouts, health seminars, and challenges. A day of activity, wellness, and community support for a healthier lifestyle.",
+  "image": "https://www.uaepersonaltrainers.com/wp-content/uploads/2018/02/gym-vs-personal-trainer-uae-article-header-1.jpg",
+  "seat": 300
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7782"
+  },
+  "title": "Music Fest Extravaganza",
+  "date": "February 12, 2024",
+  "location": "City Amphitheater",
+  "category": "others",
+  "description": "Embark on a musical journey at the Fest Extravaganza. Live performances, diverse genres, and a lively festival atmosphere for music enthusiasts to enjoy.",
+  "image": "https://c.ndtvimg.com/2022-04/3uvghvj8_coachella-afp_625x300_16_April_22.jpg?im=Resize=(1230,900)",
+  "seat": 400
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7783"
+  },
+  "title": "Entrepreneurship Summit",
+  "date": "February 15, 2024",
+  "location": "Innovation Hub",
+  "category": "business",
+  "description": "Empower your entrepreneurial spirit at the Summit. Connect with successful entrepreneurs, attend workshops, and gain insights into building successful ventures.",
+  "image": "https://images.inc.com/uploaded_files/image/1920x1080/ges-01-2016_98454.jpg",
+  "seat": 200
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7784"
+  },
+  "title": "Science and Discovery Expo",
+  "date": "February 18, 2024",
+  "location": "Science Museum",
+  "category": "technology",
+  "description": "Dive into science at the Discovery Expo. Explore interactive exhibits, witness awe-inspiring experiments, and ignite your curiosity for a day of scientific discovery.",
+  "image": "https://www.madscience.org/uploads/images/50ea804e-fd36-44ff-aaea-18578a92d46e.jpg",
+  "seat": 500
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7785"
+  },
+  "title": "Fashion Showcase",
+  "date": "February 21, 2024",
+  "location": "Fashion Center",
+  "category": "business",
+  "description": "Witness the latest trends at our Fashion Showcase. Experience runway shows, discover emerging designers, and indulge in a stylish atmosphere for fashion enthusiasts.",
+  "image": "https://hips.hearstapps.com/hmg-prod/images/gettyimages-854189198-1535705667.jpg",
+  "seat": 600
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7786"
+  },
+  "title": "Green Living Expo",
+  "date": "February 25, 2024",
+  "location": "Sustainable Living Hall",
+  "category": "business",
+  "description": "Explore sustainable living at the Green Expo. Learn about eco-friendly products, attend workshops, and contribute to a greener future for a healthier planet.",
+  "image": "https://www.futurarc.com/wp-content/uploads/2019/02/Happ_A-Green-lifestyle_NovDec2016-copycopy.jpg",
+  "seat": 250
+},
+{
+  "_id": {
+    "$oid": "65bcf52212b04b7bc3da7787"
+  },
+  "title": "Film Buff Movie Marathon",
+  "date": "March 3, 2024",
+  "location": "Cinema Complex",
+  "category": "business",
+  "description": "Indulge in a movie marathon for film enthusiasts. Enjoy back-to-back screenings of classic and contemporary films in a cinematic atmosphere for a day of cinematic delight.",
+  "image": "https://worldclassvip.com/wp-content/uploads/2020/03/World-Class-Blog-Disney-Movie-Marathon.jpg",
+  "seat": 350
+}]
