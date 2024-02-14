@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "../container/Container";
 import SectionTitle from "../sectionTitle/SectionTitle";
 
@@ -11,9 +12,11 @@ const EventCards = () => {
             subHeading={"explore our services"}
           />
           <div className="self-center">
-            <button className="text-xl border px-6 py-2 rounded-3xl hover:bg-gradient-to-r from-purple-500 to-emerald-300 hover:text-white border-cyan-500">
-              View All
-            </button>
+            <Link to="/booking">
+              <button className="text-xl border px-6 py-2 rounded-3xl hover:bg-gradient-to-r from-purple-500 to-emerald-300 hover:text-white border-cyan-500">
+                View All
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -29,11 +32,11 @@ const EventCards = () => {
               borderRadius: "6px",
             }}
           >
-            <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
+            {/* <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
               <h2 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text font-semibold text-xl tracking-widest">
                 $700
               </h2>
-            </div>
+            </div> */}
             <div className="absolute bottom-3 left-4">
               <h3 className="text-xl tracking-widest bg-black inline-block  bg-opacity-60 px-3 text-white font-semibold">
                 PARTIES
@@ -58,11 +61,11 @@ const EventCards = () => {
               borderRadius: "6px",
             }}
           >
-            <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
+            {/* <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
               <h2 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text font-semibold text-xl tracking-widest">
                 $800
               </h2>
-            </div>
+            </div> */}
             <div className="absolute bottom-3 left-4">
               <h3 className="text-xl tracking-widest bg-black inline-block  bg-opacity-60 px-3 text-white font-semibold">
                 FAMILY
@@ -89,11 +92,11 @@ const EventCards = () => {
               borderRadius: "6px",
             }}
           >
-            <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
+            {/* <div className="bg-white px-4 py-2 absolute top-3 left-3  ">
               <h2 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text font-semibold text-xl tracking-widest">
                 $1100
               </h2>
-            </div>
+            </div> */}
             <div className="absolute bottom-3 left-4">
               <h3 className="text-xl tracking-widest bg-black inline-block bg-opacity-60 px-3 text-white font-semibold">
                 CONFERENCES
