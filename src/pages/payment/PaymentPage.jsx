@@ -31,13 +31,30 @@ const PaymentPage = () => {
   }
   
   const handleAddMoreTicket = () => {
-     setAddMoreTicket(addMoreTicket + 1)
+    
+     if (addMoreTicket < 5) {
+      setAddMoreTicket(addMoreTicket + 1)
+      if (ticketPrice == 89 || ticketPrice == 178 || ticketPrice == 267 || ticketPrice == 356) {
+        setTicketPrice(ticketPrice + 89)
+      }
+      else if (ticketPrice == 159 || ticketPrice == 318 || ticketPrice == 477 || ticketPrice == 636) {
+        setTicketPrice(ticketPrice + 159)
+      }
+      
+     }
+
     
   }
+
   const handleRemoveMoreTicket = () => {
      if (addMoreTicket > 1 ) {
       setAddMoreTicket(addMoreTicket - 1)
-      
+      if (ticketPrice == 89 || ticketPrice == 178 || ticketPrice == 267 || ticketPrice == 356 || ticketPrice == 445 ) {
+        setTicketPrice(ticketPrice - 89)
+      }
+      else if (ticketPrice == 159 || ticketPrice == 318 || ticketPrice == 477 || ticketPrice == 636 || ticketPrice == 795) {
+        setTicketPrice(ticketPrice - 159)
+      }
      }
   }
 
@@ -78,19 +95,34 @@ const PaymentPage = () => {
   const dateFormat = new Date(event.date);
   const options = { day: 'numeric', month: 'long', year: 'numeric' };
   const formattedDate = dateFormat.toLocaleDateString('en-US', options);
-  const orderId = event._id.slice(1, 14)
+  const timestamp = new Date().getTime();
+  const randomNumber = Math.floor(Math.random() * 1000);
+  const orderID = `${event._id.slice(0,6)}-${timestamp}-${randomNumber}`;
+
+
+
+
+  const paymentInfo = {
+    orderId: orderID,
+    title: event.title,
+    date: new Date().toLocaleDateString('en-US', options),
+    price: ticketPrice,
+    location: event.location
+  }
+
+
 
   return (
     <div className='max-w-screen-xl mx-auto'>
-      <div className='grid md:grid-cols-3 lg:gap-4'>
+      <div className='grid md:grid-cols-3 px-4 md:px-1 lg:gap-4'>
         <div className='col-span-2'>
           <PricingCards ticketPriceHandle={ticketPriceHandle} ticketPriceHandle2={ticketPriceHandle2} />
         </div>
-        <div className='mt-16 ml-6 md:ml-0'>
+        <div className='mt-16 col-span-2 md:col-span-1'>
           <h2 className='text-2xl text-center font-semibold'>Payment details</h2>
           <div className='bg-slate-100 rounded-md border-2 border-black mt-7 p-5 pb-12'>
             <h3 className='font-semibold text-xl'>Order Summary</h3>
-            <h2 className='mt-1'>Order id: <span className='font-semibold ml-2'>{orderId}</span></h2>
+            <h2 className='mt-1'>Order id: <span className='font-semibold ml-2'>{orderID}</span></h2>
             <div className='flex md:flex-col lg:flex-row gap-3 lg:gap-5 justify-between mt-4'>
               <img src={event.image} alt={event.title} className='w-24' />
               <div>
