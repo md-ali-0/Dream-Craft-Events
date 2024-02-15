@@ -60,6 +60,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/addEvent",
                                         }}
                                     />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Organizer Request",
+                                            icon: "LuCommand",
+                                            path: "/dashboard/organizer-request",
+                                        }}
+                                    />
                                 </>
                             )}
                             <SideBarMenuItem
@@ -77,7 +84,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     </h4>
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Setings",
+                                            name: "Settings",
                                             icon: "LuSettings",
                                             path: "/dashboard/settings",
                                         }}
