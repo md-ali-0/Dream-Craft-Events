@@ -151,9 +151,9 @@ const Router = createBrowserRouter([
       {
         path: "organizer-request",
         element: (
-          <PrivateRoute>
+          <AdminRouter>
             <OrganizerRequest />
-          </PrivateRoute>
+          </AdminRouter>
         ),
       },
       {
