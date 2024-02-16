@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import logo from "../../assets/logo/logo-dark.png";
 import Loading from "../../components/loading/Loading";
 import SideBarMenuItem from "../../components/sidebar/SideBarMenuItem";
+import SidebarSubMenu from "../../components/sidebar/SidebarSubMenu";
 import useAuth from "../../hooks/useAuth";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
@@ -53,13 +54,19 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/admin",
                                         }}
                                     />
-                                    <SideBarMenuItem
-                                        menu={{
-                                            name: "Add Events",
-                                            icon: "LuCommand",
-                                            path: "/dashboard/addEvent",
-                                        }}
-                                    />
+                                    <SidebarSubMenu
+                                        menu={{ name: "Events", icon: "LuCalendarPlus" }}
+                                        subMenu={[
+                                            {
+                                                name: "Add Event",
+                                                path: "add-event",
+                                            },
+                                            {
+                                                name: "All Events",
+                                                path: "events",
+                                            },
+                                        ]}
+                                    ></SidebarSubMenu>
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Organizer Request",
@@ -72,7 +79,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                             <SideBarMenuItem
                                 menu={{
                                     name: "Profile",
-                                    icon: "LuCommand",
+                                    icon: "LuUserCircle2",
                                     path: "/dashboard/profile",
                                 }}
                             />
