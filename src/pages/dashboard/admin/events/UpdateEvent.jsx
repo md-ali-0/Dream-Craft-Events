@@ -1,7 +1,6 @@
 import React from 'react';
-import img from '../../assets/addEvent/vase-with-tulips-table-removebg-preview.png'
+import { useForm } from "react-hook-form";
 import { toast } from 'react-hot-toast';
-import { Form, useForm } from "react-hook-form";
 
 const UpdateEvent = () =>{
     const { register, handleSubmit, reset } = useForm();
