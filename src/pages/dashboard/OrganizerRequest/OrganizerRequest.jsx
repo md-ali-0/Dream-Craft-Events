@@ -1,8 +1,21 @@
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+
 const OrganizerRequest = () => {
+
+    const axios = useAxiosPublic()
+
+    const { data: request = [], refetch } = useQuery({
+        queryKey: ['request'],
+        queryFn: async () => {
+            const res = await axios.get('/request-organizer')
+            return res.data;
+        }
+    })
     return (
         <div>
             <div className="flex justify-between items-center">
-                {/* <h2 className="text-2xl font-bold">Total Request: {request.length}</h2> */}
+
             </div>
             <div className="overflow-x-auto mt-6">
                 <table className="table-auto w-full">
@@ -20,31 +33,37 @@ const OrganizerRequest = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {
-                        request.map((item, index) => (
-                            <tr key={item._id}>
-                                <td className="px-4 py-2">{index + 1}</td>
-                                <td className="px-4 py-2"><img src={item?.image} className="w-20 h-20 object-cover" alt="" /></td>
-                                <td className="px-4 py-2">{item?.name}</td>
-                                <td className="px-4 py-2">{item?.experience}</td>
-                                <td className="px-4 py-2">{item?.title}</td>
-                                <td className="px-4 py-2">{item?.category}</td>
-                                <td className="px-4 py-2">{item?.status}</td>
-                                <td className="px-4 py-2">
-                                    <button
-                                        disabled={item?.status === 'accepted' || item?.status === 'rejected'}
-                                        onClick={() => handleApprove(item.userId, item._id)}
-                                        className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 disabled:opacity-50">Approve</button>
-                                </td>
-                                <td className="px-4 py-2">
-                                    <button
-                                        disabled={item?.status === 'accepted' || item?.status === 'rejected'}
-                                        onClick={() => handleReject(item._id)}
-                                        className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 disabled:opacity-50">Reject</button>
-                                </td>
-                            </tr>
-                        ))
-                    } */}
+                        {
+                            request.map((item, index) => (
+                                <tr key={item._id}>
+                                    <td className="px-4 py-2">{index + 1}</td>
+                                    <td className="px-4 py-2"><img src={item?.image} className="w-20 h-20 object-cover" alt="" /></td>
+                                    <td className="px-4 py-2">{item?.name}</td>
+                                    <td className="px-4 py-2">{item?.experience}</td>
+                                    <td className="px-4 py-2">{item?.company}</td>
+                                    <td className="px-4 py-2">{item?.skills}</td>
+                                    <td className="px-4 py-2">{item?.status}</td>
+                                    <td className="px-4 py-2">
+                                        {/* <button
+                                            disabled={item?.status === 'accepted' || item?.status === 'rejected'}
+                                            onClick={() => handleApprove(item.userId, item._id)}
+                                            className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 disabled:opacity-50">Approve</button> */}
+
+                                        {/* TODO */}
+                                        <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 disabled:opacity-50">Approve</button>
+                                    </td>
+                                    <td className="px-4 py-2">
+                                        {/* <button
+                                            disabled={item?.status === 'accepted' || item?.status === 'rejected'}
+                                            onClick={() => handleReject(item._id)}
+                                            className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 disabled:opacity-50">Reject</button> */}
+
+                                        {/* TODO */}
+                                        <button className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 disabled:opacity-50">Reject</button>
+                                    </td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
                 </table>
             </div>
