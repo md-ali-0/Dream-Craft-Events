@@ -32,6 +32,7 @@ import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 import AllEvents from "../pages/dashboard/admin/events/AllEvents";
 import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
+import MyCart from "../pages/shop/MyCart";
 import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
@@ -216,6 +217,14 @@ const Router = createBrowserRouter([
                 element: (
                     <AdminRouter>
                         <EditUser />
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "events",
+                element: (
+                    <AdminRouter>
+                        <AllEvents />
                     </AdminRouter>
                 ),
             },
