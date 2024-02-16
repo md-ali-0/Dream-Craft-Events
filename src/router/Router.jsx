@@ -31,6 +31,7 @@ import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBook
 import Cart from "../pages/dashboard/userDashboard/cart/cart";
 
 import PrivateRoute from "./PrivateRoute";
+import CustomEventBooking from "../pages/dashboard/userDashboard/CustomEventBook/CustomEventBooking";
 
 const Router = createBrowserRouter([
   {
@@ -189,38 +190,16 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "customEventsBooking",
+        element: (
+          <PrivateRoute>
+            <CustomEventBooking></CustomEventBooking>
+          </PrivateRoute>
+        ),
+      },
     ],
-    element: <PrivateRoute><Dashboard /></PrivateRoute>,
-    children: [
-      {
-        path: '/dashboard',
-        element: <PrivateRoute><DashboardHome /></PrivateRoute>
-      },
-      {
-        path: 'addEvent',
-        element: <PrivateRoute><AddEvent /></PrivateRoute>
-      },
-      {
-        path: 'updateEvent',
-        element: <PrivateRoute><UpdateEvent /></PrivateRoute>
-      },
-      {
-        path: 'settings',
-        element: <PrivateRoute><Settings /></PrivateRoute>
-      },
-      {
-        path: 'profile',
-        element: <PrivateRoute><Profile /></PrivateRoute>
-      },
-      {
-        path: 'organizer-request',
-        element: <PrivateRoute><OrganizerRequest /></PrivateRoute>
-      },
-        {
-          path: 'admin',
-          element: <AdminRouter><DashboardAdminHome/></AdminRouter>
-        },
-    ]
+   
   },
 ]);
 

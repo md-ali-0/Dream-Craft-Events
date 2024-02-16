@@ -1,14 +1,20 @@
 import { useState } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import logo from '../../assets/logo/dream-craft.png'
+import useAuth from '../../hooks/useAuth';
 
 const Contact = () => {
+  const { user } = useAuth();
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
+    if(!user){
+      return
+    }
     // Handle form submission logic here
     console.log('Email:', email);
     console.log('Subject:', subject);
