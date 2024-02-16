@@ -21,9 +21,6 @@ const Reviews = () => {
         <h3 className="text-3xl font-semibold text-gray-800 uppercase">
           WHAT PEOPLE SAY ABOUT Dream Craft Events.
         </h3>
-        <ReviewInput></ReviewInput>
-      </div>
-      <div className="w-full md:w-1/2">
         <Swiper
           pagination={{
             type: "progressbar",
@@ -66,6 +63,10 @@ const Reviews = () => {
             </div>
           </SwiperSlide>
         </Swiper>
+      </div>
+      <div className="w-full md:w-1/2">
+        
+        <ReviewInput></ReviewInput>
       </div>
     </div>
   );
