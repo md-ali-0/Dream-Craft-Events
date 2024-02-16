@@ -30,6 +30,7 @@ import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBook
 import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 
 import PrivateRoute from "./PrivateRoute";
+import MyCart from "../pages/shop/MyCart";
 
 const Router = createBrowserRouter([
   {
@@ -54,12 +55,12 @@ const Router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: '/portfolio',
-        element: <Portfolio />
+        path: "/portfolio",
+        element: <Portfolio />,
       },
       {
-        path: '/schedule',
-        element: <Schedule />
+        path: "/schedule",
+        element: <Schedule />,
       },
       {
         path: "/schedule",
@@ -86,18 +87,21 @@ const Router = createBrowserRouter([
         element: <Shop></Shop>,
       },
       {
-        path: '/create-your-event',
-        element: <CustomEvent />
+        path: "/create-your-event",
+        element: <CustomEvent />,
       },
       {
-        path: '/payment/:_id',
-        element: <PaymentPage />
+        path: "/payment/:_id",
+        element: <PaymentPage />,
       },
       {
-        path: '/request-organizer',
-        element: <RequestOrganizer />
-      }
-
+        path: "/request-organizer",
+        element: <RequestOrganizer />,
+      },
+      {
+        path: "/my-cart",
+        element: <MyCart />,
+      },
     ],
   },
   {
