@@ -12,12 +12,15 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxios from "../../../../hooks/useAxios";
 
-const AllUsers = () => {
+const AllEvents = () => {
     const axios = useAxios();
-    const { data: users = [], refetch } = useQuery({
+    const {
+        data: users = [],
+        refetch,
+    } = useQuery({
         queryKey: ["users"],
         queryFn: async () => {
-            const response = await axios.post("/users");
+            const response = await axios.get("/events");
             return response.data;
         },
     });
@@ -27,28 +30,25 @@ const AllUsers = () => {
 
     const columns = [
         {
-            header: "Name",
-            accessorKey: "name",
+            header: "Title",
+            accessorKey: "title",
         },
         {
-            header: "Email",
-            accessorKey: "email",
+            header: "Location",
+            accessorKey: "location",
         },
         {
-            header: "Image",
-            accessorKey: "image",
+            header: "Seat",
+            accessorKey: "seat",
+        },
+        {
+            header: "Events Date",
+            accessorKey: "date",
             cell: ({ cell: { row } }) => (
-                <>
-                    <img
-                        className="w-10 rounded-full"
-                        src={row.original.image}
-                    />
-                </>
+                <span>
+                    {new Date(row.original.date).toLocaleDateString()}
+                </span>
             ),
-        },
-        {
-            header: "Role",
-            accessorKey: "role",
         },
         {
             header: "Created Date",
@@ -63,12 +63,7 @@ const AllUsers = () => {
             header: "Edit",
             accessor: "_id",
             cell: ({ cell: { row } }) => (
-                <Link
-                    key={row.original._id}
-                    to={`/dashboard/edit-user/${row.original._id}`}
-                >
-                    Edit
-                </Link>
+                <Link key={row.original._id} to={`/dashboard/edit-event/${row.original._id}`}>Edit</Link>
             ),
         },
         {
@@ -111,7 +106,7 @@ const AllUsers = () => {
                 confirmButtonText: "Yes, delete it!",
             });
             if (swalConfirm.isConfirmed) {
-                const response = await axios.delete(`/delete-user/${id}`);
+                const response  = await axios.delete(`/delete-user/${id}`);
                 console.log(response);
                 refetch();
                 Swal.fire({
@@ -130,7 +125,7 @@ const AllUsers = () => {
             <div>
                 <div className="flex justify-between items-center py-2">
                     <h3 className="font-Quicksand text-primary text-2xl font-bold">
-                        All Users
+                        All Events
                     </h3>
                     <div className="block relative">
                         <input
@@ -180,7 +175,7 @@ const AllUsers = () => {
                             {table.getRowModel().rows.map((row) => (
                                 <tr
                                     key={row.id}
-                                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                                    className="bg-white border-b dark:bg-primary dark:border-rose-700"
                                 >
                                     {row.getVisibleCells().map((cell) => (
                                         <td key={cell.id} className="px-6 py-4">
@@ -232,4 +227,4 @@ const AllUsers = () => {
     );
 };
 
-export default AllUsers;
+export default AllEvents;
