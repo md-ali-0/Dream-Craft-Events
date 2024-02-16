@@ -14,7 +14,7 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
     }
     console.log(user);
     return (
-        <header className="flex items-center justify-between px-6 py-3 dark:bg-[#0c1427] border dark:border-slate-800">
+        <div className="flex items-center justify-between px-6 py-3 dark:bg-[#0c1427] border dark:border-slate-800">
             <div className="flex items-center">
                 <button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -90,7 +90,7 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     );
 };
 Navbar.propTypes = {
