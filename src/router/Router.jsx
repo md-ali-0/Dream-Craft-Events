@@ -32,6 +32,7 @@ import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
 import PrivateRoute from "./PrivateRoute";
+import MyCart from "../pages/shop/MyCart";
 
 const Router = createBrowserRouter([
     {
@@ -99,6 +100,10 @@ const Router = createBrowserRouter([
                 path: "/request-organizer",
                 element: <RequestOrganizer />,
             },
+            {
+                path: "/my-cart",
+                element: <MyCart/>,
+            }
         ],
     },
     {
