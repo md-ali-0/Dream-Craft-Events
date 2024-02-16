@@ -13,19 +13,19 @@ const RequestOrganizer = () => {
     const onSubmit = async (data) => {
         if (data) {
             const request = {
-                // userId: role._id,
-                // name: user.displayName,
-                // image: user.photoURL,
+                userId: user._id,
+                name: user.name,
+                image: user.image,
                 experience: data.experience,
-                title: data.company,
-                category: data.skills,
-                // email: user.email,
+                company: data.company,
+                skills: data.skills,
+                email: user.email,
                 status: "pending"
             }
 
             const requestRes = await axiosSecure.post('/request-organizer', request)
             console.log(requestRes);
-            if (requestRes.data.insertedId) {
+            if (requestRes.data._id) {
                 toast.success('Request for organizer, await for confirmation')
                 reset()
             }
@@ -45,7 +45,7 @@ const RequestOrganizer = () => {
                             <input
                                 type="text"
                                 {...register('name', { required: true })}
-                                value={user?.displayName}
+                                value={user?.name}
                                 placeholder="Name"
                                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                             />

@@ -8,18 +8,20 @@ import PopularEvents from "./PopularEvents";
 import MagicBanner from "./magicBanner/MagicBanner";
 
 const Home = () => {
-    return (
-        <div>
-            <MagicBanner></MagicBanner>
-            {/* <Banner/> */}
-            <EventCards />
-            {/* <FeatureEvents/> */}
-            <PopularEvents />
-            <Organizer />
-            <Booking></Booking>
-            <TeamCards />
-        </div>
-    );
+  return (
+    <div>
+      <MagicBanner></MagicBanner>
+      {/* <Banner/> */}
+
+      {/* <FeatureEvents/> */}
+      <Organizer />
+      <PopularEvents />
+
+      <Booking></Booking>
+      <EventCards />
+      <TeamCards />
+    </div>
+  );
 };
 
 export default Home;
