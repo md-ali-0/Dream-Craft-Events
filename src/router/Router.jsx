@@ -29,6 +29,7 @@ import Cart from "../pages/dashboard/userDashboard/cart/cart";
 import UserBookings from "../pages/dashboard/userDashboard/userBookings/UserBookings";
 import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 
+import AllEvents from "../pages/dashboard/admin/events/AllEvents";
 import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
 import PrivateRoute from "./PrivateRoute";
@@ -118,7 +119,7 @@ const Router = createBrowserRouter([
                 ),
             },
             {
-                path: "addEvent",
+                path: "add-event",
                 element: (
                     <PrivateRoute>
                         <AddEvent />
@@ -126,7 +127,11 @@ const Router = createBrowserRouter([
                 ),
             },
             {
-                path: "updateEvent",
+                path: "edit-event/:id",
+                loader: ({ params }) =>
+                    fetch(
+                        `https://dream-craft-server.vercel.app/event/${params.id}`
+                    ),
                 element: (
                     <PrivateRoute>
                         <UpdateEvent />
@@ -207,6 +212,14 @@ const Router = createBrowserRouter([
                 element: (
                     <AdminRouter>
                         <EditUser />
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "events",
+                element: (
+                    <AdminRouter>
+                        <AllEvents />
                     </AdminRouter>
                 ),
             },
