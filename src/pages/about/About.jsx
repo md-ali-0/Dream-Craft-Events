@@ -24,6 +24,7 @@ const About = () => {
             Make your dreams come to life
           </p>
         </div>
+        
       </div>
       <div className=" p-3 space-y-7 mt-20  md:max-w-6xl mx-auto">
         <h2 className="text-center text-3xl underline">
