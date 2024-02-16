@@ -79,6 +79,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
                             {user?.role === "admin" && (
                                 <>
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Users",
+                                            icon: "LuUser",
+                                            path: "/dashboard/all-users",
+                                        }}
+                                    />
                                     <h4 className="text-gray-400 font-semibold text-xs mt-2">
                                         Settings
                                     </h4>

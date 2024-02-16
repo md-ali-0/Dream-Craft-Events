@@ -1,6 +1,4 @@
-import React from 'react';
-import { Form, useForm } from "react-hook-form";
-
+import { useForm } from "react-hook-form";
 import { toast } from 'react-hot-toast';
 
 const AddEvent = () => {
