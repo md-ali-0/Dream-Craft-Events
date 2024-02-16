@@ -71,13 +71,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/cart",
                                         }}
                                     />
-                                    <SideBarMenuItem
-                                        menu={{
-                                            name: "Back to home",
-                                            icon: "LuCommand",
-                                            path: "/",
-                                        }}
-                                    />
                                 </>
                             )}
                             {user?.role === "admin" && (
@@ -90,7 +83,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                         }}
                                     />
                                     <SidebarSubMenu
-                                        menu={{ name: "Events", icon: "LuCalendarPlus" }}
+                                        menu={{
+                                            name: "Events",
+                                            icon: "LuCalendarPlus",
+                                        }}
                                         subMenu={[
                                             {
                                                 name: "Add Event",
