@@ -1,15 +1,21 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import useAxios from "../../../../hooks/useAxios";
+import uploadImage from "../../../../utils/useImageUpload";
 
 const AddEvent = () => {
     const { register, handleSubmit, reset } = useForm();
-
+    const axios = useAxios()
     const onSubmit = async (data) => {
-        console.log(data);
-        // name:data.name,
-        if (data) {
+        const { title, type, location, speakers, sponsor,description, seat, image, date } = data;
+        const imageResult = await uploadImage(image[0]);
+        const  loadingToast = toast.loading('Creating new event ... !!');
+        if (imageResult) {
+            const newEvent = { title, type, location, speakers, sponsor,description, seat, image:imageResult, date }
+            await axios.post('/add-event',newEvent)
             reset();
-            return toast.success("Event successfully added");
+            toast.dismiss(loadingToast);
+            toast.success("Event successfully added");
         }
     };
 
