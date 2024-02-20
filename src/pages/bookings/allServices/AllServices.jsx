@@ -17,8 +17,9 @@ import shopimg from "../../home/magicBanner/image/img6.jpg";
 const AllServices = () => {
   return (
     <Container>
-                      <h3 className="mt-8 mb-5 text-center uppercase text-secondary font-extrabold text-3xl">
-                    Book Your Events</h3>
+      <h3 className="mt-8 mb-5 text-center uppercase text-secondary font-extrabold text-3xl">
+        Book Your Events
+      </h3>
       <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-24 m-3 lg:m-12">
         {/* card 1  */}
         <div className="rounded-md shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg bg-white hover:bg-gray-100">

@@ -35,6 +35,12 @@ import EditUser from "../pages/dashboard/admin/users/EditUser";
 import MyCart from "../pages/shop/MyCart";
 import PrivateRoute from "./PrivateRoute";
 
+// eita Nizam kortece 
+import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
+import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
+// etotuku Nizam vai korce, piliz dont conflict
+
+
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -228,6 +234,24 @@ const Router = createBrowserRouter([
                     </AdminRouter>
                 ),
             },
+    // eita Nizam kortece 
+            {
+                path: "add-product",
+                element: (
+                    <AdminRouter>
+                       <AddProduct/>
+                        </AdminRouter>
+                ),
+            },
+            {
+                path: "products",
+                element: (
+                    <AdminRouter>
+                       <AllProducts/>
+                        </AdminRouter>
+                ),
+            },
+    // etotuku Nizam vai korce, piliz dont conflict
         ],
     },
 ]);

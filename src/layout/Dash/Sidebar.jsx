@@ -98,6 +98,28 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             },
                                         ]}
                                     ></SidebarSubMenu>
+                                    
+                                    <SidebarSubMenu
+                                        menu={{
+                                            name: "Shop",
+                                            icon: "LuShoppingBag",
+                                        }}
+                                        subMenu={[
+                                            {
+                                                name: "Product Orders",
+                                                path: "product-orders",
+                                            },
+                                            {
+                                                name: "Add Product",
+                                                path: "add-product",
+                                            },
+                                            {
+                                                name: "All Product",
+                                                path: "products",
+                                            },
+                                        ]}
+                                    ></SidebarSubMenu>
+                                    
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Organizer Request",
