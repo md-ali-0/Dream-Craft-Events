@@ -1,3 +1,5 @@
+// Shop.jsx file
+
 import toast from "react-hot-toast";
 import Container from "../../components/container/Container";
 import { useEffect, useState } from "react";
@@ -5,6 +7,7 @@ import { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 const MyCart = ({ cartItems: propCartItems }) => {
   const [cartItems, setCartItems] = useState([]);
+  
 
   // Retrieve cart items from local storage when the component mounts
   useEffect(() => {
@@ -34,8 +37,8 @@ const MyCart = ({ cartItems: propCartItems }) => {
   // Check if cartItems is undefined or null, and render a message if it is
   if (!cartItems || cartItems.length === 0) {
     return (
-      <div className="text-center mt-10">
-        <p className="text-gray-600">Your cart is empty</p>
+      <div className="text-center mt-10 mb-10">
+        <p className="text-gray-600">Add products to your cart.</p>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// eslint-disable-next-line no-unused-vars
 const MyCart = ({ cartItems: propCartItems }) => {
   const [cartItems, setCartItems] = useState([]);
 
