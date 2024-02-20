@@ -1,25 +1,28 @@
+// ShopCard.jsx file
+
 import toast from "react-hot-toast";
 import { FaDollarSign } from "react-icons/fa";
 import { TbListDetails } from "react-icons/tb";
 import { TiShoppingCart } from "react-icons/ti";
 
-const EventCard = ({ event }) => {
+const ShopCard = ({ shopItem, updateCartItemCount }) => {
   const { product_image, product_name, product_description, product_price } =
-    event;
+    shopItem;
 
   const addToCart = () => {
     // Add your logic to add the product to the cart here
-    // toast.success(`${product_name} added to cart`);
-
     toast.success(
-        <div className="flex items-center">
-          <span>{product_name} added to cart</span>
+      <div className="flex items-center">
+        <span>{product_name} added to cart</span>
 
-          <span className="mt-1 ml-2 text-primary">
-              <TiShoppingCart />
-            </span>
-        </div>
+        <span className="mt-1 ml-2 text-primary">
+          <TiShoppingCart />
+        </span>
+      </div>
     );
+
+    // Call the function passed as prop to update cart item count
+    updateCartItemCount(shopItem); // Pass the shopItem object to updateCartItemCount
   };
 
   return (
@@ -67,4 +70,4 @@ const EventCard = ({ event }) => {
   );
 };
 
-export default EventCard;
+export default ShopCard;

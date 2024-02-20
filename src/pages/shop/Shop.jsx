@@ -1,3 +1,5 @@
+// Shop.jsx file
+
 /* eslint-disable no-unused-vars */
 import { useQuery } from "@tanstack/react-query";
 import Lottie from "lottie-react";
@@ -11,23 +13,19 @@ import { TiShoppingCart } from "react-icons/ti";
 import MyCart from "./MyCart";
 import { Link } from "react-router-dom";
 
-const Events = () => {
+const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [cartItemCount, setCartItemCount] = useState(0);
 
-  // const fetchEvents = async () => {
-  //     const response = await fetch(
-  //         "https://dream-craft-server.vercel.app/events"
-  //     );
-  //     if (!response.ok) {
-  //         throw new Error("Network response was not ok");
-  //     }
-  //     return response.json();
-  // };
+  // Save cart items to local storage when cartItems state updates
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const fetchProducts = async () => {
     try {
-      // Assuming the shop.json file is in the public directory
       const response = await fetch(
         "https://dream-craft-server.vercel.app/products"
       );
@@ -38,7 +36,7 @@ const Events = () => {
 
       return response.json();
     } catch (error) {
-      console.error("Error fetching events:", error);
+      console.error("Error fetching products:", error);
       throw error;
     }
   };
@@ -53,15 +51,20 @@ const Events = () => {
   });
 
   useEffect(() => {
-    setFilteredEvents(allProducts || []);
+    setFilteredItems(allProducts || []);
   }, [allProducts]);
+
+  const updateCartItemCount = (newCartItem) => {
+    setCartItems([...cartItems, newCartItem]);
+    setCartItemCount(cartItemCount + 1);
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
     const searchResult = allProducts?.filter((event) =>
       event.product_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setFilteredEvents(searchResult);
+    setFilteredItems(searchResult);
   };
 
   if (isLoading) {
@@ -76,7 +79,7 @@ const Events = () => {
   }
 
   if (error) {
-    return <p>Error loading events: {error.message}</p>;
+    return <p>Error loading products: {error.message}</p>;
   }
 
   return (
@@ -125,7 +128,8 @@ const Events = () => {
                   </span>
                   {/* Badge for cart item count */}
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
-                    +3
+                    {cartItemCount}
+                    {/* when I click Add to Cart button from ShopCard.jsx file, then it increases the number of badge cart item count  */}
                   </span>
                 </button>
               </Link>
@@ -135,14 +139,19 @@ const Events = () => {
         <div className=" my-10 md:my-12 gap-6">
           {/* cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-            {filteredEvents?.map((event) => (
-              <ShopCard key={event.id} event={event}></ShopCard>
+            {filteredItems?.map((shopItem) => (
+              <ShopCard
+                key={shopItem.id}
+                shopItem={shopItem}
+                updateCartItemCount={updateCartItemCount}
+              ></ShopCard>
             ))}
           </div>
         </div>
       </Container>
+      <MyCart cartItems={cartItems} />
     </div>
   );
 };
 
-export default Events;
+export default Shop;
