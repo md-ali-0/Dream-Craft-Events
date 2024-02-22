@@ -1,13 +1,16 @@
-// Shop.jsx file
+// MyCart.jsx file
 
 import toast from "react-hot-toast";
 import Container from "../../components/container/Container";
 import { useEffect, useState } from "react";
+// import useAuth from "../../hooks/useAuth";
+// import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 // eslint-disable-next-line no-unused-vars
 const MyCart = ({ cartItems: propCartItems }) => {
+  // const { user } = useAuth()
+  // const axiosSecure = useAxiosPublic()
   const [cartItems, setCartItems] = useState([]);
-  
 
   // Retrieve cart items from local storage when the component mounts
   useEffect(() => {
@@ -49,6 +52,7 @@ const MyCart = ({ cartItems: propCartItems }) => {
         <span>Your order has been placed successfully.</span>
       </div>
     );
+    console.log(cartItems);
   };
 
   return (
@@ -87,7 +91,7 @@ const MyCart = ({ cartItems: propCartItems }) => {
                       required=""
                     />
                     <a
-                      className="inline-block w-full px-6 py-4 mt-4 text-lg font-medium leading-6 tracking-tighter text-center text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 focus:ring-opacity-50 rounded-xl"
+                      className="inline-block w-full px-6 py-4 mt-4 text-lg font-medium leading-6  text-center text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 focus:ring-opacity-50 rounded-xl"
                       href="#"
                     >
                       Apply
@@ -122,10 +126,11 @@ const MyCart = ({ cartItems: propCartItems }) => {
                     </div>
                     <button
                       onClick={placeMyOrder}
-                      className="inline-block w-full px-6 py-4 text-lg font-medium leading-6 tracking-tighter text-center text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80  lg:w-auto hover:bg-red-600 focus:ring-4 focus:ring-opacity-50 rounded-xl"
+                      className="inline-block w-full px-6 py-4 text-lg font-medium leading-6  text-center text-white bg-gradient-to-r from-rose-700 to-pink-600 hover:bg-gradient-to-br focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80  lg:w-auto hover:bg-red-600 focus:ring-4 focus:ring-opacity-50 rounded-xl"
                       href="#"
                     >
-                      Checkout
+                      {/* Checkout */}
+                      Place My Order
                     </button>
                   </div>
                   {/* Cart totals Section end */}
@@ -194,5 +199,3 @@ const CartItem = ({ cartItem, removeFromCart }) => {
 };
 
 export default MyCart;
-
-// on clicking remove items from cart button then the specific card will removed from MyCart page

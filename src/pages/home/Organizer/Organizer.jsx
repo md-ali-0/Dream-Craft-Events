@@ -5,7 +5,7 @@ import organizer from '../../../assets/Organizer/organizer.jpg';
 
 const Organizer = () => {
     return (
-        <div className='bg-gray-100 py-16'>
+        <div className='bg-gray-100 py-16 mt-10'>
             <Container>
                 <div className='flex flex-col md:flex-row md:gap-10 items-center'>
                     <div className='flex-1'>
