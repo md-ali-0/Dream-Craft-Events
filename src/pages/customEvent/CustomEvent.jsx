@@ -115,7 +115,7 @@ const CustomEvent = () => {
                 <div className='grid md:grid-cols-5 p-2 gap-12 my-8'>
                     <div className='col-span-3 '>
                         <div>
-                            <div className="border rounded-lg border-gray-400 p-4">
+                            <div className="border rounded-lg bg-rose-50/50 border-gray-400 p-4">
                                 <h2 className="text-base font-semibold leading-7 text-gray-900">Fiil up this form</h2>
                                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                     <div className="sm:col-span-3">
@@ -195,8 +195,8 @@ const CustomEvent = () => {
                         </div>
                     </div>
 
-                    <div className='md:col-span-2 col-span-3 p-4 md:p-0 rounded-lg border-gray-400 border'>
-                        <div className="w-full bg-white rounded-lg  sm:p-12 ">
+                    <div className='md:col-span-2 col-span-3 p-4 md:p-0 bg-rose-50/50  rounded-lg border-gray-400 border'>
+                        <div className="w-full  rounded-lg  sm:p-12 ">
                             <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Estimated Cost</h5>
                             <div className="flex items-baseline text-gray-900 dark:text-white">
                                 <span className="text-3xl font-semibold">$</span>
@@ -230,7 +230,7 @@ const CustomEvent = () => {
                                 </li>}
                             </ul>
                             {
-                                totalCost > 0 && guestCount == '1-250' || guestCount == '1-500' || guestCount == '1-1000' ? <button onClick={handleShowModal} type="button" className='bg-rose-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Request Now</button> :
+                                totalCost > 0 ? <button onClick={handleShowModal} type="button" className='bg-rose-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Request Now</button> :
                                 <button disabled type="button" className=' bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Request Now</button>
                             }
                         </div>
@@ -246,7 +246,7 @@ const CustomEvent = () => {
                     <div className='w-[550px] p-4 md:p-0'>
                         <div className='bg-white rounded-md relative'>
                             <div className="p-8  rounded max-w-md w-full mx-auto">
-                                <h2 className="text-2xl font-semibold mb-8">Please drop you information</h2>
+                                <h2 className="text-2xl font-semibold mb-8">Please drop your information</h2>
 
                                 <form action="#" method="POST">
 
@@ -269,7 +269,7 @@ const CustomEvent = () => {
 
                                     <div className="mt-4">
                                         <label className="block text-sm font-medium text-gray-700">Phone</label>
-                                        <input type="number" id="password" name="password" className="mt-1 p-2 w-full border border-black  rounded-md" />
+                                        <input type="text" id="password" name="password" className="mt-1 p-2 w-full border border-black  rounded-md" />
                                     </div>
 
 
