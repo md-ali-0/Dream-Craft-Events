@@ -161,12 +161,16 @@ const PaymentPage = () => {
               </div>
             </div>
             <div className='flex flex-col items-center'>
-              <button
+              { user ?  <button
                 onClick={handlePayment}
                 className='bg-rose-700 w-full rounded-md py-2 mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
               >
                 Continue to secure payment
-              </button>
+              </button> : <Link className='w-full' to='/login'><button
+                className='bg-rose-700 w-full rounded-md py-2 px-4  mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
+              >
+                Login to Purchase
+              </button></Link> }
               <Link to={`/event-details/${event._id}`}>
                 <h3 className='mt-3 border-b border-black font-semibold md:text-sm text-xl lg:text-xl'>Cancel payment</h3>
               </Link>
