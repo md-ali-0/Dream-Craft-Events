@@ -38,6 +38,7 @@ import PrivateRoute from "./PrivateRoute";
 // eita Nizam kortece 
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
 import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
+import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
 // etotuku Nizam vai korce, piliz dont conflict
 
 
@@ -248,6 +249,14 @@ const Router = createBrowserRouter([
                 element: (
                     <AdminRouter>
                        <AllProducts/>
+                        </AdminRouter>
+                ),
+            },
+            {
+                path: "product-orders",
+                element: (
+                    <AdminRouter>
+                       <ProductOrders></ProductOrders>
                         </AdminRouter>
                 ),
             },
