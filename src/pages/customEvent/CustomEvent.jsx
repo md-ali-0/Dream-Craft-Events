@@ -5,6 +5,10 @@ import { IoLocationSharp } from "react-icons/io5";
 import { TbToolsKitchen2 } from "react-icons/tb";
 import Swal from 'sweetalert2';
 import CustomEventModal from './CustomEventModal';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+import { useForm } from 'react-hook-form';
+import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 
 
@@ -17,7 +21,13 @@ const CustomEvent = () => {
     const [guestCount, setEventGuestCount] = useState('Select guests count')
     const [photography, setPhotography] = useState('select')
     const [catering, setCatering] = useState('')
+    const [specialRequest, setSpecialRequest] = useState('')
     const [showModal, setShowModal] = useState(false)
+
+    const axios = useAxiosPublic()
+    const { user } = useAuth()
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm()
 
     let totalCost = 0;
 
@@ -69,16 +79,11 @@ const CustomEvent = () => {
     const handleCatering = (e) => {
         setCatering(e.target.value)
     }
-
-    const handleBooking = () => {
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "You have created an event, thanks",
-            showConfirmButton: false,
-            timer: 1500
-        });
+    const handleSpecialRequest = (e) => {
+        setSpecialRequest(e.target.value)
     }
+
+
 
     const handleShowModal = () => {
         setShowModal(!showModal)
@@ -87,6 +92,45 @@ const CustomEvent = () => {
         if (e.target.id == 'wrapper') {
             handleShowModal()
         }
+
+    }
+
+    const handleBooking = async (e) => {
+        e.preventDefault()
+        const firstName = e.target.firstName.value;
+        const lastName = e.target.lastName.value;
+        const email = e.target.email.value;
+        const phone = e.target.phone.value;
+
+
+        const CustomEventData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            phone: phone,
+            eventType: eventType,
+            date: date,
+            location: location,
+            guests: guestCount,
+            photography: photography,
+            catering: catering,
+            request: specialRequest,
+            cost: totalCost,
+            status: 'pending'
+        }
+
+        const response = await axios.post('/custom-event', CustomEventData)
+        console.log(response);
+
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "You have requested an event, we will get back to you soon",
+            showConfirmButton: false,
+            timer: 3000
+        });
+
+        setShowModal(!showModal)
 
     }
 
@@ -187,7 +231,7 @@ const CustomEvent = () => {
                                         <label className="block text-sm font-medium leading-6 text-gray-900">
                                             Any Special Request
                                         </label>
-                                        <textarea id="email" rows={6} placeholder='Write here if you have any special request' name="email" type="email" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" />
+                                        <textarea onChange={handleSpecialRequest} id="email" rows={6} placeholder='Write here if you have any special request' name="email" type="email" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" />
                                     </div>
 
                                 </div>
@@ -230,8 +274,13 @@ const CustomEvent = () => {
                                 </li>}
                             </ul>
                             {
-                                totalCost > 0 ? <button onClick={handleShowModal} type="button" className='bg-rose-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Request Now</button> :
-                                <button disabled type="button" className=' bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Request Now</button>
+                                user ? (
+                                    totalCost > 0 ? <button onClick={handleShowModal} type="button" className='bg-rose-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Request Now</button> :
+                                        <button disabled type="button" className=' bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Request Now</button>
+                                ) : <Link to='/login'>
+                                    <button type="button" className='bg-rose-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 text-white font-medium rounded-lg  px-5 py-2.5 inline-flex justify-center w-full text-xl text-center'>Login to Request</button>
+                                </Link>
+
                             }
                         </div>
 
@@ -248,28 +297,28 @@ const CustomEvent = () => {
                             <div className="p-8  rounded max-w-md w-full mx-auto">
                                 <h2 className="text-2xl font-semibold mb-8">Please drop your information</h2>
 
-                                <form action="#" method="POST">
+                                <form onSubmit={handleBooking}>
 
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700">First Name</label>
-                                            <input type="text" id="firstName" name="firstName" className="mt-1 p-2 w-full border border-black rounded-md" />
+                                            <input type="text" id="firstName" name="firstName" className="mt-1 p-2 bg-rose-100 placeholder:text-sm w-full border border-gray-300 rounded-md" placeholder='write your first name' required />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700">Last Name</label>
-                                            <input type="text" id="lastName" name="lastName" className="mt-1 p-2 w-full border border-black  rounded-md" />
+                                            <input type="text" id="lastName" name="lastName" className="mt-1 p-2 bg-rose-100 placeholder:text-sm w-full border border-gray-300  rounded-md" placeholder='write your last name' required />
                                         </div>
                                     </div>
 
                                     <div className="mt-4">
                                         <label className="block text-sm font-medium text-gray-700">Email</label>
-                                        <input type="email" id="email" name="email" className="mt-1 p-2 w-full border border-black  rounded-md" />
+                                        <input type="email" id="email" name="email" className="mt-1 p-2 w-full border bg-rose-100 border-gray-300 placeholder:text-sm rounded-md" placeholder='write your email' required />
                                     </div>
 
 
                                     <div className="mt-4">
                                         <label className="block text-sm font-medium text-gray-700">Phone</label>
-                                        <input type="text" id="password" name="password" className="mt-1 p-2 w-full border border-black  rounded-md" />
+                                        <input type="text" id="password" name="phone" className="mt-1 p-2 bg-rose-100 w-full border border-gray-300 placeholder:text-sm rounded-md" placeholder='write your phone' required />
                                     </div>
 
 
