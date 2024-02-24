@@ -114,7 +114,9 @@ const CustomEvent = () => {
             guests: guestCount,
             photography: photography,
             catering: catering,
-            request: specialRequest
+            request: specialRequest,
+            cost: totalCost,
+            status: 'pending'
         }
 
         const response = await axios.post('/custom-event', CustomEventData)
