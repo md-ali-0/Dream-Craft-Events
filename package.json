@@ -16,7 +16,7 @@
     "aos": "^2.3.4",
     "apexcharts": "^3.45.2",
     "axios": "^1.6.7",
-    "firebase": "^10.8.0",
+    "firebase": "^10.6.0",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.3",
