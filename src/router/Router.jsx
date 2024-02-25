@@ -39,6 +39,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
 import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
 import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
+import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 // etotuku Nizam vai korce, piliz dont conflict
 
 
@@ -256,7 +257,8 @@ const Router = createBrowserRouter([
                 path: "product-orders",
                 element: (
                     <AdminRouter>
-                       <ProductOrders></ProductOrders>
+                       {/* <ProductOrders></ProductOrders> */}
+                       <ShopOrders></ShopOrders>
                         </AdminRouter>
                 ),
             },

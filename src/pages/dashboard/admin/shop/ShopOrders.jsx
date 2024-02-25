@@ -17,7 +17,7 @@ const AllEvents = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const response = await axios.get("/products");
+      const response = await axios.get("/product-orders");
       return response.data;
     },
   });
@@ -39,13 +39,34 @@ const AllEvents = () => {
       header: "Product Name",
       accessorKey: "product_name",
     },
-    {
-      header: "Product Description",
-      accessorKey: "product_description",
-    },
+    // {
+    //   header: "Product Description",
+    //   accessorKey: "product_description",
+    // },
     {
       header: "Product Price",
       accessorKey: "product_price",
+    },
+    {
+      header: "User Name",
+      accessorKey: "user_name",
+    },
+    {
+      header: "User Email",
+      accessorKey: "user_email",
+    },
+    {
+      header: "User Image",
+      accessorKey: "user_image",
+      cell: ({ cell: { row } }) => (
+        <>
+          <img  className="w-10 rounded-full" src={row.original.user_image} />
+        </>
+      ),
+    },
+    {
+      header: "Status",
+      accessorKey: "status",
     },
     // {
     //   header: "Events Date",
@@ -127,7 +148,7 @@ const AllEvents = () => {
       <div>
         <div className="flex justify-between items-center py-2">
           <h3 className="font-Quicksand text-primary text-2xl font-bold">
-            Manage Shopping Products
+            Orders for Shop Items
           </h3>
           <div className="block relative">
             <input
