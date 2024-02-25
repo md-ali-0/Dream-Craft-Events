@@ -4,9 +4,10 @@ import { FiAlignJustify, FiLogOut, FiUser } from "react-icons/fi";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
+import TopBar from "./TopBar";
 
 const Navbar = () => {
-  const { user, logout, } = useAuth()
+  const { user, logout } = useAuth()
   const navigate = useNavigate()
   const [dropdownOpen, setDropDown] = useState(false);
   const [collapse, setCollapse] = useState(false);
@@ -25,11 +26,11 @@ const Navbar = () => {
     navigate('/')
     toast.success('Successfully Logout')
   };
-
   console.log(user);
   return (
     <>
-      <nav className="flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 md:flex-wrap lg:py-3.5">
+      <TopBar/>
+      <nav className="flex-no-wrap relative flex w-full items-center justify-between bg-transparent py-2 shadow-md shadow-black/5 md:flex-wrap lg:py-3.5">
         <div className="flex w-full items-center justify-between md:max-w-7xl md:px-12 mx-auto">
           <button
             onClick={() => setCollapse(!collapse)}
@@ -52,42 +53,42 @@ const Navbar = () => {
           >
             <ul className="flex mx-auto flex-col md:flex-row justify-center gap-5 py-3">
               <li>
-                <NavLink to="/" className="border border-white p-1">
+                <NavLink to="/" className="border hover:text-primary border-white p-1">
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/events" className="border border-white p-1">
+                <NavLink to="/events" className="border hover:text-primary border-white p-1">
                   Events
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/create-your-event" className="border border-white p-1">
-                  Create Event
+                <NavLink to="/booking" className="border hover:text-primary border-white p-1">
+                  Booking
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/schedule" className="border border-white p-1">
+                <NavLink to="/schedule" className="border hover:text-primary border-white p-1">
                   Schedule
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/shop" className="border border-white p-1">
+                <NavLink to="/shop" className="border hover:text-primary border-white p-1">
                   Shop
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="border border-white p-1">
+                <NavLink to="/about" className="border hover:text-primary border-white p-1">
                   About
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/portfolio" className="border border-white p-1">
+                <NavLink to="/portfolio" className="border hover:text-primary border-white p-1">
                   Portfolio
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/contact" className="border border-white p-1">
+                <NavLink to="/contact" className="border hover:text-primary border-white p-1">
                   Contact
                 </NavLink>
               </li>
