@@ -2,6 +2,7 @@ import { LuFacebook, LuLinkedin, LuTwitter } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import Container from "../container/Container";
 import SectionTitle from "../sectionTitle/SectionTitle";
+import mamun from '../../assets/team/Mamun.jpg';
 
 const TeamCards = () => {
   return (
@@ -237,7 +238,7 @@ const TeamCards = () => {
           <div className="relative bg-white shadow-md border rounded-md px-5 py-5">
             <img
               className="w-32 h-32 object-cover rounded-full"
-              src="https://scontent.fcgp3-1.fna.fbcdn.net/v/t39.30808-6/268144853_983824599147942_7820454297340573291_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9c7eae&_nc_eui2=AeGFO73BLsaxucpdFp4kEQvLyfe4tojVR-DJ97i2iNVH4CM4bWgK1cN0etzODAeDWNOBgRxI7d_2ZSfkr6mg11cO&_nc_ohc=ZBDjbtYaCSYAX-qt5xh&_nc_ht=scontent.fcgp3-1.fna&oh=00_AfCScNe1fTmCUgUHy5DqLSTURTrJ7g7ILvDMdp-VatHQkQ&oe=65D1645F"
+              src={mamun}
               alt=""
             />
             <h3 className="text-dark_01 text-2xl">Abdullah Mamun</h3>

@@ -251,33 +251,33 @@ const Router = createBrowserRouter([
                     </AdminRouter>
                 ),
             },
-    // eita Nizam kortece 
+            // eita Nizam kortece 
             {
                 path: "add-product",
                 element: (
                     <AdminRouter>
-                       <AddProduct/>
-                        </AdminRouter>
+                        <AddProduct />
+                    </AdminRouter>
                 ),
             },
             {
                 path: "products",
                 element: (
                     <AdminRouter>
-                       <AllProducts/>
-                        </AdminRouter>
+                        <AllProducts />
+                    </AdminRouter>
                 ),
             },
             {
                 path: "product-orders",
                 element: (
                     <AdminRouter>
-                       {/* <ProductOrders></ProductOrders> */}
-                       <ShopOrders></ShopOrders>
-                        </AdminRouter>
+                        {/* <ProductOrders></ProductOrders> */}
+                        <ShopOrders></ShopOrders>
+                    </AdminRouter>
                 ),
             },
-    // etotuku Nizam vai korce, piliz dont conflict
+            // etotuku Nizam vai korce, piliz dont conflict
         ],
     },
 ]);
