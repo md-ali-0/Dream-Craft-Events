@@ -23,7 +23,8 @@ const CustomEvent = () => {
     const [catering, setCatering] = useState('')
     const [specialRequest, setSpecialRequest] = useState('')
     const [showModal, setShowModal] = useState(false)
-
+    
+ 
     const axios = useAxiosPublic()
     const { user } = useAuth()
 
@@ -131,6 +132,7 @@ const CustomEvent = () => {
         });
 
         setShowModal(!showModal)
+        window.location.reload()
 
     }
 
