@@ -1,7 +1,7 @@
 const OptionsWidget = ({ actionProvider }) => {
   const options = [
-    { name: "Events", action: actionProvider.handleFetchEvents },
-    { name: "Upcoming Events", action: actionProvider.handleUpcomingEventsDirectly },
+    { name: "Events", action: () => actionProvider.handleFetchEvents() },
+    { name: "Upcoming Events", action: () =>  actionProvider.handleFetchUpcomingEvents() },
     { name: "Payments", action: actionProvider.handlePaymentOptions },
   ];
 
@@ -10,27 +10,6 @@ const OptionsWidget = ({ actionProvider }) => {
     action();
   };
 
-  const actionProviderA = {
-    handleFetchEvents: async () => {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=5');
-        const eventData = await response.json(); // Assume "todos" represent events
-  
-        return createChatBotMessage(
-          "Here are some events:",
-          {
-            widget: "eventsWidget",
-            data: { events: eventData },
-          }
-        );
-      } catch (error) {
-        console.error('Error fetching events:', error);
-        return createChatBotMessage(
-          'Looks like I encountered an error while fetching events. Please try again later.',
-        );
-      }
-    },
-  };
 
   return (
     <div className="bg-gray-800 p-4 rounded-lg shadow-md">

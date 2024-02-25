@@ -1,16 +1,20 @@
-// EventsWidget.jsx
-import React from 'react';
-
-const EventsWidget = () => {
-  return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4">
-      <h2 className="text-xl mb-2 font-bold text-gray-900">Events</h2>
-      {/* <p className="text-gray-700 text-base">
-        Check out the latest events happening around you.
-      </p> */}
-      {/* Add more content or functionality here */}
-    </div>
-  );
-};
-
-export default EventsWidget;
+function EventsWidget(props) {
+    const events = props.data || [];
+  
+    if (events.length === 0) {
+      return <div>No events to display.</div>;
+    }
+  
+    return (
+      <ul>
+        {props.data.events.map((event, index) => (
+          <li key={index} className="mb-4 p-4 bg-white border rounded shadow-md">
+          {event.title}
+        </li>
+        ))}
+      </ul>
+    );
+  }
+  
+  export default EventsWidget;
+  
