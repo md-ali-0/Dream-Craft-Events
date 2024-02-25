@@ -120,6 +120,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/organizer-request",
                                         }}
                                     />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Custom Event Request",
+                                            icon: "LuList",
+                                            path: "/dashboard/custom-event-request",
+                                        }}
+                                    />
                                 </>
                             )}
                             <SideBarMenuItem

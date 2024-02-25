@@ -34,12 +34,17 @@ import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
 import MyCart from "../pages/shop/MyCart";
 import PrivateRoute from "./PrivateRoute";
+import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 
 // eita Nizam kortece 
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
 import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
+import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
+import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 // etotuku Nizam vai korce, piliz dont conflict
 
+
+import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
 
 const Router = createBrowserRouter([
     {
@@ -104,12 +109,16 @@ const Router = createBrowserRouter([
                 element: <PaymentPage />,
             },
             {
+                path: "/payment/success/:tranId",
+                element: <PaymentSuccess />,
+            },
+            {
                 path: "/request-organizer",
                 element: <RequestOrganizer />,
             },
             {
                 path: "/my-cart",
-                element: <MyCart/>,
+                element: <MyCart />,
             }
         ],
     },
@@ -174,6 +183,14 @@ const Router = createBrowserRouter([
                 ),
             },
             {
+                path: "custom-event-request",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventDashboard />
+                    </PrivateRoute>
+                ),
+            },
+            {
                 path: "admin",
                 element: (
                     <AdminRouter>
@@ -234,24 +251,33 @@ const Router = createBrowserRouter([
                     </AdminRouter>
                 ),
             },
-    // eita Nizam kortece 
+            // eita Nizam kortece 
             {
                 path: "add-product",
                 element: (
                     <AdminRouter>
-                       <AddProduct/>
-                        </AdminRouter>
+                        <AddProduct />
+                    </AdminRouter>
                 ),
             },
             {
                 path: "products",
                 element: (
                     <AdminRouter>
-                       <AllProducts/>
-                        </AdminRouter>
+                        <AllProducts />
+                    </AdminRouter>
                 ),
             },
-    // etotuku Nizam vai korce, piliz dont conflict
+            {
+                path: "product-orders",
+                element: (
+                    <AdminRouter>
+                        {/* <ProductOrders></ProductOrders> */}
+                        <ShopOrders></ShopOrders>
+                    </AdminRouter>
+                ),
+            },
+            // etotuku Nizam vai korce, piliz dont conflict
         ],
     },
 ]);

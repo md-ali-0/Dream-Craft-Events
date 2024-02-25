@@ -23,7 +23,7 @@ const AddEvent = () => {
         <div className="">
             <div className="flex justify-center items-center">
                 <h3 className="text-primary text-4xl font-bold py-5">
-                    Add a Event
+                    Add Event
                 </h3>
             </div>
             <div className="bg-rose-50/50 dark:bg-[#0c1427] border dark:border-gray-800  rounded py-2 px-3 md:w-3/4 mx-auto">
@@ -38,7 +38,7 @@ const AddEvent = () => {
                         <input
                             type="text"
                             placeholder="Event Title"
-                            {...register("title", {
+                            {...register("product_name", {
                                 required: true,
                                 maxLength: 100,
                             })}
@@ -172,7 +172,7 @@ const AddEvent = () => {
                             type="submit"
                             className="mx-auto rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
                         >
-                            Add User
+                            Create New Event
                         </button>
                     </div>
                 </form>
