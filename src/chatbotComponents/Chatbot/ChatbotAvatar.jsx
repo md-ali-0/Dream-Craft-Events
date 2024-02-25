@@ -1,4 +1,3 @@
-// Assuming Avatar is a simple img element replacement for demonstration
 const ChatbotAvatar = ({ src, alt, }) => {
   
 
