@@ -36,6 +36,16 @@ import MyCart from "../pages/shop/MyCart";
 import PrivateRoute from "./PrivateRoute";
 import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 
+// eita Nizam kortece 
+import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
+import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
+import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
+import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
+// etotuku Nizam vai korce, piliz dont conflict
+
+
+import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
+
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -173,6 +183,14 @@ const Router = createBrowserRouter([
                 ),
             },
             {
+                path: "custom-event-request",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventDashboard />
+                    </PrivateRoute>
+                ),
+            },
+            {
                 path: "admin",
                 element: (
                     <AdminRouter>
@@ -233,6 +251,33 @@ const Router = createBrowserRouter([
                     </AdminRouter>
                 ),
             },
+    // eita Nizam kortece 
+            {
+                path: "add-product",
+                element: (
+                    <AdminRouter>
+                       <AddProduct/>
+                        </AdminRouter>
+                ),
+            },
+            {
+                path: "products",
+                element: (
+                    <AdminRouter>
+                       <AllProducts/>
+                        </AdminRouter>
+                ),
+            },
+            {
+                path: "product-orders",
+                element: (
+                    <AdminRouter>
+                       {/* <ProductOrders></ProductOrders> */}
+                       <ShopOrders></ShopOrders>
+                        </AdminRouter>
+                ),
+            },
+    // etotuku Nizam vai korce, piliz dont conflict
         ],
     },
 ]);

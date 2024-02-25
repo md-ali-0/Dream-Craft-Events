@@ -53,7 +53,7 @@ const UpdateEvent = () => {
                         <input
                             type="text"
                             placeholder="Event Title"
-                            {...register("title", {
+                            {...register("product_name", {
                                 required: true,
                                 maxLength: 100,
                             })}
