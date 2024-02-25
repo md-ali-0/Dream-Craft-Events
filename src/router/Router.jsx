@@ -43,6 +43,8 @@ import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 // etotuku Nizam vai korce, piliz dont conflict
 
 
+import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
+
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -172,6 +174,14 @@ const Router = createBrowserRouter([
                 element: (
                     <PrivateRoute>
                         <OrganizerRequest />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "custom-event-request",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventDashboard />
                     </PrivateRoute>
                 ),
             },

@@ -53,7 +53,7 @@ export const AuthProdiver = ({ children }) => {
         }
       }
       
-      return () => unSubscribe()
+      unSubscribe()
     },[axios])
     
     const userInfo = {
