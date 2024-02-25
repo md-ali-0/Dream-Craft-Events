@@ -34,6 +34,7 @@ import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
 import MyCart from "../pages/shop/MyCart";
 import PrivateRoute from "./PrivateRoute";
+import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 
 // eita Nizam kortece 
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
@@ -108,12 +109,16 @@ const Router = createBrowserRouter([
                 element: <PaymentPage />,
             },
             {
+                path: "/payment/success/:tranId",
+                element: <PaymentSuccess />,
+            },
+            {
                 path: "/request-organizer",
                 element: <RequestOrganizer />,
             },
             {
                 path: "/my-cart",
-                element: <MyCart/>,
+                element: <MyCart />,
             }
         ],
     },
@@ -246,33 +251,33 @@ const Router = createBrowserRouter([
                     </AdminRouter>
                 ),
             },
-    // eita Nizam kortece 
+            // eita Nizam kortece 
             {
                 path: "add-product",
                 element: (
                     <AdminRouter>
-                       <AddProduct/>
-                        </AdminRouter>
+                        <AddProduct />
+                    </AdminRouter>
                 ),
             },
             {
                 path: "products",
                 element: (
                     <AdminRouter>
-                       <AllProducts/>
-                        </AdminRouter>
+                        <AllProducts />
+                    </AdminRouter>
                 ),
             },
             {
                 path: "product-orders",
                 element: (
                     <AdminRouter>
-                       {/* <ProductOrders></ProductOrders> */}
-                       <ShopOrders></ShopOrders>
-                        </AdminRouter>
+                        {/* <ProductOrders></ProductOrders> */}
+                        <ShopOrders></ShopOrders>
+                    </AdminRouter>
                 ),
             },
-    // etotuku Nizam vai korce, piliz dont conflict
+            // etotuku Nizam vai korce, piliz dont conflict
         ],
     },
 ]);

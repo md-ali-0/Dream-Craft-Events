@@ -26,7 +26,7 @@ const RequestOrganizer = () => {
             const requestRes = await axiosSecure.post('/request-organizer', request)
             console.log(requestRes);
             if (requestRes.data._id) {
-                toast.success('Request for organizer, await for confirmation')
+                toast.success('Request for organizer, wait for confirmation')
                 reset()
             }
         }
