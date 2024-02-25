@@ -37,7 +37,7 @@ const config = {
   widgets: [
     {
       widgetName: 'optionsWidget',
-      widgetFunc: (props) => <OptionsWidget {...props} />,
+      widgetFunc: (props) => <OptionsWidget {...props}  />,
     },
     {
       widgetName: 'eventsWidget',
