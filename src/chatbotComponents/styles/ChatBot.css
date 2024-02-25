@@ -1,6 +1,12 @@
 .custom-chat-width .react-chatbot-kit-chat-container {
     width: 350px !important;
 }
+
+@media only screen and (max-width: 600px) {
+    .custom-chat-width .react-chatbot-kit-chat-container {
+        width: 250px !important;
+    }
+}
 .react-chatbot-kit-chat-bot-message {
     width: 80% !important;
 }
