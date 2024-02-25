@@ -38,9 +38,12 @@ import PrivateRoute from "./PrivateRoute";
 // eita Nizam kortece 
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
 import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
-import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
+import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
+import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 // etotuku Nizam vai korce, piliz dont conflict
 
+
+import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
 
 const Router = createBrowserRouter([
     {
@@ -257,6 +260,15 @@ const Router = createBrowserRouter([
                 element: (
                     <AdminRouter>
                        <AllProducts/>
+                        </AdminRouter>
+                ),
+            },
+            {
+                path: "product-orders",
+                element: (
+                    <AdminRouter>
+                       {/* <ProductOrders></ProductOrders> */}
+                       <ShopOrders></ShopOrders>
                         </AdminRouter>
                 ),
             },

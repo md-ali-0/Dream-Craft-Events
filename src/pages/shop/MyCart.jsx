@@ -3,13 +3,13 @@
 import toast from "react-hot-toast";
 import Container from "../../components/container/Container";
 import { useEffect, useState } from "react";
-// import useAuth from "../../hooks/useAuth";
-// import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 // eslint-disable-next-line no-unused-vars
 const MyCart = ({ cartItems: propCartItems }) => {
-  // const { user } = useAuth()
-  // const axiosSecure = useAxiosPublic()
+  const { user } = useAuth();
+  const axiosSecure = useAxiosPublic();
   const [cartItems, setCartItems] = useState([]);
 
   // Retrieve cart items from local storage when the component mounts
@@ -46,13 +46,59 @@ const MyCart = ({ cartItems: propCartItems }) => {
     );
   }
 
-  const placeMyOrder = () => {
-    toast.success(
-      <div className="flex items-center">
-        <span>Your order has been placed successfully.</span>
-      </div>
-    );
+  // const placeMyOrder = async (data) => {
+  //   toast.success(
+  //     <div className="flex items-center">
+  //       <span>Your order has been placed successfully.</span>
+  //     </div>
+  //   );
+  //   console.log(cartItems);
+  //   console.log(cartItems[1]);
+
+  // };
+
+  const placeMyOrder = async (data) => {
     console.log(cartItems);
+
+    if (data && cartItems.length > 0) {
+      const userId = user._id;
+      const userName = user.name;
+      const userImage = user.image;
+      const userEmail = user.email;
+      const status = "pending";
+
+      try {
+        // Iterate over each item in the cart
+        for (const cartItem of cartItems) {
+          const order = {
+            user_id: userId,
+            user_name: userName,
+            user_image: userImage,
+            user_email: userEmail,
+            product_id: cartItem.id, // Assuming cartItem has id property
+            product_image: cartItem.product_image,
+            product_name: cartItem.product_name,
+            product_description: cartItem.product_description,
+            product_price: cartItem.product_price,
+            status: status,
+          };
+
+          // Save the order to the database
+
+          const ordersRes = await axiosSecure.post("/product-orders", order);
+          console.log(ordersRes);
+        }
+
+        toast.success("Your orders have been placed successfully.");
+      } catch (error) {
+        console.error("Error placing orders:", error);
+        toast.error(
+          "An error occurred while placing your orders. Please try again."
+        );
+      }
+    } else {
+      console.warn("No data or cart items found to place orders.");
+    }
   };
 
   return (
