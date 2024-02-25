@@ -38,13 +38,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                 <>
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Profile",
-                                            icon: "LuCommand",
-                                            path: "/dashboard/profile",
-                                        }}
-                                    />
-                                    <SideBarMenuItem
-                                        menu={{
                                             name: "Wishlist",
                                             icon: "LuCommand",
                                             path: "/dashboard/wishList",
@@ -57,13 +50,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/userBooking",
                                         }}
                                     />
-                                    <SideBarMenuItem
+                                    {/* <SideBarMenuItem
                                         menu={{
                                             name: "Custom Events",
                                             icon: "LuCommand",
                                             path: "/dashboard/customEventsBooking",
                                         }}
-                                    />
+                                    /> */}
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Cart",
