@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
-import chatbotlogo from "../../assets/chatbot/chat.png";
+import chatbotlogo from "../../assets/chatbot/Chatbot Chat Message.jpg";
 import config from "../config/config";
 import "../styles/ChatBot.css";
 import ActionProvider from "../utils/ActionProvider";
