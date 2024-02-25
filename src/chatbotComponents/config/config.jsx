@@ -1,13 +1,9 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import ChatbotAvatar from "../Chatbot/ChatbotAvatar";
-// Import the widget components
-// import EventsWidget from '../Widget/EventsWidget'; // Adjust the path as necessary
-// import UpcomingEventsWidget from '../widget/UpcomingEventsWidget'; // Adjust the path as necessary
-// import PaymentsWidget from '../widget/PaymentsWidget'; // Adjust the path as necessary
 import OptionsWidget from "../Widget/OptionsWidget";
 import EventsWidget from "../Widget/EventsWidget";
 import UpcomingEventsWidget from "../Widget/UpcomingEventsWidget";
-// import ActionProvider from "../utils/ActionProvider"
+
 
 const botAvatarImage =
   "https://i.postimg.cc/zDLLW8xP/cartoon-style-robot-vectorart-78370-4103.jpg";
@@ -55,11 +51,8 @@ const config = {
           
         ]
       }} />,
-    }
-    // {
-    //   widgetName: 'paymentsWidget',
-    //   widgetFunc: (props) => <PaymentsWidget {...props} />,
-    // },
+    },
+    
   ],
 };
 

@@ -1,5 +1,4 @@
 const UpcomingEventsWidget = ({ data }) => {
-  // Ensure that data is an object containing an events array
   const events = data?.events || [];
 
   return (

@@ -2,7 +2,7 @@ const OptionsWidget = ({ actionProvider }) => {
   const options = [
     { name: "Events", action: () => actionProvider.handleFetchEvents() },
     { name: "Upcoming Events", action: () =>  actionProvider.handleFetchUpcomingEvents() },
-    { name: "Payments", action: actionProvider.handlePaymentOptions },
+   
   ];
 
   const handleOptionClick = (action) => {
