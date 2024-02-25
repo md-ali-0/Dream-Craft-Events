@@ -34,6 +34,7 @@ import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
 import MyCart from "../pages/shop/MyCart";
 import PrivateRoute from "./PrivateRoute";
+import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 
 const Router = createBrowserRouter([
     {
@@ -98,12 +99,16 @@ const Router = createBrowserRouter([
                 element: <PaymentPage />,
             },
             {
+                path: "/payment/success/:tranId",
+                element: <PaymentSuccess />,
+            },
+            {
                 path: "/request-organizer",
                 element: <RequestOrganizer />,
             },
             {
                 path: "/my-cart",
-                element: <MyCart/>,
+                element: <MyCart />,
             }
         ],
     },
