@@ -6,6 +6,8 @@ import { MdOutlineCalendarMonth } from "react-icons/md";
 import { Link, useParams } from 'react-router-dom';
 import loadingAnimation from "../../assets/animation/animation.json";
 import PricingCards from '../../components/cards/PricingCards';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+import useAuth from '../../hooks/useAuth';
 
 const PaymentPage = () => {
   const params = useParams();
@@ -13,8 +15,8 @@ const PaymentPage = () => {
   const [addMoreTicket, setAddMoreTicket] = useState(1)
   const taxes = ticketPrice * 10 / 100
   const totalPrice = ticketPrice + taxes;
-
-
+  const axios = useAxiosPublic()
+  const { user } = useAuth()
 
 
   const ticketPriceHandle = () => {
@@ -29,10 +31,10 @@ const PaymentPage = () => {
       return
     }
   }
-  
+
   const handleAddMoreTicket = () => {
-    
-     if (addMoreTicket < 5) {
+
+    if (addMoreTicket < 5) {
       setAddMoreTicket(addMoreTicket + 1)
       if (ticketPrice == 89 || ticketPrice == 178 || ticketPrice == 267 || ticketPrice == 356) {
         setTicketPrice(ticketPrice + 89)
@@ -40,22 +42,22 @@ const PaymentPage = () => {
       else if (ticketPrice == 159 || ticketPrice == 318 || ticketPrice == 477 || ticketPrice == 636) {
         setTicketPrice(ticketPrice + 159)
       }
-      
-     }
 
-    
+    }
+
+
   }
 
   const handleRemoveMoreTicket = () => {
-     if (addMoreTicket > 1 ) {
+    if (addMoreTicket > 1) {
       setAddMoreTicket(addMoreTicket - 1)
-      if (ticketPrice == 89 || ticketPrice == 178 || ticketPrice == 267 || ticketPrice == 356 || ticketPrice == 445 ) {
+      if (ticketPrice == 89 || ticketPrice == 178 || ticketPrice == 267 || ticketPrice == 356 || ticketPrice == 445) {
         setTicketPrice(ticketPrice - 89)
       }
       else if (ticketPrice == 159 || ticketPrice == 318 || ticketPrice == 477 || ticketPrice == 636 || ticketPrice == 795) {
         setTicketPrice(ticketPrice - 159)
       }
-     }
+    }
   }
 
 
@@ -97,19 +99,25 @@ const PaymentPage = () => {
   const formattedDate = dateFormat.toLocaleDateString('en-US', options);
   const timestamp = new Date().getTime();
   const randomNumber = Math.floor(Math.random() * 1000);
-  const orderID = `${event._id.slice(0,6)}-${timestamp}-${randomNumber}`;
+  const orderID = `${event._id.slice(0, 6)}-${timestamp}-${randomNumber}`;
 
 
 
 
   const paymentInfo = {
-    orderId: orderID,
-    title: event.title,
-    date: new Date().toLocaleDateString('en-US', options),
-    price: ticketPrice,
-    location: event.location
+    name: user?.name,
+    email: user?.email,
+    eventId: params._id,
+    amount: ticketPrice,
+    currency: 'USD'
   }
 
+
+  const handlePayment = async () => {
+    const requestRes = await axios.post('/order', paymentInfo)
+    window.location.replace(requestRes.data.url)
+    console.log(requestRes);
+  }
 
 
   return (
@@ -139,7 +147,7 @@ const PaymentPage = () => {
               <h2>Taxes</h2>
               <p className='font-semibold'>${taxes}</p>
             </div>
-            <hr className='h-[1.6px] mt-1 bg-gray-500'/>
+            <hr className='h-[1.6px] mt-1 bg-gray-500' />
             <div className='flex mt-4 justify-between items-center'>
               <h2 className='text-2xl font-semibold'>Total</h2>
               <p className='font-semibold text-2xl'>${totalPrice}</p>
@@ -153,9 +161,16 @@ const PaymentPage = () => {
               </div>
             </div>
             <div className='flex flex-col items-center'>
-              <button className='bg-rose-700 w-full rounded-md py-2 mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'>
+              { user ?  <button
+                onClick={handlePayment}
+                className='bg-rose-700 w-full rounded-md py-2 mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
+              >
                 Continue to secure payment
-              </button>
+              </button> : <Link className='w-full' to='/login'><button
+                className='bg-rose-700 w-full rounded-md py-2 px-4  mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
+              >
+                Login to Purchase
+              </button></Link> }
               <Link to={`/event-details/${event._id}`}>
                 <h3 className='mt-3 border-b border-black font-semibold md:text-sm text-xl lg:text-xl'>Cancel payment</h3>
               </Link>

@@ -1,7 +1,8 @@
-import Faq from "./faq/FaqItem";
+// import Faq from "./faq/FaqItem";
 import Gallery from "./gallery/Gallery";
 import Banner from "./portfolio_banner/PortfolioBanner";
 import VideoComponent from "./videoDocuments/VideoComponent";
+import Faqac from "../portfolio/faq/Faqac"
 
 const Portfolio = () => {
     return (
@@ -9,7 +10,8 @@ const Portfolio = () => {
             <Banner/>
             <Gallery/>
             <VideoComponent/>
-            <Faq/>
+            {/* <Faq/> */}
+            <Faqac></Faqac>
         </div>
     );
 };

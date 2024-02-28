@@ -1,4 +1,3 @@
-// src/services/BackendAPI.js
 import axios from 'axios';
 
 class BackendAPI {

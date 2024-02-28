@@ -22,7 +22,7 @@ const VideoComponent = () => {
   };
 
   return (
-    <div className="md:flex flex-col items-center justify-center gap-8  h-[70vh] bg-gradient-to-r from-blue-400 to-purple-400 text-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+    <div className="md:flex flex-col items-center justify-center gap-8  h-[70vh] bg-gradient-to-r from-blue-400 to-purple-400 text-white p-8 rounded-lg shadow-lg">
       <h2 className="text-3xl font-bold text-center mb-4 sm:text-left">How We Work</h2>
       <div className="max-w-md text-center sm:text-left">
         <p className="text-lg">
@@ -50,7 +50,7 @@ const VideoComponent = () => {
           </button>
           {/* Replace the <video> element with an <iframe> for YouTube */}
           <iframe
-            className="w-full h-full"
+            className="md:w-full md:h-full lg:w-[55%] lg:h-[70%]"
             src="https://www.youtube.com/embed/eTl2Cxb74r0"
             frameBorder="0"
             allowFullScreen

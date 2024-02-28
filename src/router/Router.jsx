@@ -32,8 +32,22 @@ import Wishlist from "../pages/dashboard/userDashboard/wishlist/Wishlist";
 import AllEvents from "../pages/dashboard/admin/events/AllEvents";
 import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
-import PrivateRoute from "./PrivateRoute";
 import MyCart from "../pages/shop/MyCart";
+import PrivateRoute from "./PrivateRoute";
+import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
+
+// eita Nizam kortece 
+import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
+import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
+// import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
+import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
+// etotuku Nizam vai korce, piliz dont conflict
+
+
+import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
+import CustomEventBooking from "../pages/dashboard/userDashboard/CustomEventBook/CustomEventBooking";
+import PaymentHistory from "../pages/dashboard/userDashboard/payment/PaymentHistory";
+import Mails from "../pages/dashboard/admin/mails/Mails";
 
 const Router = createBrowserRouter([
     {
@@ -98,12 +112,16 @@ const Router = createBrowserRouter([
                 element: <PaymentPage />,
             },
             {
+                path: "/payment/success/:tranId",
+                element: <PaymentSuccess />,
+            },
+            {
                 path: "/request-organizer",
                 element: <RequestOrganizer />,
             },
             {
                 path: "/my-cart",
-                element: <MyCart/>,
+                element: <MyCart />,
             }
         ],
     },
@@ -116,10 +134,18 @@ const Router = createBrowserRouter([
         ),
         children: [
             {
-                path: "/dashboard",
+                path: "/dashboard/user",
                 element: (
                     <PrivateRoute>
                         <DashboardHome />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/dashboard/custom-event-booking",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventBooking></CustomEventBooking>
                     </PrivateRoute>
                 ),
             },
@@ -168,6 +194,14 @@ const Router = createBrowserRouter([
                 ),
             },
             {
+                path: "custom-event-request",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventDashboard />
+                    </PrivateRoute>
+                ),
+            },
+            {
                 path: "admin",
                 element: (
                     <AdminRouter>
@@ -184,10 +218,18 @@ const Router = createBrowserRouter([
                 ),
             },
             {
-                path: "userBooking",
+                path: "my-bookings",
                 element: (
                     <PrivateRoute>
                         <UserBookings />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "payment-history",
+                element: (
+                    <PrivateRoute>
+                        <PaymentHistory></PaymentHistory>
                     </PrivateRoute>
                 ),
             },
@@ -220,6 +262,49 @@ const Router = createBrowserRouter([
                     </AdminRouter>
                 ),
             },
+            {
+                path: "events",
+                element: (
+                    <AdminRouter>
+                        <AllEvents />
+                    </AdminRouter>
+                ),
+            },
+            // eita Nizam kortece 
+            {
+                path: "add-product",
+                element: (
+                    <AdminRouter>
+                        <AddProduct />
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "products",
+                element: (
+                    <AdminRouter>
+                        <AllProducts />
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "product-orders",
+                element: (
+                    <AdminRouter>
+                        {/* <ProductOrders></ProductOrders> */}
+                        <ShopOrders></ShopOrders>
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "all-mails",
+                element: (
+                    <AdminRouter>
+                        <Mails></Mails>
+                    </AdminRouter>
+                ),
+            },
+            // etotuku Nizam vai korce, piliz dont conflict
         ],
     },
 ]);
