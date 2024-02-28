@@ -48,6 +48,7 @@ import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDash
 import CustomEventBooking from "../pages/dashboard/userDashboard/CustomEventBook/CustomEventBooking";
 import PaymentHistory from "../pages/dashboard/userDashboard/payment/PaymentHistory";
 import Mails from "../pages/dashboard/admin/mails/Mails";
+import Inbox from "../pages/dashboard/userDashboard/inbox/Inbox";
 
 const Router = createBrowserRouter([
     {
@@ -222,6 +223,14 @@ const Router = createBrowserRouter([
                 element: (
                     <PrivateRoute>
                         <UserBookings />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "my-inbox",
+                element: (
+                    <PrivateRoute>
+                        <Inbox></Inbox>
                     </PrivateRoute>
                 ),
             },
