@@ -4,6 +4,7 @@ import Loading from "../../components/loading/Loading";
 import SideBarMenuItem from "../../components/sidebar/SideBarMenuItem";
 import SidebarSubMenu from "../../components/sidebar/SidebarSubMenu";
 import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     const { user, isLoading } = useAuth();
@@ -26,7 +27,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 }`}
             >
                 <div className="flex items-center justify-center border-b border-gray-900 py-[18px]">
-                    <img src={logo} alt="" className="w-28" />
+                    <Link to="/"><img src={logo} alt="" className="w-28" /></Link>
                 </div>
                 <div className="overflow-y-auto custom-scroll">
                     <nav className="mt-5 px-3">
@@ -38,30 +39,45 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                 <>
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Wishlist",
+                                            name: "User Dashboard",
                                             icon: "LuCommand",
-                                            path: "/dashboard/wishList",
-                                        }}
-                                    />
-                                    <SideBarMenuItem
-                                        menu={{
-                                            name: "Ticket Bookings",
-                                            icon: "LuCommand",
-                                            path: "/dashboard/userBooking",
+                                            path: "/dashboard",
                                         }}
                                     />
                                     {/* <SideBarMenuItem
                                         menu={{
-                                            name: "Custom Events",
+                                            name: "Wishlist",
                                             icon: "LuCommand",
-                                            path: "/dashboard/customEventsBooking",
+                                            path: "/dashboard/wishList",
                                         }}
                                     /> */}
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Cart",
-                                            icon: "LuCommand",
+                                            name: "Ticket Bookings",
+                                            icon: "LuTicket",
+                                            path: "/dashboard/my-bookings",
+                                        }}
+                                    />
+
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Custom Event Orders",
+                                            icon: "LuCalendarCheck2",
+                                            path: "/dashboard/custom-event-booking",
+                                        }}
+                                    />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "My Cart",
+                                            icon: "LuShoppingCart",
                                             path: "/dashboard/cart",
+                                        }}
+                                    />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Payment History",
+                                            icon: "LuDollarSign",
+                                            path: "/dashboard/payment-history",
                                         }}
                                     />
                                 </>

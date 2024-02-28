@@ -1,11 +1,12 @@
-import React from 'react';
+
 
 const CustomEventBooking = () => {
     return (
         <div>
-            <h2 className="text-4xl font-semibold text-center ">Your Custom events</h2>
-            
-        </div>
+
+        <h2 className="text-center text-primary text-2xl font-semibold">My Custom Events</h2>
+        
+      </div>
     );
 };
 

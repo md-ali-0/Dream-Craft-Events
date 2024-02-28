@@ -25,7 +25,7 @@ const AddProduct = () => {
     const { product_name, product_price, product_description, product_image } =
       data;
     const imageResult = await uploadImage(product_image[0]);
-    const loadingToast = toast.loading("Creating new Product ... ");
+    const loadingToast = toast.loading("Creating new Product.. ");
     if (imageResult) {
       const newProducts = {
         product_name,
