@@ -39,12 +39,14 @@ import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 // eita Nizam kortece 
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
 import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
-import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
+// import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
 import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 // etotuku Nizam vai korce, piliz dont conflict
 
 
 import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
+import CustomEventBooking from "../pages/dashboard/userDashboard/CustomEventBook/CustomEventBooking";
+import PaymentHistory from "../pages/dashboard/userDashboard/payment/PaymentHistory";
 
 const Router = createBrowserRouter([
     {
@@ -139,6 +141,14 @@ const Router = createBrowserRouter([
                 ),
             },
             {
+                path: "/dashboard/custom-event-booking",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventBooking></CustomEventBooking>
+                    </PrivateRoute>
+                ),
+            },
+            {
                 path: "add-event",
                 element: (
                     <PrivateRoute>
@@ -207,10 +217,18 @@ const Router = createBrowserRouter([
                 ),
             },
             {
-                path: "userBooking",
+                path: "my-bookings",
                 element: (
                     <PrivateRoute>
                         <UserBookings />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "payment-history",
+                element: (
+                    <PrivateRoute>
+                        <PaymentHistory></PaymentHistory>
                     </PrivateRoute>
                 ),
             },
