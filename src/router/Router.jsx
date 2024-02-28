@@ -47,6 +47,7 @@ import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
 import CustomEventBooking from "../pages/dashboard/userDashboard/CustomEventBook/CustomEventBooking";
 import PaymentHistory from "../pages/dashboard/userDashboard/payment/PaymentHistory";
+import Mails from "../pages/dashboard/admin/mails/Mails";
 
 const Router = createBrowserRouter([
     {
@@ -292,6 +293,14 @@ const Router = createBrowserRouter([
                     <AdminRouter>
                         {/* <ProductOrders></ProductOrders> */}
                         <ShopOrders></ShopOrders>
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "all-mails",
+                element: (
+                    <AdminRouter>
+                        <Mails></Mails>
                     </AdminRouter>
                 ),
             },

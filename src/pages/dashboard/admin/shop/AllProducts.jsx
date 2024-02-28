@@ -127,7 +127,7 @@ const AllEvents = () => {
       <div>
         <div className="flex justify-between items-center py-2">
           <h3 className="font-Quicksand text-primary text-2xl font-bold">
-            Manage Shopping Products
+            Manage Shop Items
           </h3>
           <div className="block relative">
             <input

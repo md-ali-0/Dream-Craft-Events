@@ -91,6 +91,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/admin",
                                         }}
                                     />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Mails",
+                                            icon: "LuMailCheck",
+                                            path: "/dashboard/all-mails",
+                                        }}
+                                    />
                                     <SidebarSubMenu
                                         menu={{
                                             name: "Events",
