@@ -8,11 +8,11 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+// import { Link } from "react-router-dom";
+// import Swal from "sweetalert2";
 import useAxios from "../../../../hooks/useAxios";
 
-const AllEvents = () => {
+const AllProducts = () => {
   const axios = useAxios();
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -223,4 +223,4 @@ const AllEvents = () => {
   );
 };
 
-export default AllEvents;
+export default AllProducts;
