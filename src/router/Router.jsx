@@ -133,7 +133,7 @@ const Router = createBrowserRouter([
         ),
         children: [
             {
-                path: "/dashboard",
+                path: "/dashboard/user",
                 element: (
                     <PrivateRoute>
                         <DashboardHome />

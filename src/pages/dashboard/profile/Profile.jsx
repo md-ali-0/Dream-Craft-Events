@@ -20,8 +20,8 @@ const Profile = () => {
     const {
         register,
         handleSubmit,
-        reset,
-        formState: { errors },
+        // reset,
+        // formState: { errors },
     } = useForm();
 
     const onSubmit = async (data) => {
@@ -49,7 +49,7 @@ const Profile = () => {
                         <p className="text-2xl">{user?.name}</p>
                     </div>
                     <p className="text-sm text-gray-500">
-                        Administrator, DreamCraft
+                        DreamCraft Events by Data Defenders 805.3 
                     </p>
                 </div>
                 <div className="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">

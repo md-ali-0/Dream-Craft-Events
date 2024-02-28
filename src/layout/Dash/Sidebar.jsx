@@ -41,7 +41,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                         menu={{
                                             name: "User Dashboard",
                                             icon: "LuCommand",
-                                            path: "/dashboard",
+                                            path: "/dashboard/user",
                                         }}
                                     />
                                     {/* <SideBarMenuItem
@@ -132,7 +132,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Organizer Request",
-                                            icon: "LuCommand",
+                                            icon: "LuUserCheck",
                                             path: "/dashboard/organizer-request",
                                         }}
                                     />
