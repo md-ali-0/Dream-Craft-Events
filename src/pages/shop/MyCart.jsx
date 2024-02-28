@@ -1,16 +1,18 @@
 // MyCart.jsx file
-
+import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import Container from "../../components/container/Container";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line no-unused-vars
 const MyCart = ({ cartItems: propCartItems }) => {
   const { user } = useAuth();
   const axiosSecure = useAxiosPublic();
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   // Retrieve cart items from local storage when the component mounts
   useEffect(() => {
@@ -89,7 +91,25 @@ const MyCart = ({ cartItems: propCartItems }) => {
           console.log(ordersRes);
         }
 
-        toast.success("Your orders have been placed successfully.");
+        // toast.success("Your orders have been placed.");
+        // Swal.fire({
+        //   title: "Order placed!",
+        //   text: "Your order has been placed successfully.",
+        //   icon: "success",
+        //   confirmButtonText: "Ok",
+        // });
+
+        Swal.fire({
+          title: "Order placed!",
+          text: "Your order has been placed successfully!",
+          icon: "success",
+          confirmButtonText: "Ok",
+      }).then((result) => {
+          if (result.isConfirmed) {
+              navigate('/dashboard/cart'); // Directly navigate to the home page
+          }
+      });
+
       } catch (error) {
         console.error("Error placing orders:", error);
         toast.error(

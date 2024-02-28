@@ -9,7 +9,7 @@ import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -23,6 +23,7 @@ const CustomEvent = () => {
     const [catering, setCatering] = useState('')
     const [specialRequest, setSpecialRequest] = useState('')
     const [showModal, setShowModal] = useState(false)
+    const navigate = useNavigate(); // Initialize useNavigate hook
     
  
     const axios = useAxiosPublic()
@@ -123,16 +124,29 @@ const CustomEvent = () => {
         const response = await axios.post('/custom-event', CustomEventData)
         console.log(response);
 
+        // Swal.fire({
+        //     position: "top-end",
+        //     icon: "success",
+        //     title: "You have requested an event, we will get back to you soon",
+        //     showConfirmButton: false,
+        //     timer: 3000
+        // });
+
         Swal.fire({
-            position: "top-end",
+            title: "Order placed succesfully!",
+            text: "You have requested an event, we will get back to you soon.",
             icon: "success",
-            title: "You have requested an event, we will get back to you soon",
-            showConfirmButton: false,
-            timer: 3000
+            confirmButtonText: "Ok",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                reset(); // Reset the form
+                setShowModal(!showModal);
+                navigate('/dashboard/custom-event-booking'); // Directly navigate to the home page
+            }
         });
 
         setShowModal(!showModal)
-        window.location.reload()
+        // window.location.reload()
 
     }
 

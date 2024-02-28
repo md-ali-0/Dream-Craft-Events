@@ -88,7 +88,7 @@ const EventDetails = () => {
             />
             <div className="flex justify-between md:max-w-[780px] lg:max-w-[830px] ml-2 mt-6">
               <p className="flex items-center text-sm gap-2">
-                <CiCalendarDate className="text-xl" />
+                <CiCalendarDate className="text-xl text-primary" />
                 {formattedDate}
               </p>
               <p className="flex items-center gap-2 text-red-600 font-semibold text-xl">
@@ -96,7 +96,7 @@ const EventDetails = () => {
                 {event.seat} Seat
               </p>
               <p className="flex items-center gap-1 text-sm">
-                <VscLocation className="text-2xl" />
+                <VscLocation className="text-2xl text-primary" />
                 {event.location}
               </p>
             </div>
@@ -126,15 +126,17 @@ const EventDetails = () => {
               </div>
 
               <div className="flex flex-col justify-center items-center">
-                <p>☆☆☆☆☆</p>
+                <p className="text-yellow-400 font-bold text-xl">☆☆☆☆☆</p>
                 <p>(260)</p>
               </div>
             </div>
           </div>
-          <div className="flex justify-center gap-3 my-6">
-            <div className="bg-pink-700 text-white px-5 py-1 rounded-md">
+
+
+          <div className="grid grid-cols-1 md:flex justify-center gap-3 my-6">
+            <div className="bg-pink-700 text-white px-5 py-1 rounded-md text-center">
               <span className="text-xl font-semibold">$</span>
-              <span className="text-3xl font-semibold tracking-tight">89</span>
+              <span className="text-3xl font-semibold tracking-tight ">89</span>
               <span className="ms-1 font-normal">/seat</span>
             </div>
             <Link to={`/payment/${params._id}`}>
@@ -144,6 +146,8 @@ const EventDetails = () => {
               </button>
             </Link>
           </div>
+
+
           <div>
             <h2 className="text-2xl font-semibold max-w-[850px]">
               {event.title}
