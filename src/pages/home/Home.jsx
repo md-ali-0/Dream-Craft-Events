@@ -6,6 +6,7 @@ import Organizer from "./Organizer/Organizer";
 // import FeatureEvents from "./FeatureEvents";
 import PopularEvents from "./PopularEvents";
 import MagicBanner from "./magicBanner/MagicBanner";
+// import Faqac from "../../pages/portfolio/faq/Faqac"
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <Booking></Booking>
       <EventCards />
       <TeamCards />
+      {/* <Faqac></Faqac> */}
     </div>
   );
 };
