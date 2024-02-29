@@ -101,6 +101,7 @@ const CustomEvent = () => {
         e.preventDefault()
         const firstName = e.target.firstName.value;
         const lastName = e.target.lastName.value;
+        const fullName = firstName + " " + lastName;
         const email = e.target.email.value;
         const phone = e.target.phone.value;
 
@@ -109,6 +110,7 @@ const CustomEvent = () => {
             firstName: firstName,
             lastName: lastName,
             email: email,
+            fullName: fullName,
             phone: phone,
             eventType: eventType,
             date: date,
@@ -120,6 +122,8 @@ const CustomEvent = () => {
             cost: totalCost,
             status: 'pending'
         }
+
+        console.log(CustomEventData)
 
         const response = await axios.post('/custom-event', CustomEventData)
         console.log(response);
@@ -183,6 +187,7 @@ const CustomEvent = () => {
                                         <div className="mt-2">
                                             <select onChange={handleEventType} className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2' name="type" id="">
                                                 <option selected disabled>Select event type</option>
+                                                <option value="Wedding">Wedding</option>
                                                 <option value="Birthday">Birthday</option>
                                                 <option value="Anniversary">Anniversary</option>
                                                 <option value="Arts and Culture Festival">Arts and Culture Festival</option>
@@ -202,7 +207,7 @@ const CustomEvent = () => {
                                     <div className="sm:col-span-3">
                                         <label className="block text-sm font-medium leading-6 text-gray-900">Location</label>
                                         <div className="mt-2 relative">
-                                            <input onChange={handleInputLocation} id="email" placeholder='Type your event location' name="email" type="email" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-6" />
+                                            <input onChange={handleInputLocation} id="location" placeholder='Type your event location' name="location" type="location" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-6" />
                                             <CiLocationOn className='absolute top-2 left-1' />
                                         </div>
                                     </div>
@@ -247,7 +252,7 @@ const CustomEvent = () => {
                                         <label className="block text-sm font-medium leading-6 text-gray-900">
                                             Any Special Request
                                         </label>
-                                        <textarea onChange={handleSpecialRequest} id="email" rows={6} placeholder='Write here if you have any special request' name="email" type="email" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" />
+                                        <textarea onChange={handleSpecialRequest} id="request" rows={6} placeholder='Write here if you have any special request' name="request" type="request" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" />
                                     </div>
 
                                 </div>
@@ -328,7 +333,7 @@ const CustomEvent = () => {
 
                                     <div className="mt-4">
                                         <label className="block text-sm font-medium text-gray-700">Email</label>
-                                        <input type="email" id="email" name="email" className="mt-1 p-2 w-full border bg-rose-100 border-gray-300 placeholder:text-sm rounded-md" placeholder='write your email' required />
+                                        <input type="email" id="email" name="email" defaultValue={user.email}  className="mt-1 p-2 w-full border bg-rose-100 border-gray-300 placeholder:text-sm rounded-md" placeholder='write your email' required />
                                     </div>
 
 

@@ -12,7 +12,7 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
         await logout()
         navigate('/login')
     }
-    console.log(user);
+    // console.log(user);
     return (
         <div className="flex items-center justify-between px-6 py-3 dark:bg-[#0c1427] border dark:border-slate-800">
             <div className="flex items-center">
