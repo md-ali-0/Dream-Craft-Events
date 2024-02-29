@@ -102,22 +102,46 @@ const PaymentPage = () => {
   const orderID = `${event._id.slice(0, 6)}-${timestamp}-${randomNumber}`;
 
 
-
-
-  const paymentInfo = {
-    name: user?.name,
-    email: user?.email,
-    eventId: params._id,
-    amount: ticketPrice,
-    currency: 'USD'
-  }
-
-
   const handlePayment = async () => {
-    const requestRes = await axios.post('/order', paymentInfo)
-    window.location.replace(requestRes.data.url)
-    console.log(requestRes);
-  }
+    if (!event || !event.title) {
+      console.error("Event data is not available.");
+      return;
+    }
+  
+    const paymentInfo = {
+      name: user?.name,
+      email: user?.email,
+      eventId: params._id,
+      eventTitle: event.title, 
+      amount: ticketPrice,
+      currency: 'USD'
+    };
+  
+    try {
+      const requestRes = await axios.post('/order', paymentInfo);
+      window.location.replace(requestRes.data.url);
+    } catch (error) {
+      console.error("Error during payment: ", error);
+    }
+  };
+  
+
+  // const paymentInfo = {
+  //   name: user?.name,
+  //   email: user?.email,
+  //   eventId: params._id,
+  //   eventTitle: event.title,
+  //   amount: ticketPrice,
+  //   currency: 'USD'
+  // }
+  
+
+
+  // const handlePayment = async () => {
+  //   const requestRes = await axios.post('/order', paymentInfo)
+  //   window.location.replace(requestRes.data.url)
+  //   console.log(requestRes);
+  // }
 
 
   return (
