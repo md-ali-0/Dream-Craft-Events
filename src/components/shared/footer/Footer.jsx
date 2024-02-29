@@ -1,8 +1,15 @@
-import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo/dream-craft.png';
-import Container from '../../container/Container';
+import { Link } from "react-router-dom";
+import logo from "../../../assets/logo/dream-craft.png";
+import Container from "../../container/Container";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling behavior
+    });
+  };
+
   return (
     <footer className="bg-white border-t border-gray-200">
       <Container>
@@ -128,36 +135,38 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
             <div></div>
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-gray-900">Important Links</p>
+              <p className="text-lg font-medium text-gray-900">
+                Important Links
+              </p>
               <ul className="mt-8 space-y-4 text-sm">
-                <li>
+                <li onClick={scrollToTop}>
                   <Link
+                    to="/booking"
                     className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/bookings"
                   >
                     Bookings
                   </Link>
                 </li>
-                <li>
+                <li onClick={scrollToTop}>
                   <Link
+                    to="/about"
                     className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/about"
                   >
                     About Us
                   </Link>
                 </li>
-                <li>
+                <li onClick={scrollToTop}>
                   <Link
+                    to="/contact"
                     className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/contact"
                   >
                     Contact Us
                   </Link>
                 </li>
-                <li>
+                <li onClick={scrollToTop}>
                   <Link
+                    to="/login"
                     className="text-gray-700 transition hover:text-gray-700/75"
-                    href="/login"
                   >
                     Login
                   </Link>
@@ -167,11 +176,8 @@ const Footer = () => {
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-gray-900">Contact Us</p>
               <ul className="mt-8 space-y-4 text-sm">
-                <li>
-                  <Link
-                    className="flex items-center justify-center gap-1.5 "
-                    href="/"
-                  >
+
+                  <li className="flex items-center justify-center gap-1.5 ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 shrink-0 text-gray-900"
@@ -186,9 +192,145 @@ const Footer = () => {
                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                       />
                     </svg>
-                    <span className="md:flex-1 text-gray-700">john@doe.com</span>
-                  </Link>
-                </li>
+                    <span className="md:flex-1 text-gray-700">
+                      john@doe.com
+                    </span>
+                  </li>
+
+{/* 
+                  <a href="mailto:nizam.chy.cs@gmail.com">
+                  <li className="flex items-center justify-center gap-1.5 ">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 shrink-0 text-gray-900"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="md:flex-1 text-gray-700">
+                      nizam.chy.cs@gmail.com
+                    </span>
+                  </li>
+                </a>
+
+                <a href="mailto:sachinsingha7899@gmail.com">
+                  <li className="flex items-center justify-center gap-1.5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 shrink-0 text-gray-900"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="md:flex-1 text-gray-700">
+                      sachinsingha7899@gmail.com
+                    </span>
+                  </li>
+                </a>
+
+                <a href="mailto:bdmamun100@gmail.com">
+                  <li className="flex items-center justify-center gap-1.5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 shrink-0 text-gray-900"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="md:flex-1 text-gray-700">
+                      bdmamun100@gmail.com
+                    </span>
+                  </li>
+                </a>
+
+                <a href="mailto:rhakibuxd@gmail.com">
+                  <li className="flex items-center justify-center gap-1.5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 shrink-0 text-gray-900"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="md:flex-1 text-gray-700">
+                      rhakibuxd@gmail.com
+                    </span>
+                  </li>
+                </a>
+
+                <a href="mailto:neelimasultana6@gmail.com">
+                  <li className="flex items-center justify-center gap-1.5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 shrink-0 text-gray-900"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="md:flex-1 text-gray-700">
+                      neelimasultana6@gmail.com
+                    </span>
+                  </li>
+                </a>
+
+                <a href="mailto:mohammad.98482@gmail.com">
+                  <li className="flex items-center justify-center gap-1.5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 shrink-0 text-gray-900"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="md:flex-1 text-gray-700">
+                      mohammad.98482@gmail.com
+                    </span>
+                  </li>
+                </a> */}
+  
+
                 <li>
                   <Link
                     className="flex items-center justify-center gap-1.5 "

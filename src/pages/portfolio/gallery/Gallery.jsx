@@ -36,8 +36,8 @@ const Gallery = () => {
             </div>
             <div
               data-aos="zoom-in"
-              data-aos-delay="50"
-              data-aos-duration="1000"
+              data-aos-delay="70"
+              data-aos-duration="3500"
               className="bg-gray-800 border border-gray-300 object-cover h-full"
             >
               <img className="w-full h-full object-cover" src={img2} alt="" />

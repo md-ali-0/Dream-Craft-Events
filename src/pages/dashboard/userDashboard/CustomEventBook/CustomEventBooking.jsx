@@ -76,7 +76,7 @@ const Cart = () => {
     // },
     {
       header: "Name",
-      accessorKey: "firstName",
+      accessorKey: "fullName",
     },
     
     {
