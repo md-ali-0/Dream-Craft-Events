@@ -45,6 +45,7 @@ import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 
 
 import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
+import CustomEventUser from "../pages/dashboard/CustomEvent/CustomEventUser";
 
 const Router = createBrowserRouter([
     {
@@ -185,9 +186,9 @@ const Router = createBrowserRouter([
             {
                 path: "custom-event-request",
                 element: (
-                    <PrivateRoute>
+                    <AdminRouter>
                         <CustomEventDashboard />
-                    </PrivateRoute>
+                    </AdminRouter>
                 ),
             },
             {
@@ -211,6 +212,14 @@ const Router = createBrowserRouter([
                 element: (
                     <PrivateRoute>
                         <UserBookings />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "custom-events",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventUser />
                     </PrivateRoute>
                 ),
             },

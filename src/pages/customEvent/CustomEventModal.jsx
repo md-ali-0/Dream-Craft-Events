@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 
-const CustomEventModal = ({ isVisible, children }) => {
+const CustomEventModal = ({ showModal, children }) => {
 
-    if (!isVisible) {
+    if (!showModal) {
         return null;
     }   
 

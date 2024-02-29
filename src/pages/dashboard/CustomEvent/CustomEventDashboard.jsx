@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
+import toast from 'react-hot-toast';
 
 const CustomEventDashboard = () => {
 
@@ -12,22 +13,21 @@ const CustomEventDashboard = () => {
             return res.data;
         }
     })
-    const handleApprove = async (id) => {
+    const handleApprove =  (id) => {
 
-        const update = await axios.patch(`/custom-event/${id}`)
+        const update = axios.patch(`/custom-event/${id}`)
         console.log(update);
-        // if (update.status.modifiedCount > 0) {            
-        //     refetch()
-        // }
+        toast.success("Successfully Approved!");                  
+        refetch();
+        
 
     }
-    const handleReject = async (id) => {
+    const handleReject = (id) => {
 
-        const update = await axios.put(`/custom-event/${id}`)
+        const update = axios.patch(`/custom-event/reject/${id}`)
         console.log(update);
-        if (update.status.modifiedCount > 0) {            
-            refetch()
-        }
+        toast.success("Successfully rejected!");  
+        refetch();
 
     }
 
@@ -76,7 +76,7 @@ const CustomEventDashboard = () => {
                                 <td className="px-4 py-2">
                                    {
                                     event.status == 'rejected' ? <p
-                                    className="bg-green-500 text-white px-4 py-2 rounded-md  opacity-70">Approve</p> : (event.status == 'pending' ? <button
+                                    className="bg-green-500 text-white px-4 py-2 rounded-md  opacity-60">Approve</p> : (event.status == 'pending' ? <button
                                     onClick={() => handleApprove(event._id)}
                                     className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 disabled:opacity-50">Approve</button> : <p className='bg-green-700 text-white font-bold px-4 py-2 rounded-md hover:bg-green-600 disabled:opacity-50'>Approved</p> )
                                    }
@@ -85,10 +85,14 @@ const CustomEventDashboard = () => {
                                     
                                 </td>
                                 <td className="px-4 py-2 ">
-                                    {event.status == 'rejected' ? <p
+                                    {
+                                        event.status == 'approved' ? <p
+                                        className="bg-red-700 text-white px-4 py-2 rounded-md  opacity-70">Reject</p> :
+                                        (event.status == 'rejected' ? <p
                                         className="bg-red-700 text-white px-4 py-2 rounded-md  disabled:opacity-50 font-bold">Rejected</p> : <button
                                         onClick={() => handleReject(event._id)}
-                                        className="bg-yellow-600 text-white px-7 py-2 rounded-md hover:bg-yellow-600 disabled:opacity-50">Reject</button>}
+                                        className="bg-yellow-600 text-white px-7 py-2 rounded-md hover:bg-yellow-600 disabled:opacity-50">Reject</button>)
+                                    }
 
                                     {/* TODO */}
                                    
