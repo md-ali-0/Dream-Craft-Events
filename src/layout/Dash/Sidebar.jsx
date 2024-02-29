@@ -15,16 +15,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         <>
             <div
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className={`fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden ${
-                    sidebarOpen ? "block" : "hidden"
-                }`}
+                className={`fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden ${sidebarOpen ? "block" : "hidden"
+                    }`}
             ></div>
             <div
-                className={`fixed inset-y-0 left-0 z-30 w-64 flex flex-col bg-[#0c1427] min-h-screen transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0 ${
-                    sidebarOpen
-                        ? "translate-x-0 ease-out"
-                        : "-translate-x-full ease-in"
-                }`}
+                className={`fixed inset-y-0 left-0 z-30 w-64 flex flex-col bg-[#0c1427] min-h-screen transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0 ${sidebarOpen
+                    ? "translate-x-0 ease-out"
+                    : "-translate-x-full ease-in"
+                    }`}
             >
                 <div className="flex items-center justify-center border-b border-gray-900 py-[18px]">
                     <Link to="/"><img src={logo} alt="" className="w-28" /></Link>
@@ -121,7 +119,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             },
                                         ]}
                                     ></SidebarSubMenu>
-                                    
+
                                     <SidebarSubMenu
                                         menu={{
                                             name: "Shop",
@@ -142,7 +140,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             },
                                         ]}
                                     ></SidebarSubMenu>
-                                    
+
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Organizer Request",
@@ -157,6 +155,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/custom-event-request",
                                         }}
                                     />
+                                </>
+                            )}
+                            {user?.role === "organizer" && (
+                                <>
+                                    <SidebarSubMenu
+                                        menu={{
+                                            name: "Events",
+                                            icon: "LuCalendarPlus",
+                                        }}
+                                        subMenu={[
+                                            {
+                                                name: "Add Event",
+                                                path: "add-event",
+                                            },
+                                        ]}
+                                    ></SidebarSubMenu>
                                 </>
                             )}
                             <SideBarMenuItem
