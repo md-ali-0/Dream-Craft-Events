@@ -109,6 +109,7 @@ const CustomEvent = () => {
         const CustomEventData = {
             firstName: firstName,
             lastName: lastName,
+            userEmail: user?.email,
             email: email,
             fullName: fullName,
             phone: phone,
@@ -128,13 +129,6 @@ const CustomEvent = () => {
         const response = await axios.post('/custom-event', CustomEventData)
         console.log(response);
 
-        // Swal.fire({
-        //     position: "top-end",
-        //     icon: "success",
-        //     title: "You have requested an event, we will get back to you soon",
-        //     showConfirmButton: false,
-        //     timer: 3000
-        // });
 
         Swal.fire({
             title: "Order placed succesfully!",
@@ -145,7 +139,7 @@ const CustomEvent = () => {
             if (result.isConfirmed) {
                 reset(); // Reset the form
                 setShowModal(!showModal);
-                navigate('/dashboard/custom-event-booking'); // Directly navigate to the home page
+                navigate('/dashboard/customEvent'); // Directly navigate to the home page
             }
         });
 
@@ -311,7 +305,7 @@ const CustomEvent = () => {
                 </div>
 
             </div>
-            <CustomEventModal isVisible={showModal} handleShowModal={handleShowModal}>
+            <CustomEventModal showModal={showModal} >
                 <div id='wrapper' className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center' onClick={handleClose}>
                     <div className='w-[550px] p-4 md:p-0'>
                         <div className='bg-white rounded-md relative'>
