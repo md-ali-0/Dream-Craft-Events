@@ -18,7 +18,7 @@ const OrganizerRequest = () => {
     const handleApprove = (userId, id) => {
         Swal.fire({
             title: "Are you sure?",
-            text: "You want to make teacher?",
+            text: "You want to make organizer?",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
