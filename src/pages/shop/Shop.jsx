@@ -28,6 +28,7 @@ const Shop = () => {
     try {
       const response = await fetch(
         "https://dream-craft-server.vercel.app/products"
+        // "http://localhost:8080/products"
       );
 
       if (!response.ok) {
@@ -54,10 +55,16 @@ const Shop = () => {
     setFilteredItems(allProducts || []);
   }, [allProducts]);
 
+  // const updateCartItemCount = (newCartItem) => {
+  //   setCartItems([...cartItems, newCartItem]);
+  //   setCartItemCount(cartItemCount + 1);
+  // };
+
   const updateCartItemCount = (newCartItem) => {
-    setCartItems([...cartItems, newCartItem]);
-    setCartItemCount(cartItemCount + 1);
+    setCartItems((prevCartItems) => [...prevCartItems, newCartItem]);
+    setCartItemCount((prevCount) => prevCount + 1);
   };
+  
 
   const handleSearch = (e) => {
     e.preventDefault();

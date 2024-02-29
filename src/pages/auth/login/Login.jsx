@@ -22,7 +22,7 @@ const Login = () => {
             const {data} = await login(email, password)
             toast.dismiss(toastLoading)
             toast.success('Login Successfully')
-            console.log(data.user);
+            // console.log(data.user);
             if (data.user.role === 'admin') {
                 navigation('/dashboard/admin')
             }else if(data.user.role === 'organiger'){

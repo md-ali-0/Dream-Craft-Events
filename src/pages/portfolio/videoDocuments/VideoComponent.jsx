@@ -22,11 +22,11 @@ const VideoComponent = () => {
   };
 
   return (
-    <div className="md:flex flex-col items-center justify-center gap-8  h-[70vh] bg-gradient-to-r from-blue-400 to-purple-400 text-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+    <div className="md:flex flex-col items-center justify-center gap-8  h-[70vh] bg-gradient-to-r from-blue-400 to-purple-400 text-white p-8 rounded-lg shadow-lg">
       <h2 className="text-3xl font-bold text-center mb-4 sm:text-left">How We Work</h2>
       <div className="max-w-md text-center sm:text-left">
         <p className="text-lg">
-          No matter if you're organizing a corporate event, a wedding, or a special celebration, our team possesses the expertise and resources to ensure its success.
+          No matter if you&apos;re organizing a corporate event, a wedding, or a special celebration, our team possesses the expertise and resources to ensure its success.
         </p>
       </div>
       <div className="flex-shrink-0 text-center">
@@ -34,6 +34,8 @@ const VideoComponent = () => {
           onClick={handleWatchVideo}
           className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
           data-aos="zoom-in"
+          data-aos-delay="70"
+          data-aos-duration="3500"
         >
           Watch Video
         </button>
@@ -50,7 +52,7 @@ const VideoComponent = () => {
           </button>
           {/* Replace the <video> element with an <iframe> for YouTube */}
           <iframe
-            className="w-full h-full"
+            className="md:w-full md:h-full lg:w-[55%] lg:h-[70%]"
             src="https://www.youtube.com/embed/eTl2Cxb74r0"
             frameBorder="0"
             allowFullScreen

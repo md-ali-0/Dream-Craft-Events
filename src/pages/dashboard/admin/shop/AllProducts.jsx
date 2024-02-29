@@ -8,11 +8,11 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+// import { Link } from "react-router-dom";
+// import Swal from "sweetalert2";
 import useAxios from "../../../../hooks/useAxios";
 
-const AllEvents = () => {
+const AllProducts = () => {
   const axios = useAxios();
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -127,7 +127,7 @@ const AllEvents = () => {
       <div>
         <div className="flex justify-between items-center py-2">
           <h3 className="font-Quicksand text-primary text-2xl font-bold">
-            Manage Shopping Products
+            Manage Shop Items
           </h3>
           <div className="block relative">
             <input
@@ -223,4 +223,4 @@ const AllEvents = () => {
   );
 };
 
-export default AllEvents;
+export default AllProducts;

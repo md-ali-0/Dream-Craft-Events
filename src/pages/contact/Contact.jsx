@@ -1,29 +1,40 @@
-import { useState } from 'react';
-import { AiOutlineArrowRight } from 'react-icons/ai';
-import logo from '../../assets/logo/dream-craft.png'
-import useAuth from '../../hooks/useAuth';
+import { useState } from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import logo from "../../assets/logo/dream-craft.png";
+import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Contact = () => {
   const { user } = useAuth();
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const axiosPublic = useAxiosPublic();
 
   const handleSubmit = (e) => {
-
+    console.log("click")
     e.preventDefault();
-    if(!user){
-      return
+    if (!user) {
+      return;
     }
     // Handle form submission logic here
     console.log("Email:", email);
     console.log("Subject:", subject);
     console.log("Message:", message);
+    const info={
+      email, subject,message
+    }
+    axiosPublic.post('/contact', info).then(res=>{
+      console.log(res.data)
+      
+    })
   };
 
   return (
     <div>
-      <h2 className="text-4xl text-center font-semibold mt-5 underline">Contact Us</h2>
+      <h2 className="text-4xl text-center font-semibold mt-5 underline">
+        Contact Us
+      </h2>
       <div className="mt-10 p-5 flex flex-col md:flex-row max-w-5xl mx-auto text-black ">
         <div className=" md:w-1/2">
           <img src={logo} alt="" className="w-32" />
