@@ -101,17 +101,14 @@ const PaymentPage = () => {
   const randomNumber = Math.floor(Math.random() * 1000);
   const orderID = `${event._id.slice(0, 6)}-${timestamp}-${randomNumber}`;
 
-
-
-
   const paymentInfo = {
     name: user?.name,
     email: user?.email,
     eventId: params._id,
-    amount: ticketPrice,
+    eventTitle: event.title,
+    amount: totalPrice,
     currency: 'USD'
   }
-
 
   const handlePayment = async () => {
     const requestRes = await axios.post('/order', paymentInfo)
@@ -161,16 +158,19 @@ const PaymentPage = () => {
               </div>
             </div>
             <div className='flex flex-col items-center'>
-              { user ?  <button
-                onClick={handlePayment}
-                className='bg-rose-700 w-full rounded-md py-2 mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
-              >
-                Continue to secure payment
-              </button> : <Link className='w-full' to='/login'><button
-                className='bg-rose-700 w-full rounded-md py-2 px-4  mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
-              >
-                Login to Purchase
-              </button></Link> }
+              {user ?
+                <button
+                  onClick={handlePayment}
+                  className='bg-rose-700 w-full rounded-md py-2 mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
+                >
+                  Continue to secure payment
+                </button>
+                :
+                <Link className='w-full' to='/login'><button
+                  className='bg-rose-700 w-full rounded-md py-2 px-4  mt-2 text-white font-medium lg:text-xl text-xl md:text-sm'
+                >
+                  Login to Purchase
+                </button></Link>}
               <Link to={`/event-details/${event._id}`}>
                 <h3 className='mt-3 border-b border-black font-semibold md:text-sm text-xl lg:text-xl'>Cancel payment</h3>
               </Link>

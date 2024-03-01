@@ -2,6 +2,14 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
 import Container from "../../../components/container/Container";
+import img1 from "../images/portfolio1.jpg";
+import img2 from "../images/portfolio2.jpg";
+import img3 from "../images/portfolio3.jpg";
+import img4 from "../images/portfolio4.jpg";
+import img5 from "../images/portfolio5.jpg";
+import img6 from "../images/portfolio6.jpg";
+import img7 from "../images/portfolio7.jpg";
+import img8 from "../images/portfolio8.jpg";
 
 const Gallery = () => {
   useEffect(() => {
@@ -19,101 +27,69 @@ const Gallery = () => {
         <div className=" text-white">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
             <div
-              data-aos="flip-up"
+              data-aos="zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
               className="  bg-gray-800  border border-gray-300 "
             >
-              <img
-                className="w-full "
-                src="https://i.ibb.co/L9rS2MB/side-view-lovely-married-couple-which-hugging-dancing-first-wedding-dance-cozy-restaurant-while-thei.jpg"
-                alt=""
-              />
+              <img className="w-full " src={img1} alt="" />
             </div>
             <div
-              data-aos="flip-up"
-              data-aos-delay="50"
-              data-aos-duration="1000"
+              data-aos="zoom-in"
+              data-aos-delay="70"
+              data-aos-duration="3500"
               className="bg-gray-800 border border-gray-300 object-cover h-full"
             >
-              <img
-                className="w-full h-full object-cover"
-                src="https://i.ibb.co/ZN7SjF9/newlyweds-cutting-cake.jpg"
-                alt=""
-              />
+              <img className="w-full h-full object-cover" src={img2} alt="" />
             </div>
 
             <div
-              data-aos="flip-up"
+              data-aos="zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
               className="  bg-gray-800  border border-gray-300 "
             >
-              <img
-                className="w-full h-full object-cover "
-                src="https://i.ibb.co/pQ8xhjM/loving-wife-feeding-her-husband-wedding-ceremony-night.jpg"
-                alt=""
-              />
+              <img className="w-full h-full object-cover " src={img3} alt="" />
             </div>
             <div
-              data-aos="flip-up"
+              data-aos="zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
               className="  bg-gray-800  border border-gray-300 "
             >
-              <img
-                className="w-full h-full object-cover"
-                src="https://i.ibb.co/ZcZc7V6/young-joyful-friends-celebrating.jpg"
-                alt=""
-              />
+              <img className="w-full h-full object-cover" src={img4} alt="" />
             </div>
             <div
-              data-aos="flip-up"
+              data-aos="zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
               className="  bg-gray-800  border border-gray-300 "
             >
-              <img
-                className="w-full h-full object-cover"
-                src="https://i.ibb.co/r7hsrJT/side-view-photographer-taking-photos-bride.jpg"
-                alt=""
-              />
+              <img className="w-full h-full object-cover" src={img5} alt="" />
             </div>
             <div
-              data-aos="flip-up"
+              data-aos="zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
               className="  bg-gray-800  border border-gray-300 "
             >
-              <img
-                className="w-full h-full object-cover"
-                src="https://i.ibb.co/HFn1Tsy/female-wedding-planner-working-ceremony.jpg"
-                alt=""
-              />
+              <img className="w-full h-full object-cover" src={img6} alt="" />
             </div>
             <div
-              data-aos="flip-up"
+              data-aos="zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
               className="  bg-gray-800  border border-gray-300 "
             >
-              <img
-                className="w-full h-full object-cover"
-                src="https://i.ibb.co/7vRspQD/sparkling-glassware-stands-long-table-prepared-wedding-di.jpg"
-                alt=""
-              />
+              <img className="w-full h-full object-cover" src={img7} alt="" />
             </div>
             <div
-              data-aos="flip-up"
+              data-aos="zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
               className="  bg-gray-800  border border-gray-300 row-start-2 row-span-2"
             >
-              <img
-                className="w-full"
-                src="https://i.ibb.co/LJjCH1J/sensitive-portrait-pregnant-woman-expecting-lady-pink-dress-poses-with-flowers.jpg"
-                alt=""
-              />
+              <img className="w-full" src={img8} alt="" />
             </div>
           </div>
         </div>

@@ -39,12 +39,17 @@ import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 // eita Nizam kortece 
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
 import AllProducts from "../pages/dashboard/admin/shop/AllProducts";
-import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
+// import ProductOrders from "../pages/dashboard/admin/shop/ProductOrders";
 import ShopOrders from "../pages/dashboard/admin/shop/ShopOrders";
 // etotuku Nizam vai korce, piliz dont conflict
 
 
 import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDashboard";
+import CustomEventBooking from "../pages/dashboard/userDashboard/CustomEventBook/CustomEventBooking";
+import PaymentHistory from "../pages/dashboard/userDashboard/payment/PaymentHistory";
+import Mails from "../pages/dashboard/admin/mails/Mails";
+import Inbox from "../pages/dashboard/userDashboard/inbox/Inbox";
+import CustomEventUser from "../pages/dashboard/CustomEvent/CustomEventUser";
 
 const Router = createBrowserRouter([
     {
@@ -131,10 +136,18 @@ const Router = createBrowserRouter([
         ),
         children: [
             {
-                path: "/dashboard",
+                path: "/dashboard/user",
                 element: (
                     <PrivateRoute>
                         <DashboardHome />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/dashboard/custom-event-booking",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventBooking></CustomEventBooking>
                     </PrivateRoute>
                 ),
             },
@@ -185,9 +198,9 @@ const Router = createBrowserRouter([
             {
                 path: "custom-event-request",
                 element: (
-                    <PrivateRoute>
+                    <AdminRouter>
                         <CustomEventDashboard />
-                    </PrivateRoute>
+                    </AdminRouter>
                 ),
             },
             {
@@ -207,10 +220,34 @@ const Router = createBrowserRouter([
                 ),
             },
             {
-                path: "userBooking",
+                path: "customEvent",
+                element: (
+                    <PrivateRoute>
+                        <CustomEventUser/>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "my-bookings",
                 element: (
                     <PrivateRoute>
                         <UserBookings />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "my-inbox",
+                element: (
+                    <PrivateRoute>
+                        <Inbox></Inbox>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "payment-history",
+                element: (
+                    <PrivateRoute>
+                        <PaymentHistory></PaymentHistory>
                     </PrivateRoute>
                 ),
             },
@@ -274,6 +311,14 @@ const Router = createBrowserRouter([
                     <AdminRouter>
                         {/* <ProductOrders></ProductOrders> */}
                         <ShopOrders></ShopOrders>
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "all-mails",
+                element: (
+                    <AdminRouter>
+                        <Mails></Mails>
                     </AdminRouter>
                 ),
             },

@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
 import Container from "../container/Container";
 import SectionTitle from "../sectionTitle/SectionTitle";
+import { useNavigate } from "react-router-dom";
 
 const EventCards = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  const goToAllServices = () => {
+    navigate("/booking");
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
   return (
     <Container>
       <div className="space-y-8">
@@ -12,11 +19,12 @@ const EventCards = () => {
             subHeading={"explore our services"}
           />
           <div className="self-center">
-            <Link to="/booking">
-              <button className="text-xl border px-6 py-2 rounded-3xl hover:bg-gradient-to-r from-purple-500 to-emerald-300 hover:text-white border-cyan-500">
-                View All
-              </button>
-            </Link>
+            <button
+              onClick={goToAllServices}
+              className="text-xl border px-6 py-2 rounded-3xl hover:bg-gradient-to-r from-purple-500 to-emerald-300 hover:text-white border-cyan-500"
+            >
+              View All
+            </button>
           </div>
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
 import TopBar from "./TopBar";
+// import TopBar from "./TopBar";
+import { LuCommand } from "react-icons/lu";
 
 const Navbar = () => {
   const { user, logout } = useAuth()
@@ -26,7 +28,7 @@ const Navbar = () => {
     navigate('/')
     toast.success('Successfully Logout')
   };
-  console.log(user);
+  // console.log(user);
   return (
     <>
       <TopBar/>
@@ -67,11 +69,11 @@ const Navbar = () => {
                   Booking
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/schedule" className="border hover:text-primary border-white p-1">
                   Schedule
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/shop" className="border hover:text-primary border-white p-1">
                   Shop
@@ -130,6 +132,33 @@ const Navbar = () => {
                   className={`absolute py-2 px-1 z-[1000] m-0  min-w-max overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg  w-40 ${dropdownOpen ? "block left-auto right-0" : "hidden"
                     }`}
                 >
+                  {user?.role === "admin" && (
+                    <li>
+                      <Link
+                        to="/dashboard/admin"
+                        className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent 
+                                            flex items-center gap-2
+                                            "
+                      >
+                        <LuCommand className="inline-block" size={15} />
+                        Admin Dashboard
+                      </Link>
+                    </li>
+                  )}
+
+                  {user?.role === "user" &&(
+                    <li>
+                      <Link
+                        to="/dashboard/user"
+                        className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent 
+                                            flex items-center gap-2
+                                            "
+                      >
+                        <LuCommand className="inline-block" size={15} />
+                        User Dashboard
+                      </Link>
+                    </li>
+                  )}
                   {user && (
                     <li>
                       <Link

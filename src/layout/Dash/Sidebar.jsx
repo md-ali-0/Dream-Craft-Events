@@ -4,6 +4,7 @@ import Loading from "../../components/loading/Loading";
 import SideBarMenuItem from "../../components/sidebar/SideBarMenuItem";
 import SidebarSubMenu from "../../components/sidebar/SidebarSubMenu";
 import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     const { user, isLoading } = useAuth();
@@ -14,19 +15,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         <>
             <div
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className={`fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden ${
-                    sidebarOpen ? "block" : "hidden"
-                }`}
+                className={`fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden ${sidebarOpen ? "block" : "hidden"
+                    }`}
             ></div>
             <div
-                className={`fixed inset-y-0 left-0 z-30 w-64 flex flex-col bg-[#0c1427] min-h-screen transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0 ${
-                    sidebarOpen
-                        ? "translate-x-0 ease-out"
-                        : "-translate-x-full ease-in"
-                }`}
+                className={`fixed inset-y-0 left-0 z-30 w-64 flex flex-col bg-[#0c1427] min-h-screen transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0 ${sidebarOpen
+                    ? "translate-x-0 ease-out"
+                    : "-translate-x-full ease-in"
+                    }`}
             >
                 <div className="flex items-center justify-center border-b border-gray-900 py-[18px]">
-                    <img src={logo} alt="" className="w-28" />
+                    <Link to="/"><img src={logo} alt="" className="w-28" /></Link>
                 </div>
                 <div className="overflow-y-auto custom-scroll">
                     <nav className="mt-5 px-3">
@@ -38,30 +37,45 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                 <>
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Wishlist",
+                                            name: "User Dashboard",
                                             icon: "LuCommand",
-                                            path: "/dashboard/wishList",
+                                            path: "/dashboard/user",
+                                        }}
+                                    />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Inbox",
+                                            icon: "LuMailPlus",
+                                            path: "/dashboard/my-inbox",
                                         }}
                                     />
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Ticket Bookings",
-                                            icon: "LuCommand",
-                                            path: "/dashboard/userBooking",
+                                            icon: "LuTicket",
+                                            path: "/dashboard/my-bookings",
                                         }}
                                     />
-                                    {/* <SideBarMenuItem
-                                        menu={{
-                                            name: "Custom Events",
-                                            icon: "LuCommand",
-                                            path: "/dashboard/customEventsBooking",
-                                        }}
-                                    /> */}
+
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Cart",
-                                            icon: "LuCommand",
+                                            name: "Custom Events",
+                                            icon: "LuUserCog",
+                                            path: "/dashboard/customEvent",
+                                        }}
+                                    />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Orders From Shop",
+                                            icon: "LuShoppingCart",
                                             path: "/dashboard/cart",
+                                        }}
+                                    />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Payment History",
+                                            icon: "LuDollarSign",
+                                            path: "/dashboard/payment-history",
                                         }}
                                     />
                                 </>
@@ -73,6 +87,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             name: "Dashboard",
                                             icon: "LuCommand",
                                             path: "/dashboard/admin",
+                                        }}
+                                    />
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Mails",
+                                            icon: "LuMailCheck",
+                                            path: "/dashboard/all-mails",
                                         }}
                                     />
                                     <SidebarSubMenu
@@ -91,7 +112,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             },
                                         ]}
                                     ></SidebarSubMenu>
-                                    
+
                                     <SidebarSubMenu
                                         menu={{
                                             name: "Shop",
@@ -112,11 +133,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             },
                                         ]}
                                     ></SidebarSubMenu>
-                                    
+
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Organizer Request",
-                                            icon: "LuCommand",
+                                            icon: "LuUserCheck",
                                             path: "/dashboard/organizer-request",
                                         }}
                                     />
@@ -127,6 +148,29 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/custom-event-request",
                                         }}
                                     />
+                                </>
+                            )}
+                            {user?.role === "organizer" && (
+                                <>
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Inbox",
+                                            icon: "LuMailPlus",
+                                            path: "/dashboard/my-inbox",
+                                        }}
+                                    />
+                                    <SidebarSubMenu
+                                        menu={{
+                                            name: "Events",
+                                            icon: "LuCalendarPlus",
+                                        }}
+                                        subMenu={[
+                                            {
+                                                name: "Add Event",
+                                                path: "add-event",
+                                            },
+                                        ]}
+                                    ></SidebarSubMenu>
                                 </>
                             )}
                             <SideBarMenuItem

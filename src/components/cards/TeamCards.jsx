@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import Container from "../container/Container";
 import SectionTitle from "../sectionTitle/SectionTitle";
 import mamun from '../../assets/team/Mamun.jpg';
+import nizam from '../../assets/team/Nizam.png';
+import ali from '../../assets/team/Ali.png';
+import saikat from '../../assets/team/Saikat.png';
+import nelima from '../../assets/team/Nelima.png';
+import rakib from '../../assets/team/Rakib.png';
 
 const TeamCards = () => {
   return (
@@ -17,7 +22,7 @@ const TeamCards = () => {
           <div className="relative bg-white shadow-md border rounded-md px-5 py-5">
             <img
               className="w-32 h-32 object-cover rounded-full"
-              src="https://scontent.fcgp3-1.fna.fbcdn.net/v/t39.30808-6/419066730_1380253985956858_5393115818291594078_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeEFpnOHIBmExiEkKlv99yDMQRCt06NP4gFBEK3To0_iAVEcSNK5NgbBd7Y9dD_wHg2yRY5N6zFUiwium_zofdab&_nc_ohc=BLMN9A5y0yQAX8PN3mr&_nc_ht=scontent.fcgp3-1.fna&oh=00_AfCTG-KZmkBQ48YCeHgAbV42HYY_dcADeSZbmLmY3NxpVg&oe=65D18139"
+              src={nizam}
               alt=""
             />
             <h3 className="text-dark_01 text-2xl">Nizam Chowdhury</h3>
@@ -63,7 +68,7 @@ const TeamCards = () => {
           <div className="relative bg-white shadow-md border rounded-md px-5 py-5">
             <img
               className="w-32 h-32 object-cover rounded-full"
-              src="https://scontent.fcgp3-2.fna.fbcdn.net/v/t39.30808-6/245413586_3159306734345725_959244596654201671_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFCr7sCgfOzzn-SNqn06aEN168tgoV7OhXXry2ChXs6FfgNAu4lw_2cu8-SeF7LCveb_ylVGi4hOdbAz3HCCJqR&_nc_ohc=f-WhI3WQ0JIAX_WvUEP&_nc_ht=scontent.fcgp3-2.fna&oh=00_AfAonJaI9c4mHBmx59lWw-SK3VV9bgYtDsfrj0stFbSohg&oe=65D13A58"
+              src={saikat}
               alt=""
             />
             <h3 className="text-dark_01 text-2xl">Saikat Singha</h3>
@@ -106,7 +111,7 @@ const TeamCards = () => {
           <div className="relative bg-white shadow-md border rounded-md px-5 py-5">
             <img
               className="w-32 h-32 object-cover rounded-full"
-              src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg"
+              src={rakib}
               alt=""
             />
             <h3 className="text-dark_01 text-2xl">Md. Rakibul Hasan</h3>
@@ -152,7 +157,7 @@ const TeamCards = () => {
           <div className="relative bg-white shadow-md border rounded-md px-5 py-5">
             <img
               className="w-32 h-32 object-cover rounded-full"
-              src="https://1.bp.blogspot.com/-HoyT-d9JX0g/YUtRefQcHLI/AAAAAAAAk9w/P-NTrf0jPColdcKjKy2XGAVAjLjbQUyIQCLcBGAsYHQ/s16000-rw/50%2B%252B%2BIndian%2BHijab%2BGirl%2BDP%2Bfor%2BInstagram%2BPage%2Bwith%2BCaption%2B%252825%2529.jpg"
+              src={nelima}
               alt=""
             />
             <h3 className="text-dark_01 text-2xl">Neelima Sultana</h3>
@@ -195,7 +200,7 @@ const TeamCards = () => {
           <div className="relative bg-white shadow-md border rounded-md px-5 py-5">
             <img
               className="w-32 h-32 object-cover rounded-full"
-              src="https://scontent.fcgp3-1.fna.fbcdn.net/v/t1.6435-1/106010102_2598189153781060_14873953383681052_n.jpg?stp=dst-jpg_p320x320&_nc_cat=107&ccb=1-7&_nc_sid=2b6aad&_nc_eui2=AeE2GD6V3kX9ak4j-SW-2b0d6_L6gfAOqjTr8vqB8A6qNFthz6Vfv_Ai74hiid3_iMNUaU8WoJmfxtsseqk_a8mk&_nc_ohc=GRpxl_Hsm_wAX_UdQb_&_nc_ht=scontent.fcgp3-1.fna&oh=00_AfBFgW_Ynn4t6_Bl-adOCO7358lv1cHnjzJPux7jEOVj4Q&oe=65F4716F"
+              src={ali}
               alt=""
             />
             <h3 className="text-dark_01 text-2xl">Mohammad Ali</h3>

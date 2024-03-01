@@ -5,7 +5,7 @@ import { LuMailOpen, LuNavigation, LuPhoneCall } from "react-icons/lu";
 const TopBar = () => {
     return (
         
-        <div className="bg-gray-800 py-2">
+        <div className="bg-primary py-2 overflow-hidden">
             <div className="flex justify-between max-w-7xl px-4 md:px-8 lg:px-12 mx-auto">
                 <ul className="flex text-sm text-gray-200 gap-3">
                     <li className="hidden md:flex justify-center items-center gap-2">
@@ -14,18 +14,18 @@ const TopBar = () => {
                     </li>
                     <li className="flex justify-center items-center gap-2">
                         <LuPhoneCall className="inline"/>
-                        <h3>+8801916498482</h3>
+                        <a href="tel:+8801916498482">+8801916498482</a>
                     </li>
                     <li className="flex justify-center items-center gap-2">
                         <LuMailOpen className="inline"/>
-                        <h3>info@dreamcraft.com</h3>
+                        <a href="mailto:info@dreamcraft.com">info@dreamcraft.com</a>
                     </li>
                 </ul>
                 <ul className="flex text-md text-gray-200 gap-3">
-                    <li><FaFacebookF /></li>
-                    <li><FaSquareXTwitter /></li>
-                    <li><FaLinkedinIn /></li>
-                    <li><FaWhatsapp /></li>
+                    <li><a href="https://facebook.com"><FaFacebookF /></a></li>
+                    <li><a href="https://twitter.com"><FaSquareXTwitter /></a></li>
+                    <li><a href="https://linkedin.com"><FaLinkedinIn /></a></li>
+                    <li><a href="https://snap.com"><FaWhatsapp /></a></li>
                 </ul>
             </div>
         </div>
