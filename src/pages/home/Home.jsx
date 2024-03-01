@@ -1,6 +1,7 @@
 import EventCards from "../../components/cards/EventCards";
 import TeamCards from "../../components/cards/TeamCards";
 import Booking from "../bookings/Booking";
+import NewsLetter from "../newsLetter/NewsLetter";
 import Organizer from "./Organizer/Organizer";
 // import Banner from "./Banner";
 // import FeatureEvents from "./FeatureEvents";
@@ -21,6 +22,7 @@ const Home = () => {
       <Booking></Booking>
       <EventCards />
       <TeamCards />
+      <NewsLetter></NewsLetter>
       {/* <Faqac></Faqac> */}
     </div>
   );

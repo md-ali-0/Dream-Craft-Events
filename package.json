@@ -18,6 +18,8 @@
     "apexcharts": "^3.45.2",
     "axios": "^1.6.7",
     "firebase": "^10.6.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.3",

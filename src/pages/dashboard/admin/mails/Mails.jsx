@@ -6,6 +6,7 @@ const Mails = () => {
   const fetchContacts = async () => {
     const response = await fetch(
       "https://dream-craft-server.vercel.app/contact"
+      
     );
     if (!response.ok) {
       throw new Error("Network response was not ok");
