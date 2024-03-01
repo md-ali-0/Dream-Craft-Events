@@ -1,4 +1,3 @@
-import React from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { toast } from "react-hot-toast";
 
@@ -27,12 +26,12 @@ const NewsLetter = () => {
       }}
     >
       <div className="bg-black bg-opacity-60  flex flex-col md:flex-row h-full p-10 ">
-        <p className="uppercase w-4/5 mx-auto text-2xl font-semibold text-primary text-center flex justify-center items-center">
+        <p className="uppercase w-4/5 mx-auto lg:text-2xl font-semibold text-slate-300 text-center flex justify-center items-center">
           FOR EXCLUSIVE BENEFITS, INSIDER NEWS AND OUR UPCOMING EVENTS SUBSCRIBE
           for our newsletter
         </p>
 
-        <div className="">
+        <div className="mt-10 md:mt-20 lg:mt-10">
           <form onSubmit={handleSubmit} className="flex justify-center pb-5">
             <input
               name="email"
@@ -47,7 +46,7 @@ const NewsLetter = () => {
               className="bg-primary text-white p-3 rounded-r-lg cursor-pointer"
             />
           </form>
-          <p className="text-white px-10 ">
+          <p className="text-white text-center px-10 hidden lg:flex">
             {" "}
             Your personal data is to be used by the legal entity Dream Craft
             Events in order to provide you with the Dream Craft Events services
