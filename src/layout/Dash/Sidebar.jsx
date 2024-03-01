@@ -60,7 +60,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Custom Events",
-                                            icon: "LuCommand",
+                                            icon: "LuUserCog",
                                             path: "/dashboard/customEvent",
                                         }}
                                     />
