@@ -4,6 +4,7 @@ import { FiAlignJustify, FiLogOut, FiUser } from "react-icons/fi";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo/dream-craft.png";
 import useAuth from "../../../hooks/useAuth";
+import TopBar from "./TopBar";
 // import TopBar from "./TopBar";
 
 const Navbar = () => {
@@ -29,7 +30,7 @@ const Navbar = () => {
   // console.log(user);
   return (
     <>
-      {/* <TopBar/> */}
+      <TopBar/>
       <nav className="flex-no-wrap relative flex w-full items-center justify-between bg-transparent py-2 shadow-md shadow-black/5 md:flex-wrap lg:py-3.5">
         <div className="flex w-full items-center justify-between md:max-w-7xl md:px-12 mx-auto">
           <button
