@@ -38,7 +38,7 @@ const AddEvent = () => {
                         <input
                             type="text"
                             placeholder="Event Title"
-                            {...register("product_name", {
+                            {...register("title", {
                                 required: true,
                                 maxLength: 100,
                             })}
