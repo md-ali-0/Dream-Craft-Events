@@ -106,7 +106,7 @@ const AllEvents = () => {
                 confirmButtonText: "Yes, delete it!",
             });
             if (swalConfirm.isConfirmed) {
-                const response  = await axios.delete(`/delete-user/${id}`);
+                const response  = await axios.delete(`/delete-event/${id}`);
                 console.log(response);
                 refetch();
                 Swal.fire({
