@@ -82,7 +82,7 @@ const OrganizerRequest = () => {
                     </thead>
                     <tbody>
                         {
-                            request.map((item, index) => (
+                            request?.map((item, index) => (
                                 <tr key={item._id} className="border-b text-center">
                                     <td className="px-4 py-2">{index + 1}</td>
                                     <td className="px-4 py-2"><img src={item?.image} className="w-20 h-20 object-cover rounded-2xl" alt="" /></td>

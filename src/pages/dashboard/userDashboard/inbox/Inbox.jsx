@@ -56,7 +56,7 @@ const Inbox = () => {
             <div className="p-8 flex justify-between items-center" key={event._id}>
               <div className="flex gap-4 items-center">
                 <FaRocketchat className="text-3xl" />
-                <p>Your request for custom event <span className="font-semibold">{event?.eventType + '-' + event?._id.slice(0,6)}</span> has been {event.status == 'approved' ? 'approved' : 'rejected'}, to check the the details click <Link className="text-primary font-semibold" to='/dashboard/customEvent'>here</Link> </p>
+                <p>Your request for custom event <span className="font-semibold">{event?.eventType + '-' + event?._id.slice(0, 6)}</span> has been {event.status == 'approved' ? 'approved' : 'rejected'}, to check the the details click <Link className="text-primary font-semibold" to='/dashboard/customEvent'>here</Link> </p>
               </div>
               {
                 event.status == 'approved' ? <FcApproval className="text-3xl" /> : <RxCrossCircled className="text-3xl text-red-500" />
@@ -66,43 +66,49 @@ const Inbox = () => {
             </div>)
         }
 
+        {/* message for organizer request */}
+        {
+          request && <div className="mt-3">
+            <div className="p-8">
+              {
+                request.status === 'pending'
+                &&
+                <div className="flex gap-4 items-center">
+                  <FaRocketchat className="text-3xl" />
+                  Your organizer request is pending. Please wait for admin confirmation.
+                  <MdOutlinePending className="text-3xl" />
+                </div>
+              }
+              {
+                request.status === 'accepted'
+                &&
+                <div className="flex gap-4 items-center justify-between">
+                  <div className="flex gap-3 items-center">
+                    <FaRocketchat className="text-3xl" />
+                    <p>Your organizer request has been approved, Check your dashboard.</p>
+                  </div>
+                  <FcApproval className="text-3xl" />
+                </div>
+              }
+              {
+                request.status === 'rejected'
+                &&
+                <div className="flex gap-4 items-center justify-between">
+                  <div className="flex gap-3 items-center">
+                    <FaRocketchat className="text-3xl" />
+                    <p>Your organizer request has been rejected. Request again with correct information.</p>
+                  </div>
+                  <RxCrossCircled className="text-3xl text-red-500" />
+                </div>
+              }
+            </div>
+
+          </div>
+        }
+
       </div>
 
-      {/* message for organizer request */}
-      {
-        request && <div className="border border-primary rounded-md mt-3">
-          <div className="p-8">
-            {
-              request.status === 'pending'
-              &&
-              <div className="flex gap-4 items-center text-xl font-medium">
-                <FaRocketchat className="text-3xl" />
-                Your organizer request is pending. Please wait for admin confirmation.
-                <MdOutlinePending className="text-3xl" />
-              </div>
-            }
-            {
-              request.status === 'accepted'
-              &&
-              <div className="flex gap-4 items-center text-xl font-medium">
-                <FaRocketchat className="text-3xl" />
-                Your organizer request is approved. Go to <Link to='/dashboard' className="text-primary">Dashboard.</Link>
-                <FcApproval className="text-3xl" />
-              </div>
-            }
-            {
-              request.status === 'rejected'
-              &&
-              <div className="flex gap-4 items-center text-xl font-medium">
-                <FaRocketchat className="text-3xl" />
-                Your organizer request is rejected. Request again with correct information.
-                <RxCrossCircled className="text-3xl text-red-500" />
-              </div>
-            }
-          </div>
 
-        </div>
-      }
     </div>
   );
 };
