@@ -97,7 +97,6 @@ const Inbox = () => {
               </div>
             }
           </div>
-
         </div>
       }
     </div>
