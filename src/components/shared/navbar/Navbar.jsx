@@ -68,11 +68,11 @@ const Navbar = () => {
                   Booking
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/schedule" className="border hover:text-primary border-white p-1">
                   Schedule
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/shop" className="border hover:text-primary border-white p-1">
                   Shop
