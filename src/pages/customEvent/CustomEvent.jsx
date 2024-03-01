@@ -102,7 +102,7 @@ const CustomEvent = () => {
         const firstName = e.target.firstName.value;
         const lastName = e.target.lastName.value;
         const fullName = firstName + " " + lastName;
-        const email = e.target.email.value;
+        const email = e.target?.email.value;
         const phone = e.target.phone.value;
 
 
@@ -333,7 +333,7 @@ const CustomEvent = () => {
 
                                     <div className="mt-4">
                                         <label className="block text-sm font-medium text-gray-700">Email</label>
-                                        <input type="email" id="email" name="email" defaultValue={user.email}  className="mt-1 p-2 w-full border bg-rose-100 border-gray-300 placeholder:text-sm rounded-md" placeholder='write your email' required />
+                                        <input type="email" id="email" name="email" defaultValue={user?.email}  className="mt-1 p-2 w-full border bg-rose-100 border-gray-300 placeholder:text-sm rounded-md" placeholder='write your email' required />
                                     </div>
 
 
