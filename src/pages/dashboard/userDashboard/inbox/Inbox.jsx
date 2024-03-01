@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { FaRocketchat } from "react-icons/fa6";
 import { FcApproval } from "react-icons/fc";
 import { RxCrossCircled } from "react-icons/rx";
+import { MdOutlinePending } from "react-icons/md";
 import { Link } from "react-router-dom";
+import useAuth from "../../../../hooks/useAuth";
 
 
 
@@ -12,6 +14,7 @@ import { Link } from "react-router-dom";
 const Inbox = () => {
   const axios = useAxiosPublic()
   const [status, setStatus] = useState()
+  const { user } = useAuth()
 
   const { data: customEvent = [], refetch } = useQuery({
     queryKey: ['customEvent'],
@@ -31,6 +34,15 @@ const Inbox = () => {
 
   }, [customEvent, refetch])
 
+
+  // for organizer request
+  const { data: request = [] } = useQuery({
+    queryKey: ['request'],
+    queryFn: async () => {
+      const res = await axios.get(`/single-request?email=${user?.email}`)
+      return res.data;
+    }
+  })
 
   return (
     <div>
@@ -52,6 +64,42 @@ const Inbox = () => {
         }
 
       </div>
+
+      {/* message for organizer request */}
+      {
+        request && <div className="border border-primary rounded-md mt-3">
+          <div className="p-8">
+            {
+              request.status === 'pending'
+              &&
+              <div className="flex gap-4 items-center text-xl font-medium">
+                <FaRocketchat className="text-3xl" />
+                Your organizer request is pending. Please wait for admin confirmation.
+                <MdOutlinePending className="text-3xl" />
+              </div>
+            }
+            {
+              request.status === 'accepted'
+              &&
+              <div className="flex gap-4 items-center text-xl font-medium">
+                <FaRocketchat className="text-3xl" />
+                Your organizer request is approved. Go to <Link to='/dashboard' className="text-primary">Dashboard.</Link>
+                <FcApproval className="text-3xl" />
+              </div>
+            }
+            {
+              request.status === 'rejected'
+              &&
+              <div className="flex gap-4 items-center text-xl font-medium">
+                <FaRocketchat className="text-3xl" />
+                Your organizer request is rejected. Request again with correct information.
+                <RxCrossCircled className="text-3xl text-red-500" />
+              </div>
+            }
+          </div>
+
+        </div>
+      }
     </div>
   );
 };
