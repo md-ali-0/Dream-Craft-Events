@@ -104,7 +104,7 @@ const Profile = () => {
                 </div>
             </div>
 
-            <CustomEventModal isVisible={showModal} handleShowModal={handleShowModal}>
+            <CustomEventModal showModal={showModal} handleShowModal={handleShowModal}>
                 <div id='wrapper' className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center' onClick={handleClose}>
                     <div className='w-[550px] p-4 md:p-0'>
                         <div className='bg-white rounded-md relative'>
