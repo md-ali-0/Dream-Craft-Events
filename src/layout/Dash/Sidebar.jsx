@@ -152,6 +152,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                             )}
                             {user?.role === "organizer" && (
                                 <>
+                                    <SideBarMenuItem
+                                        menu={{
+                                            name: "Inbox",
+                                            icon: "LuMailPlus",
+                                            path: "/dashboard/my-inbox",
+                                        }}
+                                    />
                                     <SidebarSubMenu
                                         menu={{
                                             name: "Events",
