@@ -68,8 +68,8 @@ const Reviews = () => {
           
         >
           {review?.map((data) => (
-            <SwiperSlide key={data._id} className="bg-gray-200 p-2 rounded-lg mb-5">
-              <div className="flex gap-7">
+            <SwiperSlide key={data._id} className=" p-2 rounded-lg mb-5 bg-gray-100">
+              <div className="flex gap-7 bg-gray-300 p-2 rounded-t-lg">
               <img src={img} className="w-10 h-10 rounded-full" alt="person" />
              <div className="flex flex-col">
              <h2 className="uppercase text-primary font-semibold">{data?.name}</h2>
@@ -77,7 +77,11 @@ const Reviews = () => {
              </div>
               </div>
               <p className="mt-2">{data?.text}</p>
+
+              <div className="flex gap-5">
+                <p className="font-semibold">{data?.rating}</p>
               <Rating className="" style={{ maxWidth: 80 }} value={data?.rating} readOnly />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
