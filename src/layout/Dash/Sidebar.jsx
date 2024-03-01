@@ -49,13 +49,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             path: "/dashboard/my-inbox",
                                         }}
                                     />
-                                    {/* <SideBarMenuItem
+                                    <SideBarMenuItem
                                         menu={{
-                                            name: "Wishlist",
+                                            name: "User Dashboard",
                                             icon: "LuCommand",
-                                            path: "/dashboard/wishList",
+                                            path: "/dashboard/user",
                                         }}
-                                    /> */}
+                                    />
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Ticket Bookings",
@@ -66,14 +66,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Custom Event Orders",
-                                            icon: "LuCalendarCheck2",
-                                            path: "/dashboard/custom-event-booking",
+                                            name: "Custom Events",
+                                            icon: "LuCommand",
+                                            path: "/dashboard/customEvent",
                                         }}
                                     />
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "My Orders From Shop",
+                                            name: "Orders From Shop",
                                             icon: "LuShoppingCart",
                                             path: "/dashboard/cart",
                                         }}
