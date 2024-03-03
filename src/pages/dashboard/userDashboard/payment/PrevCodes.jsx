@@ -5,7 +5,6 @@ import Lottie from "lottie-react";
 import loadingAnimation from "../../../../assets/animation/animation.json";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import logo from "../../../../assets/logo/dream-craft.png";
 
 const PaymentHistory = () => {
   const { user } = useAuth();
@@ -14,6 +13,7 @@ const PaymentHistory = () => {
     const response = await axios.get(
       `https://dream-craft-server.vercel.app/order/${user?.email}`
       // `http://localhost:5173/order/${user?.email}`
+      
     );
     if (!response.status === 200) {
       throw new Error("Failed to fetch payment history");
@@ -48,96 +48,32 @@ const PaymentHistory = () => {
   const handleDownloadPDF = (order) => {
     const doc = new jsPDF();
 
-    // Set font styles
-    doc.setFont("helvetica");
-
-    // Add logo at the top of the PDF
-    const imgWidth = 45; // Adjust as needed
-    const imgHeight = 15; // Adjust as needed
-    const marginLeft = (doc.internal.pageSize.getWidth() - imgWidth) / 2;
-    doc.addImage(logo, "PNG", marginLeft, 10, imgWidth, imgHeight);
-
-    // Add title with blue color
-    doc.setTextColor(3, 37, 76); // blue color
-    doc.setFontSize(20);
-    doc.text(
-      "Payment Order Summary",
-      doc.internal.pageSize.getWidth() / 2,
-      50,
-      { align: "center" }
-    );
-
-    // Reset color
-    doc.setTextColor(0, 0, 0); // Black color
-
-    // Add event details
-    doc.setFontSize(14);
-    doc.text(
-      `Event Title: ${order.eventTitle}`,
-      doc.internal.pageSize.getWidth() / 2,
-      80,
-      { align: "center" }
-    );
-    doc.text(
-      `Event ID: ${order.event_id}`,
-      doc.internal.pageSize.getWidth() / 2,
-      90,
-      { align: "center" }
-    );
-
-    // Add customer details
-    doc.text(
-      `Customer Name: ${order.cus_name}`,
-      doc.internal.pageSize.getWidth() / 2,
-      120,
-      { align: "center" }
-    );
-    doc.text(
-      `Customer Email: ${order.cus_email}`,
-      doc.internal.pageSize.getWidth() / 2,
-      130,
-      { align: "center" }
-    );
-
-    // Add transaction details
-    doc.text(
-      `Transaction ID: ${order.tran_id}`,
-      doc.internal.pageSize.getWidth() / 2,
-      160,
-      { align: "center" }
-    );
-
-    // Add payment details
-    doc.text(
-      `Total Amount: $${order.total_amount}`,
-      doc.internal.pageSize.getWidth() / 2,
-      190,
-      { align: "center" }
-    );
-    doc.setTextColor(0, 128, 0); // Green color for paid status
-    doc.text(
-      `Paid Status: ${order.paidStatus ? "Paid" : "Unpaid"}`,
-      doc.internal.pageSize.getWidth() / 2,
-      200,
-      { align: "center" }
-    );
-
-    // Add color to titles
-    doc.setTextColor(255, 0, 0); // Red color
-    doc.text("Event Details", doc.internal.pageSize.getWidth() / 2, 70, {
-      align: "center",
-    });
-    doc.text("Customer Details", doc.internal.pageSize.getWidth() / 2, 110, {
-      align: "center",
-    });
-    doc.text("Transaction Details", doc.internal.pageSize.getWidth() / 2, 150, {
-      align: "center",
-    });
-    doc.text("Payment Details", doc.internal.pageSize.getWidth() / 2, 180, {
-      align: "center",
+    doc.text("Order Summary", 20, 10);
+    doc.autoTable({
+      head: [
+        [
+          "Name",
+          "Email",
+          "Transaction ID",
+          "Event ID",
+          "Event Title",
+          "Total Amount",
+          "Paid Status",
+        ],
+      ],
+      body: [
+        [
+          order.cus_name,
+          order.cus_email,
+          order.tran_id,
+          order.event_id,
+          order.eventTitle,
+          `$${order.total_amount}`,
+          order.paidStatus ? "Paid" : "Unpaid",
+        ],
+      ],
     });
 
-    // Save PDF
     doc.save(`Order_${order.tran_id}.pdf`);
   };
 
