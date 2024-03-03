@@ -20,7 +20,7 @@ const config = {
   botName: "EventMate",
   customStyles: {
     botMessageBox: {
-      backgroundColor: "#376B7E",
+      backgroundColor: "#ce1446",
     },
     chatButton: {
       backgroundColor: "#ce1446",
@@ -41,18 +41,18 @@ const config = {
     },
     {
       widgetName: "eventsWidget",
-      widgetFunc: (props) => <EventsWidget {...props} data={{ events: [{ title: "Tech Expo 2024" }, { title: "Art and Culture Festival" },{ title: "Music Fest Extravaganza" },{ title: "Entrepreneurship Summit" },{ title: "Science and Discovery Expo" }] }} />,
+      widgetFunc: (props) => <EventsWidget {...props} data={{ events: [{ title: "Tech Expo 2024" }, { title: "Art and Culture Festival" }, { title: "Music Fest Extravaganza" }, { title: "Entrepreneurship Summit" }, { title: "Science and Discovery Expo" }] }} />,
     },
     {
       widgetName: 'upcomingEventsWidget',
       widgetFunc: (props) => <UpcomingEventsWidget {...props} data={{
         events: [
           { title: "Film Buff Movie Marathon", date: "March 3, 2024" },
-          
+
         ]
       }} />,
     },
-    
+
   ],
 };
 
