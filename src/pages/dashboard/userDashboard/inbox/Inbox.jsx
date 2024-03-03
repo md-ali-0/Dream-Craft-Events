@@ -30,9 +30,7 @@ const Inbox = () => {
   useEffect(() => {
     const result = customEvent?.filter(event => event.status == 'rejected' || event.status == 'approved')
     setStatus(result);
-    if (result) {
-      refetch()
-    }
+    
 
 
   }, [customEvent, refetch])
