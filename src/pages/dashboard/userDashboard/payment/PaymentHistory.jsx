@@ -6,6 +6,7 @@ import loadingAnimation from "../../../../assets/animation/animation.json";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import logo from "../../../../assets/logo/dream-craft.png";
+import pdfbg from "./pdfbg.jpg";
 
 const PaymentHistory = () => {
   const { user } = useAuth();
@@ -48,17 +49,29 @@ const PaymentHistory = () => {
   const handleDownloadPDF = (order) => {
     const doc = new jsPDF();
 
-    // Set font styles
-    doc.setFont("helvetica");
+    // Add background image
+    doc.addImage(
+      pdfbg,
+      "JPEG",
+      0,
+      0,
+      doc.internal.pageSize.getWidth(),
+      doc.internal.pageSize.getHeight()
+    );
 
-    // Add logo at the top of the PDF
+    // Set font styles
+    doc.setFont("Courier-Bold", "bold");
+
+    // Add logo at the top of the PDF, slightly shifted downwards
     const imgWidth = 45; // Adjust as needed
     const imgHeight = 15; // Adjust as needed
     const marginLeft = (doc.internal.pageSize.getWidth() - imgWidth) / 2;
-    doc.addImage(logo, "PNG", marginLeft, 10, imgWidth, imgHeight);
+    const marginTop = 20; // Adjust the distance from the top
+    doc.addImage(logo, "PNG", marginLeft, marginTop, imgWidth, imgHeight);
 
     // Add title with blue color
-    doc.setTextColor(3, 37, 76); // blue color
+    // doc.setTextColor(3, 37, 76);
+    doc.setTextColor(0, 0, 0); // blue color
     doc.setFontSize(20);
     doc.text(
       "Payment Order Summary",
@@ -71,7 +84,8 @@ const PaymentHistory = () => {
     doc.setTextColor(0, 0, 0); // Black color
 
     // Add event details
-    doc.setFontSize(14);
+    doc.setFontSize(19);
+
     doc.text(
       `Event Title: ${order.eventTitle}`,
       doc.internal.pageSize.getWidth() / 2,
@@ -123,7 +137,7 @@ const PaymentHistory = () => {
     );
 
     // Add color to titles
-    doc.setTextColor(255, 0, 0); // Red color
+    doc.setTextColor(206, 20, 70); // Red color
     doc.text("Event Details", doc.internal.pageSize.getWidth() / 2, 70, {
       align: "center",
     });
@@ -136,6 +150,20 @@ const PaymentHistory = () => {
     doc.text("Payment Details", doc.internal.pageSize.getWidth() / 2, 180, {
       align: "center",
     });
+
+    // Add copyright text at the bottom 30% position
+    // const bottomMargin = doc.internal.pageSize.getHeight() * 0.1;
+    doc.setFontSize(16);
+    doc.setTextColor(0, 0, 0); // Black color
+    doc.text(
+      "(c) " +
+        new Date().getFullYear() +
+        " DreamCraft Events ~ Data Defenders 805.3",
+      doc.internal.pageSize.getWidth() / 2,
+      240,
+      // doc.internal.pageSize.getHeight() - bottomMargin,
+      { align: "center" }
+    );
 
     // Save PDF
     doc.save(`Order_${order.tran_id}.pdf`);
