@@ -8,7 +8,7 @@ function EventsWidget(props) {
     return (
       <ul>
         {props.data.events.map((event, index) => (
-          <li key={index} className="mb-4 p-4 bg-white border rounded shadow-md">
+          <li key={index} className="mb-4 p-4 bg-rose-200 border rounded shadow-md">
           {event.title}
         </li>
         ))}

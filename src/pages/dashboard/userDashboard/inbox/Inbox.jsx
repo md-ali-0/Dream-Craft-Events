@@ -20,7 +20,7 @@ const Inbox = () => {
   const { data: customEvent = [], refetch } = useQuery({
     queryKey: ['customEvent',],
     queryFn: async () => {
-      const res = await axios.get(`/custom-event`)
+      const res = await axios.get(`/custom-event/inbox?email=${user?.email}`)
       return res.data;
     }
   })
@@ -68,7 +68,7 @@ const Inbox = () => {
 
         {/* message for organizer request */}
         {
-          request && <div className="mt-3">
+          request && <div className="">
             <div className="p-8">
               {
                 request.status === 'pending'
