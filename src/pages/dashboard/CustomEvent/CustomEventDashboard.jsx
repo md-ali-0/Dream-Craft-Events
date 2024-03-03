@@ -13,22 +13,29 @@ const CustomEventDashboard = () => {
             return res.data;
         }
     })
-    const handleApprove =  (id) => {
+    const handleApprove = (id) => {
 
-        const update = axios.patch(`/custom-event/${id}`)
-        console.log(update);
-        toast.success("Successfully Approved!");                  
-        refetch();
-        
+        axios.patch(`/custom-event/${id}`)
+            .then(res => {
+                console.log(res);
+                if (res.data.status == 'pending') {
+                    refetch()
+                    toast.success('Request approved')
+                }
+            })
+
 
     }
     const handleReject = (id) => {
 
-        const update = axios.put(`/custom-event/${id}`)
-        console.log(update);    
-        toast.success("Successfully rejected!");  
-        refetch();
-
+        axios.put(`/custom-event/${id}`)
+        .then(res => {
+            console.log(res);
+            if (res.data.status == 'pending') {
+                refetch()
+                toast.success('Request rejected')
+            }
+        })
     }
 
     return (
@@ -73,8 +80,8 @@ const CustomEventDashboard = () => {
                                     <td className="px-4 py-2">
                                         {
                                             event.status == 'pending' ? <button
-                                            onClick={() => handleApprove(event._id)}
-                                            className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:opacity-50">Approve</button> : (event.status == 'approved' ? <p className='text-white bg-gradient-to-r from-green-600 via-green-700 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 '>Approved</p> : <p className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 opacity-60'>Approve</p>)
+                                                onClick={() => handleApprove(event._id)}
+                                                className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:opacity-50">Approve</button> : (event.status == 'approved' ? <p className='text-white bg-gradient-to-r from-green-600 via-green-700 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 '>Approved</p> : <p className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 opacity-60'>Approve</p>)
                                         }
 
                                         {/* TODO */}
@@ -82,8 +89,8 @@ const CustomEventDashboard = () => {
                                     </td>
                                     <td className="px-4 py-2 ">
                                         {event.status == 'pending' ? <button
-                                                onClick={() => handleReject(event._id)}
-                                                className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:opacity-50">Reject</button> : (event.status == 'rejected' ? <p className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:opacity-50">Rejected</p> : <p className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 opacity-60">Reject</p>) }
+                                            onClick={() => handleReject(event._id)}
+                                            className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:opacity-50">Reject</button> : (event.status == 'rejected' ? <p className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:opacity-50">Rejected</p> : <p className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 opacity-60">Reject</p>)}
 
                                         {/* TODO */}
 
