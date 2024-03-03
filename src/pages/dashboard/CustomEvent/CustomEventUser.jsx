@@ -10,7 +10,7 @@ const CustomEventUser = () => {
     const { data: customEvent = [] } = useQuery({
         queryKey: ['customEvent'],
         queryFn: async () => {
-            const res = await axios.get('/custom-event')
+            const res = await axios.get(`/custom-event/inbox?email=${user?.email}`)
             return res.data;
         }
     })

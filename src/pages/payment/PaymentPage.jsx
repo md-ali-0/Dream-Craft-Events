@@ -42,8 +42,10 @@ const PaymentPage = () => {
       else if (ticketPrice == 159 || ticketPrice == 318 || ticketPrice == 477 || ticketPrice == 636) {
         setTicketPrice(ticketPrice + 159)
       }
-
     }
+
+    return alert('no more')
+    
 
 
   }
