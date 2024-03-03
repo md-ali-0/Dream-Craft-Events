@@ -105,7 +105,6 @@ const CustomEvent = () => {
         const email = e.target?.email.value;
         const phone = e.target.phone.value;
 
-
         const CustomEventData = {
             firstName: firstName,
             lastName: lastName,

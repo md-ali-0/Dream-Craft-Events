@@ -15,13 +15,12 @@ const ReviewInput = () => {
   const handleSubmitReview = (e) => {
     e.preventDefault();
 
-// Check if the user is logged in
-if (!user) {
-  console.log("User is not logged in. Navigating to login page...");
-  // If user is not logged in, navigate to login page
-  navigate('/login');
-  return;
-}
+  // Check if the user is logged in
+  if (!user) {
+    console.log("User is not logged in. Navigating to login page...");
+    // If user is not logged in, navigate to login page
+    return navigate('/login');
+  }
 
     const form = e.target;
     const text = form.text.value;
@@ -88,12 +87,11 @@ if (!user) {
               </select>
             </div>
           </div>
-          <input
-            disabled={!user}
+          <button
             type="submit"
             value="Send"
-            className=" bg-red-700 text-white hover:bg-slate-600  w-1/3 mx-auto p-2 cursor-pointer rounded-lg mt-2"
-          />
+            className=" bg-red-700 text-white hover:bg-slate-600  w-1/3 mx-auto p-2 cursor-pointer rounded-lg mt-2">
+          </button>
         </form>
       </div>
     </div>
