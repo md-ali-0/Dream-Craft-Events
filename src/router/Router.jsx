@@ -236,14 +236,6 @@ const Router = createBrowserRouter([
                 ),
             },
             {
-                path: "my-inbox",
-                element: (
-                    <PrivateRoute>
-                        <Inbox></Inbox>
-                    </PrivateRoute>
-                ),
-            },
-            {
                 path: "payment-history",
                 element: (
                     <PrivateRoute>

@@ -44,13 +44,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     />
                                     <SideBarMenuItem
                                         menu={{
-                                            name: "Inbox",
-                                            icon: "LuMailPlus",
-                                            path: "/dashboard/my-inbox",
-                                        }}
-                                    />
-                                    <SideBarMenuItem
-                                        menu={{
                                             name: "Ticket Bookings",
                                             icon: "LuTicket",
                                             path: "/dashboard/my-bookings",
@@ -161,13 +154,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                             name: "User Dashboard",
                                             icon: "LuCommand",
                                             path: "/dashboard/user",
-                                        }}
-                                    />
-                                    <SideBarMenuItem
-                                        menu={{
-                                            name: "Inbox",
-                                            icon: "LuMailPlus",
-                                            path: "/dashboard/my-inbox",
                                         }}
                                     />
                                     <SideBarMenuItem
