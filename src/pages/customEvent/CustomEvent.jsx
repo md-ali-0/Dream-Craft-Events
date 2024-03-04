@@ -348,8 +348,6 @@ const CustomEvent = () => {
                 </div>
 
             </CustomEventModal>
-
-            
         </div>
     );
 };

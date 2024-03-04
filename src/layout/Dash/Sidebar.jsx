@@ -96,6 +96,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                         }}
                                         subMenu={[
                                             {
+                                                name: "Booked Tickets",
+                                                path: "..",
+                                            },
+                                            {
                                                 name: "Add Event",
                                                 path: "add-event",
                                             },
@@ -137,7 +141,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                     <SideBarMenuItem
                                         menu={{
                                             name: "Custom Event Request",
-                                            icon: "LuList",
+                                            icon: "LuUserCog",
                                             path: "/dashboard/custom-event-request",
                                         }}
                                     />

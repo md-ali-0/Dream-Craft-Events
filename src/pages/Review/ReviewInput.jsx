@@ -1,12 +1,12 @@
 import toast from 'react-hot-toast';
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import img from '../../assets/logo/dream-craft.png'
 
 const ReviewInput = () => {
   const axios = useAxiosPublic();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { user } = useAuth();
   const email = user?.email;
   const today = new Date();
@@ -15,12 +15,24 @@ const ReviewInput = () => {
   const handleSubmitReview = (e) => {
     e.preventDefault();
 
+<<<<<<< HEAD
 // Check if the user is logged in
 if (!user) {
   console.log("User is not logged in. Navigating to login page...");
   // If user is not logged in, navigate to login page  
   return navigate('/login');
 }
+=======
+    if (!user) {
+      // If user is not logged in, redirect to login page
+      // navigate('/login');
+      toast.error(
+        "Please Log in first!"
+      );
+      return;
+    }
+
+>>>>>>> 1e64b90e7ad292d998c8eab754c9a75c11b3395a
 
     const form = e.target;
     const text = form.text.value;
@@ -88,6 +100,10 @@ if (!user) {
             </div>
           </div>
           <input
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e64b90e7ad292d998c8eab754c9a75c11b3395a
             type="submit"
             value="Send"
             className=" bg-red-700 text-white hover:bg-slate-600  w-1/3 mx-auto p-2 cursor-pointer rounded-lg mt-2"

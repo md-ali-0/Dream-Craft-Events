@@ -7,6 +7,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useNavigate } from 'react-router-dom';
 
+
 // eslint-disable-next-line no-unused-vars
 const MyCart = ({ cartItems: propCartItems }) => {
   const { user } = useAuth();
@@ -60,7 +61,17 @@ const MyCart = ({ cartItems: propCartItems }) => {
   // };
 
   const placeMyOrder = async (data) => {
+    
     console.log(cartItems);
+
+    if (!user) {
+      // If user is not logged in, redirect to login page
+      // navigate('/login');
+      toast.error(
+        "Please Log in first!"
+      );
+      return;
+    }
 
     if (data && cartItems.length > 0) {
       const userId = user._id;
