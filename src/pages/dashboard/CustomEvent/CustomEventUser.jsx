@@ -1,14 +1,16 @@
 import React from 'react';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
+import useAuth from '../../../hooks/useAuth';
 
 const CustomEventUser = () => {
     const axios = useAxiosPublic()
+    const {user} = useAuth()
 
     const { data: customEvent = [] } = useQuery({
         queryKey: ['customEvent'],
         queryFn: async () => {
-            const res = await axios.get('/custom-event')
+            const res = await axios.get(`/custom-event/inbox?email=${user?.email}`)
             return res.data;
         }
     })
@@ -42,7 +44,7 @@ const CustomEventUser = () => {
                                     <td className="px-4 border-gray-300">{event?.location}</td>
                                     <td className="px-2 border-gray-300">{event?.cost ? '$' + ' ' + event?.cost : ''}</td>
                                     <td >
-                                        <button className={`${event.status == 'pending' ? 'bg-yellow-600 text-white' : (event.status == 'approved' ? 'bg-green-600 text-white' : 'bg-red-600 text-white')} px-6 rounded-md py-1.5 cursor-auto font-bold`}>
+                                        <button className={`${event.status == 'pending' ? 'bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 text-white' : (event.status == 'approved' ? 'bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white' : 'bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-white')} px-6 rounded-md py-2 cursor-auto font-bold`}>
                                             {
                                                 event.status == 'pending' ? 'Pending' : (event.status == 'approved' ? 'Approved' : 'Rejected')
                                             }

@@ -2,7 +2,7 @@ const UpcomingEventsWidget = ({ data }) => {
   const events = data?.events || [];
 
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+    <div className="max-w-md mx-auto bg-rose-200 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
       <div className="p-4">
         <h2 className="font-bold text-lg mb-2">Upcoming Events</h2>
         <ul>

@@ -18,7 +18,8 @@ const AllServices = () => {
   return (
     <Container>
       <h3 className="mt-8 mb-5 text-center uppercase text-secondary font-extrabold text-3xl">
-        Book Your Events
+        {/* Book Your Events */}
+        Our Services
       </h3>
       <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-24 m-3 lg:m-12">
         {/* card 1  */}
