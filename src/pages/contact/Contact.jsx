@@ -3,6 +3,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import logo from "../../assets/logo/dream-craft.png";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const { user } = useAuth();
@@ -12,9 +13,14 @@ const Contact = () => {
   const axiosPublic = useAxiosPublic();
 
   const handleSubmit = (e) => {
-    console.log("click")
+    // console.log("click")
     e.preventDefault();
     if (!user) {
+      // If user is not logged in, redirect to login page
+      // navigate('/login');
+      toast.error(
+        "Please Log in first!"
+      );
       return;
     }
     // Handle form submission logic here
