@@ -24,12 +24,12 @@ const CustomEvent = () => {
     const [specialRequest, setSpecialRequest] = useState('')
     const [showModal, setShowModal] = useState(false)
     const navigate = useNavigate(); // Initialize useNavigate hook
-    
- 
+
+
     const axios = useAxiosPublic()
     const { user } = useAuth()
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm()
+    // const { register, handleSubmit, reset, formState: { errors } } = useForm()
 
     let totalCost = 0;
 
@@ -130,13 +130,12 @@ const CustomEvent = () => {
 
 
         Swal.fire({
-            title: "Order placed succesfully!",
+            title: "Request placed succesfully!",
             text: "You have requested an event, we will get back to you soon.",
             icon: "success",
             confirmButtonText: "Ok",
         }).then((result) => {
             if (result.isConfirmed) {
-                reset(); // Reset the form
                 setShowModal(!showModal);
                 navigate('/dashboard/customEvent'); // Directly navigate to the home page
             }
@@ -326,7 +325,7 @@ const CustomEvent = () => {
 
                                     <div className="mt-4">
                                         <label className="block text-sm font-medium text-gray-700">Email</label>
-                                        <input type="email" id="email" name="email" defaultValue={user?.email}  className="mt-1 p-2 w-full border bg-rose-100 border-gray-300 placeholder:text-sm rounded-md" placeholder='write your email' required disabled />
+                                        <input type="email" id="email" name="email" defaultValue={user?.email} className="mt-1 p-2 w-full border bg-rose-100 border-gray-300 placeholder:text-sm rounded-md" placeholder='write your email' required disabled />
                                     </div>
 
 
