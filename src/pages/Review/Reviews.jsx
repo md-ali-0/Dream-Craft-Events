@@ -38,8 +38,8 @@ const Reviews = () => {
   return (
     <div className="flex flex-col  gap-5 my-20 px-10 ">
       <div className="w-full">
-        <h2 className="text-primary font-semibold">Testimonial</h2>
-        <h3 className="text-3xl font-semibold text-gray-800 uppercase">
+        <h2 className="text-primary text-3xl mb-10 text-center font-semibold">Testimonial</h2>
+        <h3 className="text-3xl text-center font-semibold mb-10 text-gray-800 uppercase">
           WHAT PEOPLE SAY ABOUT Dream Craft Events.
         </h3>
         <Swiper
@@ -63,22 +63,22 @@ const Reviews = () => {
          clickable: true,
        }}
        modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-       className="mySwiper "
+       className="mySwiper h-60 text-center"
          
           
         >
           {review?.map((data) => (
-            <SwiperSlide key={data._id} className=" p-2 rounded-lg mb-5 bg-gray-100">
-              <div className="flex gap-7 bg-gray-300 p-2 rounded-t-lg">
+            <SwiperSlide key={data._id} className=" p-2 rounded-lg mb-5 bg-slate-100">
+              <div className="flex gap-7 bg-slate-300 p-2 rounded-t-lg justify-center">
               <img src={img} className="w-10 h-10 rounded-full" alt="person" />
              <div className="flex flex-col">
              <h2 className="uppercase text-primary font-semibold">{data?.name}</h2>
               <p className="text-sm">{data?.time}</p>
              </div>
               </div>
-              <p className="mt-2">{data?.text}</p>
+              <p className="mt-2 px-7 py-5">{data?.text}</p>
 
-              <div className="flex gap-5">
+              <div className="flex gap-2 justify-center">
                 <p className="font-semibold">{data?.rating}</p>
               <Rating className="" style={{ maxWidth: 80 }} value={data?.rating} readOnly />
               </div>
