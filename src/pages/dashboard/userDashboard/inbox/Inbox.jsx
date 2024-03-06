@@ -21,8 +21,9 @@ const Inbox = () => {
       return res.data;
     }
   })
-  
-  
+
+  // console.log(customEvent);
+
   useEffect(() => {
     const result = customEvent?.filter(event => event.status == 'rejected' || event.status == 'approved')
     setStatus(result);
