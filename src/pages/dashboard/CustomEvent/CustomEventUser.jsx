@@ -33,7 +33,7 @@ const CustomEventUser = () => {
                     </thead>
                     <tbody className=''>
                         {
-                            customEvent.map((event, index) => (
+                            customEvent?.map((event, index) => (
                                 <tr key={event._id} className='text-center text-sm text-gray-500 dark:text-gray-400'>
                                     <td className="px-4 py-4  border-gray-300">{index + 1}</td>
 

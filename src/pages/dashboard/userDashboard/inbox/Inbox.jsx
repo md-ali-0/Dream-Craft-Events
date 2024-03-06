@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import useAuth from "../../../../hooks/useAuth";
 import CustomEventModal from "../../../customEvent/CustomEventModal";
 import bell from '/bell.gif'
+import { FaBell } from "react-icons/fa";
+
 
 
 const Inbox = () => {
   const axios = useAxiosPublic()
   const [status, setStatus] = useState()
   const [showModal, setShowModal] = useState(false)
-  const [seen, setSeen] = useState({})
   const { user } = useAuth()
 
   const { data: customEvent = [], refetch } = useQuery({
@@ -20,17 +21,8 @@ const Inbox = () => {
       return res.data;
     }
   })
-console.log(seen);
-
   
-
-  useEffect(() => {
-    const seenStatus =  status?.find(event=> setSeen(event)) 
-    console.log(seenStatus) 
- 
-  }, [status])
-
-
+  
   useEffect(() => {
     const result = customEvent?.filter(event => event.status == 'rejected' || event.status == 'approved')
     setStatus(result);
@@ -57,20 +49,13 @@ console.log(seen);
 
   }
 
-  const handleSeen = async (id) => {
-   const res = await axios.patch(`/custom-event/seen/${id}`)
-    .then(res=> {
-      console.log(res);
-    })
-
     
-
-  }
   return (
     <>
 
-      <div>
-        <img onClick={handleShowModal} src={bell} alt="" className="w-10" />
+      <div className="relative">     
+        <button onClick={handleShowModal}><FaBell className="text-3xl"/></button>
+        <span className="absolute -top-2 -right-3 text-rose-700 font-bold">+1</span>
       </div>
 
       <div
@@ -79,9 +64,9 @@ console.log(seen);
           }`}
       ></div>
       <CustomEventModal showModal={showModal} >
-        <div id='wrapper' className='absolute top-12 z-10 text-sm right-5 md:right-28' onClick={handleClose}>
+        <div id='wrapper' className='absolute  top-12 z-10 text-sm right-5 md:right-28' onClick={handleClose}>
           <div className='md:w-[400px]  p-4 md:p-0'>
-            <div className='bg-gray-200 h-[400px] border border-rose-400 rounded-md relative'>
+            <div className='bg-slate-200 h-[400px] border border-rose-400 rounded-md relative'>
               <div className="p-2.5 rounded max-w-md w-full mx-auto">
                 <h2 className="gap-1 inline-block px-3 rounded-2xl bg-gray-300 text-rose-600 font-bold text-lg">Notifications</h2>
                 <div className="mt-3">
@@ -95,11 +80,6 @@ console.log(seen);
                           <h2>
                             Your request for custom event <span className="font-semibold">{event?.eventType + '-' + event?._id.slice(0, 6)}</span> has been {event.status == 'approved' ? 'approved' : 'rejected'}.
                           </h2>
-                          <div>
-                            {
-                              event?.seen == 'false' && <p className="bg-rose-700 w-3 h-3 rounded-full"></p>
-                            }
-                          </div>
 
                         </div>
 
@@ -155,7 +135,6 @@ console.log(seen);
 
               </div>
 
-              <button onClick={()=>handleSeen(seen._id)} className="absolute bottom-2 bg-gray-300 px-3 py-1 text-rose-600 font-semibold rounded-2xl left-2">Mark all as read</button>
             </div>
           </div>
         </div>
