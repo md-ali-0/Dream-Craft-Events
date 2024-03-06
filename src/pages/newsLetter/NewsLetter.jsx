@@ -14,7 +14,7 @@ const NewsLetter = () => {
     axios.post("/news", newsMAil).then((res) => {
       console.log(res.data);
       form.reset();
-      toast.success("Thanks for connected with us😊");
+      toast.success("Thanks for connecting with us😊");
     });
   };
 
