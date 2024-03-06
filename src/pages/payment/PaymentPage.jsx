@@ -8,6 +8,7 @@ import loadingAnimation from "../../assets/animation/animation.json";
 import PricingCards from '../../components/cards/PricingCards';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const PaymentPage = () => {
   const params = useParams();
@@ -44,10 +45,14 @@ const PaymentPage = () => {
       }
     }
 
-    return alert('no more')
-    
+  }
 
-
+  if (addMoreTicket >= 5) {
+    Swal.fire({
+      title: "Oops!",
+      text: "You can't purchase more than 5 tickets",
+      icon: "error"
+    });
   }
 
   const handleRemoveMoreTicket = () => {
