@@ -16,7 +16,6 @@ const PaymentHistory = () => {
   const fetchPaymentHistory = async () => {
     const response = await axios.get(
       `https://dream-craft-server.vercel.app/order/${user?.email}`
-      // `http://localhost:5173/order/${user?.email}`
     );
     if (!response.status === 200) {
       throw new Error("Failed to fetch payment history");
@@ -29,7 +28,7 @@ const PaymentHistory = () => {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["paymentHistory", user.email], // Include user.email to refetch when the email changes
+    queryKey: ["paymentHistory", user.email], 
     queryFn: fetchPaymentHistory,
   });
 
