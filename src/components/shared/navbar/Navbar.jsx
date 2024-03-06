@@ -31,7 +31,7 @@ const Navbar = () => {
   // console.log(user);
   return (
     <>
-      <TopBar/>
+      <TopBar />
       <nav className="flex-no-wrap relative flex w-full items-center justify-between bg-transparent py-2 shadow-md shadow-black/5 md:flex-wrap lg:py-3.5">
         <div className="flex w-full items-center justify-between md:max-w-7xl md:px-12 mx-auto">
           <button
@@ -146,7 +146,7 @@ const Navbar = () => {
                     </li>
                   )}
 
-                  {user?.role === "user" &&(
+                  {user?.role === "user" && (
                     <li>
                       <Link
                         to="/dashboard/user"
@@ -159,6 +159,21 @@ const Navbar = () => {
                       </Link>
                     </li>
                   )}
+
+                  {user?.role === "organizer" && (
+                    <li>
+                      <Link
+                        to="/dashboard"
+                        className="rounded w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent 
+                                            flex items-center gap-2
+                                            "
+                      >
+                        <LuCommand className="inline-block" size={15} />
+                        Organizer Dashboard
+                      </Link>
+                    </li>
+                  )}
+
                   {user && (
                     <li>
                       <Link

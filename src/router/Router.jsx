@@ -50,6 +50,7 @@ import PaymentHistory from "../pages/dashboard/userDashboard/payment/PaymentHist
 import Mails from "../pages/dashboard/admin/mails/Mails";
 import Inbox from "../pages/dashboard/userDashboard/inbox/Inbox";
 import CustomEventUser from "../pages/dashboard/CustomEvent/CustomEventUser";
+import BookedTickets from "../pages/dashboard/admin/events/BookedTickets";
 
 const Router = createBrowserRouter([
     {
@@ -154,9 +155,9 @@ const Router = createBrowserRouter([
             {
                 path: "add-event",
                 element: (
-                    <PrivateRoute>
+                    <AdminRouter>
                         <AddEvent />
-                    </PrivateRoute>
+                    </AdminRouter>
                 ),
             },
             {
@@ -223,7 +224,7 @@ const Router = createBrowserRouter([
                 path: "customEvent",
                 element: (
                     <PrivateRoute>
-                        <CustomEventUser/>
+                        <CustomEventUser />
                     </PrivateRoute>
                 ),
             },
@@ -277,6 +278,14 @@ const Router = createBrowserRouter([
                 element: (
                     <AdminRouter>
                         <AllEvents />
+                    </AdminRouter>
+                ),
+            },
+            {
+                path: "booked-tickets",
+                element: (
+                    <AdminRouter>
+                        <BookedTickets />
                     </AdminRouter>
                 ),
             },
