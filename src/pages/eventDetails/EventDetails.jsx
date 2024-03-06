@@ -12,10 +12,13 @@ import { TiTick } from "react-icons/ti";
 import { VscLocation } from "react-icons/vsc";
 import { Link, useParams } from "react-router-dom";
 import loadingAnimation from "../../assets/animation/animation.json";
+import { useEffect, useState } from "react";
+
 
 
 const EventDetails = () => {
   const params = useParams();
+  const [filteredEvent, setFilteredEvent] = useState([])
 
   const fetchEvents = async () => {
     const response = await fetch(
@@ -29,12 +32,37 @@ const EventDetails = () => {
 
   const {
     data: event = [],
-    isLoading,
     error,
   } = useQuery({
-    queryKey: ["event"],
+    queryKey: ["events"],
     queryFn: fetchEvents,
   });
+
+  const recentEvents = async () => {
+    const response = await fetch(
+      "https://dream-craft-server.vercel.app/events"
+    );
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  };
+
+  const {
+    data: allEvents = [],
+    isLoading
+  } = useQuery({
+    queryKey: ["allEvents"],
+    queryFn: recentEvents,
+  });
+
+  useEffect(() => {
+    const filteredRecentEvent = allEvents?.filter(event => event._id !== params._id)
+    setFilteredEvent(filteredRecentEvent);
+
+  }, [allEvents, params._id])
+
+
   if (isLoading) {
     return (
       <Lottie
@@ -45,6 +73,7 @@ const EventDetails = () => {
       />
     );
   }
+  
 
   if (error) {
     return <p>Error loading events: {error.message}</p>;
@@ -364,55 +393,7 @@ const EventDetails = () => {
           </div>
         </div>
         <div>
-          {/* <div className="bg-base-200 py-5 lg:w-96 mt-8 lg:mt-0">
-            <h2 className="bg-pink-700 px-4 py-2 text-2xl w-60 text-center text-white rounded-r-md flex items-center gap-2">
-              <BsBookmarkCheck />
-              Book This Event
-            </h2>
 
-            <div>
-              <form action="" className="lg:pl-7 px-4 pt-4 space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your full name"
-                  className="lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Your email"
-                  className="lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Phone"
-                  className="lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500"
-                />
-                <select
-                  type="text"
-                  defaultValue=""
-                  className="lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500"
-                >
-                  <option value="" disabled>
-                    Quantity
-                  </option>
-                  <option value="One">One</option>
-                  <option value="Two">Two</option>
-                  <option value="Three">Three</option>
-                </select>
-                <input
-                  type="text"
-                  placeholder="Your location"
-                  className="lg:w-80 w-full p-2 rounded-md border-2 outline-pink-500"
-                />
-                <button
-                  type="submit"
-                  className="bg-pink-700 lg:w-80 w-full text-center text-xl font-semibold text-white py-2 rounded-md"
-                >
-                  Submit Now
-                </button>
-              </form>
-            </div>
-          </div> */}
           <div className="bg-base-200 py-5 lg:w-96">
             <h2 className="bg-pink-700 px-4 py-2 text-2xl w-60 text-center text-white rounded-r-md flex items-center gap-2">
               <PiNotebookDuotone className="text-3xl" />
@@ -420,106 +401,35 @@ const EventDetails = () => {
             </h2>
 
             <div className="lg:pl-5 px-4 pt-4 mt-3 space-y-5">
-              <div className="flex gap-4 items-center">
-                <img
-                  className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/9qNw5xs/leadership.jpg"
-                  alt=""
-                />
-                <div className="">
-                  <h3 className="text-sm font-semibold">
-                    Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.
-                  </h3>
-                  <div className="flex justify-between my-3">
-                    <p className="flex items-center text-sm gap-2">
-                      <CiCalendarDate className="text-sm" />
-                      January 30, 2024
-                    </p>
-                    <p className="flex items-center gap-2 text-sm text-red-600 font-semibold ">
-                      <BsDiagram3 className="text-sm" />
-                      500 Seat
-                    </p>
+              {
+                filteredEvent?.slice(0, 4).map(event => <div key={event._id} className="flex gap-4 items-center">
+                  <img
+                    className="w-40 h-28 rounded-md"
+                    src={event.image}
+                    alt={event.title}
+                  />
+                  <div className="">
+                    <h3 className="text-sm font-semibold">
+                      {event.title}
+                    </h3>
+                    <div className="flex justify-between gap-2 my-3">
+                      <p className="flex items-center text-sm gap-2">
+                        <CiCalendarDate className="text-sm" />
+                        {event.date.slice(0, 10)}
+                      </p>
+                      <p className="flex items-center gap-2 text-sm text-red-600 font-semibold ">
+                        <BsDiagram3 className="text-sm" />
+                        {event.seat} Seat
+                      </p>
+                    </div>
+                    <Link to={`/event-details/${event._id}`}>
+                      <button className="text-sm text-red-600 underline">
+                        Book Now
+                      </button>
+                    </Link>
                   </div>
-                  <button className="text-sm text-red-600 underline">
-                    Book Now
-                  </button>
-                </div>
-              </div>
-              <div className="flex gap-4 items-center">
-                <img
-                  className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/mGZ71df/pexels-rdne-stock-project-7648306.jpg"
-                  alt=""
-                />
-                <div className="">
-                  <h3 className="text-sm font-semibold">
-                    Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.
-                  </h3>
-                  <div className="flex justify-between my-3">
-                    <p className="flex items-center text-sm gap-2">
-                      <CiCalendarDate className="text-sm" />
-                      January 26, 2024
-                    </p>
-                    <p className="flex items-center gap-2 text-sm text-red-600 font-semibold ">
-                      <BsDiagram3 className="text-sm" />
-                      500 Seat
-                    </p>
-                  </div>
-                  <button className="text-sm text-red-600 underline">
-                    Book Now
-                  </button>
-                </div>
-              </div>
-              <div className="flex gap-4 items-center">
-                <img
-                  className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/9qNw5xs/leadership.jpg"
-                  alt=""
-                />
-                <div className="">
-                  <h3 className="text-sm font-semibold">
-                    Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.
-                  </h3>
-                  <div className="flex justify-between my-3">
-                    <p className="flex items-center text-sm gap-2">
-                      <CiCalendarDate className="text-sm" />
-                      February 21, 2024
-                    </p>
-                    <p className="flex items-center gap-2 text-sm text-red-600 font-semibold ">
-                      <BsDiagram3 className="text-sm" />
-                      500 Seat
-                    </p>
-                  </div>
-                  <button className="text-sm text-red-600 underline">
-                    Book Now
-                  </button>
-                </div>
-              </div>
-              <div className="flex gap-4 items-center">
-                <img
-                  className="w-40 h-28 rounded-md"
-                  src="https://i.ibb.co/mGZ71df/pexels-rdne-stock-project-7648306.jpg"
-                  alt=""
-                />
-                <div className="">
-                  <h3 className="text-sm font-semibold">
-                    Donec Risus Dui, Suscipit Iand Tempor Lacinia Vehicula.
-                  </h3>
-                  <div className="flex justify-between my-3">
-                    <p className="flex items-center text-sm gap-2">
-                      <CiCalendarDate className="text-sm" />
-                      February 28, 2024
-                    </p>
-                    <p className="flex items-center gap-2 text-sm text-red-600 font-semibold ">
-                      <BsDiagram3 className="text-sm" />
-                      500 Seat
-                    </p>
-                  </div>
-                  <button className="text-sm text-red-600 underline">
-                    Book Now
-                  </button>
-                </div>
-              </div>
+                </div>)
+              }
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-1">
               <div className="bg-base-200 py-5 lg:w-96 mt-8 lg:mt-10">

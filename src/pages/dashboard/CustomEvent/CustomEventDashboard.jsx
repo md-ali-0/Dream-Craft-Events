@@ -65,7 +65,7 @@ const CustomEventDashboard = () => {
                     </thead>
                     <tbody>
                         {
-                            customEvent.map((event, index) => (
+                            customEvent?.map((event, index) => (
                                 <tr key={event._id} className='text-center'>
                                     <td className="px-4 py-2 border-2 border-gray-300">{index + 1}</td>
 

@@ -31,7 +31,7 @@ const Events = () => {
         queryKey: ["allEvents"],
         queryFn: fetchEvents,
     });
-
+console.log(allEvents);
     useEffect(() => {
         setFilteredEvents(allEvents || []);
     }, [allEvents]);
