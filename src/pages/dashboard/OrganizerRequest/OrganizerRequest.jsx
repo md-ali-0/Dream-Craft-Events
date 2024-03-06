@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 const OrganizerRequest = () => {
-
     const axios = useAxiosPublic()
 
     const { data: request = [], refetch } = useQuery({
@@ -26,11 +25,9 @@ const OrganizerRequest = () => {
             confirmButtonText: "Yes, Make Organizer"
         }).then((result) => {
             if (result.isConfirmed) {
-
                 axios.put(`/users/organizer/${userId}`)
                     .then(res => {
                         if (res.data.role === 'organizer') {
-
                             axios.put(`/request-organizer/accept/${id}`)
                                 .then(res => {
                                     console.log(res);
@@ -59,11 +56,10 @@ const OrganizerRequest = () => {
             })
     }
 
-
     return (
         <div>
             <div className="flex justify-between items-center">
-
+                {/* Other JSX */}
             </div>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full">
@@ -81,38 +77,36 @@ const OrganizerRequest = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            request?.map((item, index) => (
-                                <tr key={item._id} className="border-b text-center">
-                                    <td className="px-4 py-2">{index + 1}</td>
-                                    <td className="px-4 py-2"><img src={item?.image} className="w-20 h-20 object-cover rounded-2xl" alt="" /></td>
-                                    <td className="px-4 py-2">{item?.name}</td>
-                                    <td className="px-4 py-2">{item?.experience}</td>
-                                    <td className="px-4 py-2">{item?.company}</td>
-                                    <td className="px-4 py-2">{item?.skills}</td>
-                                    <td className="px-4 py-2">{item?.status}</td>
-                                    <td className="px-4 py-2">
-                                        <button
-                                            disabled={item?.status === 'accepted' || item?.status === 'rejected'}
-                                            onClick={() => handleApprove(item.userId, item._id)}
-                                            className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:from-green-200 disabled:via-green-300 disabled:to-green-400"
-                                        >
-                                            {item?.status === 'accepted' ? 'Approved' : 'Approve'}
-                                        </button>
-                                    </td>
+                        {Array.isArray(request) && request.map((item, index) => (
+                            <tr key={item._id} className="border-b text-center">
+                                <td className="px-4 py-2">{index + 1}</td>
+                                <td className="px-4 py-2"><img src={item?.image} className="w-20 h-20 object-cover rounded-2xl" alt="" /></td>
+                                <td className="px-4 py-2">{item?.name}</td>
+                                <td className="px-4 py-2">{item?.experience}</td>
+                                <td className="px-4 py-2">{item?.company}</td>
+                                <td className="px-4 py-2">{item?.skills}</td>
+                                <td className="px-4 py-2">{item?.status}</td>
+                                <td className="px-4 py-2">
+                                    <button
+                                        disabled={item?.status === 'accepted' || item?.status === 'rejected'}
+                                        onClick={() => handleApprove(item.userId, item._id)}
+                                        className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:from-green-200 disabled:via-green-300 disabled:to-green-400"
+                                    >
+                                        {item?.status === 'accepted' ? 'Approved' : 'Approve'}
+                                    </button>
+                                </td>
 
-                                    <td className="px-4 py-2">
-                                        <button
-                                            disabled={item?.status === 'accepted' || item?.status === 'rejected'}
-                                            onClick={() => handleReject(item._id)}
-                                            className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:from-red-200 disabled:via-red-300 disabled:to-red-400"
-                                        >
-                                            {item?.status === 'rejected' ? 'Rejected' : 'Reject'}
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))
-                        }
+                                <td className="px-4 py-2">
+                                    <button
+                                        disabled={item?.status === 'accepted' || item?.status === 'rejected'}
+                                        onClick={() => handleReject(item._id)}
+                                        className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:from-red-200 disabled:via-red-300 disabled:to-red-400"
+                                    >
+                                        {item?.status === 'rejected' ? 'Rejected' : 'Reject'}
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
