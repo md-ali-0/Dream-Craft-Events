@@ -97,7 +97,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                                         subMenu={[
                                             {
                                                 name: "Booked Tickets",
-                                                path: "..",
+                                                path: "booked-tickets",
                                             },
                                             {
                                                 name: "Add Event",
