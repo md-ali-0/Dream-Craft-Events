@@ -119,7 +119,8 @@ const CustomEvent = () => {
             catering: catering,
             request: specialRequest,
             cost: totalCost,
-            status: 'pending'
+            status: 'pending',
+            seen: false
         }
 
         console.log(CustomEventData)

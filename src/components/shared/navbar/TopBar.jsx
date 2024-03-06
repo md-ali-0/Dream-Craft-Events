@@ -10,7 +10,7 @@ const TopBar = () => {
                 <ul className="flex text-sm text-gray-200 gap-3">
                     <li className="hidden md:flex justify-center items-center gap-2">
                         <LuNavigation className="inline"/>
-                        <h3>1356 Broadway, New York</h3>
+                        <h3>1213 Dhaka, Bangladesh</h3>
                     </li>
                     <li className="flex justify-center items-center gap-2">
                         <LuPhoneCall className="inline"/>
