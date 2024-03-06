@@ -68,18 +68,18 @@ const AllProducts = () => {
     //         <Link key={row.original._id} to={`/dashboard/edit-event/${row.original._id}`}>Edit</Link>
     //     ),
     // },
-    {
-      header: "Delete",
-      accessorKey: "_id",
-      cell: ({ cell: { row } }) => (
-        <button
-          // onClick={() => handleDelete(row.original._id)}
-          className="bg-red-600 rounded text-white px-1 py-0.5 "
-        >
-          Delete
-        </button>
-      ),
-    },
+    // {
+    //   header: "Delete",
+    //   accessorKey: "_id",
+    //   cell: ({ cell: { row } }) => (
+    //     <button
+    //       // onClick={() => handleDelete(row.original._id)}
+    //       className="bg-red-600 rounded text-white px-1 py-0.5 "
+    //     >
+    //       Delete
+    //     </button>
+    //   ),
+    // },
   ];
   const table = useReactTable({
     data,

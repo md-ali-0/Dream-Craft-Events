@@ -55,19 +55,19 @@ const AllEvents = () => {
       header: "User Email",
       accessorKey: "user_email",
     },
-    {
-      header: "User Image",
-      accessorKey: "user_image",
-      cell: ({ cell: { row } }) => (
-        <>
-          <img  className="w-10 rounded-full" src={row.original.user_image} />
-        </>
-      ),
-    },
-    {
-      header: "Status",
-      accessorKey: "status",
-    },
+    // {
+    //   header: "User Image",
+    //   accessorKey: "user_image",
+    //   cell: ({ cell: { row } }) => (
+    //     <>
+    //       <img  className="w-10 rounded-full" src={row.original.user_image} />
+    //     </>
+    //   ),
+    // },
+    // {
+    //   header: "Status",
+    //   accessorKey: "status",
+    // },
     // {
     //   header: "Events Date",
     //   accessorKey: "date",
@@ -89,16 +89,29 @@ const AllEvents = () => {
     //         <Link key={row.original._id} to={`/dashboard/edit-event/${row.original._id}`}>Edit</Link>
     //     ),
     // },
+    // {
+    //   header: "Delete",
+    //   accessorKey: "_id",
+    //   cell: ({ cell: { row } }) => (
+    //     <button
+    //       // onClick={() => handleDelete(row.original._id)}
+    //       className="bg-red-600 rounded text-white px-1 py-0.5 "
+    //     >
+    //       Delete
+    //     </button>
+    //   ),
+    // },
     {
-      header: "Delete",
+      header: "Status",
       accessorKey: "_id",
       cell: ({ cell: { row } }) => (
         <button
           // onClick={() => handleDelete(row.original._id)}
-          className="bg-red-600 rounded text-white px-1 py-0.5 "
+          className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         >
-          Delete
+          Ready to Delivery
         </button>
+
       ),
     },
   ];

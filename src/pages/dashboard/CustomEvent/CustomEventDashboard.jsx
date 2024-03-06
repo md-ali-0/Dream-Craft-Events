@@ -40,6 +40,9 @@ const CustomEventDashboard = () => {
 
     return (
         <div>
+                        <h2 className=" text-primary text-2xl font-semibold mb-4">
+        Requests for Custom Event
+      </h2>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full">
                     <thead className="text-sm border-b text-gray-700 uppercase bg-rose-50 font-semibold ">
