@@ -111,9 +111,6 @@ const Inbox = () => {
                                   <p>Your organizer request has been <span className="">approved</span>, Check your dashboard.</p>
                                 </div>
 
-<<<<<<< HEAD
-    </div>
-=======
 
                               }
                               {
@@ -146,7 +143,6 @@ const Inbox = () => {
 
       </CustomEventModal>
     </>
->>>>>>> c3ef51abf9386559dbec9c250cbb356cf10d3613
   );
 };
 
