@@ -1,152 +1,325 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { CiEdit } from "react-icons/ci";
 import useAuth from "../../../hooks/useAuth";
-import CustomEventModal from "../../customEvent/CustomEventModal";
 import { toast } from "react-hot-toast";
+import PageHeader from "../../../components/pageHeader/PageHeader";
+import { RiShieldUserLine } from "react-icons/ri";
+import { BsFileLock } from "react-icons/bs";
+import { RiPencilLine } from "react-icons/ri";
+import useAxios from "../../../hooks/useAxios";
+import { useState } from "react";
+import uploadImage from "../../../utils/useImageUpload";
 
 const Profile = () => {
-    const { user } = useAuth();
-    const [showModal, setShowModal] = useState(false)
-    const handleShowModal = () => {
-        setShowModal(!showModal)
+  const { user } = useAuth();
+  const axios = useAxios();
+  const [userImage, setUserImage] = useState(user?.image);
+  const [userCover, setUserCover] = useState(user?.cover);
+  const {
+    register,
+    handleSubmit,
+    // reset,
+    // formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    const loadingToast = toast.loading("User Updating ... ");
+    try {
+      await axios.put(`/edit-user/${user?._id}`, data);
+      toast.dismiss(loadingToast);
+      toast.success("Successfully Changed!");
+    } catch (error) {
+      console.log(error);
     }
-    const handleClose = (e) => {
-        if (e.target.id == 'wrapper') {
-            handleShowModal()
-        }
+  };
 
+  const passwordSubmit = async (e) => {
+    e.preventDefault();
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirm_password.value;
+
+    if (password === confirmPassword) {
+      const loadingToast = toast.loading("Password Updating ... ");
+      try {
+        await axios.put(`/update-pass/${user?._id}`, { password: password });
+        toast.dismiss(loadingToast);
+        toast.success("Successfully Changed!");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      toast.error("Password and Confirm Password Must be Same !");
     }
-    const {
-        register,
-        handleSubmit,
-        // reset,
-        // formState: { errors },
-    } = useForm();
+  };
 
-    const onSubmit = async (data) => {
-        // const { name, image, password } = data;
-        // const imageFile = { image: image[0] };
-        console.log(data);
-        toast.success("Profile successfully updated");
-        setShowModal(!showModal)
-    };
-    return (
-        <div>
-            <div className="bg-white rounded-lg shadow-xl pb-8">
-                <div className="w-full h-[250px]">
+  const profileImageChange = async (e)=>{
+    e.preventDefault()
+    const loadingToast = toast.loading("Cover Image Updating ... ");
+    const imageurl = await uploadImage(e.target.files[0])
+    if (imageurl) {
+        try {
+            await axios.put(`/edit-user/${user?._id}`, {cover:imageurl});
+            toast.dismiss(loadingToast);
+            toast.success("Successfully Changed!");
+            setUserCover(imageurl)
+            user.image = imageurl
+          } catch (error) {
+            console.log(error);
+          }
+    }
+  }
+  const coverImageChange = async (e)=>{
+    e.preventDefault()
+    const loadingToast = toast.loading("Profile Image Updating ... ");
+    const imageurl = await uploadImage(e.target.files[0])
+    if (imageurl) {
+        try {
+            await axios.put(`/edit-user/${user?._id}`, {image:imageurl});
+            toast.dismiss(loadingToast);
+            toast.success("Successfully Changed!");
+            setUserImage(imageurl)
+            user.image = imageurl
+          } catch (error) {
+            console.log(error);
+          }
+    }
+  }
+  return (
+    <div>
+      <PageHeader />
+      <div className="grid grid-cols-12 gap-x-6">
+        <div className="col-span-12 xl:col-span-4">
+          <div className="relative mb-6 flex flex-col rounded border bg-white shadow">
+            <div className="p-6 relative">
+              <div className="flex relative before:bg-black/50 before:absolute before:w-full before:h-full before:rounded-sm">
+                <img
+                  src={userCover}
+                  alt=""
+                  className="h-[200px] w-full rounded-sm"
+                  id="profile-img2"
+                />
+                <span className="absolute top-5 right-5 flex p-2 rounded-sm ring-1 ring-black/10 text-white bg-black/10 leading-none">
+                  <RiPencilLine className="inline" size={20} />
+                  <input
+                    type="file"
+                    onChange={coverImageChange}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    id="profile-change2"
+                  />
+                </span>
+              </div>
+              <div className="absolute top-[4.5rem] inset-x-0 text-center space-y-3">
+                <div className="flex justify-center w-full">
+                  <div className="relative">
                     <img
-                        src="https://timelinecovers.pro/facebook-cover/download/life-facebook-cover.jpg"
-                        className="w-full h-full rounded-tl-lg rounded-tr-lg"
+                      src={userImage}
+                      className="w-24 h-24 rounded-full ring-4 ring-white/10 mx-auto"
+                      id="profile-img"
+                      alt="pofile-img"
                     />
+                    <span className="absolute bottom-0 right-0 block p-1 rounded-full ring-2 ring-white/10 text-white bg-white/10 dark:bg-bgdark leading-none">
+                      <RiPencilLine className="inline" size={20} />
+                      <input
+                        type="file"
+                        name="image"
+                        onChange={profileImageChange}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        id="profile-change"
+                      />
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center -mt-20">
-                    <img
-                        src={user?.image}
-                        className="w-40 h-40 object-cover border-4 border-white rounded-full"
+              </div>
+            </div>
+          </div>
+          <div className="relative mb-6 flex flex-col rounded border bg-white shadow">
+            <div className="border py-3 px-4 font-medium">
+              <h5 className="text-base font-semibold text-gray-700 leading-none flex">
+                <BsFileLock className="mr-2" />
+                Security Settings
+              </h5>
+            </div>
+            <form className="p-6 pt-0" onSubmit={passwordSubmit}>
+              <div>
+                <div className="my-5">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-gray-500 mb-0">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                      placeholder="Password"
                     />
-                    <div className="flex items-center space-x-2 mt-2">
-                        <p className="text-2xl">{user?.name}</p>
-                    </div>
-                    <p className="text-sm text-gray-500">
-                        DreamCraft Events by Data Defenders 805.3 
-                    </p>
+                  </div>
                 </div>
-                <div className="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">
-                    <div className="flex items-center space-x-4 mt-2">
-                        <button
-                            onClick={() => setShowModal(true)}
-                            className="flex items-center bg-primary hover:bg-rose-700 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100"
-                        >
-                            <CiEdit />
-                            <span>Update</span>
-                        </button>
-                    </div>
+                <div className="my-5">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-gray-500 mb-0">
+                      Confirm Password
+                    </label>
+                    <input
+                      type="password"
+                      name="confirm_password"
+                      className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                      placeholder="Confirm Password"
+                    />
+                  </div>
                 </div>
-            </div>
-            <div className="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
-                <div className="w-full flex flex-col 2xl:w-1/3">
-                    <div className="flex-1 bg-white rounded-lg shadow-xl p-8">
-                        <h4 className="text-xl text-gray-900 font-bold">
-                            Personal Info
-                        </h4>
-                        <ul className="mt-2 text-gray-700">
-                            <li className="flex border-y py-2">
-                                <span className="font-bold w-24">
-                                    Full name:
-                                </span>
-                                <span className="text-gray-700">
-                                    {user?.name}
-                                </span>
-                            </li>
-                            <li className="flex border-b py-2">
-                                <span className="font-bold w-24">Email:</span>
-                                <span className="text-gray-700">
-                                    {user?.email}
-                                </span>
-                            </li>
-                            <li className="flex border-b py-2">
-                                <span className="font-bold w-24">
-                                    Last Login:
-                                </span>
-                                <span className="text-gray-700">
-                                    {new Date(user?.createdAt).toLocaleString()}
-                                </span>
-                            </li>
-                            <li className="flex border-b py-2">
-                                <span className="font-bold w-24">Joined:</span>
-                                <span className="text-gray-700">
-                                    {new Date(user?.createdAt).toLocaleString()}
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <CustomEventModal showModal={showModal} handleShowModal={handleShowModal}>
-                <div id='wrapper' className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center' onClick={handleClose}>
-                    <div className='w-[550px] p-4 md:p-0'>
-                        <div className='bg-white rounded-md relative'>
-                            <div className="p-8  rounded max-w-md w-full mx-auto">
-                                <h2 className="text-2xl font-semibold mb-8">Please drop your information</h2>
-
-                                <form onSubmit={handleSubmit(onSubmit)}>
-
-                                    <div className="mt-4">
-                                            <label className="block text-sm font-medium text-gray-700">Full name:</label>
-                                            <input type="text" {...register("name", { required: true })} defaultValue={user?.name} id="name" name="name" className="px-2.5 py-2 w-full border text-sm bg-body border-primary/20 rounded-md focus:border-primary/20 outline-none transition-colors duration-300" />
-                                    </div>
-
-                                    <div className="mt-4">
-                                        <label className="block text-sm font-medium text-gray-700">Email</label>
-                                        <input type="email" id="email" {...register("email", { required: true })} defaultValue={user?.email} name="email" className="px-2.5 py-2 w-full border text-sm bg-body border-primary/20 rounded-md focus:border-primary/20 outline-none transition-colors duration-300" />
-                                    </div>
-
-
-                                    <div className="mt-4">
-                                        <label className="block text-sm font-medium text-gray-700">Password</label>
-                                        <input type="text" id="password" {...register("password", { required: true })} name="password" className="px-2.5 py-2 w-full border text-sm bg-body border-primary/20 rounded-md focus:border-primary/20 outline-none transition-colors duration-300" />
-                                    </div>
-
-                                    <div className="mt-6">
-                                    <button
-                            type="submit"
-                            className="mx-auto rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90 w-full"
-                        >Submit</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div className='bg-rose-600 text-white p-2 absolute top-4 right-4 rounded-full w-8 h-8 flex justify-center items-center'>
-                                <button onClick={handleShowModal}>X</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </CustomEventModal>
+              </div>
+              <div className="relative flex items-center justify-end gap-2 mb-3 text-left px-3">
+                <button
+                  type="submit"
+                  className="text-white bg-gradient-to-r from-rose-600 via-rose-700 to-rose-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-rose-300 dark:focus:ring-rose-800 font-medium rounded-md text-sm px-5 py-2.5 text-center me-2 mb-2 "
+                >
+                  Update
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-    );
+
+        <div className="col-span-12 xl:col-span-8">
+          <form
+            className="relative mb-6 flex flex-col rounded border bg-white shadow"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <div className="relative flex flex-col rounded bg-white shadow-none">
+              <div className="border py-3 px-4 font-medium">
+                <h5 className="text-base font-semibold text-gray-700 leading-none flex">
+                  <RiShieldUserLine className="mr-2" />
+                  Profile Settings
+                </h5>
+              </div>
+              <div className="p-6">
+                <div>
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        {...register("firstname", { required: true })}
+                        className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        defaultValue={user?.firstname}
+                        placeholder="Firstname"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        Last Name
+                      </label>
+                      <input
+                        type="text"
+                        {...register("lastname", { required: true })}
+                        className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        defaultValue={user?.lastname}
+                        placeholder="Lastname"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        Phone Number
+                      </label>
+                      <input
+                        type="text"
+                        {...register("phone", { required: true })}
+                        className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        defaultValue={user?.phone}
+                        placeholder="+880 123-456-789"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        {...register("email", { required: true })}
+                        className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        defaultValue={user?.email}
+                        readOnly={!user?.role !== "admin"}
+                        placeholder="example@site.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="my-5">
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        Address
+                      </label>
+                      <input
+                        type="text"
+                        {...register("address", { required: true })}
+                        className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        defaultValue={user?.address}
+                        placeholder="Address"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        City
+                      </label>
+                      <input
+                        type="text"
+                        {...register("city", { required: true })}
+                        className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        defaultValue={user?.city}
+                        placeholder="City"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        Country
+                      </label>
+                      <input
+                        type="text"
+                        {...register("country", { required: true })}
+                        className="my-auto block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        defaultValue={user?.country}
+                        placeholder="Country"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-5">
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-gray-500 mb-0">
+                        Bio
+                      </label>
+                      <textarea
+                        {...register("bio", { required: true })}
+                        className="block w-full rounded border py-3 px-4 text-sm outline-none shadow-sm"
+                        rows={3}
+                        placeholder="Add Your Bio"
+                        defaultValue={user?.bio}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative flex items-center justify-end gap-2 mb-6 text-left px-3">
+              <button
+                type="submit"
+                className="text-white bg-gradient-to-r from-rose-600 via-rose-700 to-rose-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-rose-300 dark:focus:ring-rose-800 font-medium rounded-md text-sm px-5 py-2.5 text-center me-2 mb-2 "
+              >
+                Update
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Profile;
