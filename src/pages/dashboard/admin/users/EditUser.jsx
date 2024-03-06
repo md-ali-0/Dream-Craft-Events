@@ -11,7 +11,6 @@ const EditUser = () => {
     const {
         register,
         handleSubmit,
-        reset,
         formState: { errors },
     } = useForm();
 

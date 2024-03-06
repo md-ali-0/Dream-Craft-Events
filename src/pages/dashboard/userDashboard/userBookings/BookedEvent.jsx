@@ -105,11 +105,6 @@ const BookedEvent = () => {
   return (
     <div>
       <h2 className="text-center text-primary text-2xl font-semibold mb-4">
-        Retrieve Your tickets
-
-  return (
-    <div>
-      <h2 className="text-center text-primary text-2xl font-semibold mb-4">
         My Bookings
 
       </h2>
