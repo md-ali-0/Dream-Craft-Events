@@ -3,18 +3,22 @@ import { useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Inbox from "../../pages/dashboard/userDashboard/inbox/Inbox";
 const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
     const navigate = useNavigate()
-    const {user, logout}= useAuth()
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const { user, logout } = useAuth()
+    const [dropdownOpen, setDropdownOpen] = useState(false);    
 
-    const handleLogout = async()=>{
+    const handleLogout = async () => {
         await logout()
         navigate('/login')
     }
-    // console.log(user);
+
+   
+
+    
     return (
-        <div className="flex items-center justify-between px-6 py-3 dark:bg-[#0c1427] border dark:border-slate-800">
+        <div className="flex relative items-center justify-between px-6 py-3 dark:bg-[#0c1427] border dark:border-slate-800">
             <div className="flex items-center">
                 <button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -50,46 +54,51 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
                 </div>
             </div>
 
-            <div className="flex items-center">
-                <div className="relative">
-                    <button
-                        onClick={() => setDropdownOpen(!dropdownOpen)}
-                        className="relative block w-10 h-10 overflow-hidden rounded-full shadow focus:outline-none"
-                    >
-                        <img
-                            className="object-cover w-full h-full"
-                            src={user?.image}
-                            alt="Your avatar"
-                        />
-                    </button>
 
-                    <div
-                        onClick={() => setDropdownOpen(false)}
-                        className={`fixed inset-0 z-10 w-full h-full ${
-                            dropdownOpen ? "" : "hidden"
-                        }`}
-                    ></div>
 
-                    <div
-                        className={`absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl ${
-                            dropdownOpen ? "" : "hidden"
-                        }`}
-                    >
-                        <Link
-                            to="/dashboard/profile"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
+            <div className="flex gap-4 items-center">
+                <Inbox/>
+                <div className="flex items-center">
+                    <div className="relative">
+                        <button
+                            onClick={() => setDropdownOpen(!dropdownOpen)}
+                            className="relative block w-10 h-10 overflow-hidden rounded-full shadow focus:outline-none"
                         >
-                            Profile
-                        </Link>
-                        <Link
-                            onClick={handleLogout}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
+                            <img
+                                className="object-cover w-full h-full"
+                                src={user?.image}
+                                alt="Your avatar"
+                            />
+                        </button>
+
+                        <div
+                            onClick={() => setDropdownOpen(false)}
+                            className={`fixed inset-0 z-10 w-full h-full ${dropdownOpen ? "" : "hidden"
+                                }`}
+                        ></div>
+                        
+
+                        <div
+                            className={`absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl ${dropdownOpen ? "" : "hidden"
+                                }`}
                         >
-                            Logout
-                        </Link>
+                            <Link
+                                to="/dashboard/profile"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
+                            >
+                                Profile
+                            </Link>
+                            <Link
+                                onClick={handleLogout}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white"
+                            >
+                                Logout
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 };

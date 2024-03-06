@@ -7,6 +7,8 @@ import { RxCrossCircled } from "react-icons/rx";
 import { MdOutlinePending } from "react-icons/md";
 import { Link } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
+import { FaBell } from "react-icons/fa";
+import CustomEventModal from "../../../customEvent/CustomEventModal";
 
 
 
@@ -15,6 +17,7 @@ import useAuth from "../../../../hooks/useAuth";
 const Inbox = () => {
   const axios = useAxiosPublic()
   const [status, setStatus] = useState()
+  const [showModal, setShowModal] = useState(false)
   const { user } = useAuth()
 
   const { data: customEvent = [], refetch } = useQuery({
@@ -25,12 +28,11 @@ const Inbox = () => {
     }
   })
 
-  console.log(customEvent);
+  // console.log(customEvent);
 
   useEffect(() => {
     const result = customEvent?.filter(event => event.status == 'rejected' || event.status == 'approved')
     setStatus(result);
-    
 
 
   }, [customEvent, refetch])
@@ -45,68 +47,106 @@ const Inbox = () => {
     }
   })
 
+  const handleShowModal = () => {
+    setShowModal(!showModal)
+  }
+  const handleClose = (e) => {
+    if (e.target.id == 'wrapper') {
+      handleShowModal()
+    }
+
+  }
   return (
-    <div>
-      <h2 className="text-center text-primary text-2xl font-semibold my-5">My Inbox<FaRocketchat className="text-3xl ml-2 inline-block" /> </h2>
-      <div className="border border-primary rounded-md">
-        {
-          status?.map(event =>
-            <div className="p-8 flex justify-between items-center" key={event._id}>
-              <div className="flex gap-4 items-center">
-                <FaRocketchat className="text-3xl" />
-                <p>Your request for custom event <span className="font-semibold">{event?.eventType + '-' + event?._id.slice(0, 6)}</span> has been {event.status == 'approved' ? 'approved' : 'rejected'}, to check the the details click <Link className="text-primary font-semibold" to='/dashboard/customEvent'>here</Link> </p>
-              </div>
-              {
-                event.status == 'approved' ? <FcApproval className="text-3xl" /> : <RxCrossCircled className="text-3xl text-red-500" />
-              }
+    <>
 
-
-            </div>)
-        }
-
-        {/* message for organizer request */}
-        {
-          request && <div className="">
-            <div className="p-8">
-              {
-                request.status === 'pending'
-                &&
-                <div className="flex gap-4 items-center">
-                  <FaRocketchat className="text-3xl" />
-                  Your organizer request is pending. Please wait for admin confirmation.
-                  <MdOutlinePending className="text-3xl" />
-                </div>
-              }
-              {
-                request.status === 'accepted'
-                &&
-                <div className="flex gap-4 items-center justify-between">
-                  <div className="flex gap-3 items-center">
-                    <FaRocketchat className="text-3xl" />
-                    <p>Your organizer request has been approved, Check your dashboard.</p>
-                  </div>
-                  <FcApproval className="text-3xl" />
-                </div>
-              }
-              {
-                request.status === 'rejected'
-                &&
-                <div className="flex gap-4 items-center justify-between">
-                  <div className="flex gap-3 items-center">
-                    <FaRocketchat className="text-3xl" />
-                    <p>Your organizer request has been rejected. Request again with correct information.</p>
-                  </div>
-                  <RxCrossCircled className="text-3xl text-red-500" />
-                </div>
-              }
-            </div>
-
-          </div>
-        }
-
+      <div>
+        <FaBell onClick={handleShowModal} className="text-2xl text-rose-600" />
       </div>
+      <div
+        onClick={() => setShowModal(false)}
+        className={`fixed inset-0 z-10 w-full h-full ${showModal ? "" : "hidden"
+          }`}
+      ></div>
+      <CustomEventModal showModal={showModal} >
+        <div id='wrapper' className='absolute top-12 z-10 right-5 md:right-24' onClick={handleClose}>
+          <div className='md:w-[400px]  p-4 md:p-0'>
+            <div className='bg-gray-200 h-[400px] bg-opacity-95 border border-rose-400 rounded-md relative'>
+              <div className="p-2.5 rounded max-w-md w-full mx-auto">
+                <h2 className="text-center flex items-center justify-center gap-1 text-rose-600 font-bold text-xl"><FaBell className="text-xl inline-block text-rose-600" />Notifications</h2>
+                <div className="mt-2">
+                  {
+                    status?.map(event =>
+                      <div key={event._id}>
+                        <div className="flex items-center" >
+                          <div className="w-20">
+                            <img src="https://placehold.co/500x500/png" alt="" className="w-10 rounded-full" />
+                          </div>
+                          <h2>
+                            Your request for custom event <span className="font-semibold">{event?.eventType + '-' + event?._id.slice(0, 6)}</span> has been {event.status == 'approved' ? 'approved' : 'rejected'}.
+                          </h2>
 
+                        </div>
+
+                        {
+                          request && <div className="mt-3">
+                            <div className="">
+                              {
+                                request.status === 'pending'
+                                &&
+                                <div className="flex items-center">
+                                  <div className="w-24">
+                                    <img src="https://placehold.co/500x500/png" alt="" className="w-10 rounded-full" />
+                                  </div>
+                                  Your organizer request is pending. Please wait for admin confirmation.
+
+                                </div>
+                              }
+                              {
+                                request.status === 'accepted'
+                                &&
+                                <div className="flex items-center">
+                                  <div className="w-24">
+                                    <img src="https://placehold.co/500x500/png" alt="" className="w-10 rounded-full" />
+                                  </div>
+                                  <p>Your organizer request has been <span className="">approved</span>, Check your dashboard.</p>
+                                </div>
+
+<<<<<<< HEAD
     </div>
+=======
+
+                              }
+                              {
+                                request.status === 'rejected'
+                                &&
+                                <div className="flex items-center">
+                                  <div className="w-24">
+                                    <img src="https://placehold.co/500x500/png" alt="" className="w-10 rounded-full" />
+                                  </div>
+                                  <p>Your organizer request has been <span className="font-semibold">rejected.</span> Request again with correct information.</p>
+                                </div>
+
+                              }
+                            </div>
+
+                          </div>
+                        }
+
+                      </div>
+                    )
+                  }
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </CustomEventModal>
+    </>
+>>>>>>> c3ef51abf9386559dbec9c250cbb356cf10d3613
   );
 };
 

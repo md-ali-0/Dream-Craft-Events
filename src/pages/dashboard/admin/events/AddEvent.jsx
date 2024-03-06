@@ -9,7 +9,7 @@ const AddEvent = () => {
     const onSubmit = async (data) => {
         const { title, type, location, speakers, sponsor,description, seat, image, date } = data;
         const imageResult = await uploadImage(image[0]);
-        const  loadingToast = toast.loading('Creating new event ... !!');
+        const  loadingToast = toast.loading('Creating New Event..');
         if (imageResult) {
             const newEvent = { title, type, location, speakers, sponsor,description, seat, image:imageResult, date }
             await axios.post('/add-event',newEvent)
@@ -33,7 +33,7 @@ const AddEvent = () => {
                 >
                     <div className=" ">
                         <label className="block text-sm font-medium text-gray-700 py-1.5">
-                            <span className=" ">Event Name*</span>
+                            <span className=" ">Event Name</span>
                         </label>
                         <input
                             type="text"
@@ -51,7 +51,7 @@ const AddEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event seats*
+                                    Event seats
                                 </span>
                             </label>
                             <input
@@ -66,7 +66,7 @@ const AddEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event type*
+                                    Event type
                                 </span>
                             </label>
                             <input
@@ -83,7 +83,7 @@ const AddEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event Location*
+                                    Event Location
                                 </span>
                             </label>
                             <input
@@ -98,7 +98,7 @@ const AddEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event Date*
+                                    Event Date
                                 </span>
                             </label>
                             <input
@@ -115,7 +115,7 @@ const AddEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Speakers*
+                                    Speakers
                                 </span>
                             </label>
                             <input
@@ -130,7 +130,7 @@ const AddEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Sponsor*
+                                    Sponsor
                                 </span>
                             </label>
                             <input
@@ -145,7 +145,7 @@ const AddEvent = () => {
                     <div className="">
                         <label className="">
                             <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                Event Details*
+                                Event Details
                             </span>
                         </label>
 

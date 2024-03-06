@@ -47,6 +47,22 @@
     }
 }
 
+.button-reciept {
+    animation-name: animate-updownAnim;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes animate-updownAnim {
+    from {
+        transform: translateY(-5px);
+    }
+    to {
+        transform: translateY(4px);
+    }
+}
+
 .custom-scroll {
     overflow-x: hidden;
     scroll-behavior: smooth;

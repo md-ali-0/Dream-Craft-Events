@@ -12,8 +12,8 @@ const About = () => {
   return (
     <div className=" ">
       <div className="">
-        <div>
-          <img src={bg} alt="" />
+        <div >
+          <img className="" src={bg} alt="" />
         </div>
         <div className="-mt-[75px] md:-mt-40">
           <h2 className="text-xl md:text-4xl text-center ">About Us</h2>
@@ -26,7 +26,7 @@ const About = () => {
         </div>
         
       </div>
-      <div className=" p-3 space-y-7 mt-20  md:max-w-6xl mx-auto">
+      <div className=" p-3 space-y-7 mt-5 md:mt-20  md:max-w-6xl mx-auto">
         <h2 className="text-center text-3xl underline">
           Why choose us
         </h2>
@@ -37,7 +37,7 @@ const About = () => {
           </div>
 
           <div className="">
-            <h4 className="text-2xl mb-2 ">Original</h4>
+            <h4 className="text-2xl mb-2 mt-2 ">Original</h4>
             <p className="text-sm">
               We have the sense fresh, new and original ideas that will ensure
               the event we organize is successful, unique and memorable. And We
@@ -53,7 +53,7 @@ const About = () => {
             <img className="h-[250px] w-[350px]" src={img4} alt="" />
           </div>
           <div>
-            <h4 className="text-2xl mb-2 ">Creative</h4>
+            <h4 className="text-2xl mb-2 mt-2 ">Creative</h4>
             <p>
               We are creative in every aspect of the event; planning,
               promotional and publicity as well as execution. By being creative,
@@ -68,7 +68,7 @@ const About = () => {
             <img className="h-[250px] w-[350px]" src={img1} alt="" />
           </div>
           <div className="lg:-ml-32">
-            <h4 className="text-2xl mb-2">Maticulous</h4>
+            <h4 className="text-2xl mb-2 mt-2">Maticulous</h4>
             <p>
               We are very particular in every aspect of the event management to
               guarantee the event we organise runs perfectly and efficiently.guarantee the event we organise runs perfectly and efficiently.
@@ -81,7 +81,7 @@ const About = () => {
             <img className="h-[250px] w-[350px]" src={img2} alt="" />
           </div>
           <div>
-            <h4 className="text-2xl mb-2">Event Services</h4>
+            <h4 className="text-2xl mb-2 mt-2">Event Services</h4>
             <p>
               With many years of experience in event organising, we understand
               that there many factors that lead to a well-organised and
@@ -98,7 +98,7 @@ const About = () => {
             <img className="h-[250px] w-[350px]" src={img3} alt="" />
           </div>
           <div>
-            <h4 className="text-2xl mb-2">Satisfaction</h4>
+            <h4 className="text-2xl mb-2 mt-2">Satisfaction</h4>
             <p>
               Of course, achieving our clients’ satisfaction is what motivates
               us to bring out the best events. We believe in the strengths of
@@ -109,7 +109,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Add></Add>
+      {/* <Add></Add> */}
       <OurStory></OurStory>
       <Reviews></Reviews>
     </div>

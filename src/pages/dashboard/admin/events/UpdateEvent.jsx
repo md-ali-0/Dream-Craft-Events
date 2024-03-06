@@ -24,7 +24,7 @@ const UpdateEvent = () => {
             updateData.password = data.password;
         }
         console.log(updateData);
-        const loadingToast = toast.loading("User Updating ... ");
+        const loadingToast = toast.loading("Updating Event..");
         try {
             const res = await axios.put(`/edit-event/${id}`, updateData);
             console.log(res.data);
@@ -48,7 +48,7 @@ const UpdateEvent = () => {
                 >
                     <div className=" ">
                         <label className="block text-sm font-medium text-gray-700 py-1.5">
-                            <span className=" ">Event Name*</span>
+                            <span className=" ">Event Name</span>
                         </label>
                         <input
                             type="text"
@@ -75,7 +75,7 @@ const UpdateEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event seats*
+                                    Event seats
                                 </span>
                             </label>
                             <input
@@ -99,7 +99,7 @@ const UpdateEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event type*
+                                    Event type
                                 </span>
                             </label>
                             <input
@@ -125,7 +125,7 @@ const UpdateEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event Location*
+                                    Event Location
                                 </span>
                             </label>
                             <input
@@ -149,7 +149,7 @@ const UpdateEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Event Date*
+                                    Event Date
                                 </span>
                             </label>
                             <input
@@ -175,7 +175,7 @@ const UpdateEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Speakers*
+                                    Speakers
                                 </span>
                             </label>
                             <input
@@ -199,7 +199,7 @@ const UpdateEvent = () => {
                         <div className="md:w-1/2">
                             <label className="">
                                 <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                    Sponsor*
+                                    Sponsor
                                 </span>
                             </label>
                             <input
@@ -223,7 +223,7 @@ const UpdateEvent = () => {
                     <div className="">
                         <label className="">
                             <span className="block text-sm font-medium text-gray-700 py-1.5">
-                                Event Details*
+                                Event Details
                             </span>
                         </label>
 
@@ -268,7 +268,7 @@ const UpdateEvent = () => {
                             type="submit"
                             className="mx-auto rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary/95 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary/90 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary/90"
                         >
-                            Update User
+                            Update Event
                         </button>
                     </div>
                 </form>
