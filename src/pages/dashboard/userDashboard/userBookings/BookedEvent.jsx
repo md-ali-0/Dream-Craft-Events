@@ -7,6 +7,8 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import qrCode from "qrcode";
 import { FaArrowDownLong } from "react-icons/fa6";
+import "jspdf-autotable";
+
 
 const BookedEvent = () => {
   const { user } = useAuth();
@@ -14,6 +16,7 @@ const BookedEvent = () => {
   const fetchPaymentHistory = async () => {
     const response = await axios.get(
       `https://dream-craft-server.vercel.app/order/${user?.email}`
+
     );
     if (!response.status === 200) {
       throw new Error("Failed to fetch payment history");
@@ -44,6 +47,7 @@ const BookedEvent = () => {
   if (error) {
     return <p>Error loading payment history: {error.message}</p>;
   }
+
 
   const handleDownloadTicket = async (order) => {
     const qrCodeDataURL = await qrCode.toDataURL(order.tran_id, {
@@ -102,6 +106,12 @@ const BookedEvent = () => {
     <div>
       <h2 className="text-center text-primary text-2xl font-semibold mb-4">
         Retrieve Your tickets
+
+  return (
+    <div>
+      <h2 className="text-center text-primary text-2xl font-semibold mb-4">
+        My Bookings
+
       </h2>
 
       <div className="overflow-x-auto">
@@ -114,12 +124,15 @@ const BookedEvent = () => {
               <th className="px-4 py-2">Event Title</th>
               <th className="px-4 py-2">Total Amount</th>
               <th className="px-4 py-2">Status</th>
+
               <th className="px-4 py-2">Actions</th>
+
             </tr>
           </thead>
           <tbody>
             {paymentHistory?.map((order) => (
               <tr key={order._id} className="border-b text-center">
+
                 <td className="px-4 py-2">
                   <img
                     src={order?.image}
@@ -127,6 +140,9 @@ const BookedEvent = () => {
                     alt=""
                   />
                 </td>
+
+                <td className="px-4 py-2"><img src={order?.eventImage} className="w-20 h-20 object-cover rounded-2xl" alt="" /></td>
+
                 <td className="px-4 py-2">{order.cus_name}</td>
                 <td className="px-4 py-2">{order.cus_email}</td>
                 <td className="px-4 py-2">{order.eventTitle}</td>
@@ -134,6 +150,7 @@ const BookedEvent = () => {
                 <td className="px-4 py-2">
                   {order.paidStatus ? "Paid" : "Unpaid"}
                 </td>
+
                 <td className="px-4 py-2 ml-2">
                   <button
                     onClick={() => handleDownloadTicket(order)}
@@ -143,6 +160,7 @@ const BookedEvent = () => {
                     Download Ticket
                   </button>
                 </td>
+
               </tr>
             ))}
           </tbody>

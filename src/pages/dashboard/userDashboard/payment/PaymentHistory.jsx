@@ -7,8 +7,6 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import logo from "../../../../assets/logo/dream-craft.png";
 import pdfbg from "./pdfbg.jpg";
-import { FaArrowDownLong } from "react-icons/fa6";
-
 
 const PaymentHistory = () => {
   const { user } = useAuth();
@@ -205,10 +203,9 @@ const PaymentHistory = () => {
                 <td className="px-4 py-2">
                   <button
                     onClick={() => handleDownloadPDF(order)}
-                    className="px-4 py-1.5 flex items-center gap-0.5 text-nowrap text-lg font-semibold rounded bg-primary text-white"
+                    className="px-5 text-lg font-semibold rounded bg-primary text-white"
                   >
-                    <FaArrowDownLong className="button-reciept"/>
-                    Receipt
+                    Download PDF
                   </button>
                 </td>
               </tr>
