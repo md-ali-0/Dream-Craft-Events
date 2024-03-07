@@ -90,6 +90,11 @@ const BookedEvent = () => {
     doc.text(` ${order.eventTitle}`, pageWidth / 2, marginTop + 10, {
       align: "center",
     });
+    doc.setFontSize(16);
+    doc.text(`Date: ${order.eventDate.slice(0,10)}`, pageWidth / 2, marginTop + 20, {
+      align: "center",
+    });
+
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
 
@@ -134,7 +139,7 @@ const BookedEvent = () => {
                 <td className="px-4 py-2">{order.cus_name}</td>
                 <td className="px-4 py-2">{order.cus_email}</td>
                 <td className="px-4 py-2">{order.eventTitle}</td>
-                <td className="px-4 py-2">{order.eventDate}</td>
+                <td className="px-4 py-2">{order.eventDate.slice(0,10)}</td>
                 <td className="px-4 py-2">${order.total_amount}</td>
                 <td className="px-4 py-2">
                   {order.paidStatus ? "Paid" : "Unpaid"}

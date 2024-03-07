@@ -9,11 +9,11 @@ const NewsLetter = () => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
-    console.log(email);
+    //console.log(email);
     const newsMAil = { email };
 
     axios.post("/news", newsMAil).then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       form.reset();
       toast.success("Thanks for connecting with us😊");
     });

@@ -23,15 +23,15 @@ const EditUser = () => {
         if (data.password !== "") {
             updateData.password = data.password;
         }
-        console.log(updateData);
+        //console.log(updateData);
         const loadingToast = toast.loading("User Updating ... ");
         try {
             const res = await axios.put(`/edit-user/${id}`, updateData);
-            console.log(res.data);
+            //console.log(res.data);
             toast.dismiss(loadingToast);
             toast.success("Successfully created!");
         } catch (error) {
-            console.log(error);
+            //console.log(error);
         }
     };
 
