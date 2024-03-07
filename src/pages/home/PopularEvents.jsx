@@ -44,7 +44,7 @@ const PopularEvents = () => {
       }
 
     return (
-        <div className="bg-[#E9F8F3B2] py-16 mt-10">
+        <div className="bg-[#E9F8F3B2] py-16">
             <Container>
                 <div className="flex flex-col md:flex-row items-center gap-4">
                     <div className="w-1/4">
