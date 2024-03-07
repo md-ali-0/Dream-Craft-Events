@@ -30,6 +30,15 @@ const AllEvents = () => {
 
     const columns = [
         {
+            header: "Event Banner",
+            accessorKey: "image",
+            cell: ({ cell: { row } }) => (
+              <>
+                <img className="w-36 rounded-lg" src={row.original.image} />
+              </>
+            ),
+        },
+        {
             header: "Title",
             accessorKey: "title",
         },
@@ -59,25 +68,25 @@ const AllEvents = () => {
                 </span>
             ),
         },
-        {
-            header: "Edit",
-            accessor: "_id",
-            cell: ({ cell: { row } }) => (
-                <Link key={row.original._id} to={`/dashboard/edit-event/${row.original._id}`}>Edit</Link>
-            ),
-        },
-        {
-            header: "Delete",
-            accessorKey: "_id",
-            cell: ({ cell: { row } }) => (
-                <button
-                    onClick={() => handleDelete(row.original._id)}
-                    className="bg-red-600 rounded text-white px-1 py-0.5 "
-                >
-                    Delete
-                </button>
-            ),
-        },
+        // {
+        //     header: "Edit",
+        //     accessor: "_id",
+        //     cell: ({ cell: { row } }) => (
+        //         <Link key={row.original._id} to={`/dashboard/edit-event/${row.original._id}`}>Edit</Link>
+        //     ),
+        // },
+        // {
+        //     header: "Delete",
+        //     accessorKey: "_id",
+        //     cell: ({ cell: { row } }) => (
+        //         <button
+        //             onClick={() => handleDelete(row.original._id)}
+        //             className="bg-red-600 rounded text-white px-1 py-0.5 "
+        //         >
+        //             Delete
+        //         </button>
+        //     ),
+        // },
     ];
     const table = useReactTable({
         data,
