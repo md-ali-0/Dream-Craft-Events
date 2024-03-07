@@ -28,7 +28,7 @@ const Navbar = () => {
     navigate('/')
     toast.success('Successfully Logout')
   };
-  // console.log(user);
+
   return (
     <>
       <TopBar />
