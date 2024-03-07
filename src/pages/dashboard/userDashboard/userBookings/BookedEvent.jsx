@@ -117,6 +117,7 @@ const BookedEvent = () => {
               <th className="px-4 py-2">Name</th>
               <th className="px-4 py-2">Email</th>
               <th className="px-4 py-2">Event Title</th>
+              <th className="px-4 py-2">Event Date</th>
               <th className="px-4 py-2">Total Amount</th>
               <th className="px-4 py-2">Status</th>
 
@@ -128,19 +129,12 @@ const BookedEvent = () => {
             {paymentHistory?.map((order) => (
               <tr key={order._id} className="border-b text-center">
 
-                <td className="px-4 py-2">
-                  <img
-                    src={order?.image}
-                    className="w-20 h-20 object-cover rounded-2xl"
-                    alt=""
-                  />
-                </td>
-
                 <td className="px-4 py-2"><img src={order?.eventImage} className="w-20 h-20 object-cover rounded-2xl" alt="" /></td>
 
                 <td className="px-4 py-2">{order.cus_name}</td>
                 <td className="px-4 py-2">{order.cus_email}</td>
                 <td className="px-4 py-2">{order.eventTitle}</td>
+                <td className="px-4 py-2">{order.eventDate}</td>
                 <td className="px-4 py-2">${order.total_amount}</td>
                 <td className="px-4 py-2">
                   {order.paidStatus ? "Paid" : "Unpaid"}

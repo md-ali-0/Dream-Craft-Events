@@ -34,7 +34,6 @@ import AllUsers from "../pages/dashboard/admin/users/AllUsers";
 import EditUser from "../pages/dashboard/admin/users/EditUser";
 import MyCart from "../pages/shop/MyCart";
 import PrivateRoute from "./PrivateRoute";
-import PaymentSuccess from "../pages/paymentSuccess/paymentSuccess";
 
 // eita Nizam kortece 
 import AddProduct from "../pages/dashboard/admin/shop/AddProduct";
@@ -48,9 +47,10 @@ import CustomEventDashboard from "../pages/dashboard/CustomEvent/CustomEventDash
 import CustomEventBooking from "../pages/dashboard/userDashboard/CustomEventBook/CustomEventBooking";
 import PaymentHistory from "../pages/dashboard/userDashboard/payment/PaymentHistory";
 import Mails from "../pages/dashboard/admin/mails/Mails";
-import Inbox from "../pages/dashboard/userDashboard/inbox/Inbox";
 import CustomEventUser from "../pages/dashboard/CustomEvent/CustomEventUser";
 import BookedTickets from "../pages/dashboard/admin/events/BookedTickets";
+import PaymentSuccess from "../pages/payment/PaymentSuccess";
+import PaymentFail from "../pages/payment/PaymentFail";
 
 const Router = createBrowserRouter([
     {
@@ -117,6 +117,10 @@ const Router = createBrowserRouter([
             {
                 path: "/payment/success/:tranId",
                 element: <PaymentSuccess />,
+            },
+            {
+                path: "/payment/fail/:transId",
+                element: <PaymentFail />,
             },
             {
                 path: "/request-organizer",
