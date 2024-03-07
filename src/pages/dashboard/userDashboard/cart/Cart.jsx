@@ -75,17 +75,29 @@ const Cart = () => {
     },
 
     {
-      header: "Action",
+      header: "Messages",
       accessorKey: "_id",
       cell: ({ cell: { row } }) => (
         <button
           // onClick={() => handleDelete(row.original._id)}
-          className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
+          className="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
         >
-          Cancel Order
+          Your product will be delivered soon.
         </button>
       ),
     },
+    // {
+    //   header: "Action",
+    //   accessorKey: "_id",
+    //   cell: ({ cell: { row } }) => (
+    //     <button
+    //       // onClick={() => handleDelete(row.original._id)}
+    //       className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
+    //     >
+    //       Cancel Order
+    //     </button>
+    //   ),
+    // },
   ];
   const table = useReactTable({
     data,
