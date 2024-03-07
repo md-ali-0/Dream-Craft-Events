@@ -17,7 +17,7 @@ const CustomEventDashboard = () => {
 
         axios.patch(`/custom-event/${id}`)
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 if (res.data.status == 'pending') {
                     refetch()
                     toast.success('Request approved')
@@ -29,20 +29,20 @@ const CustomEventDashboard = () => {
     const handleReject = (id) => {
 
         axios.put(`/custom-event/${id}`)
-        .then(res => {
-            console.log(res);
-            if (res.data.status == 'pending') {
-                refetch()
-                toast.success('Request rejected')
-            }
-        })
+            .then(res => {
+                //console.log(res);
+                if (res.data.status == 'pending') {
+                    refetch()
+                    toast.success('Request rejected')
+                }
+            })
     }
 
     return (
         <div>
-                        <h2 className=" text-primary text-2xl font-semibold mb-4">
-        Requests for Custom Event
-      </h2>
+            <h2 className=" text-primary text-2xl font-semibold mb-4">
+                Requests for Custom Event
+            </h2>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full">
                     <thead className="text-sm border-b text-gray-700 uppercase bg-rose-50 font-semibold ">
@@ -71,7 +71,7 @@ const CustomEventDashboard = () => {
 
                                     <td className="px-4 text-nowrap py-2 border-2 border-gray-300">{event?.firstName + ' ' + event?.lastName}</td>
                                     <td className="px-4 py-2 border-2 border-gray-300">{event?.email}</td>
-                                    <td className="px-4 py-2 border-2 border-gray-300">{event?.phone}</td>
+                                    <td className="px-4 py-2 text-nowrap border-2 border-gray-300">{event?.phone}</td>
                                     <td className="px-4 py-2 text-nowrap border-2 border-gray-300">{event?.eventType}</td>
                                     <td className="px-4 text-nowrap py-2 border-2 border-gray-300">{event?.date}</td>
                                     <td className="px-4 py-2 border-2 border-gray-300">{event?.location}</td>

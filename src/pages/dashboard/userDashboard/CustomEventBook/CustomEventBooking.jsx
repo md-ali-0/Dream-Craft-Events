@@ -5,7 +5,7 @@
 //         <div>
 
 //         <h2 className="text-center text-primary text-2xl font-semibold">My Custom Events</h2>
-        
+
 //       </div>
 //     );
 // };
@@ -55,8 +55,8 @@ const Cart = () => {
   const [filtering, setFiltering] = useState("");
 
 
-   // Filter products based on user_email
-   const filteredCustomEvent = useMemo(() => {
+  // Filter products based on user_email
+  const filteredCustomEvent = useMemo(() => {
     return customEvent.filter(customEvent => customEvent.email === user.email);
   }, [customEvent, user.email]);
 
@@ -78,7 +78,7 @@ const Cart = () => {
       header: "Name",
       accessorKey: "fullName",
     },
-    
+
     {
       header: "Email",
       accessorKey: "email",
@@ -143,7 +143,7 @@ const Cart = () => {
   //         });
   //         if (swalConfirm.isConfirmed) {
   //             const response  = await axios.delete(`/delete-user/${id}`);
-  //             console.log(response);
+  //             //console.log(response);
   //             refetch();
   //             Swal.fire({
   //                 title: "Deleted!",
@@ -152,7 +152,7 @@ const Cart = () => {
   //             });
   //         }
   //     } catch (error) {
-  //         console.log(error);
+  //         //console.log(error);
   //     }
   // };
 

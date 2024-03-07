@@ -1,19 +1,20 @@
-# Event Management System and Booking System
+# Event Management System and Booking Platform
 
 Welcome to the Event Management System, a project built with MERN.
 
 ## Main Features
 
 1. **User-friendly Event Creation**
-2. **Integrated Calendar and Scheduling**
+2. **Dedicated dashborad for user, admin, and event organizer**
 3. **Ticketing and Registration**
-4. **Virtual Event Hosting and Streaming**
+4. **Custom Event Creation**
+5. **Shop section for event accessories**
 5. **Payment Gateway Integration**
-6. **Promotional Tools**
-7. **Event Analytics and Reporting**
+6. **Chatbot guide**
+7. **Notification system**
 8. **Interactive Event Pages**
-9. **Networking and Community Building**
-10. **Feedback and Review System**
+9. **Feedback and Review System**
+10. **Responsive interfaces across all devices**
 
 ## Contributing
 
@@ -100,3 +101,27 @@ To get started with the project, follow these installation steps:
 3. Start the development server with `npm run dev`.
 
 Feel free to reach out if you have any questions or need further assistance!
+
+## Credentials
+
+**Admin login:**
+
+- Email: admin@gmail.com
+- Password: 123456
+
+**Event Organizer login:**
+
+- Email: organizer@gmail.com
+- Password: 123456
+
+**User login:**
+
+- Email: user@gmail.com
+- Password: 123456
+
+
+
+
+
+
+

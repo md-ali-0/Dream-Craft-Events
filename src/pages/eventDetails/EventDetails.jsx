@@ -13,6 +13,12 @@ import { VscLocation } from "react-icons/vsc";
 import { Link, useParams } from "react-router-dom";
 import loadingAnimation from "../../assets/animation/animation.json";
 import { useEffect, useState } from "react";
+import mamun from '../../assets/team/Mamun.jpg';
+import nizam from '../../assets/team/Nizam.png';
+import ali from '../../assets/team/Ali.png';
+import saikat from '../../assets/team/Saikat.png';
+import nelima from '../../assets/team/Nelima.png';
+import rakib from '../../assets/team/Rakib.png';
 
 
 
@@ -32,6 +38,7 @@ const EventDetails = () => {
 
   const {
     data: event = [],
+    isLoading,
     error,
   } = useQuery({
     queryKey: ["events"],
@@ -50,7 +57,7 @@ const EventDetails = () => {
 
   const {
     data: allEvents = [],
-    isLoading
+    
   } = useQuery({
     queryKey: ["allEvents"],
     queryFn: recentEvents,
@@ -238,11 +245,11 @@ const EventDetails = () => {
               <div className="flex items-center gap-4">
                 <img
                   className="w-28 h-28 rounded-full"
-                  src="https://i.ibb.co/qD9p7Fg/IMG-20220514-211757-02.jpg"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVYTd2Hapj5Ri_KBYNwWpK-Jk9cNuOiQbp6Q&usqp=CAU"
                   alt=""
                 />
                 <div>
-                  <h2 className="text-xl font-semibold">Rakibul Hasan</h2>
+                  <h2 className="text-xl font-semibold">Foyez Ahmed</h2>
                   <h3 className="text-md font-medium">Web Developer</h3>
                   <div className="flex gap-3 mt-3">
                     <p className="border-2 border-gray-500 rounded-full p-1">
@@ -267,7 +274,7 @@ const EventDetails = () => {
                   alt=""
                 />
                 <div>
-                  <h2 className="text-xl font-semibold">Nizam Chy</h2>
+                  <h2 className="text-xl font-semibold">Asif Mahmud</h2>
                   <h3 className="text-md font-medium">Graphic Designer</h3>
                   <div className="flex gap-3 mt-3">
                     <p className="border-2 border-gray-500 rounded-full p-1">
@@ -292,7 +299,7 @@ const EventDetails = () => {
                   alt=""
                 />
                 <div>
-                  <h2 className="text-xl font-semibold">Mohammad Ali</h2>
+                  <h2 className="text-xl font-semibold">Arif Hossain</h2>
                   <h3 className="text-md font-medium">Digital Marketer</h3>
                   <div className="flex gap-3 mt-3">
                     <p className="border-2 border-gray-500 rounded-full p-1">
@@ -319,7 +326,7 @@ const EventDetails = () => {
                   alt=""
                 />
                 <div>
-                  <h2 className="text-xl font-semibold">Neelima Sultana</h2>
+                  <h2 className="text-xl font-semibold">Sabrina Suraiya</h2>
                   <h3 className="text-md font-medium">Product Designer</h3>
                   <div className="flex gap-3 mt-3">
                     <p className="border-2 border-gray-500 rounded-full p-1">
@@ -344,7 +351,7 @@ const EventDetails = () => {
                   alt=""
                 />
                 <div>
-                  <h2 className="text-xl font-semibold">Saikat Singha</h2>
+                  <h2 className="text-xl font-semibold">Lutfur Rahman</h2>
                   <h3 className="text-md font-medium">
                     Brand Identity Designer
                   </h3>
@@ -408,11 +415,11 @@ const EventDetails = () => {
                     src={event.image}
                     alt={event.title}
                   />
-                  <div className="">
+                  <div className="space-y-4">
                     <h3 className="text-sm font-semibold">
                       {event.title}
                     </h3>
-                    <div className="flex justify-between gap-2 my-3">
+                    
                       <p className="flex items-center text-sm gap-2">
                         <CiCalendarDate className="text-sm" />
                         {event.date.slice(0, 10)}
@@ -421,12 +428,7 @@ const EventDetails = () => {
                         <BsDiagram3 className="text-sm" />
                         {event.seat} Seat
                       </p>
-                    </div>
-                    <Link to={`/event-details/${event._id}`}>
-                      <button className="text-sm text-red-600 underline">
-                        Book Now
-                      </button>
-                    </Link>
+                    
                   </div>
                 </div>)
               }

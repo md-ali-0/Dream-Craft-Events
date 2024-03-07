@@ -28,7 +28,7 @@ const Profile = () => {
       toast.dismiss(loadingToast);
       toast.success("Successfully Changed!");
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
 
@@ -44,43 +44,43 @@ const Profile = () => {
         toast.dismiss(loadingToast);
         toast.success("Successfully Changed!");
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     } else {
       toast.error("Password and Confirm Password Must be Same !");
     }
   };
 
-  const profileImageChange = async (e)=>{
+  const coverImageChange = async (e) => {
     e.preventDefault()
     const loadingToast = toast.loading("Cover Image Updating ... ");
     const imageurl = await uploadImage(e.target.files[0])
     if (imageurl) {
-        try {
-            await axios.put(`/edit-user/${user?._id}`, {cover:imageurl});
-            toast.dismiss(loadingToast);
-            toast.success("Successfully Changed!");
-            setUserCover(imageurl)
-            user.image = imageurl
-          } catch (error) {
-            console.log(error);
-          }
+      try {
+        await axios.put(`/edit-user/${user?._id}`, { cover: imageurl });
+        toast.dismiss(loadingToast);
+        toast.success("Successfully Changed!");
+        setUserCover(imageurl)
+        user.image = imageurl
+      } catch (error) {
+        //console.log(error);
+      }
     }
   }
-  const coverImageChange = async (e)=>{
+  const profileImageChange = async (e) => {
     e.preventDefault()
     const loadingToast = toast.loading("Profile Image Updating ... ");
     const imageurl = await uploadImage(e.target.files[0])
     if (imageurl) {
-        try {
-            await axios.put(`/edit-user/${user?._id}`, {image:imageurl});
-            toast.dismiss(loadingToast);
-            toast.success("Successfully Changed!");
-            setUserImage(imageurl)
-            user.image = imageurl
-          } catch (error) {
-            console.log(error);
-          }
+      try {
+        await axios.put(`/edit-user/${user?._id}`, { image: imageurl });
+        toast.dismiss(loadingToast);
+        toast.success("Successfully Changed!");
+        setUserImage(imageurl)
+        user.image = imageurl
+      } catch (error) {
+        //console.log(error);
+      }
     }
   }
   return (

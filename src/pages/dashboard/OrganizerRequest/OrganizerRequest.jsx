@@ -30,7 +30,7 @@ const OrganizerRequest = () => {
                         if (res.data.role === 'organizer') {
                             axios.put(`/request-organizer/accept/${id}`)
                                 .then(res => {
-                                    console.log(res);
+                                    //console.log(res);
                                     if (res.data.status === 'accepted') {
                                         refetch()
                                         Swal.fire({
@@ -59,8 +59,8 @@ const OrganizerRequest = () => {
     return (
         <div>
             <h2 className=" text-primary text-2xl font-semibold mb-4">
-        Organizer Requests
-      </h2>
+                Organizer Requests
+            </h2>
             <div className="flex justify-between items-center">
                 {/* Other JSX */}
             </div>

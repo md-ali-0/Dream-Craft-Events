@@ -177,159 +177,26 @@ const Footer = () => {
               <p className="text-lg font-medium text-gray-900">Contact Us</p>
               <ul className="mt-8 space-y-4 text-sm">
 
-                  <li className="flex items-center justify-center gap-1.5 ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-gray-900"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="md:flex-1 text-gray-700">
-                      john@doe.com
-                    </span>
-                  </li>
+                <li className="flex items-center justify-center gap-1.5 ">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 shrink-0 text-gray-900"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span className="md:flex-1 text-gray-700">
+                  <a href="mailto:info@dreamcraft.com">info@dreamcraft.com</a>                  </span>
+                </li>
 
-{/* 
-                  <a href="mailto:nizam.chy.cs@gmail.com">
-                  <li className="flex items-center justify-center gap-1.5 ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-gray-900"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="md:flex-1 text-gray-700">
-                      nizam.chy.cs@gmail.com
-                    </span>
-                  </li>
-                </a>
 
-                <a href="mailto:sachinsingha7899@gmail.com">
-                  <li className="flex items-center justify-center gap-1.5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-gray-900"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="md:flex-1 text-gray-700">
-                      sachinsingha7899@gmail.com
-                    </span>
-                  </li>
-                </a>
-
-                <a href="mailto:bdmamun100@gmail.com">
-                  <li className="flex items-center justify-center gap-1.5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-gray-900"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="md:flex-1 text-gray-700">
-                      bdmamun100@gmail.com
-                    </span>
-                  </li>
-                </a>
-
-                <a href="mailto:rhakibuxd@gmail.com">
-                  <li className="flex items-center justify-center gap-1.5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-gray-900"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="md:flex-1 text-gray-700">
-                      rhakibuxd@gmail.com
-                    </span>
-                  </li>
-                </a>
-
-                <a href="mailto:neelimasultana6@gmail.com">
-                  <li className="flex items-center justify-center gap-1.5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-gray-900"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="md:flex-1 text-gray-700">
-                      neelimasultana6@gmail.com
-                    </span>
-                  </li>
-                </a>
-
-                <a href="mailto:mohammad.98482@gmail.com">
-                  <li className="flex items-center justify-center gap-1.5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 shrink-0 text-gray-900"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="md:flex-1 text-gray-700">
-                      mohammad.98482@gmail.com
-                    </span>
-                  </li>
-                </a> */}
-  
 
                 <li>
                   <Link
@@ -350,7 +217,9 @@ const Footer = () => {
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
-                    <span className="md:flex-1 text-gray-700">0123456789</span>
+                    <span className="md:flex-1 text-gray-700">
+                      <a href="tel:+8801916498482">+8801916498482</a>
+                    </span>
                   </Link>
                 </li>
                 <li className="flex items-start justify-center gap-1.5 ">
@@ -374,8 +243,7 @@ const Footer = () => {
                     />
                   </svg>
                   <address className="-mt-0.5 md:flex-1 not-italic text-gray-700">
-                    213 Lane, London, United Kingdom
-                  </address>
+                    1213 Dhaka, Bangladesh</address>
                 </li>
               </ul>
             </div>

@@ -4,6 +4,7 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Inbox from "../../pages/dashboard/userDashboard/inbox/Inbox";
+
 const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
     const navigate = useNavigate()
     const { user, logout } = useAuth()
@@ -14,9 +15,6 @@ const Navbar = ({ sidebarOpen, setSidebarOpen }) => {
         navigate('/login')
     }
 
-   
-
-    
     return (
         <div className="flex relative items-center justify-between px-6 py-3 dark:bg-[#0c1427] border dark:border-slate-800">
             <div className="flex items-center">

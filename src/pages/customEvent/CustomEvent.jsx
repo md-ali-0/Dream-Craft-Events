@@ -123,10 +123,10 @@ const CustomEvent = () => {
             seen: false
         }
 
-        console.log(CustomEventData)
+        //console.log(CustomEventData)
 
         const response = await axios.post('/custom-event', CustomEventData)
-        console.log(response);
+        //console.log(response);
 
 
         Swal.fire({

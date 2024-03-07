@@ -6,7 +6,8 @@ import loadingAnimation from "../../../../assets/animation/animation.json";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import logo from "../../../../assets/logo/dream-craft.png";
-import pdfbg from "./pdfbg.jpg";
+import { FaArrowDownLong } from "react-icons/fa6";
+// import pdfbg from "./pdfbg.jpg";
 
 const PaymentHistory = () => {
   const { user } = useAuth();
@@ -48,28 +49,25 @@ const PaymentHistory = () => {
   const handleDownloadPDF = (order) => {
     const doc = new jsPDF();
 
-    // Add background image
-    doc.addImage(
-      pdfbg,
-      "JPEG",
-      0,
-      0,
-      doc.internal.pageSize.getWidth(),
-      doc.internal.pageSize.getHeight()
-    );
+    
+    // doc.addImage(
+    //   pdfbg,
+    //   "JPEG",
+    //   0,
+    //   0,
+    //   doc.internal.pageSize.getWidth(),
+    //   doc.internal.pageSize.getHeight()
+    // );
 
-    // Set font styles
+    
     doc.setFont("Courier-Bold", "bold");
 
-    // Add logo at the top of the PDF, slightly shifted downwards
     const imgWidth = 45; // Adjust as needed
     const imgHeight = 15; // Adjust as needed
     const marginLeft = (doc.internal.pageSize.getWidth() - imgWidth) / 2;
     const marginTop = 20; // Adjust the distance from the top
     doc.addImage(logo, "PNG", marginLeft, marginTop, imgWidth, imgHeight);
 
-    // Add title with blue color
-    // doc.setTextColor(3, 37, 76);
     doc.setTextColor(0, 0, 0); // blue color
     doc.setFontSize(20);
     doc.text(
@@ -79,10 +77,8 @@ const PaymentHistory = () => {
       { align: "center" }
     );
 
-    // Reset color
     doc.setTextColor(0, 0, 0); // Black color
 
-    // Add event details
     doc.setFontSize(19);
 
     doc.text(
@@ -98,7 +94,6 @@ const PaymentHistory = () => {
       { align: "center" }
     );
 
-    // Add customer details
     doc.text(
       `Customer Name: ${order.cus_name}`,
       doc.internal.pageSize.getWidth() / 2,
@@ -112,7 +107,6 @@ const PaymentHistory = () => {
       { align: "center" }
     );
 
-    // Add transaction details
     doc.text(
       `Transaction ID: ${order.tran_id}`,
       doc.internal.pageSize.getWidth() / 2,
@@ -120,7 +114,6 @@ const PaymentHistory = () => {
       { align: "center" }
     );
 
-    // Add payment details
     doc.text(
       `Total Amount: $${order.total_amount}`,
       doc.internal.pageSize.getWidth() / 2,
@@ -135,7 +128,6 @@ const PaymentHistory = () => {
       { align: "center" }
     );
 
-    // Add color to titles
     doc.setTextColor(206, 20, 70); // Red color
     doc.text("Event Details", doc.internal.pageSize.getWidth() / 2, 70, {
       align: "center",
@@ -203,8 +195,8 @@ const PaymentHistory = () => {
                 <td className="px-4 py-2">
                   <button
                     onClick={() => handleDownloadPDF(order)}
-                    className="px-5 text-lg font-semibold rounded bg-primary text-white"
-                  >
+                    className="px-5 flex items-center text-nowrap gap-1 py-1 text-lg font-semibold rounded bg-primary text-white"
+                  ><FaArrowDownLong className="button-reciept" />
                     Download PDF
                   </button>
                 </td>
