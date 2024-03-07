@@ -85,3 +85,27 @@
 .active {
     @apply text-primary border border-primary;
 }
+
+.ti-list-group{
+    margin-top: -1px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    border-width: 1px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+  }
+  .ti-list-group:first-child{
+    margin-top: 0px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .ti-list-group:last-child{
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
