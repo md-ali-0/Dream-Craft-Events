@@ -55,14 +55,14 @@ const MyCart = ({ cartItems: propCartItems }) => {
   //       <span>Your order has been placed successfully.</span>
   //     </div>
   //   );
-  //   console.log(cartItems);
-  //   console.log(cartItems[1]);
+  //   //console.log(cartItems);
+  //   //console.log(cartItems[1]);
 
   // };
 
   const placeMyOrder = async (data) => {
-    
-    console.log(cartItems);
+
+    //console.log(cartItems);
 
     if (!user) {
       // If user is not logged in, redirect to login page
@@ -99,7 +99,7 @@ const MyCart = ({ cartItems: propCartItems }) => {
           // Save the order to the database
 
           const ordersRes = await axiosSecure.post("/product-orders", order);
-          console.log(ordersRes);
+          //console.log(ordersRes);
         }
 
         // toast.success("Your orders have been placed.");
@@ -115,11 +115,11 @@ const MyCart = ({ cartItems: propCartItems }) => {
           text: "Your order has been placed successfully!",
           icon: "success",
           confirmButtonText: "Ok",
-      }).then((result) => {
+        }).then((result) => {
           if (result.isConfirmed) {
-              navigate('/dashboard/cart'); // Directly navigate to the home page
+            navigate('/dashboard/cart'); // Directly navigate to the home page
           }
-      });
+        });
 
       } catch (error) {
         console.error("Error placing orders:", error);

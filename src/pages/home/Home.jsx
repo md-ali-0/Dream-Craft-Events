@@ -1,4 +1,3 @@
-import EventCards from "../../components/cards/EventCards";
 import TeamCards from "../../components/cards/TeamCards";
 import Booking from "../bookings/Booking";
 import NewsLetter from "../newsLetter/NewsLetter";
@@ -20,7 +19,6 @@ const Home = () => {
       <PopularEvents />
 
       <Booking></Booking>
-      <EventCards />
       <TeamCards />
       <NewsLetter></NewsLetter>
       {/* <Faqac></Faqac> */}

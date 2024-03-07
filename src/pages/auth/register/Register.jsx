@@ -9,25 +9,25 @@ import GoogleLogin from "../../../components/shared/googleLogin/GoogleLogin";
 const Register = () => {
     const [passwordShow, setPasswordShow] = useState(false);
     const navigation = useNavigate()
-    const {signUp} = useAuth()
+    const { signUp } = useAuth()
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    
+
     const onSubmit = async (data) => {
-        console.log(data);
-        const{firstname, lastname, email, password} = data
+        //console.log(data);
+        const { firstname, lastname, email, password } = data
         const toastLoading = toast.loading('User Signuping...')
         try {
             const response = await signUp(firstname, lastname, email, password)
             toast.dismiss(toastLoading)
             toast.success('Sign Up Successfully')
             navigation('/dashboard')
-            console.log(response);
+            //console.log(response);
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             toast.dismiss(toastLoading)
             toast.error(error?.response?.data)
         }
@@ -61,11 +61,10 @@ const Register = () => {
                                         {...register("firstname", {
                                             required: "Firstname is Required",
                                         })}
-                                        className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${
-                                            errors.name
+                                        className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${errors.name
                                                 ? "border-red-500 focus:border-red-500"
                                                 : "focus:border-primary"
-                                        }
+                                            }
                                         `}
                                         placeholder="FirstName"
                                     />
@@ -89,11 +88,10 @@ const Register = () => {
                                         {...register("lastname", {
                                             required: "Lastname is Required",
                                         })}
-                                        className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${
-                                            errors.name
+                                        className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${errors.name
                                                 ? "border-red-500 focus:border-red-500"
                                                 : "focus:border-primary"
-                                        }
+                                            }
                                         `}
                                         placeholder="LastName"
                                     />
@@ -118,11 +116,10 @@ const Register = () => {
                                     {...register("email", {
                                         required: "Email is Required",
                                     })}
-                                    className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${
-                                        errors.email
+                                    className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${errors.email
                                             ? "border-red-500 focus:border-red-500"
                                             : "focus:border-primary"
-                                    }
+                                        }
                                     `}
                                     placeholder="Enter Email Address"
                                 />
@@ -146,11 +143,10 @@ const Register = () => {
                                     {...register("password", {
                                         required: "Password is Required",
                                     })}
-                                    className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${
-                                        errors.password
+                                    className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${errors.password
                                             ? "border-red-500 focus:border-red-500"
                                             : "focus:border-primary"
-                                    }
+                                        }
                                     `}
                                     placeholder="Enter Password"
                                 />
@@ -226,7 +222,7 @@ const Register = () => {
                                     className="grow bg-gray-100 rounded h-0.5 dark:bg-gray-700/75"
                                 />
                             </div>
-                            <GoogleLogin/>
+                            <GoogleLogin />
                             <div className="p-5 text-sm text-center">
                                 Already have an account?
                                 <Link

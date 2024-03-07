@@ -6,10 +6,10 @@ class MessageParser {
 
   parse(message) {
     const lowercaseMessage = message.toLowerCase();
-    console.log("Received message:", lowercaseMessage); 
+    //console.log("Received message:", lowercaseMessage); 
 
     if (lowercaseMessage.includes("upcoming events")) {
-      this.actionProvider.handleFetchUpcomingEvents(); 
+      this.actionProvider.handleFetchUpcomingEvents();
     } else if (lowercaseMessage.includes("event details")) {
       this.actionProvider.handleEventDetailsPrompt();
     } else if (lowercaseMessage.includes("dreamcraft")) {
@@ -80,7 +80,7 @@ class MessageParser {
     ) {
       this.actionProvider.handleExhibitShowcase();
     } else {
-      console.log("Handling as unknown:", lowercaseMessage); 
+      //console.log("Handling as unknown:", lowercaseMessage); 
       this.actionProvider.handleUnknown();
     }
   }

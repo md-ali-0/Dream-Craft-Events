@@ -40,8 +40,8 @@ const Cart = () => {
   const [filtering, setFiltering] = useState("");
 
 
-   // Filter products based on user_email
-   const filteredProducts = useMemo(() => {
+  // Filter products based on user_email
+  const filteredProducts = useMemo(() => {
     return products.filter(product => product.user_email === user.email);
   }, [products, user.email]);
 
@@ -127,7 +127,7 @@ const Cart = () => {
   //         });
   //         if (swalConfirm.isConfirmed) {
   //             const response  = await axios.delete(`/delete-user/${id}`);
-  //             console.log(response);
+  //             //console.log(response);
   //             refetch();
   //             Swal.fire({
   //                 title: "Deleted!",
@@ -136,7 +136,7 @@ const Cart = () => {
   //             });
   //         }
   //     } catch (error) {
-  //         console.log(error);
+  //         //console.log(error);
   //     }
   // };
 
