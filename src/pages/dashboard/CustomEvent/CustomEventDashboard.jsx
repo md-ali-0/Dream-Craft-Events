@@ -40,6 +40,9 @@ const CustomEventDashboard = () => {
 
     return (
         <div>
+                        <h2 className=" text-primary text-2xl font-semibold mb-4">
+        Requests for Custom Event
+      </h2>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full">
                     <thead className="text-sm border-b text-gray-700 uppercase bg-rose-50 font-semibold ">
@@ -62,7 +65,7 @@ const CustomEventDashboard = () => {
                     </thead>
                     <tbody>
                         {
-                            customEvent.map((event, index) => (
+                            customEvent?.map((event, index) => (
                                 <tr key={event._id} className='text-center'>
                                     <td className="px-4 py-2 border-2 border-gray-300">{index + 1}</td>
 

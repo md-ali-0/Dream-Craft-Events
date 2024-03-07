@@ -105,7 +105,6 @@ const CustomEvent = () => {
         const email = e.target?.email.value;
         const phone = e.target.phone.value;
 
-
         const CustomEventData = {
             firstName: firstName,
             lastName: lastName,
@@ -120,7 +119,8 @@ const CustomEvent = () => {
             catering: catering,
             request: specialRequest,
             cost: totalCost,
-            status: 'pending'
+            status: 'pending',
+            seen: false
         }
 
         console.log(CustomEventData)

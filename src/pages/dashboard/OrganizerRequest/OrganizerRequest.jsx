@@ -58,6 +58,9 @@ const OrganizerRequest = () => {
 
     return (
         <div>
+            <h2 className=" text-primary text-2xl font-semibold mb-4">
+        Organizer Requests
+      </h2>
             <div className="flex justify-between items-center">
                 {/* Other JSX */}
             </div>
@@ -66,7 +69,7 @@ const OrganizerRequest = () => {
                     <thead className="text-sm border-b text-gray-700 uppercase bg-rose-50 font-semibold ">
                         <tr>
                             <th className="px-4 py-2"></th>
-                            <th className="px-4 py-2">Image</th>
+                            {/* <th className="px-4 py-2">Image</th> */}
                             <th className="px-4 py-2">Name</th>
                             <th className="px-4 py-2">Experience</th>
                             <th className="px-4 py-2">Company</th>
@@ -80,7 +83,7 @@ const OrganizerRequest = () => {
                         {Array.isArray(request) && request.map((item, index) => (
                             <tr key={item._id} className="border-b text-center">
                                 <td className="px-4 py-2">{index + 1}</td>
-                                <td className="px-4 py-2"><img src={item?.image} className="w-20 h-20 object-cover rounded-2xl" alt="" /></td>
+                                {/* <td className="px-4 py-2"><img src={item?.image} className="w-20 h-20 object-cover rounded-2xl" alt="" /></td> */}
                                 <td className="px-4 py-2">{item?.name}</td>
                                 <td className="px-4 py-2">{item?.experience}</td>
                                 <td className="px-4 py-2">{item?.company}</td>

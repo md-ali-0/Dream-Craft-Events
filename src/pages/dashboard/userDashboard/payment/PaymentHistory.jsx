@@ -7,8 +7,6 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import logo from "../../../../assets/logo/dream-craft.png";
 import pdfbg from "./pdfbg.jpg";
-import { FaArrowDownLong } from "react-icons/fa6";
-
 
 const PaymentHistory = () => {
   const { user } = useAuth();
@@ -16,7 +14,6 @@ const PaymentHistory = () => {
   const fetchPaymentHistory = async () => {
     const response = await axios.get(
       `https://dream-craft-server.vercel.app/order/${user?.email}`
-      // `http://localhost:5173/order/${user?.email}`
     );
     if (!response.status === 200) {
       throw new Error("Failed to fetch payment history");
@@ -29,7 +26,7 @@ const PaymentHistory = () => {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["paymentHistory", user.email], // Include user.email to refetch when the email changes
+    queryKey: ["paymentHistory", user.email], 
     queryFn: fetchPaymentHistory,
   });
 
@@ -206,10 +203,9 @@ const PaymentHistory = () => {
                 <td className="px-4 py-2">
                   <button
                     onClick={() => handleDownloadPDF(order)}
-                    className="px-4 py-1.5 flex items-center gap-0.5 text-nowrap text-lg font-semibold rounded bg-primary text-white"
+                    className="px-5 text-lg font-semibold rounded bg-primary text-white"
                   >
-                    <FaArrowDownLong className="button-reciept"/>
-                    Receipt
+                    Download PDF
                   </button>
                 </td>
               </tr>

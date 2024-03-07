@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { GoInfo } from "react-icons/go";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
@@ -14,6 +14,8 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    const location = useLocation();
+    let from = location?.state?.from?.pathname || "/";
 
     const onSubmit = async (data) => {
         const toastLoading = toast.loading('User Signing...')
@@ -28,7 +30,7 @@ const Login = () => {
             }else if(data.user.role === 'organiger'){
                 navigation('/dashboard/organiger')
             }else{
-                navigation('/')
+                navigation(from)
             }
         } catch (error) {
             toast.dismiss(toastLoading)

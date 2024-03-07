@@ -17,10 +17,10 @@ const Register = () => {
     
     const onSubmit = async (data) => {
         console.log(data);
-        const{name, email, password} = data
+        const{firstname, lastname, email, password} = data
         const toastLoading = toast.loading('User Signuping...')
         try {
-            const response = await signUp(name, email, password)
+            const response = await signUp(firstname, lastname, email, password)
             toast.dismiss(toastLoading)
             toast.success('Sign Up Successfully')
             navigation('/dashboard')
@@ -45,33 +45,63 @@ const Register = () => {
                                     Create an account to start using Dream Craft
                                 </small>
                             </div>
-                            <div>
-                                <label
-                                    htmlFor="name"
-                                    className="block mb-1 text-gray-600 text-sm font-medium"
-                                >
-                                    Full Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    {...register("name", {
-                                        required: "Name is Required",
-                                    })}
-                                    className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${
-                                        errors.name
-                                            ? "border-red-500 focus:border-red-500"
-                                            : "focus:border-primary"
-                                    }
-                                    `}
-                                    placeholder="Enter Full Name"
-                                />
-                                {errors.name && (
-                                    <span className="flex items-center gap-1 py-1 text-red-500">
-                                        <GoInfo className="inline" />
-                                        {errors.name.message}
-                                    </span>
-                                )}
+                            <div className="flex flex-col md:flex-row gap-2">
+                                <div>
+                                    <label
+                                        htmlFor="firstname"
+                                        className="block mb-1 text-gray-600 text-sm font-medium"
+                                    >
+                                        First Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="firstname"
+                                        {...register("firstname", {
+                                            required: "Firstname is Required",
+                                        })}
+                                        className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${
+                                            errors.name
+                                                ? "border-red-500 focus:border-red-500"
+                                                : "focus:border-primary"
+                                        }
+                                        `}
+                                        placeholder="FirstName"
+                                    />
+                                    {errors.firstname && (
+                                        <span className="flex items-center gap-1 py-1 text-red-500">
+                                            <GoInfo className="inline" />
+                                            {errors.firstname.message}
+                                        </span>
+                                    )}
+                                </div>
+                                <div>
+                                    <label
+                                        htmlFor="lastname"
+                                        className="block mb-1 text-gray-600 text-sm font-medium"
+                                    >
+                                        Last Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="lastname"
+                                        {...register("lastname", {
+                                            required: "Lastname is Required",
+                                        })}
+                                        className={`w-full rounded-lg border border-stroke bg-transparent py-2 px-3 outline-none text-gray-600 focus-visible:shadow-none dark:border-form-strokeDark dark:bg-form-input ${
+                                            errors.name
+                                                ? "border-red-500 focus:border-red-500"
+                                                : "focus:border-primary"
+                                        }
+                                        `}
+                                        placeholder="LastName"
+                                    />
+                                    {errors.lastname && (
+                                        <span className="flex items-center gap-1 py-1 text-red-500">
+                                            <GoInfo className="inline" />
+                                            {errors.lastname.message}
+                                        </span>
+                                    )}
+                                </div>
                             </div>
                             <div>
                                 <label
