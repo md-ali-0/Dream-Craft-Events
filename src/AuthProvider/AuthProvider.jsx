@@ -1,12 +1,22 @@
 import { createContext, useEffect, useState } from "react";
 import useAxiosPublic from "../hooks/useAxiosPublic";
-
+import {
+  GoogleAuthProvider, getAuth,
+  signInWithPopup,
+} from "firebase/auth";
+import { app } from "../firebase/firebase.config";
 export const AuthContext = createContext();
 
 export const AuthProdiver = ({ children }) => {
   const axios = useAxiosPublic();
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const googleLogin = () => {
+      return signInWithPopup(auth, googleProvider);
+  };
 
   const login = async (email, password) => {
     const response = await axios.post("/login", { email, password });
@@ -15,6 +25,7 @@ export const AuthProdiver = ({ children }) => {
     setIsLoading(false);
     return response;
   };
+
   const signUp = async (firstname, lastname, email, password) => {
     const response = await axios.post("/signup", {
       firstname,
@@ -31,6 +42,7 @@ export const AuthProdiver = ({ children }) => {
     localStorage.removeItem("token");
     setIsLoading(false);
   };
+
 
   useEffect(() => {
     const unSubscribe = async () => {
@@ -61,7 +73,10 @@ export const AuthProdiver = ({ children }) => {
     signUp,
     logout,
     user,
+    setUser,
     isLoading,
+    googleLogin,
+    setIsLoading
   };
 
   return (
