@@ -122,7 +122,7 @@ const PaymentPage = () => {
   const handlePayment = async () => {
     const requestRes = await axios.post('/order', paymentInfo)
     window.location.replace(requestRes.data.url)
-    // console.log(requestRes);
+    // //console.log(requestRes);
   }
 
 

@@ -13,7 +13,7 @@ const Contact = () => {
   const axiosPublic = useAxiosPublic();
 
   const handleSubmit = (e) => {
-    // console.log("click")
+    // //console.log("click")
     e.preventDefault();
     if (!user) {
       // If user is not logged in, redirect to login page
@@ -24,15 +24,15 @@ const Contact = () => {
       return;
     }
     // Handle form submission logic here
-    console.log("Email:", email);
-    console.log("Subject:", subject);
-    console.log("Message:", message);
-    const info={
-      email, subject,message
+    //console.log("Email:", email);
+    //console.log("Subject:", subject);
+    //console.log("Message:", message);
+    const info = {
+      email, subject, message
     }
-    axiosPublic.post('/contact', info).then(res=>{
-      console.log(res.data)
-      
+    axiosPublic.post('/contact', info).then(res => {
+      //console.log(res.data)
+
     })
   };
 

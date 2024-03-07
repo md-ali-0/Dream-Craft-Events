@@ -90,6 +90,11 @@ const BookedEvent = () => {
     doc.text(` ${order.eventTitle}`, pageWidth / 2, marginTop + 10, {
       align: "center",
     });
+    doc.setFontSize(16);
+    doc.text(`Date: ${order.eventDate.slice(0,10)}`, pageWidth / 2, marginTop + 20, {
+      align: "center",
+    });
+
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
 

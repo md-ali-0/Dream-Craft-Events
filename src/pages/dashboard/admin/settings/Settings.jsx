@@ -10,7 +10,7 @@ const Settings = () => {
     } = useForm();
     const onSubmit = async (data) => {
         const { siteName, siteLogo } = data;
-        console.log(siteName, siteLogo);
+        //console.log(siteName, siteLogo);
         toast.success("Successfully Updated");
     };
 

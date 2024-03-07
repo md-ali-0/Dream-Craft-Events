@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const RequestOrganizer = () => {
 
     const { user } = useAuth()
+    //console.log(user?.name);
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const axiosSecure = useAxiosPublic()
     const [hasPendingRequest, setHasPendingRequest] = useState(false);

@@ -23,15 +23,15 @@ const UpdateEvent = () => {
         if (data.password !== "") {
             updateData.password = data.password;
         }
-        console.log(updateData);
+        //console.log(updateData);
         const loadingToast = toast.loading("Updating Event..");
         try {
             const res = await axios.put(`/edit-event/${id}`, updateData);
-            console.log(res.data);
+            //console.log(res.data);
             toast.dismiss(loadingToast);
             toast.success("Successfully created!");
         } catch (error) {
-            console.log(error);
+            //console.log(error);
         }
     };
     return (

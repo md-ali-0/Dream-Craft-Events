@@ -33,9 +33,9 @@ const AllEvents = () => {
             header: "Event Banner",
             accessorKey: "image",
             cell: ({ cell: { row } }) => (
-              <>
-                <img className="w-36 rounded-lg" src={row.original.image} />
-              </>
+                <>
+                    <img className="w-36 rounded-lg" src={row.original.image} />
+                </>
             ),
         },
         {
@@ -115,8 +115,8 @@ const AllEvents = () => {
                 confirmButtonText: "Yes, delete it!",
             });
             if (swalConfirm.isConfirmed) {
-                const response  = await axios.delete(`/delete-event/${id}`);
-                console.log(response);
+                const response = await axios.delete(`/delete-event/${id}`);
+                //console.log(response);
                 refetch();
                 Swal.fire({
                     title: "Deleted!",
@@ -125,7 +125,7 @@ const AllEvents = () => {
                 });
             }
         } catch (error) {
-            console.log(error);
+            //console.log(error);
         }
     };
 
@@ -169,8 +169,8 @@ const AllEvents = () => {
                                                             asc: "🔼",
                                                             desc: "🔽",
                                                         }[
-                                                            header.column.getIsSorted() ??
-                                                                null
+                                                        header.column.getIsSorted() ??
+                                                        null
                                                         ]
                                                     }
                                                 </div>

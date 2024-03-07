@@ -143,7 +143,7 @@ const AllEvents = () => {
   //         });
   //         if (swalConfirm.isConfirmed) {
   //             const response  = await axios.delete(`/delete-user/${id}`);
-  //             console.log(response);
+  //             //console.log(response);
   //             refetch();
   //             Swal.fire({
   //                 title: "Deleted!",
@@ -152,7 +152,7 @@ const AllEvents = () => {
   //             });
   //         }
   //     } catch (error) {
-  //         console.log(error);
+  //         //console.log(error);
   //     }
   // };
 

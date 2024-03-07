@@ -33,14 +33,14 @@ const AddProduct = () => {
         product_description,
         product_image: imageResult,
       };
-      // console.log(newProducts);
+      // //console.log(newProducts);
 
       const productRes = await axiosSecure.post('/products', newProducts)
-      console.log(productRes);
+      //console.log(productRes);
       if (productRes.data._id) {
         toast.success("Product successfully added");
-          reset()
-          toast.dismiss(loadingToast);
+        reset()
+        toast.dismiss(loadingToast);
       }
 
 

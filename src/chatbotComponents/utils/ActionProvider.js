@@ -24,7 +24,7 @@ class ActionProvider {
   async handleFetchEvents() {
     try {
       const events = await this.backendAPI.fetchEvents();
-      console.log(events);
+      //console.log(events);
 
       const messageText =
         events.length > 0
@@ -43,11 +43,11 @@ class ActionProvider {
     }
   }
   async handleFetchUpcomingEvents() {
-   
+
     const upcomingEvents = [
       { title: "Green Living Expo", date: "February 25, 2024" },
       { title: "Film Buff Movie Marathon", date: "March 3, 2024" },
-      
+
     ];
 
     this.updateChatWithMessage("Here are some upcoming events:", {
