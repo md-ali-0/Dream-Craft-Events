@@ -51,7 +51,7 @@ const Profile = () => {
     }
   };
 
-  const profileImageChange = async (e)=>{
+  const coverImageChange = async (e)=>{
     e.preventDefault()
     const loadingToast = toast.loading("Cover Image Updating ... ");
     const imageurl = await uploadImage(e.target.files[0])
@@ -67,7 +67,7 @@ const Profile = () => {
           }
     }
   }
-  const coverImageChange = async (e)=>{
+  const profileImageChange = async (e)=>{
     e.preventDefault()
     const loadingToast = toast.loading("Profile Image Updating ... ");
     const imageurl = await uploadImage(e.target.files[0])
