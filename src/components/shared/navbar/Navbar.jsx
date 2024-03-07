@@ -95,24 +95,6 @@ const Navbar = () => {
                 </NavLink>
               </li>
 
-              {/* <li>
-                <details>
-                  <summary>More</summary>
-                  <ul className="p-2 bg-base-100 rounded-t-none">
-                    <li>
-                    <NavLink to="/event-details" className="border border-white p-1">
-                    Event Details
-                </NavLink>
-                    </li>
-                    <li>
-                    <NavLink to="/shop" className="border border-white p-1">
-                    Shop
-                </NavLink>
-                    </li>
-                  </ul>
-                </details>
-              </li> */}
-
 
             </ul>
           </div>

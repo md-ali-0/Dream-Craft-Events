@@ -71,7 +71,7 @@ const CustomEventDashboard = () => {
 
                                     <td className="px-4 text-nowrap py-2 border-2 border-gray-300">{event?.firstName + ' ' + event?.lastName}</td>
                                     <td className="px-4 py-2 border-2 border-gray-300">{event?.email}</td>
-                                    <td className="px-4 py-2 border-2 border-gray-300">{event?.phone}</td>
+                                    <td className="px-4 py-2 text-nowrap border-2 border-gray-300">{event?.phone}</td>
                                     <td className="px-4 py-2 text-nowrap border-2 border-gray-300">{event?.eventType}</td>
                                     <td className="px-4 text-nowrap py-2 border-2 border-gray-300">{event?.date}</td>
                                     <td className="px-4 py-2 border-2 border-gray-300">{event?.location}</td>

@@ -48,7 +48,7 @@ const TeamCards = () => {
                   fill="pink"
                 />
               </Link>
-              <Link to="https://linkedIn.com" target="_blank">
+              <Link to="https://www.linkedin.com/in/nizam-chowdhury/" target="_blank">
                 <LuLinkedin
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
@@ -91,7 +91,7 @@ const TeamCards = () => {
                   fill="pink"
                 />
               </Link>
-              <Link to="https://linkedIn.com" target="_blank">
+              <Link to="https://www.linkedin.com/in/saikatsingha65/" target="_blank">
                 <LuLinkedin
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
@@ -121,7 +121,7 @@ const TeamCards = () => {
             </p>
             <div className="flex gap-5 py-2">
               <Link
-                to="https://www.facebook.com/100008261679338/"
+                to="https://www.facebook.com/Iamrakibhassan/"
                 target="_blank"
               >
                 <LuFacebook
@@ -130,14 +130,14 @@ const TeamCards = () => {
                   fill="pink"
                 />
               </Link>
-              <Link to="https://twitter.com" target="_blank">
+              <Link to="https://twitter.com/Rhakibwd" target="_blank">
                 <LuTwitter
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
                   fill="pink"
                 />
               </Link>
-              <Link to="https://linkedIn.com" target="_blank">
+              <Link to="https://www.linkedin.com/in/mrakibulhasan/" target="_blank">
                 <LuLinkedin
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
@@ -180,7 +180,7 @@ const TeamCards = () => {
                   fill="pink"
                 />
               </Link>
-              <Link to="https://linkedIn.com" target="_blank">
+              <Link to="https://www.linkedin.com/in/nelima-sultana-7b4280298/" target="_blank">
                 <LuLinkedin
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
@@ -223,7 +223,7 @@ const TeamCards = () => {
                   fill="pink"
                 />
               </Link>
-              <Link to="https://linkedIn.com" target="_blank">
+              <Link to="https://www.linkedin.com/in/md-ali77/" target="_blank">
                 <LuLinkedin
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
@@ -259,14 +259,14 @@ const TeamCards = () => {
                   fill="pink"
                 />
               </Link>
-              <Link to="https://twitter.com" target="_blank">
+              <Link to="https://twitter.com/AAMamun24" target="_blank">
                 <LuTwitter
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}
                   fill="pink"
                 />
               </Link>
-              <Link to="https://linkedIn.com" target="_blank">
+              <Link to="https://www.linkedin.com/in/aamamun24/" target="_blank">
                 <LuLinkedin
                   className="inline text-2xl border border-primary text-primary/80 rounded-md p-0.5"
                   size={28}

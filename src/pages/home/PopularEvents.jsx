@@ -73,7 +73,7 @@ const PopularEvents = () => {
                             className="mySwiper"
                         >
                             {
-                                events.slice(0, 5).map(event => <SwiperSlide key={event._id} >
+                                events?.slice(0, 5).map(event => <SwiperSlide key={event._id} >
                                     <EventCard event={event}></EventCard>
                                 </SwiperSlide>)
                             }

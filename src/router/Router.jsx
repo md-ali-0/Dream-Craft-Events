@@ -159,9 +159,9 @@ const Router = createBrowserRouter([
             {
                 path: "add-event",
                 element: (
-                    <AdminRouter>
+                    <PrivateRoute>
                         <AddEvent />
-                    </AdminRouter>
+                    </PrivateRoute>
                 ),
             },
             {
