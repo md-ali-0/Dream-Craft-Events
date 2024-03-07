@@ -114,6 +114,7 @@ const PaymentPage = () => {
     eventId: params._id,
     eventTitle: event.title,
     eventImage: event.image,
+    eventDate: event.date,
     amount: totalPrice,
     currency: 'USD'
   }
