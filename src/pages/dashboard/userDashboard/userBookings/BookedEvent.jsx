@@ -139,7 +139,7 @@ const BookedEvent = () => {
                 <td className="px-4 py-2">{order.cus_name}</td>
                 <td className="px-4 py-2">{order.cus_email}</td>
                 <td className="px-4 py-2">{order.eventTitle}</td>
-                <td className="px-4 py-2">{order.eventDate.slice(0,10)}</td>
+                <td className="px-4 py-2">{order.eventDate?.slice(0,10)}</td>
                 <td className="px-4 py-2">${order.total_amount}</td>
                 <td className="px-4 py-2">
                   {order.paidStatus ? "Paid" : "Unpaid"}
