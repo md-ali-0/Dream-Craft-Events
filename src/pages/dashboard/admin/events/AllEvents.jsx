@@ -8,17 +8,16 @@ import {
     useReactTable,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+// import { Link } from "react-router-dom";
+// import Swal from "sweetalert2";
 import useAxios from "../../../../hooks/useAxios";
 
 const AllEvents = () => {
     const axios = useAxios();
     const {
-        data: users = [],
-        refetch,
+        data: allEvents = [],
     } = useQuery({
-        queryKey: ["users"],
+        queryKey: ["allEvents"],
         queryFn: async () => {
             const response = await axios.get("/events");
             return response.data;
@@ -26,7 +25,7 @@ const AllEvents = () => {
     });
     const [sorting, setSorting] = useState([]);
     const [filtering, setFiltering] = useState("");
-    const data = useMemo(() => users, [users]);
+    const data = useMemo(() => allEvents, [allEvents]);
 
     const columns = [
         {
@@ -103,31 +102,31 @@ const AllEvents = () => {
         onGlobalFilterChange: setFiltering,
     });
 
-    const handleDelete = async (id) => {
-        try {
-            const swalConfirm = await Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-            });
-            if (swalConfirm.isConfirmed) {
-                const response = await axios.delete(`/delete-event/${id}`);
-                //console.log(response);
-                refetch();
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your Camp has been deleted.",
-                    icon: "success",
-                });
-            }
-        } catch (error) {
-            //console.log(error);
-        }
-    };
+    // const handleDelete = async (id) => {
+    //     try {
+    //         const swalConfirm = await Swal.fire({
+    //             title: "Are you sure?",
+    //             text: "You won't be able to revert this!",
+    //             icon: "warning",
+    //             showCancelButton: true,
+    //             confirmButtonColor: "#3085d6",
+    //             cancelButtonColor: "#d33",
+    //             confirmButtonText: "Yes, delete it!",
+    //         });
+    //         if (swalConfirm.isConfirmed) {
+    //             const response = await axios.delete(`/delete-event/${id}`);
+    //             //console.log(response);
+    //             refetch();
+    //             Swal.fire({
+    //                 title: "Deleted!",
+    //                 text: "Your Camp has been deleted.",
+    //                 icon: "success",
+    //             });
+    //         }
+    //     } catch (error) {
+    //         //console.log(error);
+    //     }
+    // };
 
     return (
         <>
