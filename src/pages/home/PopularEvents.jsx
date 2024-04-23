@@ -25,7 +25,7 @@ const PopularEvents = () => {
         isLoading,
         error,
       } = useQuery({
-        queryKey: ["events"],
+        queryKey: ["popularEvents"],
         queryFn: fetchEvents,
       });
       if (isLoading) {
